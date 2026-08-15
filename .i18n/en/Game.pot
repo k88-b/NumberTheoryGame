@@ -1,0 +1,1612 @@
+msgid ""
+msgstr "Project-Id-Version: Game v4.23.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-15\n"
+"Last-Translator: \n"
+"Language-Team: none\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#. §0: $m$
+#: Game.Levels.Congruence
+msgid "Welcome to World 2: Congruences in Action!\n"
+"\n"
+"In the first world, you proved that modular arithmetic forms an equivalence relation.\n"
+"But the real power of congruences comes from their arithmetic properties. In this world, you will prove that you can safely add, multiply, and raise congruences to powers, just like regular equations!\n"
+"\n"
+"You will also learn how to manipulate the modulus §0 itself, breaking it apart or scaling it up. Let's dive into the algebra!"
+msgstr ""
+
+#: Game.Levels.GCD.L01_dvd_mul
+msgid ""
+msgstr ""
+
+#. §0: $m$
+#: Game
+msgid "# Welcome to the Number Theory Game\n"
+"#### An introduction to integer arithmetic and formal proofs.\n"
+"\n"
+"In this game, we will explore the fascinating world of Number Theory.\n"
+"We will start from the basic definition of divisibility and build our way up\n"
+"to modular arithmetic and congruences.\n"
+"\n"
+"Our ultimate goal is to understand how remainders work, how to safely manipulate\n"
+"equations modulo §0, and eventually reach powerful results like the\n"
+"Chinese Remainder Theorem. We will do this by solving levels in a computer\n"
+"puzzle game called Lean.\n"
+"\n"
+"# Read this.\n"
+"\n"
+"Learning how to use an interactive theorem prover takes time.\n"
+"Tests show that the people who get the most out of this game are\n"
+"those who read the help texts on the left side of the screen.\n"
+"\n"
+"To start, click on the **Divisibility Club**."
+msgstr ""
+
+#. §0: $c$
+#. §1: $m$
+#. §2: $1$
+#. §3: `gcd(c, m) = 1`
+#. §4: $x, y$
+#. §5: $c \\cdot x + m \\cdot y = 1$
+#. §6: $\\implies$
+#. §7: $\\impliedby$
+#. §8: `unfold IsGCD at h`
+#. §9: `obtain`
+#. §10: `use`
+#: Game.Levels.GCD.L04_coprime_forward
+msgid "Two integers §0 and §1 are called **coprime** (or *relatively prime*) exactly when their greatest common divisor is §2: §3.\n"
+"\n"
+"By our definition, this immediately gives us a Bézout identity: there exist integers §4 with §5.\n"
+"\n"
+"*Note:* an \"if and only if\" statement like this one is always split into two separate levels in this game — one per direction of the arrow. This level is the \"§6\" direction; the next one is \"§7\".\n"
+"\n"
+"This direction is really just unpacking the definition: §8 to get access to the pieces, §9 to peel them apart, and hand the pieces straight back with §10."
+msgstr ""
+
+#. §0: `ring`
+#. §1: `x + y = y + x`
+#. §2: `x * 1 = x`
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "The §0 tactic automatically proves algebraic equalities like §1\n"
+"or §2. It is a powerful tool so you don't have to manually apply axioms."
+msgstr ""
+
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "Your First Proof"
+msgstr ""
+
+#: Game.Levels.GCD.L03_gcd_greatest
+msgid "The GCD Really Is the Greatest"
+msgstr ""
+
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "Divisibility is transitive."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "intermediate goal solved! 🎉"
+msgstr ""
+
+#: Game.Levels.Divisibility.L03_dvd_refl
+msgid "A number divides itself"
+msgstr ""
+
+#: Game.Levels.GCD.L04_coprime_forward
+msgid "Coprimality gives a Bézout identity."
+msgstr ""
+
+#. §0: `exact`
+#: Game.Levels.Congruence.L03_mul
+msgid "The §0 tactic closes a goal if you provide a theorem that perfectly matches the goal."
+msgstr ""
+
+#. §0: `use`
+#. §1: `∃ k, 12 = 3 * k`
+#. §2: `use 4`
+#. §3: `12 = 3 * 4`
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "The §0 tactic is used to provide a \\\\\"witness\\\\\" to prove that something exists.\n"
+"If your goal is §1, typing §2 changes the goal to §3."
+msgstr ""
+
+#. §0: $a$
+#. §1: $b$
+#. §2: $m$
+#. §3: $a \\equiv b \\pmod m$
+#. §4: $c$
+#. §5: $a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$
+#: Game.Levels.Congruence.L06_mod_mul
+msgid "So far, we have only changed the numbers §0 and §1. But what if we want to change the modulus §2 itself?\n"
+"\n"
+"If §3, then multiplying everything (including the modulus) by §4 preserves the truth of the statement:\n"
+"§5.\n"
+"\n"
+"Unfold the definition and look closely at the algebra."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $b \\equiv a \\pmod m$
+#. §2: $a$
+#. §3: $b$
+#. §4: $m$
+#. §5: $b$
+#. §6: $a$
+#. §7: $17 \\equiv 5 \\pmod{12}$
+#. §8: $17 - 5 = 12$
+#. §9: $5 \\equiv 17 \\pmod{12}$
+#. §10: $5 - 17 = -12$
+#. §11: $12$
+#. §12: $12 \\cdot -1$
+#: Game.Levels.Divisibility.L07_mod_symm
+msgid "**Symmetry of Congruences**\n"
+"\n"
+"If §0, then §1.\n"
+"\n"
+"**Intuition:**\n"
+"If the difference between §2 and §3 is a multiple of §4, the difference between §5 and §6 is just the same multiple with a negative sign.\n"
+"For example, §7 because §8.\n"
+"Conversely, §9 because §10, which is still a multiple of §11 (§12)."
+msgstr ""
+
+#: Game.Levels.GCD.L09_dvd_antisymm
+msgid "On non-negative integers, mutual divisibility implies equality."
+msgstr ""
+
+#: Game.Levels.Divisibility
+msgid "Divisibility Club"
+msgstr ""
+
+#: Game.Levels.GCD.L08_cancel_general
+msgid "The fully general cancellation law for congruences."
+msgstr ""
+
+#: Game.Levels.GCD.L05_coprime_backward
+msgid "A Bézout identity implies coprimality."
+msgstr ""
+
+#: Game.Levels.GCD.L03_gcd_greatest
+msgid "Any greatest-common-divisor witness dominates every common divisor."
+msgstr ""
+
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "Every integer is congruent to itself."
+msgstr ""
+
+#. §0: `a ∣ a`
+#: Game.Levels.Divisibility.L03_dvd_refl
+msgid "Divisibility is reflexive: §0."
+msgstr ""
+
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: $c$
+#. §2: $m$
+#. §3: `gcd(c, m) = 1`
+#. §4: $a \\equiv b \\pmod m$
+#. §5: $c$
+#. §6: $c$
+#. §7: $m$
+#. §8: $c = 2$
+#. §9: $m = 4$
+#. §10: $2 \\cdot 1 \\equiv 2 \\cdot 3 \\pmod 4$
+#. §11: $6 - 2 = 4$
+#. §12: $1 \\equiv 3 \\pmod 4$
+#. §13: $3 - 1 = 2$
+#. §14: $4$
+#. §15: $c$
+#. §16: $m$
+#. §17: $c \\cdot x + m \\cdot y = 1$
+#. §18: $x, y$
+#. §19: $x$
+#. §20: $c$
+#. §21: `have`
+#. §22: `ring`
+#. §23: `rw`
+#: Game.Levels.GCD.L06_cancel_coprime
+msgid "Here is the central theorem of this world — and one of the most useful facts in all of number theory.\n"
+"\n"
+"If §0, and §1 is coprime to §2 (§3), can we conclude §4? In other words: can we *cancel* the common factor §5 from both sides of a congruence?\n"
+"\n"
+"**Yes** — but only because §6 and §7 are coprime! Without that assumption this would be false: take §8, §9. Then §10 (since §11), yet §12 is false (§13 is not a multiple of §14). Coprimality is essential.\n"
+"\n"
+"**The key idea:** since §15 and §16 are coprime, we have §17 for some §18 (that's exactly what you proved in Level 4!). Multiplying our congruence's underlying equation by §19 makes the extra factor §20 effectively disappear, leaving exactly what we want.\n"
+"\n"
+"This proof is long, but every single step is either a §21 (a pure algebra identity, closed by §22) or an §23 that plugs in a hypothesis. Take it one line at a time."
+msgstr ""
+
+#: Game.Levels.GCD
+msgid "In Search of GCD"
+msgstr ""
+
+#. §0: `IsGCD a b d`
+#. §1: $c$
+#. §2: $a$
+#. §3: $b$
+#. §4: $c \\mid d$
+#. §5: $d = a \\cdot x + b \\cdot y$
+#. §6: $x, y$
+#. §7: $c$
+#. §8: $a$
+#. §9: $b$
+#. §10: $a \\cdot x + b \\cdot y$
+#. §11: $c$
+#. §12: $a \\cdot x$
+#. §13: $b \\cdot y$
+#. §14: $c$
+#. §15: $c$
+#. §16: `IsGCD`
+#. §17: $c$
+#: Game.Levels.GCD.L03_gcd_greatest
+msgid "**The Bézout Definition Really Gives the Greatest Common Divisor**\n"
+"\n"
+"If §0, then for any common divisor §1 of §2 and §3, §4.\n"
+"\n"
+"**Intuition:**\n"
+"Since §5 for some integers §6, and §7 divides both §8 and §9, it must also divide the combination §10 — because §11 divides each of the two pieces §12 and §13 separately, and the sum of two multiples of §14 is again a multiple of §15.\n"
+"\n"
+"This is exactly why, from now on, we can treat §16-witnesses as *the* greatest common divisor: any competitor §17 always divides it."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed with warnings… 🎭"
+msgstr ""
+
+#: Game.Levels.Congruence.L02_mul_const
+msgid "You can multiply both sides of a congruence by an integer."
+msgstr ""
+
+#. §0: $c$
+#. §1: $a \\equiv b \\pmod m$
+#. §2: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §3: $a \\cdot c - b \\cdot c$
+#. §4: $(a - b) \\cdot c$
+#: Game.Levels.Congruence.L02_mul_const
+msgid "Next, let's prove that we can multiply both sides of a congruence by any integer §0.\n"
+"If §1, then §2.\n"
+"\n"
+"This is a direct application of what you already know.\n"
+"Rewrite §3 as §4 and close the goal!"
+msgstr ""
+
+#. §0: $d$
+#. §1: $a$
+#. §2: $d$
+#. §3: $a \\cdot b$
+#. §4: $b$
+#. §5: $a$
+#. §6: $d$
+#. §7: $a$
+#. §8: $d$
+#. §9: `obtain`
+#. §10: `use`
+#. §11: `rw`
+#. §12: `ring`
+#. §13: `dvd_trans`
+#: Game.Levels.GCD.L01_dvd_mul
+msgid "Welcome to World 3: In Search of the GCD!\n"
+"\n"
+"Before we dive into the Greatest Common Divisor itself, we need one small but very useful building block.\n"
+"\n"
+"If §0 divides §1, does §2 also divide §3 for *any* integer §4?\n"
+"Yes! If §5 is a multiple of §6, then any multiple of §7 is automatically a multiple of §8 too.\n"
+"\n"
+"You already have every tool you need for this one: §9 the witness from your hypothesis, §10 the right witness for the new goal, §11, and finish with §12 — exactly like you did for §13 back in World 1."
+msgstr ""
+
+#. §0: $a \\mid b$
+#. §1: $\\equiv$
+#: Game.Levels.Divisibility
+msgid "Welcome to the Divisibility Club!\n"
+"\n"
+"In this first world, you will learn the basics of Lean 4, how to interact with the system, and how to write your very first proofs. We will explore the mathematical concept of divisibility (§0) and introduce modular arithmetic (§1).\n"
+"\n"
+"By the end of this world, you will have proven that modular arithmetic is an equivalence relation. Take your time, read the explanations carefully, and have fun!"
+msgstr ""
+
+#: Game.Levels.GCD.L01_dvd_mul
+msgid "If d divides a, then d divides a * b for any integer b."
+msgstr ""
+
+#: Game.Levels.GCD.L02_gcd_def
+msgid "1 is a greatest common divisor of 2 and 3."
+msgstr ""
+
+#. §0: $x$
+#. §1: $y$
+#. §2: $y$
+#. §3: $z$
+#. §4: $x$
+#. §5: $z$
+#. §6: `P → Q`
+#. §7: `intro`
+#. §8: `intro x y z h1 h2`
+#. §9: `h1 : x ∣ y`
+#. §10: `h2 : y ∣ z`
+#. §11: `x ∣ y`
+#. §12: `obtain ⟨k1, hk1⟩ := h1`
+#. §13: `⟨`
+#. §14: `\\<`
+#. §15: `⟩`
+#. §16: `\\>`
+#. §17: `k1`
+#. §18: `hk1 : y = x * k1`
+#. §19: `h2`
+#. §20: `k2`
+#. §21: `hk2`
+#. §22: `use`
+#. §23: $x \\mid z$
+#. §24: `rw`
+#. §25: `rw [hk2]`
+#. §26: `y`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "If §0 divides §1, and §2 divides §3, does §4 divide §5? Yes! This is called **transitivity**.\n"
+"\n"
+"To prove an implication §6, you use §7. If you type §8, Lean will give you the variables and the hypotheses §9 and §10.\n"
+"\n"
+"Since §11 means there is some multiplier, we want to extract it. Type §12.\n"
+"\n"
+"Lean uses special mathematical brackets:\n"
+"* To type §13, write §14 and press Space.\n"
+"* To type §15, write §16 and press Space.\n"
+"\n"
+"Lean will give you a number §17 and the fact §18.\n"
+"Do the same for §19 to get §20 and §21.\n"
+"\n"
+"Next, figure out what you need to §22 to prove §23.\n"
+"Finally, use the §24 tactic. §25 will replace §26 in your goal based on your hypothesis!"
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $a + c \\equiv b + d \\pmod m$
+#. §3: `unfold ModEq at *`
+#. §4: `obtain`
+#. §5: $(a + c) - (b + d)$
+#. §6: $(a - b) + (c - d)$
+#. §7: `have`
+#: Game.Levels.Congruence.L01_add
+msgid "If §0 and §1, is it true that §2?\n"
+"\n"
+"Yes! This means we can add two congruences together.\n"
+"To prove this, you need to §3, extract the witnesses from both hypotheses using §4, and then use algebra.\n"
+"\n"
+"*Hint:* You will need to rewrite §5 into §6. Use the §7 tactic!"
+msgstr ""
+
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "1 divides every integer."
+msgstr ""
+
+#: Game.Levels.Divisibility.L07_mod_symm
+msgid "Congruence modulo m is symmetric."
+msgstr ""
+
+#: Game.Levels.GCD.L05_coprime_backward
+msgid "Bézout Gives You Coprimality (⟸)"
+msgstr ""
+
+#: Game.Levels.Congruence.L02_mul_const
+msgid "Multiplying a congruence by a constant."
+msgstr ""
+
+#. §0: `Int.dvd_antisymm`
+#. §1: `dvd_antisymm`
+#: Game.Levels.GCD.L09_dvd_antisymm
+msgid "Short and sweet. §0 (saved here as §1) is now in your inventory — you'll use it immediately in the final challenge of this world."
+msgstr ""
+
+#. §0: `dvd_mul_of_dvd_left`
+#: Game.Levels.GCD.L01_dvd_mul
+msgid "Perfect! Keep §0 close at hand — you'll use it again and again in this world."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $m$
+#. §2: $(a - b)$
+#. §3: `a ≡ b (mod m)`
+#. §4: `unfold ModEq`
+#. §5: $a \\equiv a \\pmod m$
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "We are now introducing a massive concept in number theory: **Congruences**.\n"
+"We say that §0 if §1 divides §2.\n"
+"\n"
+"In Lean, we have defined a custom property for this and created a notation §3.\n"
+"Check your **Definitions** tab to read a detailed explanation and see some examples!\n"
+"\n"
+"When you see this notation in the goal, you should type §4 to reveal what it actually means under the hood.\n"
+"\n"
+"Let's prove that modular arithmetic is reflexive: §5."
+msgstr ""
+
+#: Game
+msgid "Number Theory Game"
+msgstr ""
+
+#. §0: `obtain`
+#. §1: `have`
+#: Game.Levels.GCD.L03_gcd_greatest
+msgid "Excellent! You combined a deeply nested §0, two applications of a previous lemma via §1, and the familiar witness-gluing pattern. This is the deepest proof so far — and you built it entirely from pieces you already had."
+msgstr ""
+
+#. §0: $a$
+#. §1: `∀ a : ℤ`
+#. §2: $a$
+#. §3: $\\forall$
+#. §4: `intro`
+#. §5: `intro a`
+#. §6: $a$
+#. §7: $1 \\mid a$
+#. §8: $a = 1 \\cdot k$
+#. §9: $k$
+#. §10: $k$
+#. §11: `use`
+#. §12: `ring`
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "Now let's prove something abstract. We want to prove that 1 divides any integer §0.\n"
+"The statement starts with §1 (For all integers §2).\n"
+"\n"
+"When your goal starts with a \"For all\" (§3), your first step is usually to pick an arbitrary element.\n"
+"You can do this using the §4 tactic. Type §5 to bring §6 into your context.\n"
+"\n"
+"After that, remember that §7 means §8 for some §9. What should §10 be?\n"
+"Use the §11 tactic, and then close the algebra with our new super-tactic: §12."
+msgstr ""
+
+#. §0: `constructor`
+#: Game.Levels.GCD.L02_gcd_def
+msgid "Well done! You built a proof of a conjunction-inside-a-conjunction by nesting §0. Next, let's see why this definition really deserves the name \"greatest\" common divisor."
+msgstr ""
+
+#: Game.Levels.Congruence.L05_pow
+msgid "Powers of Congruences"
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $b \\equiv c \\pmod m$
+#. §2: $a \\equiv c \\pmod m$
+#. §3: $a = b$
+#. §4: $b = c \\implies a = c$
+#: Game.Levels.Divisibility.L08_mod_trans
+msgid "**Transitivity of Modular Congruence**\n"
+"\n"
+"If §0 and §1, then §2.\n"
+"\n"
+"**Meaning:** This theorem proves that modular arithmetic is a true *equivalence relation*. It means you can chain congruences together step-by-step to reach a conclusion, exactly like you can chain regular equations (§3 and §4)."
+msgstr ""
+
+#: Game.Levels.Congruence.L03_mul
+msgid "Masterful! You just constructed a proof entirely by gluing together previous theorems. This is how real mathematics is built!"
+msgstr ""
+
+#: Game.Levels.Congruence.L06_mod_mul
+msgid "Scaling the Modulus"
+msgstr ""
+
+#: Game.Levels.Congruence.L03_mul
+msgid "Multiplying Congruences"
+msgstr ""
+
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "Dividing by the GCD Gives Coprime Numbers"
+msgstr ""
+
+#. §0: $d$
+#. §1: $a$
+#. §2: $b$
+#. §3: `IsGCD a b d`
+#. §4: $d$
+#. §5: $d \\mid a$
+#. §6: $d \\mid b$
+#. §7: $d$
+#. §8: $x, y$
+#. §9: $a \\cdot x + b \\cdot y = d$
+#. §10: $$\\text{IsGCD}(a, b, d) \\iff (d \\mid a \\land d \\mid b) \\land \\exists x, y \\in \\mathbb{Z},\\ a x + b y = d$$
+#. §11: $d$
+#. §12: $d \\geq 0$
+#. §13: $d$
+#. §14: `gcd(2, 3) = 1`
+#. §15: `gcd(2, 3) = (-1)`
+#. §16: $-1$
+#. §17: $2$
+#. §18: $3$
+#: Game.Levels.GCD.L02_gcd_def
+msgid "**The Greatest Common Divisor, Bézout-style**\n"
+"\n"
+"In this game, we say §0 **is a greatest common divisor** of §1 and §2 — written §3 — if **two** conditions hold together:\n"
+"\n"
+"1. §4 is a **common divisor**: §5 and §6.\n"
+"2. §7 can be written as a **Bézout combination**: there exist integers §8 such that §9.\n"
+"\n"
+"§10\n"
+"\n"
+"**Why this definition, and not simply \"the largest common divisor\"?**\n"
+"Working with \"largest\" directly is awkward in Lean: comparing sizes doesn't play well with negative numbers, and proving something is *the* biggest usually means comparing it to every other common divisor one at a time.\n"
+"\n"
+"The Bézout condition sidesteps all of that. It turns out (and you will prove it in the very next level!) that *any* §11 satisfying condition 2, together with condition 1, is automatically bigger than every other common divisor — for free, with a short proof. So instead of taking \"greatest\" as the definition, we derive it as a theorem.\n"
+"\n"
+"**A word of caution:** this definition alone does not force §12 or force §13 to be unique. In this game we will always keep a specific, non-negative witness in mind (for example §14, never §15, even though §16 also happens to satisfy the Bézout condition for §17 and §18, up to sign)."
+msgstr ""
+
+#. §0: `induction'`
+#. §1: `n`
+#. §2: `induction' n with d ih`
+#. §3: `n = 0`
+#. §4: `n = d + 1`
+#. §5: `ih`
+#: Game.Levels.Congruence.L05_pow
+msgid "The §0 tactic is used to prove statements for all natural numbers §1.\n"
+"Typing §2 splits your goal into two cases: the base case (§3) and the inductive step (§4), giving you the induction hypothesis §5."
+msgstr ""
+
+#: Game
+msgid "An interactive introduction to Number Theory and modular arithmetic."
+msgstr ""
+
+#: Game.Levels.GCD.L08_cancel_general
+msgid "The General Cancellation Law"
+msgstr ""
+
+#. §0: `gcd(c, m) = 1`
+#. §1: $x, y$
+#. §2: $c \\cdot x + m \\cdot y = 1$
+#: Game.Levels.GCD.L04_coprime_forward
+msgid "**Coprimality Implies a Bézout Identity**\n"
+"\n"
+"If §0, then there exist integers §1 with §2."
+msgstr ""
+
+#. §0: $a - a = 0$
+#. §1: $m \\mid 0$
+#. §2: $a \\equiv a \\pmod m$
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "Great! Because §0, and §1, it immediately follows that §2."
+msgstr ""
+
+#. §0: $m$
+#. §1: $a$
+#. §2: $a + k \\cdot m \\equiv a \\pmod m$
+#: Game.Levels.Congruence.L04_add_mul_mod
+msgid "Here is a very simple but incredibly important rule[cite: 2].\n"
+"If you add any multiple of the modulus §0 to a number §1, its remainder doesn't change!\n"
+"§2.\n"
+"\n"
+"Try to prove this directly by unfolding the definition."
+msgstr ""
+
+#. §0: `induction`
+#. §1: `constructor`
+#. §2: `←`
+#. §3: `\\l`
+#: Game.Levels.Congruence.L08_mod_split
+msgid "🎉 AMAZING! 🎉\n"
+"\n"
+"You have conquered World 2! You've successfully built an entire algebraic toolkit for congruences.\n"
+"You learned how to use §0, how to break down logical conjunctions with §1, and how to confidently rewrite backwards using §2 (§3)!\n"
+"\n"
+"Next up is World 3, where we will dive into the Greatest Common Divisor (GCD) and learn how to *cancel* numbers out of congruences."
+msgstr ""
+
+#: Game
+msgid "In this game, you will learn the foundations of number theory.\n"
+"Starting with basic divisibility, you will construct a full toolkit for\n"
+"modular arithmetic (congruences) and prove theorems like a real mathematician."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $(a + c) \\equiv (b + d) \\pmod m$
+#. §3: $m$
+#. §4: $12 \\equiv 2 \\pmod{10}$
+#. §5: $25 \\equiv 5 \\pmod{10}$
+#. §6: $12 + 25 = 37$
+#. §7: $\\equiv 7 \\pmod{10}$
+#. §8: $2 + 5 = 7$
+#: Game.Levels.Congruence.L01_add
+msgid "**Adding Congruences**\n"
+"\n"
+"If §0 and §1, then §2.\n"
+"\n"
+"**Intuition:**\n"
+"If two pairs of numbers have the same remainder when divided by §3, their sums will also have the same remainder.\n"
+"For example, modulo 10 (which just looks at the last digit):\n"
+"If §4 and §5, then §6, which is §7.\n"
+"Notice that §8. We just added the remainders safely!"
+msgstr ""
+
+#: Game.Levels.Divisibility.L07_mod_symm
+msgid "Symmetry of Congruences"
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
+#. §3: `mod_trans`
+#. §4: $a \\cdot c$
+#. §5: $b \\cdot c$
+#. §6: $b \\cdot c$
+#. §7: $b \\cdot d$
+#. §8: `have h3 := mod_mul_const a b c m h1`
+#. §9: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §10: `have`
+#. §11: `exact`
+#. §12: `mod_trans`
+#: Game.Levels.Congruence.L03_mul
+msgid "We know we can add congruences, but can we multiply them?\n"
+"If §0 and §1, is §2?\n"
+"\n"
+"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
+"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
+"\n"
+"You can explicitly apply a theorem to variables to create a new hypothesis:\n"
+"§8 will prove that §9.\n"
+"\n"
+"Use §10 to build your intermediate steps, and then use the §11 tactic to finish the proof by providing §12!"
+msgstr ""
+
+#: Game.Levels.GCD.L06_cancel_coprime
+msgid "Cancelling a factor coprime to the modulus."
+msgstr ""
+
+#: Game.Levels.Divisibility.L03_dvd_refl
+msgid "Every integer divides itself."
+msgstr ""
+
+#. §0: `mod_mul_const`
+#: Game.Levels.Congruence.L02_mul_const
+msgid "Very smooth. Keep this theorem (§0) in mind, it will be very useful!"
+msgstr ""
+
+#. §0: $a$
+#. §1: $b$
+#. §2: $b$
+#. §3: $c$
+#. §4: $a$
+#. §5: $c$
+#. §6: $b$
+#. §7: $a$
+#. §8: $c$
+#. §9: $b$
+#. §10: $c$
+#. §11: $3 \\cdot 4 = 12$
+#. §12: $a$
+#. §13: `h1 : a ∣ b`
+#. §14: `h2 : b ∣ c`
+#. §15: `a ∣ c`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "**Transitivity of Divisibility**\n"
+"\n"
+"If §0 divides §1, and §2 divides §3, then §4 divides §5.\n"
+"\n"
+"**Intuition:**\n"
+"Think of it as building blocks. If a stick §6 is made of exactly 3 blocks of §7,\n"
+"and a stick §8 is made of exactly 4 sticks of §9, then §10 is made of §11 blocks of §12.\n"
+"Divisibility chains perfectly!\n"
+"\n"
+"**In Lean:**\n"
+"If you have §13 and §14, applying this theorem proves §15."
+msgstr ""
+
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "Chain of Divisors (Transitivity)"
+msgstr ""
+
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "1 divides any integer."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $b \\equiv a \\pmod m$
+#. §2: $m \\mid a - b$
+#. §3: $a - b = m \\cdot k$
+#. §4: $m \\mid b - a$
+#. §5: $b - a = m \\cdot ?$
+#. §6: $b - a = -(a - b)$
+#. §7: $-k$
+#. §8: `have`
+#. §9: `have h_eq : b - a = -(a - b) := by ring`
+#. §10: `h_eq`
+#. §11: `rw [h_eq]`
+#. §12: `rw [h_eq]`
+#. §13: `b - a`
+#. §14: `-(a - b)`
+#. §15: `have h_eq : -(a - b) = b - a`
+#. §16: `rw [← h_eq]`
+#. §17: `←`
+#. §18: `\\l`
+#: Game.Levels.Divisibility.L07_mod_symm
+msgid "If §0, is it true that §1?\n"
+"\n"
+"Let's unpack this. We assume §2, so §3.\n"
+"We need to prove §4, which means §5.\n"
+"Since §6, the multiplier should be §7.\n"
+"\n"
+"You will need an intermediate mathematical step. You can create one using the §8 tactic.\n"
+"If you type §9, Lean will add §10 to your context.\n"
+"You can then use §11 to transform your goal!\n"
+"\n"
+"**Rewriting backwards**\n"
+"By default, §12 looks for the *left* side of your equality (§13) and replaces it with the *right* side (§14).\n"
+"If you ever formulate your equality the other way around, for example §15, you will need to tell Lean to rewrite from right to left using a left arrow: §16.\n"
+"*(To type the left arrow §17, simply type §18 and press Space)*"
+msgstr ""
+
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "Modular arithmetic is reflexive."
+msgstr ""
+
+#. §0: `use`
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "Congratulations! You have just written your first proof in Lean 4!\n"
+"You used §0 to provide a witness, and Lean automatically closed the obvious equality."
+msgstr ""
+
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "Modular Arithmetic: Reflexivity"
+msgstr ""
+
+#: Game.Levels.Congruence.L04_add_mul_mod
+msgid "Short and sweet. This fact will be a lifesaver when we reach the Chinese Remainder Theorem in World 4!"
+msgstr ""
+
+#. §0: `intro a`
+#. §1: `one_dvd`
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "Great job! §0 is a tactic you will use constantly whenever you need to prove a statement for *any* element. Notice that this theorem is now saved in your inventory as §1!"
+msgstr ""
+
+#. §0: $k$
+#: Game.Levels.Congruence.L06_mod_mul
+msgid "Nice! Notice how the witness §0 didn't even need to change!"
+msgstr ""
+
+#. §0: `gcd_div_coprime`
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "Great! §0 is now saved — it's the missing piece that will let us cancel factors that aren't necessarily coprime to the modulus, in the very next level."
+msgstr ""
+
+#. §0: `mod_cancel_coprime`
+#: Game.Levels.GCD.L06_cancel_coprime
+msgid "🎉 That's the heart of this world, conquered! §0 is now yours — it is the single most important tool you will use going forward."
+msgstr ""
+
+#. §0: $\\gcd(a,b)$
+#. §1: $1$
+#. §2: $2$
+#. §3: $3$
+#. §4: `gcd(2, 3) = 1`
+#. §5: `unfold IsGCD`
+#. §6: `∧`
+#. §7: `∧`
+#. §8: `∃`
+#. §9: `constructor`
+#. §10: `∧`
+#. §11: `d ∣ a ∧ d ∣ b`
+#. §12: `use`
+#. §13: `ring`
+#. §14: `ring`
+#. §15: `use -1, 1`
+#. §16: $x = -1$
+#. §17: $y = 1$
+#. §18: `ring`
+#. §19: $2 \\cdot (-1) + 3 \\cdot 1 = 1$
+#: Game.Levels.GCD.L02_gcd_def
+msgid "Time to meet the star of this world: the **Greatest Common Divisor**.\n"
+"\n"
+"Instead of defining §0 as \"the largest number that divides both\", we use an equivalent but far more Lean-friendly definition, based on **Bézout's identity**. Check the **Definitions** tab for the full explanation!\n"
+"\n"
+"As a warm-up, let's confirm that §1 is a greatest common divisor of §2 and §3: §4.\n"
+"\n"
+"Start with §5 to reveal the raw conjunction. Your goal is then an §6 of an §7 and an §8. You already know §9 splits an §10 into two goals — you'll need it *twice*, since the first part (§11) is itself a conjunction.\n"
+"\n"
+"For the two divisibility goals, §12 the right witness and close with §13 (remember: §14 happily proves concrete numeric equalities too, not just general algebraic ones!). For the Bézout goal, §15 to supply §16 and §17 at once, then §18 again to check §19."
+msgstr ""
+
+#. §0: `have`
+#. §1: `have h : X = Y := by ring`
+#. §2: `h`
+#: Game.Levels.Divisibility.L07_mod_symm
+msgid "The §0 tactic allows you to prove intermediate steps.\n"
+"Typing §1 creates a new hypothesis §2 in your context."
+msgstr ""
+
+#: Game.Levels.Congruence.L08_mod_split
+msgid "Splitting the Modulus (Boss)"
+msgstr ""
+
+#: Game.Levels.GCD.L02_gcd_def
+msgid "Meeting the GCD"
+msgstr ""
+
+#: Game.Levels.Congruence.L05_pow
+msgid "Congruences can be raised to a natural power."
+msgstr ""
+
+#: Game.Levels.Congruence
+msgid "Congruences in Action"
+msgstr ""
+
+#. §0: `3 ∣ 12`
+#. §1: `∣`
+#. §2: `\\|`
+#. §3: `\\mid`
+#. §4: `3 ∣ 12`
+#. §5: `∃ k, 12 = 3 * k`
+#. §6: $k$
+#. §7: `use`
+#. §8: `use 4`
+#. §9: $k$
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.\n"
+"\n"
+"Our first statement is §0, which is read as \"3 divides 12\".\n"
+"Check your **Definitions** tab on the right to read exactly what this means mathematically!\n"
+"\n"
+"*(To type the divides symbol §1, type §2 or §3 and press Space!)*\n"
+"\n"
+"Lean sees §4 as §5.\n"
+"To prove this, you need to provide the number §6. You can do this using the §7 tactic.\n"
+"Type §8. Lean will automatically substitute §9 with 4 and close the goal since 12 equals 3 * 4!"
+msgstr ""
+
+#. §0: `constructor`
+#. §1: $\\wedge$
+#. §2: `P ∧ Q`
+#. §3: `P`
+#. §4: `Q`
+#: Game.Levels.Congruence.L08_mod_split
+msgid "The §0 tactic is used to prove goals consisting of a logical AND (§1).\n"
+"It splits the goal §2 into two separate goals: §3 and §4."
+msgstr ""
+
+#. §0: $x, y$
+#. §1: $c \\cdot x + m \\cdot y = 1$
+#. §2: `gcd(c, m) = 1`
+#: Game.Levels.GCD.L05_coprime_backward
+msgid "**A Bézout Identity with 1 Implies Coprimality**\n"
+"\n"
+"If there exist integers §0 with §1, then §2."
+msgstr ""
+
+#. §0: $\\equiv$
+#. §1: $a \\equiv b$
+#. §2: $b \\equiv c$
+#. §3: $a \\equiv c$
+#. §4: `unfold ModEq at *`
+#. §5: `obtain`
+#. §6: $k_1$
+#. §7: $k_2$
+#. §8: `have`
+#. §9: $a - c$
+#. §10: $(a - b) + (b - c)$
+#. §11: `ring`
+#: Game.Levels.Divisibility.L08_mod_trans
+msgid "Welcome to the final boss of the Divisibility Club!\n"
+"To prove that §0 is a true equivalence relation, we must prove **transitivity**:\n"
+"If §1 and §2, then §3.\n"
+"\n"
+"You know the drill:\n"
+"1. Use §4 to reveal the definitions in your goals and hypotheses.\n"
+"2. §5 the witnesses §6 and §7 from your hypotheses.\n"
+"3. Use algebra (§8) to rewrite §9 as §10.\n"
+"4. Apply your rewrites and let §11 finish the job!\n"
+"\n"
+"Good luck!"
+msgstr ""
+
+#: Game.Levels.Congruence.L05_pow
+msgid "Powers of congruences."
+msgstr ""
+
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: `gdc(c, m) = d`
+#. §2: $d \\neq 0$
+#. §3: $c = c_1 \\cdot d$
+#. §4: $m = m_1 \\cdot d$
+#. §5: $a \\equiv b \\pmod{m_1}$
+#. §6: $c$
+#. §7: $c$
+#. §8: $m$
+#. §9: $d = \\gcd(c,m)$
+#. §10: $d = 1$
+#: Game.Levels.GCD.L08_cancel_general
+msgid "**The General Cancellation Law**\n"
+"\n"
+"If §0, §1 with §2, §3 and §4, then §5.\n"
+"\n"
+"**Intuition:**\n"
+"This is the fully general version of \"dividing\" a congruence: you can always cancel a factor §6 out of a congruence, as long as you also divide the modulus by whatever §7 and §8 have in common, §9. The coprime case (Level 6) is just the special case §10, where the modulus doesn't need to shrink at all."
+msgstr ""
+
+#. §0: $m$
+#. §1: $d$
+#. §2: $m$
+#. §3: $a \\equiv b \\pmod m$
+#. §4: $d \\mid m$
+#. §5: $a \\equiv b \\pmod d$
+#. §6: `ModEq`
+#. §7: `dvd_trans`
+#. §8: $x \\mid y$
+#. §9: $y \\mid z$
+#. §10: $x \\mid z$
+#: Game.Levels.Congruence.L07_mod_dvd
+msgid "If two numbers are congruent modulo §0, they are also congruent modulo any divisor §1 of §2.\n"
+"\n"
+"In other words, if §3 and §4, then §5.\n"
+"\n"
+"*Hint:* You can solve this by unfolding §6 entirely and manipulating the witnesses, OR you can remember §7 from World 1, which states that if §8 and §9, then §10!"
+msgstr ""
+
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "The exercise statement: 3 divides 12."
+msgstr ""
+
+#: Game.Levels.Divisibility.L04_dvd_zero
+#: Game.Levels.Divisibility.L04_dvd_zero
+msgid "Any integer divides zero."
+msgstr ""
+
+#. §0: `pow_succ`
+#. §1: $a^{n+1} = a^n \\cdot a$
+#. §2: `rw [pow_succ]`
+#: Game.Levels.Congruence.L05_pow
+msgid "§0 is a theorem from Mathlib that states §1.\n"
+"Use §2 when dealing with powers in induction."
+msgstr ""
+
+#: Game.Levels.Congruence.L01_add
+msgid "If two pairs of numbers are congruent, their sums are congruent."
+msgstr ""
+
+#: Game.Levels.GCD.L09_dvd_antisymm
+msgid "Antisymmetry of Divisibility"
+msgstr ""
+
+#. §0: `use`
+#. §1: `intro`
+#. §2: `obtain`
+#. §3: `rw`
+#. §4: `have`
+#. §5: `ring`
+#: Game.Levels.Divisibility.L08_mod_trans
+msgid "🎉 INCREDIBLE! 🎉\n"
+"\n"
+"You have conquered the first world! You successfully proved that modular congruence is reflexive, symmetric, and transitive. It is officially an equivalence relation.\n"
+"\n"
+"You've mastered the foundational tactics §0, §1, §2, §3, §4, and §5.\n"
+"Get ready for World 2, where we will start doing actual arithmetic inside these modular equations!"
+msgstr ""
+
+#. §0: $d \\mid a$
+#. §1: $d \\mid (a \\cdot b)$
+#. §2: $b$
+#. §3: $a$
+#. §4: $k$
+#. §5: $d$
+#. §6: $a = d \\cdot k$
+#. §7: $a \\cdot b$
+#. §8: $k \\cdot b$
+#. §9: $d$
+#. §10: $3 \\mid 6$
+#. §11: $3 \\mid (6 \\cdot 5) = 30$
+#. §12: $a \\cdot x + b \\cdot y = d$
+#. §13: $c$
+#. §14: $a$
+#. §15: $b$
+#. §16: $c$
+#. §17: $a \\cdot x$
+#. §18: $b \\cdot y$
+#: Game.Levels.GCD.L01_dvd_mul
+msgid "**A Divisor of a Factor Divides the Product**\n"
+"\n"
+"If §0, then §1 for any integer §2.\n"
+"\n"
+"**Intuition:**\n"
+"If §3 is built out of §4 copies of §5 (i.e. §6), then §7 is built out of §8 copies of §9.\n"
+"For example, §10, so §11 as well.\n"
+"\n"
+"This little lemma is a \"brick\" you will reuse constantly in this world: whenever you have a Bézout-style identity §12 and you know some §13 divides §14 or §15, this lemma lets you conclude §16 divides the whole term §17 or §18."
+msgstr ""
+
+#: Game.Levels.Congruence.L07_mod_dvd
+msgid "Shrinking the Modulus"
+msgstr ""
+
+#. §0: $0 \\le d_1$
+#. §1: $0 \\le d_2$
+#. §2: $d_1 \\mid d_2$
+#. §3: $d_2 \\mid d_1$
+#. §4: $d_1 = d_2$
+#. §5: $\\mathbb{Z}$
+#: Game.Levels.GCD.L09_dvd_antisymm
+msgid "**Antisymmetry of Divisibility (for non-negative integers)**\n"
+"\n"
+"If §0, §1, §2, and §3, then §4.\n"
+"\n"
+"**Why we need it:**\n"
+"Divisibility on all of §5 only forms a *pre-order*: two different numbers can divide each other, as long as one is the negative of the other. Restricted to non-negative integers, though, divisibility becomes a genuine **partial order**: \"mutual divisibility\" really does collapse to equality.\n"
+"\n"
+"In the very next level, we will show two gcd-witnesses divide each other, and use exactly this fact to conclude they must be the *same* number."
+msgstr ""
+
+#: Game.Levels.GCD.L02_gcd_def
+msgid "A first, concrete example: gcd(2, 3) = 1."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod{m \\cdot n}$
+#. §1: $a \\equiv b \\pmod m$
+#. §2: $a \\equiv b \\pmod n$
+#. §3: `∧`
+#. §4: `constructor`
+#. §5: `have`
+#. §6: $m \\cdot n \\cdot k = m \\cdot (n \\cdot k)$
+#. §7: $m \\cdot (n \\cdot k)$
+#. §8: `rw [← h_eq]`
+#. §9: `\\l`
+#. §10: `←`
+#. §11: `have`
+#: Game.Levels.Congruence.L08_mod_split
+msgid "Welcome to the Boss Level of World 2!\n"
+"\n"
+"If §0, then it must be true that §1 AND §2.\n"
+"\n"
+"Your goal contains a logical AND (§3). To prove it, use the §4 tactic.\n"
+"This will split your goal into two separate cases.\n"
+"\n"
+"**Reminder: Rewriting backwards!**\n"
+"To close the goals here, you will use §5 to state that §6.\n"
+"Because you want to replace §7 in your goal with the left side, remember to rewrite backwards using the left arrow: §8.\n"
+"(Type §9 and Space for the §10 arrow).\n"
+"\n"
+"For each case, unfold the definition, construct the witness, use §11 for algebra, and rewrite backwards to close the goal!"
+msgstr ""
+
+#. §0: $a \\mid b$
+#. §1: $a$
+#. §2: $b$
+#. §3: $a \\mid b$
+#. §4: $b$
+#. §5: $a$
+#. §6: $k$
+#. §7: $$b = a \\cdot k$$
+#. §8: $3 \\mid 12$
+#. §9: $12 = 3 \\cdot 4$
+#. §10: $k = 4$
+#. §11: $5 \\mid -15$
+#. §12: $-15 = 5 \\cdot (-3)$
+#. §13: $k = -3$
+#. §14: $7 \\mid 0$
+#. §15: $0 = 7 \\cdot 0$
+#. §16: $k = 0$
+#. §17: $4 \\mid 14$
+#. §18: $k$
+#. §19: $14 = 4 \\cdot k$
+#. §20: $a \\mid b$
+#. §21: `∃ k, b = a * k`
+#. §22: $k$
+#. §23: `use`
+#. §24: `use 4`
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "**Divisibility (§0)**\n"
+"\n"
+"We say that an integer §1 **divides** an integer §2 (written as §3) if §4 is a multiple of §5.\n"
+"Formally, this means there exists some integer §6 such that:\n"
+"§7\n"
+"\n"
+"**Examples:**\n"
+"* §8 is true because §9 (here our witness is §10).\n"
+"* §11 is true because §12 (here §13).\n"
+"* §14 is true because §15 (here §16).\n"
+"* §17 is **false**, because there is no integer §18 that makes §19.\n"
+"\n"
+"**How it works in Lean:**\n"
+"When you see §20 in your goal, Lean translates this under the hood to an \\\\\"exists\\\\\" statement: §21.\n"
+"To prove it, you must provide the exact value of §22 using the §23 tactic (for example, §24)."
+msgstr ""
+
+#: Game.Levels.GCD.L06_cancel_coprime
+msgid "The Cancellation Law (Coprime Case)"
+msgstr ""
+
+#: Game.Levels.Divisibility.L08_mod_trans
+msgid "Transitivity of Congruences (Boss)"
+msgstr ""
+
+#: Game.Levels.Congruence.L04_add_mul_mod
+msgid "Shifting a number by a multiple of m."
+msgstr ""
+
+#. §0: `intro`
+#. §1: $\\forall$
+#. §2: $\\implies$
+#. §3: `∀ a, P a`
+#. §4: `intro a`
+#. §5: `a`
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "The §0 tactic is used to introduce variables from a \\\\\"For all\\\\\" (§1) statement\n"
+"or to assume the premise of an implication (§2).\n"
+"For example, if the goal is §3, typing §4 moves §5 into your context."
+msgstr ""
+
+#. §0: `have`
+#: Game.Levels.Divisibility.L07_mod_symm
+msgid "Beautiful! You used §0 to build a bridge between algebra you know and algebra you need.\n"
+"Working with negative variables is a core skill in integer arithmetic."
+msgstr ""
+
+#. §0: $d$
+#. §1: `gcd(a, b) = d`
+#. §2: $a$
+#. §3: $b$
+#. §4: $d$
+#. §5: `gcd(a, b) = d`
+#. §6: $c$
+#. §7: $a$
+#. §8: $b$
+#. §9: $c \\mid a$
+#. §10: $c \\mid b$
+#. §11: $c \\mid d$
+#. §12: `unfold IsGCD at h`
+#. §13: $x, y$
+#. §14: $a \\cdot x + b \\cdot y = d$
+#. §15: `obtain`
+#. §16: `⟨⟨hda, hdb⟩, x, y, hxy⟩`
+#. §17: `dvd_mul_of_dvd_left`
+#. §18: $c \\mid a$
+#. §19: $c \\mid (a \\cdot x)$
+#. §20: $c \\mid (b \\cdot y)$
+#. §21: `have`
+#. §22: `obtain`
+#. §23: `use`
+#. §24: `rw`
+#. §25: `ring`
+#. §26: `dvd_trans`
+#: Game.Levels.GCD.L03_gcd_greatest
+msgid "Now for the payoff of our definition: let's show that any §0 satisfying §1 is truly a *greatest* common divisor — meaning every other common divisor of §2 and §3 also divides §4.\n"
+"\n"
+"Formulation: if §5 holds, and §6 is *any* common divisor of §7 and §8 (§9 and §10), then §11.\n"
+"\n"
+"Strategy:\n"
+"1. §12 to extract the two divisibility facts and the Bézout witnesses §13 with §14. Since this is a nested conjunction-with-an-existential, §15 can peel apart all the layers at once with a pattern like §16.\n"
+"2. Apply §17 (from the previous level!) to §18 to get §19, and similarly to get §20. Use §21 to store each as an intermediate fact.\n"
+"3. §22 witnesses from both new facts, §23 their sum, then §24 and §25 to finish — exactly the witness-gluing pattern you used for §26 in World 1."
+msgstr ""
+
+#. §0: $a$
+#. §1: $k$
+#. §2: $a = a \\cdot k$
+#: Game.Levels.Divisibility.L03_dvd_refl
+msgid "Now let's practice what we just learned. Prove that any integer §0 divides itself.\n"
+"Think about what §1 should be so that §2."
+msgstr ""
+
+#: Game.Levels.GCD
+msgid "Welcome to World 3: In Search of GCD!\n"
+"\n"
+"In the previous worlds, you learned how to add and multiply congruences. But what about division? Can we just cancel out common factors? Not always! To safely cancel factors in modular arithmetic, we need to deeply understand the Greatest Common Divisor (GCD).\n"
+"\n"
+"In this world, we will define the GCD using Bezout's identity, prove its properties, and unlock the ultimate tool for number theory: the General Cancellation Law. Let's find that GCD!"
+msgstr ""
+
+#. §0: `gcd(c, m) = d`
+#. §1: $d \\neq 0$
+#. §2: $c = c_1 \\cdot d$
+#. §3: $m = m_1 \\cdot d$
+#. §4: `gcd(c1, m1) = 1`
+#. §5: $\\gcd(12, 18) = 6$
+#. §6: $6$
+#. §7: $2$
+#. §8: $3$
+#. §9: $\\gcd(2, 3) = 1$
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "**Dividing by the GCD Gives Coprime Numbers**\n"
+"\n"
+"If §0, §1, §2 and §3, then §4.\n"
+"\n"
+"**Intuition:**\n"
+"This matches your intuition exactly: §5, and dividing both by §6 gives §7 and §8, which indeed satisfy §9. Once you factor out everything two numbers have in common, whatever is left over shares nothing."
+msgstr ""
+
+#: Game.Levels.Divisibility.L04_dvd_zero
+msgid "Everything divides zero"
+msgstr ""
+
+#. §0: `unfold`
+#. §1: `a ≡ b (mod m)`
+#. §2: `unfold ModEq`
+#. §3: `m ∣ a - b`
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "The §0 tactic replaces a definition with its underlying meaning.\n"
+"If your goal contains §1, typing §2 will change it to §3."
+msgstr ""
+
+#. §0: `mul_left_cancel₀`
+#. §1: `a ≠ 0`
+#. §2: `a * b = a * c`
+#. §3: `b = c`
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "The §0 theorem lets you cancel a common non-zero factor from an equation:\n"
+"if §1 and §2, then §3.\n"
+"This works because the integers have no \"zero divisors\": the only way a product can vanish is if one of its factors does, so a non-zero factor can always be safely divided out of an equation."
+msgstr ""
+
+#. §0: $a$
+#. §1: $0 = a \\cdot k$
+#. §2: $k$
+#: Game.Levels.Divisibility.L04_dvd_zero
+msgid "A common misconception in standard school math is confusing \"dividing by zero\" (which is undefined) with \"dividing zero\".\n"
+"Here, we want to prove that any number §0 *divides* zero.\n"
+"By our definition, this just means §1 for some §2."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed! 🎉"
+msgstr ""
+
+#: Game.Levels.GCD.L04_coprime_forward
+msgid "Coprimality Gives You Bézout (⟹)"
+msgstr ""
+
+#: Game.Levels.Congruence.L04_add_mul_mod
+msgid "Adding a multiple of the modulus does not change the congruence."
+msgstr ""
+
+#: Game.Levels.Divisibility.L08_mod_trans
+msgid "Congruence modulo m is transitive."
+msgstr ""
+
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "Dividing by the gcd produces coprime numbers."
+msgstr ""
+
+#. §0: `IsGCD c m 1`
+#: Game.Levels.GCD.L05_coprime_backward
+msgid "Beautiful! Together, the last two levels show that §0 and \"a Bézout identity with 1 exists\" are two ways of saying exactly the same thing. From now on, feel free to think of *coprime* simply as \"Bézout equals 1\"."
+msgstr ""
+
+#: Game.Levels.Divisibility.L03_dvd_refl
+msgid "Easy, right? You are starting to recognize patterns. We call this property 'reflexivity'."
+msgstr ""
+
+#: Game.Levels.Congruence.L02_mul_const
+msgid "Multiplying by a Common Factor"
+msgstr ""
+
+#: Game.Levels.Congruence.L06_mod_mul
+msgid "You can multiply the modulus and the values by a constant."
+msgstr ""
+
+#. §0: $k_1$
+#. §1: $k_2$
+#. §2: $x \\mid z$
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "Incredible work! You just completed a multi-step abstract proof.\n"
+"By combining the two witnesses §0 and §1, you found the witness for §2."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $a$
+#. §2: $b$
+#. §3: $m$
+#. §4: $(a - b)$
+#. §5: $m$
+#. §6: $m$
+#. §7: $(a - b)$
+#. §8: $$m \\mid (a - b)$$
+#. §9: $a$
+#. §10: $b$
+#. §11: $m$
+#. §12: $15 \\equiv 3 \\pmod{12}$
+#. §13: $17 \\equiv 5 \\pmod{12}$
+#. §14: $12 \\mid (17 - 5)$
+#. §15: $12 \\mid 12$
+#. §16: $23 \\equiv 2 \\pmod 7$
+#. §17: $7 \\mid (23 - 2)$
+#. §18: $7 \\mid 21$
+#. §19: $10 \\equiv 0 \\pmod 5$
+#. §20: $5 \\mid (10 - 0)$
+#. §21: $5 \\mid 10$
+#. §22: $a \\equiv b \\pmod m$
+#. §23: `ModEq`
+#. §24: `unfold ModEq`
+#. §25: `m ∣ a - b`
+#: Game.Levels.Divisibility.L06_mod_refl
+msgid "**Modular Congruence (§0)**\n"
+"\n"
+"We say that §1 is **congruent** to §2 modulo §3 if their difference §4 is a multiple of §5.\n"
+"Formally, it means §6 divides §7:\n"
+"§8\n"
+"\n"
+"**Intuition:**\n"
+"This is a mathematical way of saying that §9 and §10 leave the *same remainder* when divided by §11. Think of a clock: 15:00 and 3:00 point to the same place because §12.\n"
+"\n"
+"**Examples:**\n"
+"* §13 because §14, which simplifies to §15.\n"
+"* §16 because §17, which is §18.\n"
+"* §19 because §20, which is §21.\n"
+"\n"
+"**How it works in Lean:**\n"
+"We created a custom notation §22 to represent a function called §23. When you see this notation in your goal or hypotheses, you can use the §24 tactic. This will strip away the formatting and reveal the underlying divisibility statement: §25."
+msgstr ""
+
+#: Game.Levels.Congruence.L07_mod_dvd
+msgid "If a = b (mod m) and d | m, then a = b (mod d)."
+msgstr ""
+
+#. §0: `obtain`
+#. §1: $\\exists$
+#. §2: `h : x ∣ y`
+#. §3: `∃ k, y = x * k`
+#. §4: `obtain ⟨k, hk⟩ := h`
+#. §5: `k`
+#. §6: `hk : y = x * k`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "The §0 tactic extracts a witness from a hypothesis that contains an \\\\\"exists\\\\\" (§1).\n"
+"If you have a hypothesis §2 (which means §3), you can type\n"
+"§4 to get the variable §5 and the equation §6."
+msgstr ""
+
+#: Game.Levels.Congruence.L07_mod_dvd
+msgid "Decreasing the modulus to a divisor."
+msgstr ""
+
+#: Game
+msgid "*Game version: 1.0*\n"
+"\n"
+"## Progress saving\n"
+"\n"
+"The game stores your progress in your local browser storage.\n"
+"If you clear your cookies or site data, your progress will be lost!\n"
+"Make sure to download your game progress if you switch browsers.\n"
+"\n"
+"## About\n"
+"\n"
+"This game was created to teach Number Theory using formal verification in Lean 4.\n"
+"It introduces players to fundamental properties of integers, modular arithmetic,\n"
+"and divisibility, translating classical pen-and-paper mathematics into rigorous code."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $(a \\cdot c) \\equiv (b \\cdot d) \\pmod m$
+#. §3: $12 \\equiv 2$
+#. §4: $13 \\equiv 3$
+#. §5: $12 \\cdot 13 = 156$
+#. §6: $156 \\equiv 6 \\pmod{10}$
+#. §7: $2 \\cdot 3$
+#. §8: $6$
+#: Game.Levels.Congruence.L03_mul
+msgid "**Multiplying Congruences**\n"
+"\n"
+"If §0 and §1, then §2.\n"
+"\n"
+"**Intuition:**\n"
+"Just like addition, you can multiply remainders directly!\n"
+"Modulo 10: §3 and §4.\n"
+"If we multiply them: §5.\n"
+"And §6. Notice that §7 is exactly §8."
+msgstr ""
+
+#: Game.Levels.GCD.L08_cancel_general
+msgid "🎉 Incredible! You just built the full cancellation law for modular congruences by gluing together two previous theorems and one careful algebraic cancellation. This is exactly how real number-theory results get assembled from smaller pieces."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $a^n \\equiv b^n \\pmod m$
+#. §2: $n$
+#. §3: $n \\in \\mathbb{N}$
+#. §4: `induction' n with d ih`
+#. §5: $n = 0$
+#. §6: $a^0 \\equiv b^0 \\pmod m$
+#. §7: $d$
+#. §8: `ih`
+#. §9: $d + 1$
+#. §10: $a^{d+1}$
+#. §11: $a^d \\cdot a$
+#. §12: `rw [pow_succ]`
+#. §13: $a$
+#. §14: $b$
+#: Game.Levels.Congruence.L05_pow
+msgid "If §0, is §1?\n"
+"Since §2 is a natural number (§3), we must prove this using **mathematical induction**.\n"
+"\n"
+"Type §4. Lean will generate two goals for you:\n"
+"1. The base case (§5): §6.\n"
+"2. The inductive step: Assuming the statement holds for §7 (your hypothesis §8), prove it for §9.\n"
+"\n"
+"*Hint:* In the inductive step, you will need to break §10 into §11. You can do this by typing §12. You will need to do this twice (once for §13 and once for §14). After that, remember that you already know how to multiply congruences!"
+msgstr ""
+
+#: Game.Levels.Congruence.L07_mod_dvd
+msgid "Beautiful. This shows the deep underlying connection between standard divisibility and modular congruences."
+msgstr ""
+
+#. §0: $x, y$
+#. §1: $c \\cdot x + m \\cdot y = 1$
+#. §2: `gcd(c, m) = 1`
+#. §3: `one_dvd`
+#. §4: $1$
+#. §5: `1 ∣ c`
+#. §6: `1 ∣ m`
+#: Game.Levels.GCD.L05_coprime_backward
+msgid "Now the other direction: if there exist integers §0 with §1, does that mean §2?\n"
+"\n"
+"Yes — and to prove it, remember §3 from World 1: *every* integer is divisible by §4. So the \"common divisor\" half of the definition (§5 and §6) comes completely for free! All that's left is to hand back the Bézout identity you were already given."
+msgstr ""
+
+#. §0: `rw`
+#. §1: `h : A = B`
+#. §2: `rw [h]`
+#. §3: `A`
+#. §4: `B`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "The §0 (rewrite) tactic replaces a term with an equivalent term based on an equality you have.\n"
+"If you have §1, typing §2 will replace §3 with §4 in your goal."
+msgstr ""
+
+#. §0: $d_1$
+#. §1: $d_2$
+#. §2: $d_1 \\mid d_2$
+#. §3: $d_2 \\mid d_1$
+#. §4: $d_1 = d_2$
+#. §5: $\\mathbb{Z}$
+#. §6: $3 \\mid (-3)$
+#. §7: $(-3) \\mid 3$
+#. §8: $3 \\neq -3$
+#. §9: $\\geq 0$
+#. §10: `Int.dvd_antisymm`
+#. §11: `exact`
+#: Game.Levels.GCD.L09_dvd_antisymm
+msgid "One last small tool before the final boss.\n"
+"\n"
+"If §0 and §1 are both **non-negative** integers, and §2 while also §3, then §4.\n"
+"\n"
+"*(Non-negativity really is needed: on all of §5 this can fail — for instance §6 and §7, yet §8. Once both numbers are required to be §9, this kind of \"mirrored pair\" becomes impossible, and mutual divisibility forces equality.)*\n"
+"\n"
+"The Mathlib theorem §10 packages up exactly this reasoning for us. We simply invoke it with §11."
+msgstr ""
+
+#: Game.Levels.Congruence.L04_add_mul_mod
+msgid "Shifting by the Modulus"
+msgstr ""
+
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: $d = \\gcd(c, m) \\neq 0$
+#. §2: $c = c_1 \\cdot d$
+#. §3: $m = m_1 \\cdot d$
+#. §4: $a \\equiv b \\pmod{m_1}$
+#. §5: `gcd_div_coprime`
+#. §6: `gcd(c1, m1) = 1`
+#. §7: $c = c_1 \\cdot d$
+#. §8: $m = m_1 \\cdot d$
+#. §9: $d$
+#. §10: `mul_left_cancel₀`
+#. §11: $a \\cdot c_1$
+#. §12: $b \\cdot c_1$
+#. §13: $m_1$
+#. §14: `mod_cancel_coprime`
+#. §15: `mod_mul`
+#. §16: `have`
+#. §17: `exact`
+#: Game.Levels.GCD.L08_cancel_general
+msgid "Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!\n"
+"\n"
+"If §0 and §1, and we write §2, §3 (exactly as in Level 7), then §4.\n"
+"\n"
+"**Strategy — assemble, don't reprove:**\n"
+"1. Apply §5 (Level 7) to get §6.\n"
+"2. Unfold the congruence hypothesis, substitute §7 and §8, and cancel the shared factor §9 (using §10 again) to reduce it to a congruence between §11 and §12 modulo §13.\n"
+"3. Feed both pieces into §14 (Level 6) to finish in one line!\n"
+"\n"
+"This is exactly the reuse pattern from §15 back in World 2: build small intermediate facts with §16, then §17 the final theorem."
+msgstr ""
+
+#. §0: `obtain`
+#: Game.Levels.Congruence.L01_add
+msgid "Excellent! You combined two witnesses using §0 and proved your first arithmetic rule for congruences."
+msgstr ""
+
+#: Game.Levels.GCD.L04_coprime_forward
+msgid "Straightforward! You've now confirmed one half of the equivalence: coprimality *implies* a Bézout identity."
+msgstr ""
+
+#. §0: $a \\cdot 0 = 0$
+#. §1: $a$
+#: Game.Levels.Divisibility.L04_dvd_zero
+msgid "Perfect! Because §0, §1 always divides 0."
+msgstr ""
+
+#. §0: `mod_mul`
+#: Game.Levels.Congruence.L05_pow
+msgid "Fantastic! You just performed your first proof by induction. The multi-layered nature of mathematics is starting to reveal itself: you used §0 inside an inductive step![cite: 2]"
+msgstr ""
+
+#: Game.Levels.Congruence.L01_add
+msgid "Adding Congruences"
+msgstr ""
+
+#: Game.Levels.Congruence.L06_mod_mul
+msgid "Scaling the modulus."
+msgstr ""
+
+#: Game.Levels.Divisibility.L02_what_is_dvd
+msgid "What exactly does 'divides' mean?"
+msgstr ""
+
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: `gcd(c, m) = 1`
+#. §2: $a \\equiv b \\pmod m$
+#: Game.Levels.GCD.L06_cancel_coprime
+msgid "**Cancellation Law for Coprime Factors**\n"
+"\n"
+"If §0 and §1, then §2.\n"
+"\n"
+"**Intuition:**\n"
+"Multiplying both sides of a congruence by the same number is always safe (World 2!). This theorem shows the *reverse* direction — cancelling out a common factor — is *also* safe, but only when that factor shares no common divisor with the modulus. Coprimality is precisely the condition under which \"dividing\" makes sense in modular arithmetic."
+msgstr ""
+
+#: Game.Levels.Congruence.L08_mod_split
+msgid "Splitting the modulus into a product."
+msgstr ""
+
+#: Game.Levels.GCD.L01_dvd_mul
+msgid "A Divisor of a Factor Divides the Product"
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod{m \\cdot n}$
+#. §1: $a \\equiv b \\pmod m$
+#. §2: $a \\equiv b \\pmod n$
+#. §3: $(a - b)$
+#. §4: $15$
+#. §5: $3 \\cdot 5$
+#. §6: $3$
+#. §7: $5$
+#: Game.Levels.Congruence.L08_mod_split
+msgid "**Splitting the Modulus**\n"
+"\n"
+"If §0, then §1 and §2.\n"
+"\n"
+"**Intuition:**\n"
+"If a difference §3 is a multiple of §4 (§5), it must logically be a multiple of §6 and a multiple of §7.\n"
+"So if two numbers are congruent modulo 15, they are automatically congruent modulo 3 and modulo 5.\n"
+"This is a crucial stepping stone towards the Chinese Remainder Theorem!"
+msgstr ""
+
+#. §0: $d$
+#. §1: $c$
+#. §2: $m$
+#. §3: $c$
+#. §4: $m$
+#. §5: $d$
+#. §6: $c = c_1 \\cdot d$
+#. §7: $m = m_1 \\cdot d$
+#. §8: $c_1$
+#. §9: $m_1$
+#. §10: $d \\neq 0$
+#. §11: $d = 0$
+#. §12: $c = m = 0$
+#. §13: $d$
+#. §14: `IsGCD c m d`
+#. §15: $c \\cdot x + m \\cdot y = d$
+#. §16: $c = c_1 \\cdot d$
+#. §17: $m = m_1 \\cdot d$
+#. §18: $c_1 \\cdot d \\cdot x + m_1 \\cdot d \\cdot y = d$
+#. §19: $d \\cdot (c_1 \\cdot x + m_1 \\cdot y) = d \\cdot 1$
+#. §20: $d \\neq 0$
+#. §21: `mul_left_cancel₀`
+#. §22: $c_1, m_1$
+#. §23: $x, y$
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "Here's a natural question: if §0 is a gcd of §1 and §2, and we divide both §3 and §4 by §5 (writing §6 and §7), are the quotients §8 and §9 coprime?\n"
+"\n"
+"Yes — and this is exactly what will let us reduce a *general* cancellation problem to the coprime case you just solved.\n"
+"\n"
+"We need §10 for this level. (If §11 then §12 too, and \"dividing by §13\" doesn't make sense — you'll see exactly where this hypothesis is used.)\n"
+"\n"
+"**Strategy:** unfold §14 to get the Bézout identity §15. Substitute §16 and §17 to get §18, i.e. §19. Since §20, you can *cancel* it from both sides using the new theorem §21, leaving exactly the Bézout identity you need for §22 — with the very same §23!"
+msgstr ""
+
+#: Game.Levels.Congruence.L03_mul
+msgid "If two pairs of numbers are congruent, their products are congruent."
+msgstr ""
