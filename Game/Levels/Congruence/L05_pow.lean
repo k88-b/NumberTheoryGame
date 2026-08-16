@@ -16,7 +16,7 @@ TacticDoc induction'
 `pow_succ` is a theorem from Mathlib that states $a^{n+1} = a^n \cdot a$.
 Use `rw [pow_succ]` when dealing with powers in induction.
 -/
-TheoremDoc pow_succ as "pow_succ" in "Congruence"
+TheoremDoc pow_succ as "pow_succ" in "Algebra"
 
 NewTactic induction'
 NewTheorem pow_succ

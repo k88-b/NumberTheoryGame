@@ -27,7 +27,7 @@ If $a \cdot c \equiv b \cdot c \pmod m$ and `IsGCD(c, m) 1`, then $a \equiv b \p
 **Intuition:**
 Multiplying both sides of a congruence by the same number is always safe (World 2!). This theorem shows the *reverse* direction — cancelling out a common factor — is *also* safe, but only when that factor shares no common divisor with the modulus. Coprimality is precisely the condition under which "dividing" makes sense in modular arithmetic.
 -/
-TheoremDoc mod_cancel_coprime as "mod_cancel_coprime" in "GCD"
+TheoremDoc mod_cancel_coprime as "mod_cancel_coprime" in "Congruence"
 
 /-- Cancelling a factor coprime to the modulus. -/
 Statement mod_cancel_coprime (a b c m : ℤ) (h1 : (a * c) ≡ (b * c) (mod m)) (h2 : IsGCD(c, m) 1) : a ≡ b (mod m) := by
