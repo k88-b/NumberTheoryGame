@@ -31,6 +31,7 @@ Statement mod_trans (a b c m : ℤ) (h1 : a ≡ b (mod m)) (h2 : b ≡ c (mod m)
   unfold ModEq at *
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
+  Hint (hidden := true) "try to `use {k1} + {k2}`"
   use k1 + k2
   have h_eq : a - c = (a - b) + (b - c) := by ring
   rw [h_eq]
@@ -39,5 +40,5 @@ Statement mod_trans (a b c m : ℤ) (h1 : a ≡ b (mod m)) (h2 : b ≡ c (mod m)
   ring
 
 Conclusion "
-good
+Excellent! You have successfully proved transitivity, completely confirming that congruences behave just like regular equality.
 "
