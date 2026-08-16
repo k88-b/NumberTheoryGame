@@ -26,13 +26,16 @@ TheoremDoc gcd_two_three as "gcd_two_three" in "GCD"
 /-- A first, concrete example: IsGCD(2, 3) 1. -/
 Statement gcd_two_three : IsGCD(2, 3) 1 := by
   unfold IsGCD
+  Hint "Your goal is an `∧` (AND). Use the `constructor` tactic to split it into two separate goals."
   constructor
-  · constructor
+  · Hint "The first goal is *also* an `∧`. Use `constructor` again!"
+    constructor
     · use 2
       ring
     · use 3
       ring
-  · use -1, 1
+  · Hint (hidden := true) "To show `2 * x + 3 * y = 1`, try `x = -1` and `y = 1`. Type `use -1, 1`."
+    use -1, 1
     ring
 
 Conclusion "

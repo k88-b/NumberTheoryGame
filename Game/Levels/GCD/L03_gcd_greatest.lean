@@ -19,24 +19,21 @@ Strategy:
 
 /--
 **The Bézout Definition Really Gives the Greatest Common Divisor**
-
-If `IsGCD(a, b) d`, then for any common divisor $c$ of $a$ and $b$, $c \mid d$.
-
-**Intuition:**
-Since $d = a \cdot x + b \cdot y$ for some integers $x, y$, and $c$ divides both $a$ and $b$, it must also divide the combination $a \cdot x + b \cdot y$ — because $c$ divides each of the two pieces $a \cdot x$ and $b \cdot y$ separately, and the sum of two multiples of $c$ is again a multiple of $c$.
-
-This is exactly why, from now on, we can treat `IsGCD`-witnesses as *the* greatest common divisor: any competitor $c$ always divides it.
+...
 -/
 TheoremDoc gcd_is_greatest as "gcd_is_greatest" in "GCD"
 
 /-- Any greatest-common-divisor witness dominates every common divisor. -/
 Statement gcd_is_greatest (a b c d : ℤ) (h : IsGCD(a, b) d) (hca : c ∣ a) (hcb : c ∣ b) : c ∣ d := by
   unfold IsGCD at h
+  Hint "Your hypothesis `{h}` is now a nested conjunction with an existential. Extract everything at once using `obtain ⟨⟨hda, hdb⟩, x, y, hxy⟩ := {h}`."
   obtain ⟨⟨hda, hdb⟩, x, y, hxy⟩ := h
+  Hint (hidden := true) "Use the theorem from Level 1! You can create a new hypothesis with `have h1 : {c} ∣ ({a} * {x}) := dvd_mul_of_dvd_left ...`"
   have h1 : c ∣ (a * x) := dvd_mul_of_dvd_left hca x
   have h2 : c ∣ (b * y) := dvd_mul_of_dvd_left hcb y
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
+  Hint (hidden := true) "Just like in transitivity, since you have witnesses `{k1}` and `{k2}`, try to `use {k1} + {k2}`."
   use k1 + k2
   rw [← hxy]
   rw [hk1]

@@ -34,6 +34,7 @@ Statement mod_cancel_coprime (a b c m : ℤ) (h1 : (a * c) ≡ (b * c) (mod m)) 
   unfold IsGCD at h2
   obtain ⟨k, hk⟩ := h1
   obtain ⟨_, x, y, hxy⟩ := h2
+  Hint (hidden := true) "You need a witness for `{m} ∣ ({a} - {b})`. We know `{c} * {x} + {m} * {y} = 1`. Multiplying `({a} - {b})` by this gives `({a} - {b}) * ({c} * {x} + {m} * {y})`. With some algebra, the `{m}` can be factored out. Try to `use {k} * {x} + ({a} - {b}) * {y}`."
   use k * x + (a - b) * y
   have h_eq1 : m * (k * x + (a - b) * y) = (m * k) * x + (a - b) * (m * y) := by ring
   rw [h_eq1]

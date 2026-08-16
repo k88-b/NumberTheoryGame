@@ -45,6 +45,7 @@ Statement gcd_div_coprime (c m d c1 m1 : ℤ) (hd : d ≠ 0) (h : IsGCD(c, m) d)
     · exact one_dvd m1
   · use x, y
     have e : d * (c1 * x + m1 * y) = c1 * d * x + m1 * d * y := by ring
+    Hint (hidden := true) "To use `mul_left_cancel₀`, you need to set up an equation of the exact form `{d} * something = {d} * 1`. Try creating it with `have h_eq : {d} * ({c1} * {x} + {m1} * {y}) = {d} * 1`."
     have h_eq : d * (c1 * x + m1 * y) = d * 1 := by
       rw [e]
       rw [← hc] ; rw [← hm]

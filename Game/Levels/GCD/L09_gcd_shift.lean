@@ -48,6 +48,8 @@ TheoremDoc Int.dvd_antisymm as "dvd_antisymm" in "Divisibility"
 
 NewTheorem Int.dvd_antisymm
 
+-- ... (imports и заголовки без изменений)
+
 /-- Shifting by a multiple of m does not change the gcd with m. -/
 Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ d2)
     (h1 : IsGCD(a + m * k, m) d1) (h2 : IsGCD(a, m) d2) : d1 = d2 := by
@@ -61,6 +63,7 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
   have hd2_m : d2 ∣ m := h2.1.2
   have h_bez2 : ∃ x y : ℤ, a * x + m * y = d2 := h2.2
 
+  Hint "First step: show that `{d1}` divides `{a}`. Think of `{a}` as `({a} + {m} * {k}) - {m} * {k}`."
   have hd1_a : d1 ∣ a := by
     obtain ⟨k1, hk1⟩ := hd1_amk
     obtain ⟨k2, hk2⟩ := hd1_m
@@ -69,6 +72,7 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
     rw [h_eq1, hk1, hk2]
     ring
 
+  Hint "Now that you know `{d1} ∣ {a}` and `{d1} ∣ {m}`, use the Bézout identity for `{d2}` to show that `{d1} ∣ {d2}`."
   have hd1_d2 : d1 ∣ d2 := by
     obtain ⟨x2, y2, h_eq2⟩ := h_bez2
     obtain ⟨ka, hka⟩ := hd1_a
@@ -77,6 +81,7 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
     rw [← h_eq2, hka, hkm]
     ring
 
+  Hint "Symmetrically, show `{d2} ∣ {a} + {m} * {k}` using the fact that `{d2} ∣ {a}` and `{d2} ∣ {m}`."
   have hd2_amk : d2 ∣ a + m * k := by
     obtain ⟨k3, hk3⟩ := hd2_a
     obtain ⟨k4, hk4⟩ := hd2_m
@@ -84,6 +89,7 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
     rw [hk3, hk4]
     ring
 
+  Hint "Almost there! Use the Bézout identity for `{d1}` to show `{d2} ∣ {d1}`."
   have hd2_d1 : d2 ∣ d1 := by
     obtain ⟨x1, y1, h_eq1⟩ := h_bez1
     obtain ⟨ka2, hka2⟩ := hd2_amk
@@ -92,7 +98,9 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
     rw [← h_eq1, hka2, hkm2]
     ring
 
+  Hint "You have `{d1} ∣ {d2}` and `{d2} ∣ {d1}`. Finish the boss by applying `Int.dvd_antisymm`!"
   exact Int.dvd_antisymm hd1 hd2 hd1_d2 hd2_d1
+
 
 Conclusion "
 🎉 MAGNIFICENT! 🎉

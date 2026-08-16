@@ -24,7 +24,8 @@ Statement bezout_imp_coprime (c m : ℤ) (h : ∃ x y : ℤ, c * x + m * y = 1) 
   unfold IsGCD
   constructor
   · constructor
-    · exact one_dvd c
+    · Hint (hidden := true) "Remember the theorem `one_dvd` from World 1? It proves that 1 divides everything. Use `exact one_dvd {c}`."
+      exact one_dvd c
     · exact one_dvd m
   · exact h
 
