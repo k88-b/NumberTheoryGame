@@ -1,8 +1,10 @@
 import GameServer
 import Mathlib.Tactic
+import Game.Levels.Divisibility.L05_dvd_trans
 
-World "Divisibility"
-Level 6
+
+World "Congruence"
+Level 1
 Title "Modular Arithmetic: Reflexivity"
 
 /--

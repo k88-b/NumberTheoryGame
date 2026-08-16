@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L06_mod_mul
+import Game.Levels.Congruence.L09_mod_mul
 
 World "Congruence"
-Level 7
+Level 10
 Title "Shrinking the Modulus"
 
 Introduction "

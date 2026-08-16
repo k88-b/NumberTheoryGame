@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L01_add
+import Game.Levels.Congruence.L04_add
 
 World "Congruence"
-Level 2
+Level 5
 Title "Multiplying by a Common Factor"
 
 Introduction "

@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L08_mod_trans
+import Game.Levels.Congruence.L03_mod_trans
 
 World "Congruence"
-Level 1
+Level 4
 Title "Adding Congruences"
 
 Introduction "

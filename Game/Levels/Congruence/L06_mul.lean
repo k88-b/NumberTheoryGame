@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L02_mul_const
+import Game.Levels.Congruence.L05_mul_const
 
 World "Congruence"
-Level 3
+Level 6
 Title "Multiplying Congruences"
 
 /--

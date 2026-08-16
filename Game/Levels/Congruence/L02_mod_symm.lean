@@ -1,10 +1,10 @@
 
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L06_mod_refl
+import Game.Levels.Congruence.L01_mod_refl
 
-World "Divisibility"
-Level 7
+World "Congruence"
+Level 2
 Title "Symmetry of Congruences"
 
 /--

@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L07_mod_dvd
+import Game.Levels.Congruence.L10_mod_dvd
 
 World "Congruence"
-Level 8
+Level 11
 Title "Splitting the Modulus (Boss)"
 
 /--

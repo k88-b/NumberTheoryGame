@@ -1,13 +1,12 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L07_mod_symm
+import Game.Levels.Congruence.L02_mod_symm
 
-World "Divisibility"
-Level 8
-Title "Transitivity of Congruences (Boss)"
+World "Congruence"
+Level 3
+Title "Transitivity of Congruences"
 
 Introduction "
-Welcome to the final boss of the Divisibility Club!
 To prove that $\\equiv$ is a true equivalence relation, we must prove **transitivity**:
 If $a \\equiv b$ and $b \\equiv c$, then $a \\equiv c$.
 
@@ -16,8 +15,6 @@ You know the drill:
 2. `obtain` the witnesses $k_1$ and $k_2$ from your hypotheses.
 3. Use algebra (`have`) to rewrite $a - c$ as $(a - b) + (b - c)$.
 4. Apply your rewrites and let `ring` finish the job!
-
-Good luck!
 "
 
 /--
@@ -42,10 +39,5 @@ Statement mod_trans (a b c m : ℤ) (h1 : a ≡ b (mod m)) (h2 : b ≡ c (mod m)
   ring
 
 Conclusion "
-🎉 INCREDIBLE! 🎉
-
-You have conquered the first world! You successfully proved that modular congruence is reflexive, symmetric, and transitive. It is officially an equivalence relation.
-
-You've mastered the foundational tactics `use`, `intro`, `obtain`, `rw`, `have`, and `ring`.
-Get ready for World 2, where we will start doing actual arithmetic inside these modular equations!
+good
 "

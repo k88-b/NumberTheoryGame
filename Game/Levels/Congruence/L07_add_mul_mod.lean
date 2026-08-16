@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L03_mul
+import Game.Levels.Congruence.L06_mul
 
 World "Congruence"
-Level 4
+Level 7
 Title "Shifting by the Modulus"
 
 Introduction "

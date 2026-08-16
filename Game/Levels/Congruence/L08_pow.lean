@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L04_add_mul_mod
+import Game.Levels.Congruence.L07_add_mul_mod
 
 World "Congruence"
-Level 5
+Level 8
 Title "Powers of Congruences"
 
 /--

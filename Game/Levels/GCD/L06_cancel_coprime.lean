@@ -1,7 +1,6 @@
 import GameServer
 import Mathlib.Tactic
 import Game.Levels.GCD.L05_coprime_backward
-import Game.Levels.Divisibility.L06_mod_refl
 
 World "GCD"
 Level 6
