@@ -1,9 +1,11 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L09_dvd_antisymm
+-- import Game.Levels.GCD.L09_dvd_antisymm
+import Game.Levels.GCD.L08_cancel_general
 
 World "GCD"
-Level 10
+-- Level 10
+Level 9
 Title "A Shift Doesn't Change the GCD (Boss)"
 
 Introduction "
@@ -17,7 +19,7 @@ Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and
 
 1. Show $d_1$ is also a common divisor of $a$ and $m$ (not just of $a + m \\cdot k$): since $a = (a + m \\cdot k) - m \\cdot k$, and $d_1$ divides both $(a + mk)$ and $m$, it divides $a$ too. Now $d_1$ is a common divisor of $a$ and $m$, and $d_2$ is *the greatest one* (Level 3!), so $d_1 \\mid d_2$.
 2. Symmetrically, show $d_2$ is also a common divisor of $(a + m \\cdot k)$ and $m$: since $d_2$ divides both $a$ and $m$, it divides the combination $a + m \\cdot k$ too. Applying Level 3 again (this time with $d_1$ as \"the greatest\"), you get $d_2 \\mid d_1$.
-3. Finally, `d1 ∣ d2` and `d2 ∣ d1`, together with `0 ≤ d1` and `0 ≤ d2`, give `d1 = d2` by the antisymmetry lemma from the previous level!
+3. Finally, `d1 ∣ d2` and `d2 ∣ d1`, together with `0 ≤ d1` and `0 ≤ d2`, give `d1 = d2` by the antisymmetry lemma (`Int.dvd_antisymm`) that has just been added to your inventory!
 "
 
 /--
@@ -30,12 +32,25 @@ if `IsGCD(a + m * k, m) d1` and `IsGCD(a, m) d2`, then $d_1 = d_2$.
 This is the *engine* of the Euclidean Algorithm for computing GCDs: $\gcd(a + mk, m) = \gcd(a, m)$ for any integer $k$. In particular, replacing $a$ by its remainder after dividing by $m$ never changes the GCD with $m$ — which is exactly what lets the Euclidean Algorithm shrink its numbers step by step until it reaches the answer.
 -/
 TheoremDoc gcd_shift_invariant as "gcd_shift_invariant" in "GCD"
+
+
+/--
+**Antisymmetry of Divisibility (for non-negative integers)**
+
+If $0 \le d_1$, $0 \le d_2$, $d_1 \mid d_2$, and $d_2 \mid d_1$, then $d_1 = d_2$.
+
+**Why we need it:**
+Divisibility on all of $\mathbb{Z}$ only forms a *pre-order*: two different numbers can divide each other, as long as one is the negative of the other. Restricted to non-negative integers, though, divisibility becomes a genuine **partial order**: "mutual divisibility" really does collapse to equality.
+
+In this boss level, we will show two gcd-witnesses divide each other, and use exactly this theorem to conclude they must be the *same* number.
+-/
+TheoremDoc Int.dvd_antisymm as "dvd_antisymm" in "GCD"
+
 NewTheorem Int.dvd_antisymm
 
 /-- Shifting by a multiple of m does not change the gcd with m. -/
 Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ d2)
-    (h1 : IsGCD((a + m * k), m) d1) (h2 : IsGCD(a, m) d2) : d1 = d2 := by
-
+    (h1 : IsGCD(a + m * k, m) d1) (h2 : IsGCD(a, m) d2) : d1 = d2 := by
   unfold IsGCD at h1 h2
 
   have hd1_amk : d1 ∣ a + m * k := h1.1.1

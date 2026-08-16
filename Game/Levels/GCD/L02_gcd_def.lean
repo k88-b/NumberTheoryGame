@@ -14,7 +14,7 @@ In this game, we say $d$ **is a greatest common divisor** of $a$ and $b$ — wri
 1. $d$ is a **common divisor**: $d \mid a$ and $d \mid b$.
 2. $d$ can be written as a **Bézout combination**: there exist integers $x, y$ such that $a \cdot x + b \cdot y = d$.
 
-$$\text{IsGCD}(a, b, d) \iff (d \mid a \land d \mid b) \land \exists x, y \in \mathbb{Z},\ a x + b y = d$$
+$$\text{IsGCD}(a, b) d \iff (d \mid a \land d \mid b) \land \exists x, y \in \mathbb{Z},\ a x + b y = d$$
 
 **Why this definition, and not simply "the largest common divisor"?**
 Working with "largest" directly is awkward in Lean: comparing sizes doesn't play well with negative numbers, and proving something is *the* biggest usually means comparing it to every other common divisor one at a time.

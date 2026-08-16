@@ -10,30 +10,18 @@ Title "A Divisor of a Factor Divides the Product"
 def IsGCD (a b d : ℤ) : Prop :=
   (d ∣ a ∧ d ∣ b) ∧ ∃ x y : ℤ, a * x + b * y = d
 
--- syntax "gcd(" term ", " term ")= " term : term
--- macro_rules
---   | `(gcd($a, $b)= $d) => `(IsGCD $a $b $d)
+-- syntax "IsGCD(" term "," term ")" term : term
 
+-- macro_rules
+--   | `(IsGCD($a, $b) $d) => `(IsGCD $a $b $d)
 
 -- @[app_unexpander IsGCD]
 -- def unexpandIsGCD : Lean.PrettyPrinter.Unexpander
---   | `($(_) $a $b $d) => `(gcd($a, $b)= $d)
+--   | `($(_) $a $b $d) => `(IsGCD($a, $b) $d)
 --   | _ => throw ()
 
--- DefinitionDoc IsGCD as "gcd(a, b) = d"
--- NewDefinition IsGCD
 
-
-syntax "IsGCD(" term ", " term ") " term : term
-
-macro_rules
-  | `(IsGCD($a, $b) $d) => `(IsGCD $a $b $d)
-
-@[app_unexpander IsGCD]
-def unexpandIsGCD : Lean.PrettyPrinter.Unexpander
-  | `($(_) $a $b $d) => `(IsGCD($a, $b) $d)
-  | _ => throw ()
-
+notation "IsGCD(" a ", " b ") " d => IsGCD a b d
 
 Introduction "
 Welcome to World 3: In Search of the GCD!
