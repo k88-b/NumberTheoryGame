@@ -7,7 +7,7 @@ Level 4
 Title "Shifting by the Modulus"
 
 Introduction "
-Here is a very simple but incredibly important rule[cite: 2].
+Here is a very simple but incredibly important rule.
 If you add any multiple of the modulus $m$ to a number $a$, its remainder doesn't change!
 $a + k \\cdot m \\equiv a \\pmod m$.
 

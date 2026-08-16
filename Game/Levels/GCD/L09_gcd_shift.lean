@@ -31,32 +31,54 @@ This is the *engine* of the Euclidean Algorithm for computing GCDs: $\gcd(a + mk
 -/
 TheoremDoc gcd_shift_invariant as "gcd_shift_invariant" in "GCD"
 
+NewTheorem Int.dvd_antisymm
+
 /-- Shifting by a multiple of m does not change the gcd with m. -/
 Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ d2)
     (h1 : gcd((a + m * k), m)= d1) (h2 : gcd(a, m)= d2) : d1 = d2 := by
-  have hcopy1 := h1
-  have hcopy2 := h2
-  unfold IsGCD at hcopy1
-  unfold IsGCD at hcopy2
-  obtain ⟨⟨hd1s, hd1m⟩, _⟩ := hcopy1
-  obtain ⟨⟨hd2a, hd2m⟩, _⟩ := hcopy2
-  obtain ⟨p, hp⟩ := hd1s
-  obtain ⟨q, hq⟩ := hd1m
-  have hd1a : d1 ∣ a := by
-    use p - q * k
-    have e : a = (a + m * k) - m * k := by ring
-    rw [e]
-    rw [hp, hq]
+
+  unfold IsGCD at h1 h2
+
+  have hd1_amk : d1 ∣ a + m * k := h1.1.1
+  have hd1_m : d1 ∣ m := h1.1.2
+  have h_bez1 : ∃ x y : ℤ, (a + m * k) * x + m * y = d1 := h1.2
+
+  have hd2_a : d2 ∣ a := h2.1.1
+  have hd2_m : d2 ∣ m := h2.1.2
+  have h_bez2 : ∃ x y : ℤ, a * x + m * y = d2 := h2.2
+
+  have hd1_a : d1 ∣ a := by
+    obtain ⟨k1, hk1⟩ := hd1_amk
+    obtain ⟨k2, hk2⟩ := hd1_m
+    use k1 - k2 * k
+    have h_eq1 : a = (a + m * k) - m * k := by ring
+    rw [h_eq1, hk1, hk2]
     ring
-  have hle1 : d1 ∣ d2 := gcd_is_greatest a m d1 d2 h2 hd1a hd1m
-  obtain ⟨p2, hp2⟩ := hd2a
-  obtain ⟨q2, hq2⟩ := hd2m
-  have hd2s : d2 ∣ (a + m * k) := by
-    use p2 + q2 * k
-    rw [hp2, hq2]
+
+  have hd1_d2 : d1 ∣ d2 := by
+    obtain ⟨x2, y2, h_eq2⟩ := h_bez2
+    obtain ⟨ka, hka⟩ := hd1_a
+    obtain ⟨km, hkm⟩ := hd1_m
+    use ka * x2 + km * y2
+    rw [← h_eq2, hka, hkm]
     ring
-  have hle2 : d2 ∣ d1 := gcd_is_greatest (a + m * k) m d2 d1 h1 hd2s hd2m
-  exact dvd_antisymm d1 d2 hd1 hd2 hle1 hle2
+
+  have hd2_amk : d2 ∣ a + m * k := by
+    obtain ⟨k3, hk3⟩ := hd2_a
+    obtain ⟨k4, hk4⟩ := hd2_m
+    use k3 + k4 * k
+    rw [hk3, hk4]
+    ring
+
+  have hd2_d1 : d2 ∣ d1 := by
+    obtain ⟨x1, y1, h_eq1⟩ := h_bez1
+    obtain ⟨ka2, hka2⟩ := hd2_amk
+    obtain ⟨km2, hkm2⟩ := hd2_m
+    use ka2 * x1 + km2 * y1
+    rw [← h_eq1, hka2, hkm2]
+    ring
+
+  exact Int.dvd_antisymm hd1 hd2 hd1_d2 hd2_d1
 
 Conclusion "
 🎉 MAGNIFICENT! 🎉

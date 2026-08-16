@@ -30,5 +30,5 @@ Statement bezout_imp_coprime (c m : ℤ) (h : ∃ x y : ℤ, c * x + m * y = 1) 
   · exact h
 
 Conclusion "
-Beautiful! Together, the last two levels show that `IsGCD c m 1` and \"a Bézout identity with 1 exists\" are two ways of saying exactly the same thing. From now on, feel free to think of *coprime* simply as \"Bézout equals 1\".
+Beautiful! Together, the last two levels show that `gcd(c, m) = 1` and \"a Bézout identity with 1 exists\" are two ways of saying exactly the same thing. From now on, feel free to think of *coprime* simply as \"Bézout equals 1\".
 "

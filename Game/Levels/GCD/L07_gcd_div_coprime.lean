@@ -37,10 +37,8 @@ TheoremDoc gcd_div_coprime as "gcd_div_coprime" in "GCD"
 
 /-- Dividing by the gcd produces coprime numbers. -/
 Statement gcd_div_coprime (c m d c1 m1 : ℤ) (hd : d ≠ 0) (h : gcd(c, m)= d) (hc : c = c1 * d) (hm : m = m1 * d) : gcd(c1, m1)= 1 := by
-  unfold IsGCD at h
+  unfold IsGCD at *
   obtain ⟨_, x, y, hxy⟩ := h
-  rw [hc, hm] at hxy
-  unfold IsGCD
   constructor
   · constructor
     · exact one_dvd c1
@@ -49,9 +47,11 @@ Statement gcd_div_coprime (c m d c1 m1 : ℤ) (hd : d ≠ 0) (h : gcd(c, m)= d) 
     have e : d * (c1 * x + m1 * y) = c1 * d * x + m1 * d * y := by ring
     have h_eq : d * (c1 * x + m1 * y) = d * 1 := by
       rw [e]
+      rw [← hc] ; rw [← hm]
       rw [hxy]
       ring
     exact mul_left_cancel₀ hd h_eq
+
 
 Conclusion "
 Great! `gcd_div_coprime` is now saved — it's the missing piece that will let us cancel factors that aren't necessarily coprime to the modulus, in the very next level.

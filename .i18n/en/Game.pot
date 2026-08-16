@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-15\n"
+"POT-Creation-Date: 2026-08-16\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -216,8 +216,55 @@ msgid "Here is the central theorem of this world — and one of the most useful 
 "This proof is long, but every single step is either a §21 (a pure algebra identity, closed by §22) or an §23 that plugs in a hypothesis. Take it one line at a time."
 msgstr ""
 
-#: Game.Levels.GCD
-msgid "In Search of GCD"
+#. §0: $m$
+#. §1: $m$
+#. §2: $d_1$
+#. §3: $(a + m \\cdot k)$
+#. §4: $m$
+#. §5: $d_2$
+#. §6: $a$
+#. §7: $m$
+#. §8: $d_1 = d_2$
+#. §9: $d_1$
+#. §10: $a$
+#. §11: $m$
+#. §12: $a + m \\cdot k$
+#. §13: $a = (a + m \\cdot k) - m \\cdot k$
+#. §14: $d_1$
+#. §15: $(a + mk)$
+#. §16: $m$
+#. §17: $a$
+#. §18: $d_1$
+#. §19: $a$
+#. §20: $m$
+#. §21: $d_2$
+#. §22: $d_1 \\mid d_2$
+#. §23: $d_2$
+#. §24: $(a + m \\cdot k)$
+#. §25: $m$
+#. §26: $d_2$
+#. §27: $a$
+#. §28: $m$
+#. §29: $a + m \\cdot k$
+#. §30: $d_1$
+#. §31: $d_2 \\mid d_1$
+#. §32: `d1 ∣ d2`
+#. §33: `d2 ∣ d1`
+#. §34: `0 ≤ d1`
+#. §35: `0 ≤ d2`
+#. §36: `d1 = d2`
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "Welcome to the final boss of World 3!\n"
+"\n"
+"We prove the fact that sits at the heart of the **Euclidean Algorithm**: shifting a number by a multiple of §0 does not change its greatest common divisor with §1.\n"
+"\n"
+"Formulation: if §2 is a (non-negative) gcd of §3 and §4, and §5 is a (non-negative) gcd of §6 and §7, then §8.\n"
+"\n"
+"**Strategy** (this is a long one — take it one step at a time!):\n"
+"\n"
+"1. Show §9 is also a common divisor of §10 and §11 (not just of §12): since §13, and §14 divides both §15 and §16, it divides §17 too. Now §18 is a common divisor of §19 and §20, and §21 is *the greatest one* (Level 3!), so §22.\n"
+"2. Symmetrically, show §23 is also a common divisor of §24 and §25: since §26 divides both §27 and §28, it divides the combination §29 too. Applying Level 3 again (this time with §30 as \"the greatest\"), you get §31.\n"
+"3. Finally, §32 and §33, together with §34 and §35, give §36 by the antisymmetry lemma from the previous level!"
 msgstr ""
 
 #. §0: `IsGCD a b d`
@@ -305,6 +352,36 @@ msgid "Welcome to the Divisibility Club!\n"
 "By the end of this world, you will have proven that modular arithmetic is an equivalence relation. Take your time, read the explanations carefully, and have fun!"
 msgstr ""
 
+#. §0: `obtain`
+#. §1: `have`
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "🎉 MAGNIFICENT! 🎉\n"
+"\n"
+"You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
+"\n"
+"You've mastered nested §0, chained §1-based lemma reuse, and careful case-by-case algebra. Get ready for World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!"
+msgstr ""
+
+#. §0: $a, k, m$
+#. §1: $d_1, d_2$
+#. §2: `gcd((a + m * k), m) = d1`
+#. §3: ` gcd(a, m) = d2`
+#. §4: $d_1 = d_2$
+#. §5: $\\gcd(a + mk, m) = \\gcd(a, m)$
+#. §6: $k$
+#. §7: $a$
+#. §8: $m$
+#. §9: $m$
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "**Shift Invariance of the GCD**\n"
+"\n"
+"For any integers §0, and non-negative gcd-witnesses §1:\n"
+"if §2 and §3, then §4.\n"
+"\n"
+"**Why this matters:**\n"
+"This is the *engine* of the Euclidean Algorithm for computing GCDs: §5 for any integer §6. In particular, replacing §7 by its remainder after dividing by §8 never changes the GCD with §9 — which is exactly what lets the Euclidean Algorithm shrink its numbers step by step until it reaches the answer."
+msgstr ""
+
 #: Game.Levels.GCD.L01_dvd_mul
 msgid "If d divides a, then d divides a * b for any integer b."
 msgstr ""
@@ -373,6 +450,14 @@ msgid "If §0 and §1, is it true that §2?\n"
 "To prove this, you need to §3, extract the witnesses from both hypotheses using §4, and then use algebra.\n"
 "\n"
 "*Hint:* You will need to rewrite §5 into §6. Use the §7 tactic!"
+msgstr ""
+
+#: Game.Levels.GCD
+msgid "Welcome to World 3: In Search of the GCD!\n"
+"\n"
+"In the previous worlds, you learned how to add and multiply congruences. But what about division? Can we just cancel out common factors? Not always! To safely cancel factors in modular arithmetic, we need to deeply understand the Greatest Common Divisor (GCD).\n"
+"\n"
+"In this world, we will define the GCD using Bezout's identity, prove its properties, and unlock the ultimate tool for number theory: the General Cancellation Law. Let's find that GCD!"
 msgstr ""
 
 #: Game.Levels.Divisibility.L02_what_is_dvd
@@ -562,17 +647,6 @@ msgstr ""
 #. §2: $a \\equiv a \\pmod m$
 #: Game.Levels.Divisibility.L06_mod_refl
 msgid "Great! Because §0, and §1, it immediately follows that §2."
-msgstr ""
-
-#. §0: $m$
-#. §1: $a$
-#. §2: $a + k \\cdot m \\equiv a \\pmod m$
-#: Game.Levels.Congruence.L04_add_mul_mod
-msgid "Here is a very simple but incredibly important rule[cite: 2].\n"
-"If you add any multiple of the modulus §0 to a number §1, its remainder doesn't change!\n"
-"§2.\n"
-"\n"
-"Try to prove this directly by unfolding the definition."
 msgstr ""
 
 #. §0: `induction`
@@ -815,6 +889,10 @@ msgstr ""
 msgid "Splitting the Modulus (Boss)"
 msgstr ""
 
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "Shifting by a multiple of m does not change the gcd with m."
+msgstr ""
+
 #: Game.Levels.GCD.L02_gcd_def
 msgid "Meeting the GCD"
 msgstr ""
@@ -945,6 +1023,10 @@ msgstr ""
 #: Game.Levels.Divisibility.L04_dvd_zero
 #: Game.Levels.Divisibility.L04_dvd_zero
 msgid "Any integer divides zero."
+msgstr ""
+
+#: Game.Levels.GCD
+msgid "In Search of the GCD"
 msgstr ""
 
 #. §0: `pow_succ`
@@ -1181,14 +1263,6 @@ msgid "Now let's practice what we just learned. Prove that any integer §0 divid
 "Think about what §1 should be so that §2."
 msgstr ""
 
-#: Game.Levels.GCD
-msgid "Welcome to World 3: In Search of GCD!\n"
-"\n"
-"In the previous worlds, you learned how to add and multiply congruences. But what about division? Can we just cancel out common factors? Not always! To safely cancel factors in modular arithmetic, we need to deeply understand the Greatest Common Divisor (GCD).\n"
-"\n"
-"In this world, we will define the GCD using Bezout's identity, prove its properties, and unlock the ultimate tool for number theory: the General Cancellation Law. Let's find that GCD!"
-msgstr ""
-
 #. §0: `gcd(c, m) = d`
 #. §1: $d \\neq 0$
 #. §2: $c = c_1 \\cdot d$
@@ -1219,6 +1293,10 @@ msgstr ""
 #: Game.Levels.Divisibility.L06_mod_refl
 msgid "The §0 tactic replaces a definition with its underlying meaning.\n"
 "If your goal contains §1, typing §2 will change it to §3."
+msgstr ""
+
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "A Shift Doesn't Change the GCD (Boss)"
 msgstr ""
 
 #. §0: `mul_left_cancel₀`
@@ -1260,7 +1338,7 @@ msgstr ""
 msgid "Dividing by the gcd produces coprime numbers."
 msgstr ""
 
-#. §0: `IsGCD c m 1`
+#. §0: `gcd(c, m) = 1`
 #: Game.Levels.GCD.L05_coprime_backward
 msgid "Beautiful! Together, the last two levels show that §0 and \"a Bézout identity with 1 exists\" are two ways of saying exactly the same thing. From now on, feel free to think of *coprime* simply as \"Bézout equals 1\"."
 msgstr ""
@@ -1328,6 +1406,17 @@ msgid "**Modular Congruence (§0)**\n"
 "\n"
 "**How it works in Lean:**\n"
 "We created a custom notation §22 to represent a function called §23. When you see this notation in your goal or hypotheses, you can use the §24 tactic. This will strip away the formatting and reveal the underlying divisibility statement: §25."
+msgstr ""
+
+#. §0: $m$
+#. §1: $a$
+#. §2: $a + k \\cdot m \\equiv a \\pmod m$
+#: Game.Levels.Congruence.L04_add_mul_mod
+msgid "Here is a very simple but incredibly important rule.\n"
+"If you add any multiple of the modulus §0 to a number §1, its remainder doesn't change!\n"
+"§2.\n"
+"\n"
+"Try to prove this directly by unfolding the definition."
 msgstr ""
 
 #: Game.Levels.Congruence.L07_mod_dvd
