@@ -31,7 +31,7 @@ TheoremDoc mod_cancel_general as "mod_cancel_general" in "Congruence"
 
 /-- The fully general cancellation law for congruences. -/
 Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c) ≡ (b * c) (mod m)) (h2 : IsGCD(c, m) d) (hc : c = c1 * d) (hm : m = m1 * d) : a ≡ b (mod m1) := by
-  have hcoprime : IsGCD(c1, m1) 1 := gcd_div_coprime c m d c1 m1 hd h2 hc hm
+  have hcoprime := gcd_div_coprime c m d c1 m1 hd h2 hc hm
   unfold ModEq at h1
   obtain ⟨k, hk⟩ := h1
   rw [hc, hm] at hk

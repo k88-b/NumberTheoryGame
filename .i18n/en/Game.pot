@@ -9,17 +9,7 @@ msgstr "Project-Id-Version: Game v4.23.0\n"
 "Content-Transfer-Encoding: 8bit"
 
 #. §0: $m$
-#: Game.Levels.Congruence
-msgid "Welcome to World 2: Congruences in Action!\n"
-"\n"
-"In the first world, you proved that modular arithmetic forms an equivalence relation.\n"
-"But the real power of congruences comes from their arithmetic properties. In this world, you will prove that you can safely add, multiply, and raise congruences to powers, just like regular equations!\n"
-"\n"
-"You will also learn how to manipulate the modulus §0 itself, breaking it apart or scaling it up. Let's dive into the algebra!"
-msgstr ""
-
-#. §0: $m$
-#: Game
+#: «external:file:///home/kostya/LeanGame/NumberTheory/Game.lean»
 msgid "# Welcome to the Number Theory Game\n"
 "#### An introduction to integer arithmetic and formal proofs.\n"
 "\n"
@@ -283,14 +273,15 @@ msgid "Welcome to World 3: In Search of the GCD!\n"
 "You already have every tool you need for this one: §9 the witness from your hypothesis, §10 the right witness for the new goal, §11, and finish with §12 — exactly like you did for §13 back in World 1."
 msgstr ""
 
-#. §0: $a \\mid b$
-#. §1: $\\equiv$
-#: Game.Levels.Divisibility
-msgid "Welcome to the Divisibility Club!\n"
+#. §0: $m$
+#: Game.Levels.Congruence
+msgid "Welcome to World 2: Congruences in Action!\n"
 "\n"
-"In this first world, you will learn the basics of Lean 4, how to interact with the system, and how to write your very first proofs. We will explore the mathematical concept of divisibility (§0) and introduce modular arithmetic (§1).\n"
+"Here we introduce a massive concept: **Modular Arithmetic (Congruences)**.\n"
 "\n"
-"By the end of this world, you will have proven that modular arithmetic is an equivalence relation. Take your time, read the explanations carefully, and have fun!"
+"First, you will prove that modular arithmetic forms an equivalence relation. Then, we will unlock its real power: its arithmetic properties. You will prove that you can safely add, multiply, and raise congruences to powers, just like regular equations!\n"
+"\n"
+"You will also learn how to manipulate the modulus §0 itself, breaking it apart or scaling it up. Let us dive into the algebra!"
 msgstr ""
 
 #. §0: `obtain`
@@ -368,10 +359,6 @@ msgstr ""
 msgid "Bézout Gives You Coprimality (⟸)"
 msgstr ""
 
-#: Game.Levels.Divisibility.L05_dvd_trans
-msgid "Chain of Divisors (Transitivity) (Boss)"
-msgstr ""
-
 #: Game.Levels.Congruence.L05_mul_const
 msgid "Multiplying a congruence by a constant."
 msgstr ""
@@ -383,6 +370,10 @@ msgstr ""
 #. §0: `dvd_mul_of_dvd_left`
 #: Game.Levels.GCD.L01_dvd_mul
 msgid "Perfect! Keep §0 close at hand — you'll use it again and again in this world."
+msgstr ""
+
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "Chain of Divisors (Boss)"
 msgstr ""
 
 #. §0: $a \\equiv b \\pmod m$
@@ -403,8 +394,17 @@ msgid "We are now introducing a massive concept in number theory: **Congruences*
 "Let's prove that modular arithmetic is reflexive: §5."
 msgstr ""
 
-#: Game
+#: «external:file:///home/kostya/LeanGame/NumberTheory/Game.lean»
 msgid "Number Theory Game"
+msgstr ""
+
+#. §0: $a \\mid b$
+#: Game.Levels.Divisibility
+msgid "Welcome to the Divisibility Club!\n"
+"\n"
+"In this first world, you will learn the basics of Lean 4, how to interact with the system, and how to write your very first proofs. We will explore the mathematical concept of divisibility (§0).\n"
+"\n"
+"By the end of this world, you will have built a solid foundation for integer arithmetic and proven that divisibility chains perfectly (transitivity). Take your time, read the explanations carefully, and have fun!"
 msgstr ""
 
 #. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
@@ -514,7 +514,7 @@ msgstr ""
 #. §16: $-1$
 #. §17: $2$
 #. §18: $3$
-#: Game.Levels.GCD.L02_gcd_def
+#: Game.Levels.Defs
 msgid "**The Greatest Common Divisor, Bézout-style**\n"
 "\n"
 "In this game, we say §0 **is a greatest common divisor** of §1 and §2 — written §3 — if **two** conditions hold together:\n"
@@ -543,7 +543,7 @@ msgid "The §0 tactic is used to prove statements for all natural numbers §1.\n
 "Typing §2 splits your goal into two cases: the base case (§3) and the inductive step (§4), giving you the induction hypothesis §5."
 msgstr ""
 
-#: Game
+#: «external:file:///home/kostya/LeanGame/NumberTheory/Game.lean»
 msgid "An interactive introduction to Number Theory and modular arithmetic."
 msgstr ""
 
@@ -580,20 +580,10 @@ msgid "🎉 AMAZING! 🎉\n"
 "Next up is World 3, where we will dive into the Greatest Common Divisor (GCD) and learn how to *cancel* numbers out of congruences."
 msgstr ""
 
-#: Game
+#: «external:file:///home/kostya/LeanGame/NumberTheory/Game.lean»
 msgid "In this game, you will learn the foundations of number theory.\n"
 "Starting with basic divisibility, you will construct a full toolkit for\n"
 "modular arithmetic (congruences) and prove theorems like a real mathematician."
-msgstr ""
-
-#. §0: $k_1$
-#. §1: $k_2$
-#. §2: $x \\mid z$
-#: Game.Levels.Divisibility.L05_dvd_trans
-msgid "🎉 INCREDIBLE! 🎉\n"
-"\n"
-"You just completed a multi-step abstract proof.\n"
-"By combining the two witnesses §0 and §1, you found the witness for §2."
 msgstr ""
 
 #. §0: $a \\equiv b \\pmod m$
@@ -730,6 +720,22 @@ msgid "If §0, is it true that §1?\n"
 "*(To type the left arrow §17, simply type §18 and press Space)*"
 msgstr ""
 
+#. §0: $k_1$
+#. §1: $k_2$
+#. §2: $x \\mid z$
+#. §3: `use`
+#. §4: `obtain`
+#. §5: `rw`
+#. §6: `ring`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "🎉 INCREDIBLE! 🎉\n"
+"\n"
+"You have conquered the first world! You successfully proved that divisibility chains perfectly, completing your first multi-step abstract proof. By combining the two witnesses §0 and §1, you found the exact witness for §2.\n"
+"\n"
+"You've mastered the foundational tactics §3, §4, §5, and §6.\n"
+"Get ready for World 2, where we will introduce a massive new concept based on this: Modular Arithmetic (Congruences)!"
+msgstr ""
+
 #: Game.Levels.Congruence.L01_mod_refl
 msgid "Modular arithmetic is reflexive."
 msgstr ""
@@ -742,48 +748,6 @@ msgstr ""
 
 #: Game.Levels.Congruence.L01_mod_refl
 msgid "Modular Arithmetic: Reflexivity"
-msgstr ""
-
-#. §0: $x$
-#. §1: $y$
-#. §2: $y$
-#. §3: $z$
-#. §4: $x$
-#. §5: $z$
-#. §6: `x ∣ y`
-#. §7: `obtain ⟨k1, hk1⟩ := h1`
-#. §8: `⟨`
-#. §9: `\\<`
-#. §10: `⟩`
-#. §11: `\\>`
-#. §12: `k1`
-#. §13: `hk1 : y = x * k1`
-#. §14: `h2`
-#. §15: `k2`
-#. §16: `hk2`
-#. §17: `use`
-#. §18: $x \\mid z$
-#. §19: `rw`
-#. §20: `rw [hk2]`
-#. §21: `y`
-#: Game.Levels.Divisibility.L05_dvd_trans
-msgid "Welcome to the final boss of the Divisibility Club!\n"
-"\n"
-"If §0 divides §1, and §2 divides §3, does §4 divide §5? Yes! This is called **transitivity**.\n"
-"\n"
-"Since §6 means there is some multiplier, we want to extract it. Type §7.\n"
-"\n"
-"Lean uses special mathematical brackets:\n"
-"* To type §8, write §9 and press Space.\n"
-"* To type §10, write §11 and press Space.\n"
-"\n"
-"Lean will give you a number §12 and the fact §13.\n"
-"Do the same for §14 to get §15 and §16.\n"
-"\n"
-"Next, figure out what you need to §17 to prove §18.\n"
-"Finally, use the §19 tactic. §20 will replace §21 in your goal based on your hypothesis!\n"
-"\n"
-"Good luck!"
 msgstr ""
 
 #: Game.Levels.Congruence.L07_add_mul_mod
@@ -811,7 +775,7 @@ msgstr ""
 msgid "🎉 That's the heart of this world, conquered! §0 is now yours — it is the single most important tool you will use going forward."
 msgstr ""
 
-#. §0: $\\IsGCD(a,b)$
+#. §0: $\\text{IsGCD}(a,b)$
 #. §1: $1$
 #. §2: $2$
 #. §3: $3$
@@ -1101,6 +1065,46 @@ msgid "Beautiful! You used §0 to build a bridge between algebra you know and al
 "Working with negative variables is a core skill in integer arithmetic."
 msgstr ""
 
+#. §0: $x$
+#. §1: $y$
+#. §2: $y$
+#. §3: $z$
+#. §4: $x$
+#. §5: $z$
+#. §6: `x ∣ y`
+#. §7: `obtain ⟨k1, hk1⟩ := h1`
+#. §8: `⟨`
+#. §9: `\\<`
+#. §10: `⟩`
+#. §11: `\\>`
+#. §12: `k1`
+#. §13: `hk1 : y = x * k1`
+#. §14: `h2`
+#. §15: `k2`
+#. §16: `hk2`
+#. §17: `use`
+#. §18: $x \\mid z$
+#. §19: `rw`
+#. §20: `rw [hk2]`
+#. §21: `y`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "Welcome to the final boss of the Divisibility Club!\n"
+"\n"
+"If §0 divides §1, and §2 divides §3, does §4 divide §5? Yes! This is called **transitivity**, and proving it will require you to combine everything you've learned.\n"
+"\n"
+"Since §6 means there is some multiplier, we want to extract it. Type §7.\n"
+"\n"
+"*(Lean uses special mathematical brackets: to type §8, write §9 and press Space. To type §10, write §11 and press Space).*\n"
+"\n"
+"Lean will give you a number §12 and the fact §13.\n"
+"Do the same for §14 to get §15 and §16.\n"
+"\n"
+"Next, figure out what you need to §17 to prove §18.\n"
+"Finally, use the §19 (rewrite) tactic. §20 will replace §21 in your goal based on your hypothesis!\n"
+"\n"
+"Good luck!"
+msgstr ""
+
 #. §0: $d$
 #. §1: `IsGCD(a, b) d`
 #. §2: $a$
@@ -1265,7 +1269,7 @@ msgstr ""
 #. §23: `ModEq`
 #. §24: `unfold ModEq`
 #. §25: `m ∣ a - b`
-#: Game.Levels.Congruence.L01_mod_refl
+#: Game.Levels.Defs
 msgid "**Modular Congruence (§0)**\n"
 "\n"
 "We say that §1 is **congruent** to §2 modulo §3 if their difference §4 is a multiple of §5.\n"
@@ -1316,7 +1320,7 @@ msgstr ""
 msgid "Decreasing the modulus to a divisor."
 msgstr ""
 
-#: Game
+#: «external:file:///home/kostya/LeanGame/NumberTheory/Game.lean»
 msgid "*Game version: 1.0*\n"
 "\n"
 "## Progress saving\n"
@@ -1623,6 +1627,14 @@ msgid "Here's a natural question: if §0 is a gcd of §1 and §2, and we divide 
 "We need §10 for this level. (If §11 then §12 too, and \"dividing by §13\" doesn't make sense — you'll see exactly where this hypothesis is used.)\n"
 "\n"
 "**Strategy:** unfold §14 to get the Bézout identity §15. Substitute §16 and §17 to get §18, i.e. §19. Since §20, you can *cancel* it from both sides using the new theorem §21, leaving exactly the Bézout identity you need for §22 — with the very same §23!"
+msgstr ""
+
+#. §0: `«{x}» ∣ «{z}»`
+#. §1: `«{y}» = «{x}» * «{k1}»`
+#. §2: `«{z}» = «{y}» * «{k2}»`
+#. §3: `use «{k1}» * «{k2}»`
+#: Game.Levels.Divisibility.L05_dvd_trans
+msgid "To prove §0, you need to find a multiplier. Since §1 and §2, try to §3 as your witness."
 msgstr ""
 
 #: Game.Levels.Congruence.L06_mul

@@ -28,6 +28,7 @@ Notice that $2 + 5 = 7$. We just added the remainders safely!
 -/
 TheoremDoc mod_add as "mod_add" in "Congruence"
 
+
 /-- If two pairs of numbers are congruent, their sums are congruent. -/
 Statement mod_add (a b c d m : ℤ) (h1 : a ≡ b (mod m)) (h2 : c ≡ d (mod m)) : (a + c) ≡ (b + d) (mod m) := by
   unfold ModEq at *

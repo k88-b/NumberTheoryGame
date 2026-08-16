@@ -1,7 +1,6 @@
 import GameServer
 import Mathlib.Tactic
 import Game.Levels.GCD.L04_coprime_forward
-import Game.Levels.Divisibility.L02_what_is_dvd
 
 World "GCD"
 Level 5

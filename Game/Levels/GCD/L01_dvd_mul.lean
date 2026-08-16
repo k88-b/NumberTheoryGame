@@ -1,28 +1,12 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L11_mod_split
+import Game.Levels.Defs
+-- import Game.Levels.Congruence.L11_mod_split
+
 
 World "GCD"
 Level 1
 Title "A Divisor of a Factor Divides the Product"
-
-
-
-def IsGCD (a b d : ℤ) : Prop :=
-  (d ∣ a ∧ d ∣ b) ∧ ∃ x y : ℤ, a * x + b * y = d
-
--- syntax "IsGCD(" term "," term ")" term : term
-
--- macro_rules
---   | `(IsGCD($a, $b) $d) => `(IsGCD $a $b $d)
-
--- @[app_unexpander IsGCD]
--- def unexpandIsGCD : Lean.PrettyPrinter.Unexpander
---   | `($(_) $a $b $d) => `(IsGCD($a, $b) $d)
---   | _ => throw ()
-
-
-notation "IsGCD(" a ", " b ") " d => IsGCD a b d
 
 Introduction "
 Welcome to World 3: In Search of the GCD!

@@ -10,14 +10,17 @@ import Game.Levels.Congruence.L09_mod_mul
 import Game.Levels.Congruence.L10_mod_dvd
 import Game.Levels.Congruence.L11_mod_split
 
+
 World "Congruence"
 Title "Congruences in Action"
 
-Introduction "
+Introduction
+"
 Welcome to World 2: Congruences in Action!
 
 Here we introduce a massive concept: **Modular Arithmetic (Congruences)**.
+
 First, you will prove that modular arithmetic forms an equivalence relation. Then, we will unlock its real power: its arithmetic properties. You will prove that you can safely add, multiply, and raise congruences to powers, just like regular equations!
 
-You will also learn how to manipulate the modulus $m$ itself, breaking it apart or scaling it up. Let's dive into the algebra!
+You will also learn how to manipulate the modulus $m$ itself, breaking it apart or scaling it up. Let us dive into the algebra!
 "

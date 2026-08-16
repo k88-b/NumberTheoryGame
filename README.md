@@ -1,0 +1,20 @@
+# Number Theory Game
+
+An interactive game that teaches integer arithmetic and Number Theory through theorem proving in Lean 4. It uses the Lean4 Game Engine and is designed to run live at [adam.math.hhu.de](https://adam.math.hhu.de).
+
+## Game Content
+The game translates classical pen-and-paper mathematics into rigorous code, introducing players to fundamental properties of integers. It currently consists of 3 worlds:
+
+* **Divisibility Club**: The basics of divisibility ($a \mid b$), providing a foundation for integer arithmetic.
+* **Congruence**: An introduction to modular arithmetic ($a \equiv b \pmod m$) and its algebraic properties.
+* **GCD (In Search of the GCD)**: Defining the Greatest Common Divisor using Bézout's identity and proving the General Cancellation Law.
+
+## Prerequisites
+The game is extremely approachable and serves as an introduction to integer arithmetic and formal proofs. No advanced programming or math background is strictly required to get started.
+
+## Building Locally
+There are multiple ways to run the game while developing it. For full instructions, see the [lean4game documentation on running locally](https://github.com/leanprover-community/lean4game/blob/main/docs/running-locally.md).
+*The recommended setup for development is using a VSCode Devcontainer or Codespaces.*
+
+## Contributing
+PRs and issues fixing typos, inconsistencies, missing hints, or unclear explanations are very welcome!

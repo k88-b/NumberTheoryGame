@@ -44,7 +44,8 @@ and divisibility, translating classical pen-and-paper mathematics into rigorous 
 "
 
 -- Dependency tree: Players must complete worlds in this order
--- Dependency Divisibility → Congruence
+Dependency Divisibility → Congruence
+Dependency Congruence → GCD
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en"
@@ -52,6 +53,7 @@ CaptionShort "An interactive introduction to Number Theory and modular arithmeti
 CaptionLong "In this game, you will learn the foundations of number theory.
 Starting with basic divisibility, you will construct a full toolkit for
 modular arithmetic (congruences) and prove theorems like a real mathematician."
--- CoverImage "images/cover.png" -- Uncomment if you add an image later!
+
+CoverImage "images/cover.jpg"
 
 MakeGame
