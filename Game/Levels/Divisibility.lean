@@ -1,3 +1,6 @@
+import Game.Metadata
+import GameServer
+
 import Game.Levels.Divisibility.L01_first_proof
 import Game.Levels.Divisibility.L02_what_is_dvd
 import Game.Levels.Divisibility.L03_dvd_refl
@@ -11,8 +14,7 @@ World "Divisibility"
 Title "Divisibility Club"
 
 Introduction
-"
-Welcome to the Divisibility Club!
+"Welcome to the Divisibility Club!
 
 In this first world, you will learn the basics of Lean 4, how to interact with the system, and how to write your very first proofs. We will explore the mathematical concept of divisibility ($a \\mid b$) and introduce modular arithmetic ($\\equiv$).
 

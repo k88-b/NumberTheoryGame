@@ -1,5 +1,3 @@
-import GameServer
-
 -- Import all worlds
 import Game.Levels.Divisibility
 import Game.Levels.Congruence
