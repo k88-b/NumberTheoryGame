@@ -28,15 +28,15 @@ NewTheorem mul_left_cancel₀
 /--
 **Dividing by the GCD Gives Coprime Numbers**
 
-If `gcd(c, m) = d`, $d \neq 0$, $c = c_1 \cdot d$ and $m = m_1 \cdot d$, then `gcd(c1, m1) = 1`.
+If `IsGCD(c, m) d`, $d \neq 0$, $c = c_1 \cdot d$ and $m = m_1 \cdot d$, then `IsGCD(c1, m1) 1`.
 
 **Intuition:**
-This matches your intuition exactly: $\gcd(12, 18) = 6$, and dividing both by $6$ gives $2$ and $3$, which indeed satisfy $\gcd(2, 3) = 1$. Once you factor out everything two numbers have in common, whatever is left over shares nothing.
+This matches your intuition exactly: $\IsGCD(12, 18) 6$, and dividing both by $6$ gives $2$ and $3$, which indeed satisfy $\IsGCD(2, 3) 1$. Once you factor out everything two numbers have in common, whatever is left over shares nothing.
 -/
 TheoremDoc gcd_div_coprime as "gcd_div_coprime" in "GCD"
 
 /-- Dividing by the gcd produces coprime numbers. -/
-Statement gcd_div_coprime (c m d c1 m1 : ℤ) (hd : d ≠ 0) (h : gcd(c, m)= d) (hc : c = c1 * d) (hm : m = m1 * d) : gcd(c1, m1)= 1 := by
+Statement gcd_div_coprime (c m d c1 m1 : ℤ) (hd : d ≠ 0) (h : IsGCD(c, m) d) (hc : c = c1 * d) (hm : m = m1 * d) : IsGCD(c1, m1) 1 := by
   unfold IsGCD at *
   obtain ⟨_, x, y, hxy⟩ := h
   constructor

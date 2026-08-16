@@ -7,7 +7,7 @@ Level 4
 Title "Coprimality Gives You Bézout (⟹)"
 
 Introduction "
-Two integers $c$ and $m$ are called **coprime** (or *relatively prime*) exactly when their greatest common divisor is $1$: `gcd(c, m) = 1`.
+Two integers $c$ and $m$ are called **coprime** (or *relatively prime*) exactly when their greatest common divisor is $1$: `IsGCD(c, m) 1`.
 
 By our definition, this immediately gives us a Bézout identity: there exist integers $x, y$ with $c \\cdot x + m \\cdot y = 1$.
 
@@ -19,12 +19,12 @@ This direction is really just unpacking the definition: `unfold IsGCD at h` to g
 /--
 **Coprimality Implies a Bézout Identity**
 
-If `gcd(c, m) = 1`, then there exist integers $x, y$ with $c \cdot x + m \cdot y = 1$.
+If `IsGCD(c, m) 1`, then there exist integers $x, y$ with $c \cdot x + m \cdot y = 1$.
 -/
 TheoremDoc coprime_imp_bezout as "coprime_imp_bezout" in "GCD"
 
 /-- Coprimality gives a Bézout identity. -/
-Statement coprime_imp_bezout (c m : ℤ) (h :  gcd(c, m)= 1) : ∃ x y : ℤ, c * x + m * y = 1 := by
+Statement coprime_imp_bezout (c m : ℤ) (h :  IsGCD(c, m) 1) : ∃ x y : ℤ, c * x + m * y = 1 := by
   unfold IsGCD at h
   obtain ⟨_, x, y, hxy⟩ := h
   use x, y

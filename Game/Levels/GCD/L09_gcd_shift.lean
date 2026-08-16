@@ -24,18 +24,17 @@ Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and
 **Shift Invariance of the GCD**
 
 For any integers $a, k, m$, and non-negative gcd-witnesses $d_1, d_2$:
-if `gcd((a + m * k), m) = d1` and ` gcd(a, m) = d2`, then $d_1 = d_2$.
+if `IsGCD(a + m * k, m) d1` and `IsGCD(a, m) d2`, then $d_1 = d_2$.
 
 **Why this matters:**
 This is the *engine* of the Euclidean Algorithm for computing GCDs: $\gcd(a + mk, m) = \gcd(a, m)$ for any integer $k$. In particular, replacing $a$ by its remainder after dividing by $m$ never changes the GCD with $m$ — which is exactly what lets the Euclidean Algorithm shrink its numbers step by step until it reaches the answer.
 -/
 TheoremDoc gcd_shift_invariant as "gcd_shift_invariant" in "GCD"
-
 NewTheorem Int.dvd_antisymm
 
 /-- Shifting by a multiple of m does not change the gcd with m. -/
 Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ d2)
-    (h1 : gcd((a + m * k), m)= d1) (h2 : gcd(a, m)= d2) : d1 = d2 := by
+    (h1 : IsGCD((a + m * k), m) d1) (h2 : IsGCD(a, m) d2) : d1 = d2 := by
 
   unfold IsGCD at h1 h2
 
