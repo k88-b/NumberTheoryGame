@@ -21,7 +21,7 @@ The `mul_left_cancel₀` theorem lets you cancel a common non-zero factor from a
 if `a ≠ 0` and `a * b = a * c`, then `b = c`.
 This works because the integers have no "zero divisors": the only way a product can vanish is if one of its factors does, so a non-zero factor can always be safely divided out of an equation.
 -/
-TheoremDoc mul_left_cancel₀ as "mul_left_cancel₀" in "GCD"
+TheoremDoc mul_left_cancel₀ as "mul_left_cancel₀" in "Algebra"
 
 NewTheorem mul_left_cancel₀
 

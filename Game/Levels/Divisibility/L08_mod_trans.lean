@@ -27,7 +27,7 @@ If $a \equiv b \pmod m$ and $b \equiv c \pmod m$, then $a \equiv c \pmod m$.
 
 **Meaning:** This theorem proves that modular arithmetic is a true *equivalence relation*. It means you can chain congruences together step-by-step to reach a conclusion, exactly like you can chain regular equations ($a = b$ and $b = c \implies a = c$).
 -/
-TheoremDoc mod_trans as "mod_trans" in "Divisibility"
+TheoremDoc mod_trans as "mod_trans" in "Congruence"
 
 /-- Congruence modulo m is transitive. -/
 Statement mod_trans (a b c m : ℤ) (h1 : a ≡ b (mod m)) (h2 : b ≡ c (mod m)) : a ≡ c (mod m) := by

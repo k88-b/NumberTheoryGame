@@ -51,7 +51,7 @@ def ModEq (m a b : ℤ) : Prop := m ∣ (a - b)
 notation a " ≡ " b " (mod " m ")" => ModEq m a b
 
 /-- Modular arithmetic is reflexive. -/
-TheoremDoc mod_refl as "mod_refl" in "Divisibility"
+TheoremDoc mod_refl as "mod_refl" in "Congruence"
 
 /-- Every integer is congruent to itself. -/
 Statement mod_refl (a m : ℤ) : a ≡ a (mod m) := by

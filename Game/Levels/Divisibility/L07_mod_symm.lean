@@ -42,7 +42,7 @@ If the difference between $a$ and $b$ is a multiple of $m$, the difference betwe
 For example, $17 \equiv 5 \pmod{12}$ because $17 - 5 = 12$.
 Conversely, $5 \equiv 17 \pmod{12}$ because $5 - 17 = -12$, which is still a multiple of $12$ ($12 \cdot -1$).
 -/
-TheoremDoc mod_symm as "mod_symm" in "Divisibility"
+TheoremDoc mod_symm as "mod_symm" in "Congruence"
 
 /-- Congruence modulo m is symmetric. -/
 Statement mod_symm (a b m : ℤ) (h : a ≡ b (mod m)) : b ≡ a (mod m) := by

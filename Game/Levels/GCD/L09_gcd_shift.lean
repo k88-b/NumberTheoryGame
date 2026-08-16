@@ -44,7 +44,7 @@ Divisibility on all of $\mathbb{Z}$ only forms a *pre-order*: two different numb
 
 In this boss level, we will show two gcd-witnesses divide each other, and use exactly this theorem to conclude they must be the *same* number.
 -/
-TheoremDoc Int.dvd_antisymm as "dvd_antisymm" in "GCD"
+TheoremDoc Int.dvd_antisymm as "dvd_antisymm" in "Divisibility"
 
 NewTheorem Int.dvd_antisymm
 
