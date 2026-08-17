@@ -313,16 +313,6 @@ msgid "Welcome to World 2: Congruences in Action!\n"
 "You will also learn how to manipulate the modulus §0 itself, breaking it apart or scaling it up. Let us dive into the algebra!"
 msgstr ""
 
-#. §0: `obtain`
-#. §1: `have`
-#: Game.Levels.GCD.L09_gcd_shift
-msgid "🎉 MAGNIFICENT! 🎉\n"
-"\n"
-"You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
-"\n"
-"You've mastered nested §0, chained §1-based lemma reuse, and careful case-by-case algebra. Get ready for World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!"
-msgstr ""
-
 #. §0: $a, k, m$
 #. §1: $d_1, d_2$
 #. §2: `IsGCD(a + m * k, m) d1`
@@ -527,6 +517,13 @@ msgstr ""
 msgid "Multiplying Congruences"
 msgstr ""
 
+#. §0: `gcd_is_greatest`
+#. §1: `«{h1}»`
+#. §2: `«{d2}» ∣ «{d1}»`
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "Almost there! Apply §0 on §1 to show §2."
+msgstr ""
+
 #: Game.Levels.GCD.L07_gcd_div_coprime
 msgid "Dividing by the GCD Gives Coprime Numbers"
 msgstr ""
@@ -691,12 +688,6 @@ msgstr ""
 #. §0: `mod_mul_const`
 #: Game.Levels.Congruence.L05_mul_const
 msgid "Very smooth. Keep this theorem (§0) in mind, it will be very useful!"
-msgstr ""
-
-#. §0: `«{d1}»`
-#. §1: `«{d2}» ∣ «{d1}»`
-#: Game.Levels.GCD.L09_gcd_shift
-msgid "Almost there! Use the Bézout identity for §0 to show §1."
 msgstr ""
 
 #. §0: $a$
@@ -876,6 +867,13 @@ msgstr ""
 msgid "You have §0 and §1. Finish the boss by applying §2!"
 msgstr ""
 
+#. §0: `«{h1}»`
+#. §1: `«{h2}»`
+#. §2: `have`
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "Start by extracting the four divisibility facts from §0 and §1 using the dot notation explained in the introduction. Create new hypotheses for them using §2."
+msgstr ""
+
 #: Game.Levels.GCD.L09_gcd_shift
 msgid "Shifting by a multiple of m does not change the gcd with m."
 msgstr ""
@@ -936,10 +934,11 @@ msgstr ""
 
 #. §0: `«{d1}» ∣ «{a}»`
 #. §1: `«{d1}» ∣ «{m}»`
-#. §2: `«{d2}»`
-#. §3: `«{d1}» ∣ «{d2}»`
+#. §2: `gcd_is_greatest`
+#. §3: `«{h2}»`
+#. §4: `«{d1}» ∣ «{d2}»`
 #: Game.Levels.GCD.L09_gcd_shift
-msgid "Now that you know §0 and §1, use the Bézout identity for §2 to show that §3."
+msgid "Now that you know §0 and §1, use the theorem §2 (from Level 3) on §3 to show that §4."
 msgstr ""
 
 #: Game.Levels.Congruence.L08_pow
@@ -1416,58 +1415,6 @@ msgid "*Game version: 1.0*\n"
 "and divisibility, translating classical pen-and-paper mathematics into rigorous code."
 msgstr ""
 
-#. §0: $m$
-#. §1: $m$
-#. §2: $d_1$
-#. §3: $(a + m \\cdot k)$
-#. §4: $m$
-#. §5: $d_2$
-#. §6: $a$
-#. §7: $m$
-#. §8: $d_1 = d_2$
-#. §9: $d_1$
-#. §10: $a$
-#. §11: $m$
-#. §12: $a + m \\cdot k$
-#. §13: $a = (a + m \\cdot k) - m \\cdot k$
-#. §14: $d_1$
-#. §15: $(a + mk)$
-#. §16: $m$
-#. §17: $a$
-#. §18: $d_1$
-#. §19: $a$
-#. §20: $m$
-#. §21: $d_2$
-#. §22: $d_1 \\mid d_2$
-#. §23: $d_2$
-#. §24: $(a + m \\cdot k)$
-#. §25: $m$
-#. §26: $d_2$
-#. §27: $a$
-#. §28: $m$
-#. §29: $a + m \\cdot k$
-#. §30: $d_1$
-#. §31: $d_2 \\mid d_1$
-#. §32: `d1 ∣ d2`
-#. §33: `d2 ∣ d1`
-#. §34: `0 ≤ d1`
-#. §35: `0 ≤ d2`
-#. §36: `d1 = d2`
-#. §37: `Int.dvd_antisymm`
-#: Game.Levels.GCD.L09_gcd_shift
-msgid "Welcome to the final boss of World 3!\n"
-"\n"
-"We prove the fact that sits at the heart of the **Euclidean Algorithm**: shifting a number by a multiple of §0 does not change its greatest common divisor with §1.\n"
-"\n"
-"Formulation: if §2 is a (non-negative) gcd of §3 and §4, and §5 is a (non-negative) gcd of §6 and §7, then §8.\n"
-"\n"
-"**Strategy** (this is a long one — take it one step at a time!):\n"
-"\n"
-"1. Show §9 is also a common divisor of §10 and §11 (not just of §12): since §13, and §14 divides both §15 and §16, it divides §17 too. Now §18 is a common divisor of §19 and §20, and §21 is *the greatest one* (Level 3!), so §22.\n"
-"2. Symmetrically, show §23 is also a common divisor of §24 and §25: since §26 divides both §27 and §28, it divides the combination §29 too. Applying Level 3 again (this time with §30 as \"the greatest\"), you get §31.\n"
-"3. Finally, §32 and §33, together with §34 and §35, give §36 by the antisymmetry lemma (§37) that has just been added to your inventory!"
-msgstr ""
-
 #. §0: $a \\equiv b \\pmod m$
 #. §1: $c \\equiv d \\pmod m$
 #. §2: $(a \\cdot c) \\equiv (b \\cdot d) \\pmod m$
@@ -1602,6 +1549,78 @@ msgstr ""
 #. §0: `obtain`
 #: Game.Levels.Congruence.L04_add
 msgid "Excellent! You combined two witnesses using §0 and proved your first arithmetic rule for congruences."
+msgstr ""
+
+#. §0: $m$
+#. §1: $m$
+#. §2: $d_1$
+#. §3: $(a + m \\cdot k)$
+#. §4: $m$
+#. §5: $d_2$
+#. §6: $a$
+#. §7: $m$
+#. §8: $d_1 = d_2$
+#. §9: `IsGCD`
+#. §10: `∧`
+#. §11: `h.1.1`
+#. §12: `h.1.2`
+#. §13: `h1`
+#. §14: `h2`
+#. §15: `gcd_is_greatest`
+#. §16: `obtain`
+#. §17: $d_1$
+#. §18: $a$
+#. §19: $m$
+#. §20: $a + m \\cdot k$
+#. §21: $a = (a + m \\cdot k) - m \\cdot k$
+#. §22: $d_1$
+#. §23: $(a + mk)$
+#. §24: $m$
+#. §25: $a$
+#. §26: $d_1$
+#. §27: $a$
+#. §28: $m$
+#. §29: $d_2$
+#. §30: $d_1 \\mid d_2$
+#. §31: $d_2$
+#. §32: $(a + m \\cdot k)$
+#. §33: $m$
+#. §34: $d_2$
+#. §35: $a$
+#. §36: $m$
+#. §37: $a + m \\cdot k$
+#. §38: $d_1$
+#. §39: $d_2 \\mid d_1$
+#. §40: `d1 ∣ d2`
+#. §41: `d2 ∣ d1`
+#. §42: `0 ≤ d1`
+#. §43: `0 ≤ d2`
+#. §44: `d1 = d2`
+#. §45: `Int.dvd_antisymm`
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "Welcome to the final boss of World 3!\n"
+"\n"
+"We prove the fact that sits at the heart of the **Euclidean Algorithm**: shifting a number by a multiple of §0 does not change its greatest common divisor with §1.\n"
+"\n"
+"Formulation: if §2 is a (non-negative) gcd of §3 and §4, and §5 is a (non-negative) gcd of §6 and §7, then §8.\n"
+"\n"
+"**Lean Syntax Tip:** Before we start, a quick trick! Since §9 is a nested logical AND (§10), you can extract its pieces directly using **dot notation** without destroying the original hypothesis. For example, §11 gets the very first fact, and §12 gets the second. Because we will need to pass the intact hypotheses §13 and §14 to §15 later, using dot notation is safer here than using §16!\n"
+"\n"
+"**Strategy** (this is a long one — take it one step at a time!):\n"
+"\n"
+"1. Show §17 is also a common divisor of §18 and §19 (not just of §20): since §21, and §22 divides both §23 and §24, it divides §25 too. Now §26 is a common divisor of §27 and §28, and §29 is *the greatest one* (Level 3!), so §30.\n"
+"2. Symmetrically, show §31 is also a common divisor of §32 and §33: since §34 divides both §35 and §36, it divides the combination §37 too. Applying Level 3 again (this time with §38 as \"the greatest\"), you get §39.\n"
+"3. Finally, §40 and §41, together with §42 and §43, give §44 by the antisymmetry lemma (§45) that has just been added to your inventory!"
+msgstr ""
+
+#. §0: `obtain`
+#. §1: `have`
+#: Game.Levels.GCD.L09_gcd_shift
+msgid "🎉 MAGNIFICENT! 🎉\n"
+"\n"
+"You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
+"\n"
+"You've mastered nested §0, chained §1-based lemma reuse, and careful case-by-case algebra. To be continued in World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!"
 msgstr ""
 
 #: Game.Levels.GCD.L04_coprime_forward

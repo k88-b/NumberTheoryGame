@@ -1,10 +1,8 @@
 import GameServer
 import Mathlib.Tactic
--- import Game.Levels.GCD.L09_dvd_antisymm
 import Game.Levels.GCD.L08_cancel_general
 
 World "GCD"
--- Level 10
 Level 9
 Title "A Shift Doesn't Change the GCD (Boss)"
 
@@ -14,6 +12,8 @@ Welcome to the final boss of World 3!
 We prove the fact that sits at the heart of the **Euclidean Algorithm**: shifting a number by a multiple of $m$ does not change its greatest common divisor with $m$.
 
 Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and $d_2$ is a (non-negative) gcd of $a$ and $m$, then $d_1 = d_2$.
+
+**Lean Syntax Tip:** Before we start, a quick trick! Since `IsGCD` is a nested logical AND (`∧`), you can extract its pieces directly using **dot notation** without destroying the original hypothesis. For example, `h.1.1` gets the very first fact, and `h.1.2` gets the second. Because we will need to pass the intact hypotheses `h1` and `h2` to `gcd_is_greatest` later, using dot notation is safer here than using `obtain`!
 
 **Strategy** (this is a long one — take it one step at a time!):
 
@@ -48,55 +48,38 @@ TheoremDoc Int.dvd_antisymm as "dvd_antisymm" in "Divisibility"
 
 NewTheorem Int.dvd_antisymm
 
--- ... (imports и заголовки без изменений)
-
 /-- Shifting by a multiple of m does not change the gcd with m. -/
 Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ d2)
     (h1 : IsGCD(a + m * k, m) d1) (h2 : IsGCD(a, m) d2) : d1 = d2 := by
-  unfold IsGCD at h1 h2
 
+  Hint "Start by extracting the four divisibility facts from `{h1}` and `{h2}` using the dot notation explained in the introduction. Create new hypotheses for them using `have`."
   have hd1_amk : d1 ∣ a + m * k := h1.1.1
   have hd1_m : d1 ∣ m := h1.1.2
-  have h_bez1 : ∃ x y : ℤ, (a + m * k) * x + m * y = d1 := h1.2
-
   have hd2_a : d2 ∣ a := h2.1.1
   have hd2_m : d2 ∣ m := h2.1.2
-  have h_bez2 : ∃ x y : ℤ, a * x + m * y = d2 := h2.2
 
   Hint "First step: show that `{d1}` divides `{a}`. Think of `{a}` as `({a} + {m} * {k}) - {m} * {k}`."
   have hd1_a : d1 ∣ a := by
-    obtain ⟨k1, hk1⟩ := hd1_amk
-    obtain ⟨k2, hk2⟩ := hd1_m
-    use k1 - k2 * k
+    obtain ⟨x, hx⟩ := hd1_amk
+    obtain ⟨y, hy⟩ := hd1_m
+    use x - y * k
     have h_eq1 : a = (a + m * k) - m * k := by ring
-    rw [h_eq1, hk1, hk2]
+    rw [h_eq1, hx, hy]
     ring
 
-  Hint "Now that you know `{d1} ∣ {a}` and `{d1} ∣ {m}`, use the Bézout identity for `{d2}` to show that `{d1} ∣ {d2}`."
-  have hd1_d2 : d1 ∣ d2 := by
-    obtain ⟨x2, y2, h_eq2⟩ := h_bez2
-    obtain ⟨ka, hka⟩ := hd1_a
-    obtain ⟨km, hkm⟩ := hd1_m
-    use ka * x2 + km * y2
-    rw [← h_eq2, hka, hkm]
-    ring
+  Hint "Now that you know `{d1} ∣ {a}` and `{d1} ∣ {m}`, use the theorem `gcd_is_greatest` (from Level 3) on `{h2}` to show that `{d1} ∣ {d2}`."
+  have hd1_d2 : d1 ∣ d2 := gcd_is_greatest a m d1 d2 h2 hd1_a hd1_m
 
   Hint "Symmetrically, show `{d2} ∣ {a} + {m} * {k}` using the fact that `{d2} ∣ {a}` and `{d2} ∣ {m}`."
   have hd2_amk : d2 ∣ a + m * k := by
-    obtain ⟨k3, hk3⟩ := hd2_a
-    obtain ⟨k4, hk4⟩ := hd2_m
-    use k3 + k4 * k
-    rw [hk3, hk4]
+    obtain ⟨x, hx⟩ := hd2_a
+    obtain ⟨y, hy⟩ := hd2_m
+    use x + y * k
+    rw [hx, hy]
     ring
 
-  Hint "Almost there! Use the Bézout identity for `{d1}` to show `{d2} ∣ {d1}`."
-  have hd2_d1 : d2 ∣ d1 := by
-    obtain ⟨x1, y1, h_eq1⟩ := h_bez1
-    obtain ⟨ka2, hka2⟩ := hd2_amk
-    obtain ⟨km2, hkm2⟩ := hd2_m
-    use ka2 * x1 + km2 * y1
-    rw [← h_eq1, hka2, hkm2]
-    ring
+  Hint "Almost there! Apply `gcd_is_greatest` on `{h1}` to show `{d2} ∣ {d1}`."
+  have hd2_d1 : d2 ∣ d1 := gcd_is_greatest (a + m * k) m d2 d1 h1 hd2_amk hd2_m
 
   Hint "You have `{d1} ∣ {d2}` and `{d2} ∣ {d1}`. Finish the boss by applying `Int.dvd_antisymm`!"
   exact Int.dvd_antisymm hd1 hd2 hd1_d2 hd2_d1
@@ -107,5 +90,5 @@ Conclusion "
 
 You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.
 
-You've mastered nested `obtain`, chained `have`-based lemma reuse, and careful case-by-case algebra. Get ready for World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!
+You've mastered nested `obtain`, chained `have`-based lemma reuse, and careful case-by-case algebra. To be continued in World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!
 "
