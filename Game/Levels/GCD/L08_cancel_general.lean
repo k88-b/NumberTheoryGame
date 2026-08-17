@@ -13,8 +13,9 @@ If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and $\\text{IsGCD}(c, m) d \\neq 0$,
 
 **Strategy — assemble, don't reprove:**
 1. Apply `gcd_div_coprime` (Level 7) to get `IsGCD(c_1, m_1) 1`.
-2. Unfold the congruence hypothesis, substitute $c = c_1 \\cdot d$ and $m = m_1 \\cdot d$, and cancel the shared factor $d$ (using `mul_left_cancel₀` again) to reduce it to a congruence between $a \\cdot c_1$ and $b \\cdot c_1$ modulo $m_1$.
-3. Feed both pieces into `mod_cancel_coprime` (Level 6) to finish in one line!
+2. Unfold the congruence hypothesis, substitute $c = c_1 \\cdot d$ and $m = m_1 \\cdot d$, and cancel the shared factor $d$ (using `mul_left_cancel₀` again). This will leave you with a plain algebraic equation!
+3. **Reassemble the congruence:** create the specific hypothesis you need using `have h1' : (a * c1) ≡ (b * c1) (mod m1) := by ...`. Prove it by unfolding `ModEq` and using the cancelled equation from step 2.
+4. Feed both pieces into `mod_cancel_coprime` (Level 6) to finish in one line!
 
 This is exactly the reuse pattern from `mod_mul` back in World 2: build small intermediate facts with `have`, then `exact` the final theorem.
 "
@@ -39,10 +40,14 @@ Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c
   rw [e] at hk
   have e2 : m1 * d * k = d * (m1 * k) := by ring
   rw [e2] at hk
+
   have hk2 : a * c1 - b * c1 = m1 * k := mul_left_cancel₀ hd hk
+
+  Hint (hidden := true) "Now package your result back into a congruence: `have h1' : ({a} * {c1}) ≡ ({b} * {c1}) (mod {m1}) := by ...`. Unfold `ModEq`, `use {k}`, and supply your cancelled equation!"
   have h1' : (a * c1) ≡ (b * c1) (mod m1) := by
     unfold ModEq
     use k
+
   exact mod_cancel_coprime a b c1 m1 h1' hcoprime
 
 Conclusion "

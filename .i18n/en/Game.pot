@@ -888,6 +888,37 @@ msgstr ""
 msgid "Shifting by a multiple of m does not change the gcd with m."
 msgstr ""
 
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: $\\text{IsGCD}(c, m) d \\neq 0$
+#. §2: $c = c_1 \\cdot d$
+#. §3: $m = m_1 \\cdot d$
+#. §4: $a \\equiv b \\pmod{m_1}$
+#. §5: `gcd_div_coprime`
+#. §6: `IsGCD(c_1, m_1) 1`
+#. §7: $c = c_1 \\cdot d$
+#. §8: $m = m_1 \\cdot d$
+#. §9: $d$
+#. §10: `mul_left_cancel₀`
+#. §11: `have h1' : (a * c1) ≡ (b * c1) (mod m1) := by ...`
+#. §12: `ModEq`
+#. §13: `mod_cancel_coprime`
+#. §14: `mod_mul`
+#. §15: `have`
+#. §16: `exact`
+#: Game.Levels.GCD.L08_cancel_general
+msgid "Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!\n"
+"\n"
+"If §0 and §1, and we write §2, §3 (exactly as in Level 7), then §4.\n"
+"\n"
+"**Strategy — assemble, don't reprove:**\n"
+"1. Apply §5 (Level 7) to get §6.\n"
+"2. Unfold the congruence hypothesis, substitute §7 and §8, and cancel the shared factor §9 (using §10 again). This will leave you with a plain algebraic equation!\n"
+"3. **Reassemble the congruence:** create the specific hypothesis you need using §11. Prove it by unfolding §12 and using the cancelled equation from step 2.\n"
+"4. Feed both pieces into §13 (Level 6) to finish in one line!\n"
+"\n"
+"This is exactly the reuse pattern from §14 back in World 2: build small intermediate facts with §15, then §16 the final theorem."
+msgstr ""
+
 #: Game.Levels.GCD.L02_gcd_def
 msgid "Meeting the GCD"
 msgstr ""
@@ -1533,37 +1564,6 @@ msgstr ""
 msgid "Shifting by the Modulus"
 msgstr ""
 
-#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
-#. §1: $\\text{IsGCD}(c, m) d \\neq 0$
-#. §2: $c = c_1 \\cdot d$
-#. §3: $m = m_1 \\cdot d$
-#. §4: $a \\equiv b \\pmod{m_1}$
-#. §5: `gcd_div_coprime`
-#. §6: `IsGCD(c_1, m_1) 1`
-#. §7: $c = c_1 \\cdot d$
-#. §8: $m = m_1 \\cdot d$
-#. §9: $d$
-#. §10: `mul_left_cancel₀`
-#. §11: $a \\cdot c_1$
-#. §12: $b \\cdot c_1$
-#. §13: $m_1$
-#. §14: `mod_cancel_coprime`
-#. §15: `mod_mul`
-#. §16: `have`
-#. §17: `exact`
-#: Game.Levels.GCD.L08_cancel_general
-msgid "Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!\n"
-"\n"
-"If §0 and §1, and we write §2, §3 (exactly as in Level 7), then §4.\n"
-"\n"
-"**Strategy — assemble, don't reprove:**\n"
-"1. Apply §5 (Level 7) to get §6.\n"
-"2. Unfold the congruence hypothesis, substitute §7 and §8, and cancel the shared factor §9 (using §10 again) to reduce it to a congruence between §11 and §12 modulo §13.\n"
-"3. Feed both pieces into §14 (Level 6) to finish in one line!\n"
-"\n"
-"This is exactly the reuse pattern from §15 back in World 2: build small intermediate facts with §16, then §17 the final theorem."
-msgstr ""
-
 #. §0: `obtain`
 #: Game.Levels.Congruence.L04_add
 msgid "Excellent! You combined two witnesses using §0 and proved your first arithmetic rule for congruences."
@@ -1639,6 +1639,13 @@ msgid "🎉 MAGNIFICENT! 🎉\n"
 "You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
 "\n"
 "You've mastered nested §0, chained §1-based lemma reuse, and careful case-by-case algebra. To be continued in World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!"
+msgstr ""
+
+#. §0: `have h1' : («{a}» * «{c1}») ≡ («{b}» * «{c1}») (mod «{m1}») := by ...`
+#. §1: `ModEq`
+#. §2: `use «{k}»`
+#: Game.Levels.GCD.L08_cancel_general
+msgid "Now package your result back into a congruence: §0. Unfold §1, §2, and supply your cancelled equation!"
 msgstr ""
 
 #: Game.Levels.GCD.L04_coprime_forward
