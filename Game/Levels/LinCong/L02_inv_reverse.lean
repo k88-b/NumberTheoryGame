@@ -1,9 +1,6 @@
 import GameServer
 import Mathlib.Tactic
 import Game.Levels.LinCong.L01_inv_exists
-import Game.Levels.GCD
-import Game.Levels.Congruence
-import Game.Levels.Divisibility
 
 World "LinCong"
 Level 2
