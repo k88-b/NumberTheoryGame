@@ -211,6 +211,42 @@ msgstr ""
 msgid "Any greatest-common-divisor witness dominates every common divisor."
 msgstr ""
 
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
+#. §3: `mod_trans`
+#. §4: $a \\cdot c$
+#. §5: $b \\cdot c$
+#. §6: $b \\cdot c$
+#. §7: $b \\cdot d$
+#. §8: `have h3 := mod_mul_const a b c m h1`
+#. §9: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §10: `mod_mul_const`
+#. §11: $c \\equiv d$
+#. §12: $b$
+#. §13: $c \\cdot b \\equiv d \\cdot b$
+#. §14: $b \\cdot c \\equiv b \\cdot d$
+#. §15: `have`
+#. §16: `rw`
+#. §17: `have`
+#. §18: `exact`
+#. §19: `mod_trans`
+#: Game.Levels.Congruence.L06_mul
+msgid "We know we can add congruences, but can we multiply them?\n"
+"If §0 and §1, is §2?\n"
+"\n"
+"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
+"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
+"\n"
+"You can explicitly apply a theorem to variables to create a new hypothesis:\n"
+"§8 will prove that §9.\n"
+"\n"
+"**Watch out for the order of multiplication!**\n"
+"Applying §10 to §11 with multiplier §12 will give you §13. You will need to manually flip the order to §14 using a §15 block and §16 before you can chain them together!\n"
+"\n"
+"Use §17 to build your intermediate steps, and then use the §18 tactic to finish the proof by providing §19!"
+msgstr ""
+
 #: Game.Levels.Congruence.L01_mod_refl
 msgid "Every integer is congruent to itself."
 msgstr ""
@@ -649,32 +685,6 @@ msgstr ""
 
 #: Game.Levels.Congruence.L02_mod_symm
 msgid "Symmetry of Congruences"
-msgstr ""
-
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $c \\equiv d \\pmod m$
-#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
-#. §3: `mod_trans`
-#. §4: $a \\cdot c$
-#. §5: $b \\cdot c$
-#. §6: $b \\cdot c$
-#. §7: $b \\cdot d$
-#. §8: `have h3 := mod_mul_const a b c m h1`
-#. §9: $a \\cdot c \\equiv b \\cdot c \\pmod m$
-#. §10: `have`
-#. §11: `exact`
-#. §12: `mod_trans`
-#: Game.Levels.Congruence.L06_mul
-msgid "We know we can add congruences, but can we multiply them?\n"
-"If §0 and §1, is §2?\n"
-"\n"
-"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
-"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
-"\n"
-"You can explicitly apply a theorem to variables to create a new hypothesis:\n"
-"§8 will prove that §9.\n"
-"\n"
-"Use §10 to build your intermediate steps, and then use the §11 tactic to finish the proof by providing §12!"
 msgstr ""
 
 #: Game.Levels.GCD.L06_cancel_coprime
@@ -1369,6 +1379,14 @@ msgid "Here is a very simple but incredibly important rule.\n"
 "§2.\n"
 "\n"
 "Try to prove this directly by unfolding the definition."
+msgstr ""
+
+#. §0: `«{c}» * «{b}» ≡ «{d}» * «{b}»`
+#. §1: `«{b}» * «{c}» ≡ «{b}» * «{d}»`
+#. §2: `have step2_symm : («{b}» * «{c}») ≡ («{b}» * «{d}») (mod «{m}») := by ...`
+#. §3: `ring`
+#: Game.Levels.Congruence.L06_mul
+msgid "You have §0, but you need §1 for transitivity. Try creating it with §2 and prove it by rewriting the terms with §3."
 msgstr ""
 
 #: Game.Levels.Congruence.L10_mod_dvd

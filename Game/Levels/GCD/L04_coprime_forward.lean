@@ -28,7 +28,6 @@ Statement coprime_imp_bezout (c m : ℤ) (h :  IsGCD(c, m) 1) : ∃ x y : ℤ, c
   unfold IsGCD at h
   obtain ⟨_, x, y, hxy⟩ := h
   use x, y
-  -- exact hxy
 
 Conclusion "
 Straightforward! You've now confirmed one half of the equivalence: coprimality *implies* a Bézout identity.

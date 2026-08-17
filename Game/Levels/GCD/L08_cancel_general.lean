@@ -43,7 +43,6 @@ Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c
   have h1' : (a * c1) ≡ (b * c1) (mod m1) := by
     unfold ModEq
     use k
-    -- exact hk2
   exact mod_cancel_coprime a b c1 m1 h1' hcoprime
 
 Conclusion "

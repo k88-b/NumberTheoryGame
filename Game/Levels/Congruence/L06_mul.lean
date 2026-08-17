@@ -23,6 +23,9 @@ Think about transitivity (`mod_trans` from World 1). We can step from $a \\cdot 
 You can explicitly apply a theorem to variables to create a new hypothesis:
 `have h3 := mod_mul_const a b c m h1` will prove that $a \\cdot c \\equiv b \\cdot c \\pmod m$.
 
+**Watch out for the order of multiplication!**
+Applying `mod_mul_const` to $c \\equiv d$ with multiplier $b$ will give you $c \\cdot b \\equiv d \\cdot b$. You will need to manually flip the order to $b \\cdot c \\equiv b \\cdot d$ using a `have` block and `rw` before you can chain them together!
+
 Use `have` to build your intermediate steps, and then use the `exact` tactic to finish the proof by providing `mod_trans`!
 "
 
@@ -39,17 +42,18 @@ And $156 \equiv 6 \pmod{10}$. Notice that $2 \cdot 3$ is exactly $6$.
 -/
 TheoremDoc mod_mul as "mod_mul" in "Congruence"
 
-
 /-- If two pairs of numbers are congruent, their products are congruent. -/
 Statement mod_mul (a b c d m : ℤ) (h1 : a ≡ b (mod m)) (h2 : c ≡ d (mod m)) : (a * c) ≡ (b * d) (mod m) := by
   have step1 := mod_mul_const a b c m h1
   have step2 := mod_mul_const c d b m h2
+
+  Hint (hidden := true) "You have `{c} * {b} ≡ {d} * {b}`, but you need `{b} * {c} ≡ {b} * {d}` for transitivity. Try creating it with `have step2_symm : ({b} * {c}) ≡ ({b} * {d}) (mod {m}) := by ...` and prove it by rewriting the terms with `ring`."
   have step2_symm : (b * c) ≡ (b * d) (mod m) := by
-    -- We know c*b ≡ d*b, so we rewrite it.
     have hrw1 : b * c = c * b := by ring
     have hrw2 : b * d = d * b := by ring
     rw [hrw1, hrw2]
     exact step2
+
   exact mod_trans (a * c) (b * c) (b * d) m step1 step2_symm
 
 Conclusion "
