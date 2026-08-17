@@ -2,6 +2,7 @@
 import Game.Levels.Divisibility
 import Game.Levels.Congruence
 import Game.Levels.GCD
+import Game.Levels.LinCong
 
 Title "Number Theory Game"
 
@@ -46,6 +47,7 @@ and divisibility, translating classical pen-and-paper mathematics into rigorous 
 -- Dependency tree: Players must complete worlds in this order
 Dependency Divisibility → Congruence
 Dependency Congruence → GCD
+Dependency GCD → LinCong
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en"
