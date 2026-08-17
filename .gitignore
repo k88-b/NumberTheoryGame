@@ -4,4 +4,4 @@ lake-packages/
 **/.DS_Store
 .i18n/**/*.mo
 Game/Levels/levels.txt
-./ntg4.txt
+/ntg4.txt
