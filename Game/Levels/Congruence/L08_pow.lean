@@ -46,5 +46,5 @@ Statement mod_pow (a b m : ℤ) (n : ℕ) (h : a ≡ b (mod m)) : (a^n) ≡ (b^n
   exact mod_mul (a^d) (b^d) a b m ih h
 
 Conclusion "
-Fantastic! You just performed your first proof by induction. The multi-layered nature of mathematics is starting to reveal itself: you used `mod_mul` inside an inductive step![cite: 2]
+Fantastic! You just performed your first proof by induction. The multi-layered nature of mathematics is starting to reveal itself: you used `mod_mul` inside an inductive step!
 "
