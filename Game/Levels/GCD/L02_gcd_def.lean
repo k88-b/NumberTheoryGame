@@ -20,11 +20,8 @@ Start with `unfold IsGCD` to reveal the raw conjunction. Your goal is then an `�
 For the two divisibility goals, `use` the right witness and close with `ring` (remember: `ring` happily proves concrete numeric equalities too, not just general algebraic ones!). For the Bézout goal, `use -1, 1` to supply $x = -1$ and $y = 1$ at once, then `ring` again to check $2 \\cdot (-1) + 3 \\cdot 1 = 1$.
 "
 
-/-- 1 is a greatest common divisor of 2 and 3. -/
-TheoremDoc gcd_two_three as "gcd_two_three" in "GCD"
-
 /-- A first, concrete example: IsGCD(2, 3) 1. -/
-Statement gcd_two_three : IsGCD(2, 3) 1 := by
+Statement : IsGCD(2, 3) 1 := by
   unfold IsGCD
   Hint "Your goal is an `∧` (AND). Use the `constructor` tactic to split it into two separate goals."
   constructor

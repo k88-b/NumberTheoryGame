@@ -24,6 +24,7 @@ Statement lin_cong_sol_shift (a b m d m1 x0 t : ℤ) (hd : IsGCD(a, m) d) (hm : 
   unfold IsGCD at hd
   obtain ⟨⟨hda, _⟩, _⟩ := hd
   obtain ⟨a1, ha1⟩ := hda
+  Hint (hidden := true) "You want to show `{a} * ({x0} + {t} * {m1}) = {a} * {x0} + ({a1} * {t}) * {m}`, so that `mod_add_multiple` applies directly. Substitute `{a} = {a1} * {d}` and `{m} = {m1} * {d}` via `rw [{ha1}, {hm}]`, then close with `ring`."
   have h_shift : (a * (x0 + t * m1)) = a * x0 + (a1 * t) * m := by
     rw [ha1, hm]
     ring

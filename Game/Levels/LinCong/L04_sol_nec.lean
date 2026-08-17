@@ -30,6 +30,7 @@ Statement lin_cong_nec (a b x m d : ℤ) (hd : IsGCD(a, m) d) (hx : (a * x) ≡ 
   have h2 : d ∣ (m * k) := dvd_mul_of_dvd_left hdm k
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
+  Hint "You now know `{a} * {x} = {d} * {k1}` and `{m} * {k} = {d} * {k2}`. Since `{b} = {a} * {x} - {m} * {k}`, try `use {k1} - {k2}`."
   use k1 - k2
   have h_eq : b = a * x - m * k := by
     rw [← hk]

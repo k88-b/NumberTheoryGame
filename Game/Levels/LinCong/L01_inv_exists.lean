@@ -21,15 +21,23 @@ Use `unfold IsGCD` to extract Bézout's coefficients, and then use algebra!
 **Modular Inverse Existence**
 
 If $\text{IsGCD}(a, m) 1$, then there exists an integer $x$ such that $a \cdot x \equiv 1 \pmod m$.
+
+**Intuition:**
+Coprimality gives $a \cdot x + m \cdot y = 1$, i.e. $a \cdot x = 1 - m \cdot y$ — meaning $a \cdot x$ is exactly $1$ *shifted by a multiple of $m$*. That's precisely what "$\equiv 1 \pmod m$" means.
+
+For example: $\gcd(3, 7) = 1$, and $3 \cdot (-2) + 7 \cdot 1 = 1$. So $x = -2$ works: $3 \cdot (-2) = -6$, and indeed $-6 \equiv 1 \pmod 7$ (since $-6 - 1 = -7 = 7 \cdot (-1)$).
 -/
 TheoremDoc inv_exists as "inv_exists" in "LinCong"
 
 Statement inv_exists (a m : ℤ) (h : IsGCD(a, m) 1) : ∃ x : ℤ, (a * x) ≡ 1 (mod m) := by
   unfold IsGCD at h
   obtain ⟨_, x, y, hxy⟩ := h
+  Hint "You have `{a} * {x} + {m} * {y} = 1` from Bézout. This `{x}` is exactly the inverse you're looking for — `use {x}`, then `unfold ModEq` to see what you actually need to prove."
   use x
   unfold ModEq
+  Hint (hidden := true) "Your goal is `{m} ∣ ({a} * {x} - 1)`. From `{hxy}` you know `{a} * {x} - 1 = -{m} * {y}`, so try `use -{y}`."
   use -y
+  Hint (hidden := true) "Rewrite `{a} * {x} - 1` using `{hxy}` with `have h_eq : {a} * {x} - 1 = ({a} * {x} + {m} * {y}) - 1 - {m} * {y} := by ring`."
   have h_eq : a * x - 1 = (a * x + m * y) - 1 - m * y := by ring
   rw [h_eq]
   rw [hxy]

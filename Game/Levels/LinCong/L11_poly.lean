@@ -4,23 +4,25 @@ import Game.Levels.LinCong.L10_crt_glue
 
 World "LinCong"
 Level 11
-Title "Polynomial Congruences (Boss)"
+Title "Polynomial Congruences (Victory Lap)"
 
 Introduction "
-Welcome to the Final Boss of the Number Theory Game!
+You did it — the mountain is behind you. This last level isn't here to test you; it's a victory lap.
 
-All the tools you have built so far — reflexivity, addition, multiplication, scaling, and powers of congruences — can now be combined into one incredibly powerful result.
+All the tools you've built — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if $a \\equiv b \\pmod m$, then **any** polynomial with integer coefficients evaluated at $a$ and $b$ stays congruent modulo $m$ too.
 
-If two numbers are congruent modulo $m$ ($a \\equiv b \\pmod m$), then **any polynomial** with integer coefficients evaluated at those numbers will also be congruent modulo $m$.
-Let's prove this for a quadratic polynomial: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b + c_0 \\pmod m$.
+Let's prove it for a quadratic: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b + c_0 \\pmod m$.
 
-Use your theorems from World 2 (`mod_pow`, `mod_add`, `mod_mul_const`, `mod_refl`) to build the polynomial piece by piece!
+Nothing new to invent here — just snap together `mod_pow`, `mod_add`, `mod_mul_const`, and `mod_refl` from World 2, piece by piece, and enjoy watching it all just... work.
 "
 
 /--
 **Polynomial Congruences**
 
 If $a \equiv b \pmod m$, then $P(a) \equiv P(b) \pmod m$ for any integer polynomial $P$.
+
+**Intuition:**
+This is the reason modular arithmetic is genuinely useful and not just a curiosity: congruence mod $m$ is compatible with *every* polynomial operation, so you can reduce numbers mod $m$ at any point in a calculation without changing the final remainder. It's what makes "clock arithmetic" behave like real arithmetic.
 -/
 TheoremDoc polynomial_cong as "polynomial_cong" in "LinCong"
 
@@ -46,9 +48,9 @@ Statement polynomial_cong (a b c0 c1 c2 m : ℤ) (h : a ≡ b (mod m)) : (c2 * a
   exact mod_add (c2 * a^2 + c1 * a) (c2 * b^2 + c1 * b) c0 c0 m h_sum12 h_term0
 
 Conclusion "
-🎉 YOU BEAT THE GAME! 🎉
+And there it is — modular arithmetic behaving exactly like a ring should, addition and multiplication playing nicely with congruences all the way up to polynomials.
 
-You have masterfully synthesized the properties of modular arithmetic. This implies that integers modulo $m$ form a robust algebraic structure — a ring — where addition and multiplication work flawlessly without breaking the congruences.
+Thanks for playing through all four worlds — from the first divisibility proof to the Chinese Remainder Theorem. You built every piece of this theory yourself, one `have` at a time.
 
-Congratulations on completing the Number Theory Game!
+🎉 Congratulations on completing the Number Theory Game! 🎉
 "
