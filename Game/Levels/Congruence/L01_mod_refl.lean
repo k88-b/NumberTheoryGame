@@ -1,6 +1,5 @@
 import GameServer
 import Mathlib.Tactic
--- import Game.Levels.Divisibility.L05_dvd_trans
 import Game.Levels.Defs
 
 World "Congruence"

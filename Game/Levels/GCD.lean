@@ -6,7 +6,6 @@ import Game.Levels.GCD.L05_coprime_backward
 import Game.Levels.GCD.L06_cancel_coprime
 import Game.Levels.GCD.L07_gcd_div_coprime
 import Game.Levels.GCD.L08_cancel_general
--- import Game.Levels.GCD.L09_dvd_antisymm
 import Game.Levels.GCD.L09_gcd_shift
 
 World "GCD"

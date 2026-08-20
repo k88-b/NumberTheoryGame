@@ -1,7 +1,6 @@
 import GameServer
 import Mathlib.Tactic
 import Game.Levels.Defs
--- import Game.Levels.Congruence.L11_mod_split
 
 World "GCD"
 Level 1
