@@ -136,31 +136,6 @@ msgid "**Divisibility by 2**\n"
 "Since 2 divides 10, the remainder of any number modulo 2 depends entirely on its last digit."
 msgstr ""
 
-#. §0: $d$
-#. §1: $a$
-#. §2: $d$
-#. §3: $a \\cdot b$
-#. §4: $b$
-#. §5: $a$
-#. §6: $d$
-#. §7: $a$
-#. §8: $d$
-#. §9: `obtain`
-#. §10: `use`
-#. §11: `rw`
-#. §12: `ring`
-#. §13: `dvd_trans`
-#: Game.Levels.GCD.L01_dvd_mul
-msgid "Welcome to World 3: In Search of the GCD!\n"
-"\n"
-"Before we dive into the Greatest Common Divisor itself, we need one small but very useful building block.\n"
-"\n"
-"If §0 divides §1, does §2 also divide §3 for *any* integer §4?\n"
-"Yes! If §5 is a multiple of §6, then any multiple of §7 is automatically a multiple of §8 too.\n"
-"\n"
-"You already have every tool you need for this one: §9 the witness from your hypothesis, §10 the right witness for the new goal, §11, and finish with §12 — exactly like you did for §13 back in World 1."
-msgstr ""
-
 #: Game.Levels.DivRules.L02_div2
 msgid "Divisibility by 2"
 msgstr ""
@@ -350,14 +325,6 @@ msgstr ""
 
 #: Game.Levels.LinCong
 msgid "Linear Congruences and CRT"
-msgstr ""
-
-#. §0: `mod_add_multiple`
-#. §1: `have h_eq : 10 * «{k}» + «{d}» = «{d}» + «{k}» * 10 := by ring`
-#. §2: `rw [h_eq]`
-#. §3: `exact mod_add_multiple «{d}» «{k}» 10`
-#: Game.Levels.DivRules.L01_div10
-msgid "Rewrite the goal into the shape §0 expects: try §1, then §2 and finish with §3."
 msgstr ""
 
 #: Game.Levels.Congruence.L08_pow
@@ -975,10 +942,11 @@ msgstr ""
 #. §1: `«{m}»`
 #. §2: `«{k2}» * «{n}»`
 #. §3: `have h_div : «{m}» ∣ («{k2}» * «{n}»)`
-#. §4: `use «{k1}»`
-#. §5: `«{h_eq}»`
+#. §4: `⟨«{k1}», _⟩`
+#. §5: `rw`
+#. §6: `«{h_eq}»`
 #: Game.Levels.LinCong.L10_crt_glue
-msgid "From §0, §1 divides §2 (same product, reordered). Build §3 by §4 and rewriting with §5."
+msgid "From §0, §1 divides §2 (same product, reordered). Build §3 as the pair §4, closing the remaining goal with §5 and §6."
 msgstr ""
 
 #: Game.Doc.Theorems.Congruence
@@ -998,6 +966,29 @@ msgid "**Congruent Solutions modulo §0**\n"
 "All solutions to §1 are congruent modulo §2."
 msgstr ""
 
+#. §0: $d$
+#. §1: $a$
+#. §2: $d$
+#. §3: $a \\cdot b$
+#. §4: $b$
+#. §5: $a$
+#. §6: $d$
+#. §7: $a$
+#. §8: $d$
+#. §9: `obtain`
+#. §10: `use`
+#. §11: `rw`
+#. §12: `ring`
+#. §13: `dvd_trans`
+#: Game.Levels.GCD.L01_dvd_mul
+msgid "Before we dive into the Greatest Common Divisor itself, we need one small but very useful building block.\n"
+"\n"
+"If §0 divides §1, does §2 also divide §3 for *any* integer §4?\n"
+"Yes! If §5 is a multiple of §6, then any multiple of §7 is automatically a multiple of §8 too.\n"
+"\n"
+"You already have every tool you need for this one: §9 the witness from your hypothesis, §10 the right witness for the new goal, §11, and finish with §12 — exactly like you did for §13 back in World 1."
+msgstr ""
+
 #. §0: `«{m}» ∣ ((«{a}» * «{n}» * «{v}» + «{b}» * «{m}» * «{u}») - «{a}»)`
 #. §1: `use «{b}» * «{u}» - «{a}» * «{u}»`
 #. §2: `have h_eq : («{a}» * «{n}» * «{v}» + «{b}» * «{m}» * «{u}») - «{a}» = «{m}» * («{b}» * «{u}» - «{a}» * «{u}») + «{a}» * («{m}» * «{u}» + «{n}» * «{v}» - 1) := by ring`
@@ -1012,6 +1003,11 @@ msgstr ""
 
 #: Game.Levels.GCD.L07_gcd_div_coprime
 msgid "Dividing by the gcd produces coprime numbers."
+msgstr ""
+
+#. §0: `have h_eq : 100 * «{k}» + «{d}» = «{d}» + (25 * «{k}») * 4`
+#: Game.Levels.DivRules.L04_div4
+msgid "Try §0"
 msgstr ""
 
 #: Game.Doc.Theorems.Congruence
@@ -1085,13 +1081,6 @@ msgstr ""
 
 #: Game.Doc.Theorems.Congruence
 msgid "If a = b (mod m) and d | m, then a = b (mod d)."
-msgstr ""
-
-#. §0: `have h_eq : 100 * «{k}» + «{d}» = «{d}» + (25 * «{k}») * 4 := by ring`
-#. §1: `rw [h_eq]`
-#. §2: `exact mod_add_multiple «{d}» (25 * «{k}») 4`
-#: Game.Levels.DivRules.L04_div4
-msgid "Try §0, then §1 and finish with §2."
 msgstr ""
 
 #. §0: $a \\equiv b \\pmod m$
@@ -1648,6 +1637,12 @@ msgstr ""
 
 #: Game.Levels.LinCong.L03_inv_unique
 msgid "Exactly! Using the cancellation law on congruences works wonderfully here."
+msgstr ""
+
+#. §0: `mod_add_multiple`
+#. §1: `have h_eq : 10 * «{k}» + «{d}» = «{d}» + «{k}» * 10`
+#: Game.Levels.DivRules.L01_div10
+msgid "Rewrite the goal into the shape §0 expects: try §1"
 msgstr ""
 
 #. §0: $10 \\equiv -1 \\pmod{11}$
