@@ -1,10 +1,5 @@
 import GameServer
-import Mathlib.Tactic
 
-
-def ModEq (m a b : ℤ) : Prop := m ∣ (a - b)
-
-notation a " ≡ " b " (mod " m ")" => ModEq m a b
 
 /--
 **Modular Congruence ($a \equiv b \pmod m$)**
@@ -26,11 +21,6 @@ We created a custom notation $a \equiv b \pmod m$ to represent a function called
 -/
 DefinitionDoc ModEq as "a ≡ b (mod m)"
 
-
-def IsGCD (a b d : ℤ) : Prop :=
-  (d ∣ a ∧ d ∣ b) ∧ ∃ x y : ℤ, a * x + b * y = d
-
-notation "IsGCD(" a ", " b ") " d => IsGCD a b d
 
 /--
 **The Greatest Common Divisor, Bézout-style**

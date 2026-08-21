@@ -1,11 +1,13 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Defs
+import Game.Levels.Definitions
+import Game.Doc.Definitions
+import Game.Doc.Tactics
+import Game.Doc.Theorems.LinCong
+
 import Game.Levels.GCD
 import Game.Levels.Congruence
 import Game.Levels.Divisibility
-import Game.Doc.Tactics
-import Game.Doc.Theorems.LinCong
 
 
 World "LinCong"

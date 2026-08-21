@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Defs
+import Game.Levels.Definitions
+import Game.Doc.Definitions
 import Game.Doc.Tactics
 import Game.Doc.Theorems.Divisibility
-
 
 World "Divisibility"
 Level 1
