@@ -11,8 +11,6 @@ Level 1
 Title "A Divisor of a Factor Divides the Product"
 
 Introduction "
-Welcome to World 3: In Search of the GCD!
-
 Before we dive into the Greatest Common Divisor itself, we need one small but very useful building block.
 
 If $d$ divides $a$, does $d$ also divide $a \\cdot b$ for *any* integer $b$?
