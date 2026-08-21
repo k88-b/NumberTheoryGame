@@ -12,6 +12,10 @@ msgstr "Project-Id-Version: Game v4.23.0\n"
 msgid "Solvability: Necessary Condition"
 msgstr ""
 
+#: Game.Levels.DivRules.L01_div10
+msgid "The remainder of a number modulo 10 is its last digit."
+msgstr ""
+
 #. §0: $m$
 #: Game
 msgid "# Welcome to the Number Theory Game\n"
@@ -97,6 +101,14 @@ msgstr ""
 msgid "Any greatest-common-divisor witness dominates every common divisor."
 msgstr ""
 
+#. §0: $10 \\equiv 1 \\pmod 9$
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 9**\n"
+"\n"
+"A number is congruent to the sum of its digits modulo 9.\n"
+"This works beautifully because any number can be written as a polynomial evaluated at 10, and §0."
+msgstr ""
+
 #. §0: $x$
 #. §1: $y$
 #. §2: $a$
@@ -116,6 +128,12 @@ msgstr ""
 
 #: Game.Levels.LinCong.L02_inv_reverse
 msgid "Great! Reversibility is confirmed. Having a modular inverse is *exactly equivalent* to being coprime to the modulus."
+msgstr ""
+
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 2**\n"
+"\n"
+"Since 2 divides 10, the remainder of any number modulo 2 depends entirely on its last digit."
 msgstr ""
 
 #. §0: $d$
@@ -143,6 +161,10 @@ msgid "Welcome to World 3: In Search of the GCD!\n"
 "You already have every tool you need for this one: §9 the witness from your hypothesis, §10 the right witness for the new goal, §11, and finish with §12 — exactly like you did for §13 back in World 1."
 msgstr ""
 
+#: Game.Levels.DivRules.L02_div2
+msgid "Divisibility by 2"
+msgstr ""
+
 #. §0: $a, k, m$
 #. §1: $d_1, d_2$
 #. §2: `IsGCD(a + m * k, m) d1`
@@ -167,6 +189,10 @@ msgstr ""
 msgid "If d divides a, then d divides a * b for any integer b."
 msgstr ""
 
+#: Game.Levels.DivRules.L01_div10
+msgid "Perfect! The last digit is exactly the remainder modulo 10."
+msgstr ""
+
 #. §0: $a \\equiv b \\pmod m$
 #. §1: $c \\equiv d \\pmod m$
 #. §2: $a + c \\equiv b + d \\pmod m$
@@ -182,6 +208,23 @@ msgid "If §0 and §1, is it true that §2?\n"
 "To prove this, you need to §3, extract the witnesses from both hypotheses using §4, and then use algebra.\n"
 "\n"
 "*Hint:* You will need to rewrite §5 into §6. Use the §7 tactic!"
+msgstr ""
+
+#. §0: $3 \\mid 9$
+#. §1: `mod_shrink`
+#. §2: `have h3 : (3 : ℤ) ∣ 9 := by ...`
+#: Game.Levels.DivRules.L06_div3
+msgid "If the rule for 9 works, the rule for 3 must come for free, because §0.\n"
+"\n"
+"Just like you shrank the modulus from 10 down to 2 and 5 earlier, shrink the modulus from 9 to 3 here using §1.\n"
+"\n"
+"Remember Lean's type system! When writing your divisibility fact, make sure to specify the type so Lean doesn't default to natural numbers: §2"
+msgstr ""
+
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 5**\n"
+"\n"
+"Since 5 divides 10, the remainder of any number modulo 5 depends entirely on its last digit — same idea as the rule for 2."
 msgstr ""
 
 #: Game.Levels.GCD
@@ -202,6 +245,21 @@ msgstr ""
 
 #: Game.Levels.Congruence.L05_mul_const
 msgid "Multiplying a congruence by a constant."
+msgstr ""
+
+#. §0: $10 \\cdot k + d$
+#. §1: $100 \\cdot k + d$
+#. §2: $d = 56$
+#. §3: $100 \\cdot k + d \\equiv d \\pmod 4$
+#. §4: $100 = 25 \\cdot 4$
+#. §5: `mod_add_multiple`
+#: Game.Levels.DivRules.L04_div4
+msgid "A number is divisible by 4 if its last two digits form a number divisible by 4.\n"
+"\n"
+"Instead of separating the last digit, we separate the last *two* digits! Just like in Level 1, where we wrote a number as §0 using the last digit, here we write it as §1 using the last *two* digits. For example, **3456 = 34 * 100 + 56**, where §2 is exactly the last two digits.\n"
+"\n"
+"We want to show §3.\n"
+"Notice that §4. Use §5 just like in Level 1!"
 msgstr ""
 
 #. §0: `dvd_mul_of_dvd_left`
@@ -256,6 +314,10 @@ msgid "**The General Cancellation Law**\n"
 "This is the fully general version of \"dividing\" a congruence: you can always cancel a factor §6 out of a congruence, as long as you also divide the modulus by whatever §7 and §8 have in common (§9. The coprime case (Level 6) is just the special case §10, where the modulus doesn't need to shrink at all."
 msgstr ""
 
+#: Game.Levels.DivRules.L03_div5
+msgid "The remainder modulo 5 depends only on the last digit."
+msgstr ""
+
 #. §0: $a$
 #. §1: `∀ a : ℤ`
 #. §2: $a$
@@ -290,6 +352,14 @@ msgstr ""
 msgid "Linear Congruences and CRT"
 msgstr ""
 
+#. §0: `mod_add_multiple`
+#. §1: `have h_eq : 10 * «{k}» + «{d}» = «{d}» + «{k}» * 10 := by ring`
+#. §2: `rw [h_eq]`
+#. §3: `exact mod_add_multiple «{d}» «{k}» 10`
+#: Game.Levels.DivRules.L01_div10
+msgid "Rewrite the goal into the shape §0 expects: try §1, then §2 and finish with §3."
+msgstr ""
+
 #: Game.Levels.Congruence.L08_pow
 msgid "Powers of Congruences"
 msgstr ""
@@ -305,6 +375,10 @@ msgid "**Transitivity of Modular Congruence**\n"
 "If §0 and §1, then §2.\n"
 "\n"
 "**Meaning:** This theorem proves that modular arithmetic is a true *equivalence relation*. It means you can chain congruences together step-by-step to reach a conclusion, exactly like you can chain regular equations (§3 and §4)."
+msgstr ""
+
+#: Game.Levels.DivRules.L06_div3
+msgid "Beautiful. The structural similarity of mathematics really shines here."
 msgstr ""
 
 #. §0: `gcd_is_greatest`
@@ -344,6 +418,21 @@ msgstr ""
 
 #: Game.Levels.LinCong.L11_poly
 msgid "Polynomial Congruences (Victory Lap)"
+msgstr ""
+
+#. §0: $10 \\cdot k + d$
+#. §1: $d$
+#. §2: $k$
+#. §3: $10 \\cdot k + d \\equiv d \\pmod{10}$
+#. §4: `mod_add_multiple`
+#: Game.Levels.DivRules.L01_div10
+msgid "Let's start with the easiest rule: a number is divisible by 10 if and only if its last digit is 0.\n"
+"\n"
+"How do we write \"the last digit\" in math? Think about how numbers are built. You can split any number into its last digit and \"everything else\" multiplied by 10. For example, **347 = 34 * 10 + 7**.\n"
+"So, any integer can mathematically be written as §0, where §1 is the last digit and §2 is the rest of the number.\n"
+"\n"
+"We want to prove that §3.\n"
+"This is a direct consequence of §4 from World 2! You just need to massage the equation slightly."
 msgstr ""
 
 #. §0: `induction`
@@ -390,6 +479,10 @@ msgid "**Adding Congruences**\n"
 "Notice that §8. We just added the remainders safely!"
 msgstr ""
 
+#: Game.Levels.DivRules
+msgid "Divisibility Rules"
+msgstr ""
+
 #: Game.Levels.LinCong.L06_sol_equiv
 msgid "Congruent Solutions"
 msgstr ""
@@ -403,6 +496,10 @@ msgid "**Reverse Inverse**\n"
 "If §0 for some §1, then §2."
 msgstr ""
 
+#: Game.Levels.DivRules.L05_div9
+msgid "Divisibility by 9 (The Magic of Polynomials)"
+msgstr ""
+
 #: Game.Doc.Theorems.Divisibility
 msgid "1 divides any integer."
 msgstr ""
@@ -410,6 +507,10 @@ msgstr ""
 #. §0: `use «{k1}» + «{k2}»`
 #: Game.Levels.Congruence.L03_mod_trans
 msgid "try to §0"
+msgstr ""
+
+#: Game.Levels.DivRules.L04_div4
+msgid "The remainder modulo 4 depends only on the last two digits."
 msgstr ""
 
 #: Game.Doc.Theorems.Congruence
@@ -498,6 +599,14 @@ msgstr ""
 msgid "Meeting the GCD"
 msgstr ""
 
+#: Game.Levels.LinCong.L11_poly
+msgid "🎉 Congratulations on completing World 4! 🎉\n"
+"\n"
+"And there it is — modular arithmetic behaving exactly like a ring should!\n"
+"\n"
+"Next up is World 5 (Divisibility Rules). Think of it as a playable epilogue! You have already beaten the hardest parts of the game. Now, you get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math problems you learned in school."
+msgstr ""
+
 #. §0: `3 ∣ 12`
 #. §1: `∣`
 #. §2: `\\|`
@@ -548,6 +657,10 @@ msgstr ""
 #. §4: `«{d1}» ∣ «{d2}»`
 #: Game.Levels.GCD.L09_gcd_shift
 msgid "Now that you know §0 and §1, use the theorem §2 (from Level 3) on §3 to show that §4."
+msgstr ""
+
+#: Game.Levels.DivRules.L02_div2
+msgid "Nice! Exactly the same logic applies to 5, since 5 ∣ 10 too — that's exactly what the next level does."
 msgstr ""
 
 #. §0: $d \\mid b$
@@ -716,7 +829,7 @@ msgstr ""
 #. §22: $k$
 #. §23: `use`
 #. §24: `use 4`
-#: Game.Levels.Defs
+#: Game.Doc.Definitions
 msgid "**Divisibility (§0)**\n"
 "\n"
 "We say that an integer §1 **divides** an integer §2 (written as §3) if §4 is a multiple of §5.\n"
@@ -742,6 +855,10 @@ msgstr ""
 
 #: Game.Levels.Congruence.L07_add_mul_mod
 msgid "Shifting a number by a multiple of m."
+msgstr ""
+
+#: Game.Levels.DivRules.L05_div9
+msgid "Two lines of code to prove a rule that feels like magic in middle school. Because polynomials preserve congruences, substituting 10 for 1 works perfectly."
 msgstr ""
 
 #. §0: `intro`
@@ -817,15 +934,6 @@ msgid "**Dividing by the GCD Gives Coprime Numbers**\n"
 "\n"
 "**Intuition:**\n"
 "This matches your intuition exactly: §5, and dividing both by §6 gives §7 and §8, which indeed satisfy §9. Once you factor out everything two numbers have in common, whatever is left over shares nothing."
-msgstr ""
-
-#. §0: `have`
-#: Game.Levels.LinCong.L11_poly
-msgid "And there it is — modular arithmetic behaving exactly like a ring should, addition and multiplication playing nicely with congruences all the way up to polynomials.\n"
-"\n"
-"Thanks for playing through all four worlds — from the first divisibility proof to the Chinese Remainder Theorem. You built every piece of this theory yourself, one §0 at a time.\n"
-"\n"
-"🎉 Congratulations on completing the Number Theory Game! 🎉"
 msgstr ""
 
 #. §0: $m$
@@ -936,7 +1044,7 @@ msgstr ""
 #. §23: `ModEq`
 #. §24: `unfold ModEq`
 #. §25: `m ∣ a - b`
-#: Game.Levels.Defs
+#: Game.Doc.Definitions
 msgid "**Modular Congruence (§0)**\n"
 "\n"
 "We say that §1 is **congruent** to §2 modulo §3 if their difference §4 is a multiple of §5.\n"
@@ -963,8 +1071,27 @@ msgstr ""
 msgid "You have §0, but you need §1 for transitivity. Try creating it with §2 and prove it by rewriting the terms with §3."
 msgstr ""
 
+#. §0: `crt_exists`
+#. §1: `crt_glue`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "🎉 YOU DEFEATED THE FINAL BOSS! 🎉\n"
+"\n"
+"Together, §0 and §1 give you the full Chinese Remainder Theorem: a system of coprime congruences always has a solution, and that solution is unique modulo the product.\n"
+"\n"
+"Starting from a single Bézout-style definition of the GCD, you built cancellation laws, modular inverses, Euclid's Lemma, and now the CRT itself — one of the oldest and most celebrated theorems in number theory, formally verified, entirely by you.\n"
+"\n"
+"One more level awaits — not to test you further, but to let you enjoy the view."
+msgstr ""
+
 #: Game.Doc.Theorems.Congruence
 msgid "If a = b (mod m) and d | m, then a = b (mod d)."
+msgstr ""
+
+#. §0: `have h_eq : 100 * «{k}» + «{d}» = «{d}» + (25 * «{k}») * 4 := by ring`
+#. §1: `rw [h_eq]`
+#. §2: `exact mod_add_multiple «{d}» (25 * «{k}») 4`
+#: Game.Levels.DivRules.L04_div4
+msgid "Try §0, then §1 and finish with §2."
 msgstr ""
 
 #. §0: $a \\equiv b \\pmod m$
@@ -1011,13 +1138,8 @@ msgstr ""
 msgid "Beautiful. This shows the deep underlying connection between standard divisibility and modular congruences."
 msgstr ""
 
-#. §0: $a \\cdot x \\equiv b \\pmod m$
-#: Game.Levels.LinCong
-msgid "Welcome to World 4: Linear Congruences!\n"
-"\n"
-"In this final world, we bring everything together. You will use your knowledge of the GCD, Bézout's identity, and modular arithmetic to solve actual equations of the form §0.\n"
-"\n"
-"We will discover when these equations have solutions, how to find modular inverses, prove the famous Euclid's Lemma, and culminate our journey with the Chinese Remainder Theorem and polynomial congruences!"
+#: Game.Levels.DivRules.L05_div9
+msgid "The sum of digits rule for 9."
 msgstr ""
 
 #. §0: `rw`
@@ -1036,6 +1158,20 @@ msgstr ""
 #. §3: `(«{a}» + «{m}» * «{k}») - «{m}» * «{k}»`
 #: Game.Levels.GCD.L09_gcd_shift
 msgid "First step: show that §0 divides §1. Think of §2 as §3."
+msgstr ""
+
+#. §0: $5 \\mid 10$
+#. §1: $10 \\cdot k + d \\equiv d \\pmod{10}$
+#. §2: $5 \\mid 10$
+#. §3: `mod_shrink`
+#. §4: $10 \\cdot k + d \\equiv d \\pmod 5$
+#. §5: `have h5 : (5 : ℤ) ∣ 10 := by ...`
+#: Game.Levels.DivRules.L03_div5
+msgid "As promised at the end of the last level, let's finish off the pair: since §0 too, the exact same trick that worked for 2 also nails the rule for 5.\n"
+"\n"
+"If §1 (Level 1), and §2, then §3 immediately gives us §4 as well.\n"
+"\n"
+"Same Lean quirk as last time: write §5 so Lean doesn't default to natural numbers."
 msgstr ""
 
 #. §0: `obtain`
@@ -1074,6 +1210,16 @@ msgstr ""
 
 #: Game.Levels.Congruence.L09_mod_mul
 msgid "Scaling the modulus."
+msgstr ""
+
+#. §0: $a \\cdot x \\equiv b \\pmod m$
+#: Game.Levels.LinCong
+msgid "Welcome to World 4: Linear Congruences!\n"
+"\n"
+"Brace yourself — this is the hardest and most complex world in the game.\n"
+"In this world, we bring everything together. You will use your knowledge of the GCD, Bézout's identity, and modular arithmetic to solve actual equations of the form §0.\n"
+"\n"
+"We will discover when these equations have solutions, how to find modular inverses, prove the famous Euclid's Lemma, and finally face the ultimate boss of the game: the Chinese Remainder Theorem!"
 msgstr ""
 
 #: Game.Levels.LinCong.L05_sol_suff
@@ -1124,6 +1270,17 @@ msgid "Here's a natural question: if §0 is a gcd of §1 and §2, and we divide 
 "We need §10 for this level. (If §11 then §12 too, and \"dividing by §13\" doesn't make sense — you'll see exactly where this hypothesis is used.)\n"
 "\n"
 "**Strategy:** unfold §14 to get the Bézout identity §15. Substitute §16 and §17 to get §18, i.e. §19. Since §20, you can *cancel* it from both sides using the new theorem §21, leaving exactly the Bézout identity you need for §22 — with the very same §23!"
+msgstr ""
+
+#: Game.Levels.DivRules.L07_div11
+msgid "🏆 AMAZING! 🏆\n"
+"\n"
+"You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.\n"
+"\n"
+"By building formal properties step-by-step from the very definition of divisibility, you've conquered this entire mathematical landscape. You didn't just learn Number Theory — you wrote the proofs yourself, perfectly verified by a computer.\n"
+"\n"
+"🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
+"Thank you for playing."
 msgstr ""
 
 #. §0: `∧`
@@ -1439,6 +1596,10 @@ msgstr ""
 msgid "You can multiply both sides of a congruence by an integer."
 msgstr ""
 
+#: Game.Levels.DivRules.L03_div5
+msgid "Divisibility by 5"
+msgstr ""
+
 #. §0: $c$
 #. §1: $a \\equiv b \\pmod m$
 #. §2: $a \\cdot c \\equiv b \\cdot c \\pmod m$
@@ -1450,6 +1611,14 @@ msgid "Next, let's prove that we can multiply both sides of a congruence by any 
 "\n"
 "This is a direct application of what you already know.\n"
 "Rewrite §3 as §4 and close the goal!"
+msgstr ""
+
+#. §0: $100 \\cdot k + d \\equiv d \\pmod 4$
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 4**\n"
+"\n"
+"Since 4 divides 100, the remainder of any number modulo 4 depends only on its last two digits.\n"
+"§0."
 msgstr ""
 
 #. §0: `«{a}» * («{x0}» + «{t}» * «{m1}») = «{a}» * «{x0}» + («{a1}» * «{t}») * «{m}»`
@@ -1473,16 +1642,36 @@ msgid "Welcome to World 2: Congruences in Action!\n"
 "You will also learn how to manipulate the modulus §0 itself, breaking it apart or scaling it up. Let us dive into the algebra!"
 msgstr ""
 
+#: Game.Levels.DivRules.L07_div11
+msgid "Divisibility by 11 (Grand Finale)"
+msgstr ""
+
 #: Game.Levels.LinCong.L03_inv_unique
 msgid "Exactly! Using the cancellation law on congruences works wonderfully here."
+msgstr ""
+
+#. §0: $10 \\equiv -1 \\pmod{11}$
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 11**\n"
+"\n"
+"A number is congruent to the alternating sum of its digits modulo 11.\n"
+"This works because §0, so evaluating the digit polynomial at 10 is congruent to evaluating it at -1!"
 msgstr ""
 
 #: Game.Levels.LinCong.L01_inv_exists
 msgid "Perfect! You have proven that every number coprime to the modulus has a modular inverse."
 msgstr ""
 
+#: Game.Levels.DivRules.L04_div4
+msgid "Divisibility by 4"
+msgstr ""
+
 #: Game.Levels.Divisibility.L02_what_is_dvd
 msgid "1 divides every integer."
+msgstr ""
+
+#: Game.Levels.DivRules.L04_div4
+msgid "Exactly! Since 4 divides 100, everything above the tens place just vanishes modulo 4."
 msgstr ""
 
 #. §0: $m \\mid (a \\cdot c)$
@@ -1554,6 +1743,10 @@ msgstr ""
 msgid "Multiplying Congruences"
 msgstr ""
 
+#: Game.Levels.DivRules.L01_div10
+msgid "Divisibility by 10"
+msgstr ""
+
 #. §0: $a \\cdot x \\equiv 1 \\pmod m$
 #. §1: $a \\cdot y \\equiv 1 \\pmod m$
 #. §2: $x \\equiv y \\pmod m$
@@ -1582,7 +1775,7 @@ msgstr ""
 #. §16: $-1$
 #. §17: $2$
 #. §18: $3$
-#: Game.Levels.Defs
+#: Game.Doc.Definitions
 msgid "**The Greatest Common Divisor, Bézout-style**\n"
 "\n"
 "In this game, we say §0 **is a greatest common divisor** of §1 and §2 — written §3 — if **two** conditions hold together:\n"
@@ -1716,18 +1909,6 @@ msgid "🎉 INCREDIBLE! 🎉\n"
 "Get ready for World 2, where we will introduce a massive new concept based on this: Modular Arithmetic (Congruences)!"
 msgstr ""
 
-#. §0: `crt_exists`
-#. §1: `crt_glue`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "🎉 YOU BEAT THE GAME! 🎉\n"
-"\n"
-"Together, §0 and §1 give you the full Chinese Remainder Theorem: a system of coprime congruences always has a solution, and that solution is unique modulo the product.\n"
-"\n"
-"Starting from a single Bézout-style definition of the GCD, you built cancellation laws, modular inverses, Euclid's Lemma, and now the CRT itself — one of the oldest and most celebrated theorems in number theory, formally verified, entirely by you.\n"
-"\n"
-"One more level awaits — not to test you further, but to let you enjoy the view."
-msgstr ""
-
 #. §0: `use`
 #: Game.Levels.Divisibility.L01_first_proof
 msgid "Congratulations! You have just written your first proof in Lean 4!\n"
@@ -1796,6 +1977,25 @@ msgstr ""
 msgid "Use the theorem from Level 1! You can create a new hypothesis with §0"
 msgstr ""
 
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $a$
+#. §2: $b$
+#. §3: $m$
+#. §4: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b + c_0 \\pmod m$
+#. §5: `mod_pow`
+#. §6: `mod_add`
+#. §7: `mod_mul_const`
+#. §8: `mod_refl`
+#: Game.Levels.LinCong.L11_poly
+msgid "You did it — the mountain of linear congruences is behind you. This last level of the world isn't here to test you; it's a victory lap.\n"
+"\n"
+"All the tools you've built — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if §0, then **any** polynomial with integer coefficients evaluated at §1 and §2 stays congruent modulo §3 too.\n"
+"\n"
+"Let's prove it for a quadratic: §4.\n"
+"\n"
+"Nothing new to invent here — just snap together §5, §6, §7, and §8 from World 2, piece by piece, and enjoy watching it all just... work."
+msgstr ""
+
 #. §0: `IsGCD(a, b) d`
 #. §1: $c$
 #. §2: $a$
@@ -1839,6 +2039,24 @@ msgstr ""
 msgid "**Solvability (Sufficient Condition)**\n"
 "\n"
 "If §0 and §1, then §2."
+msgstr ""
+
+#. §0: $c_0 - c_1 + c_2 - c_3 \\dots$
+#. §1: $10 \\equiv -1 \\pmod{11}$
+#. §2: $c_2 \\cdot 10^2 + c_1 \\cdot 10 + c_0$
+#. §3: $(-1)^2 = 1$
+#. §4: $(-1)^1 = -1$
+#. §5: $c_2 - c_1 + c_0$
+#. §6: `polynomial_cong`
+#: Game.Levels.DivRules.L07_div11
+msgid "For our final trick: the alternating sum of digits rule for 11.\n"
+"A number is divisible by 11 if §0 is divisible by 11.\n"
+"\n"
+"Why does this work? Because §1.\n"
+"When we evaluate the \"polynomial\" of the digits (§2) at -1 instead of 10, the powers of -1 naturally alternate: §3, but §4.\n"
+"So the polynomial magically turns into §5 (the alternating sum)!\n"
+"\n"
+"Once again, §6 will do all the heavy lifting — and just like with 9, the same idea scales to numbers of any length."
 msgstr ""
 
 #. §0: `«{d1}» ∣ «{d2}»`
@@ -1890,6 +2108,10 @@ msgstr ""
 msgid "Shifting by a multiple of m does not change the gcd with m."
 msgstr ""
 
+#: Game.Levels.DivRules.L06_div3
+msgid "The sum of digits rule for 3."
+msgstr ""
+
 #: Game.Levels.Congruence
 msgid "Congruences in Action"
 msgstr ""
@@ -1923,8 +2145,26 @@ msgid "If two numbers are congruent modulo §0, they are also congruent modulo a
 "*Hint:* You can solve this by unfolding §6 entirely and manipulating the witnesses, OR you can remember §7 from World 1, which states that if §8 and §9, then §10!"
 msgstr ""
 
+#. §0: `mod_add_multiple`
+#. §1: `mod_shrink`
+#: Game.Levels.DivRules.L03_div5
+msgid "Done! Together with the last two levels, you now have the full \"last digit\" family for free: 10, 2, and 5 all fall directly out of §0 and §1."
+msgstr ""
+
+#: Game.Levels.DivRules.L07_div11
+msgid "The alternating sum of digits rule for 11."
+msgstr ""
+
 #: Game.Levels.Divisibility.L01_first_proof
 msgid "The exercise statement: 3 divides 12."
+msgstr ""
+
+#. §0: $10 \\cdot k + d \\equiv d \\pmod{10}$
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 10**\n"
+"\n"
+"The remainder of any number modulo 10 is exactly its last digit.\n"
+"§0."
 msgstr ""
 
 #: Game.Levels.GCD
@@ -2032,6 +2272,10 @@ msgid "**Polynomial Congruences**\n"
 "This is the reason modular arithmetic is genuinely useful and not just a curiosity: congruence mod §3 is compatible with *every* polynomial operation, so you can reduce numbers mod §4 at any point in a calculation without changing the final remainder. It's what makes \"clock arithmetic\" behave like real arithmetic."
 msgstr ""
 
+#: Game.Levels.DivRules.L02_div2
+msgid "The remainder modulo 2 depends only on the last digit."
+msgstr ""
+
 #: Game.Levels.LinCong.L10_crt_glue
 msgid "Chinese Remainder Theorem: Glued (Boss)"
 msgstr ""
@@ -2077,6 +2321,25 @@ msgstr ""
 
 #: GameServer.RpcHandlers
 msgid "level completed! 🎉"
+msgstr ""
+
+#. §0: $2 \\mid 10$
+#. §1: $10 \\cdot k + d \\equiv d \\pmod{10}$
+#. §2: `mod_shrink`
+#. §3: $2 \\mid 10$
+#. §4: `have`
+#. §5: `have h2 : 2 ∣ 10 := by ...`
+#. §6: `ℕ`
+#. §7: `ℤ`
+#. §8: `have h2 : (2 : ℤ) ∣ 10 := by ...`
+#: Game.Levels.DivRules.L02_div2
+msgid "What about divisibility by 2? Since §0, we can just shrink the modulus of the previous rule!\n"
+"If §1, it must also be true modulo 2.\n"
+"\n"
+"Use §2 from World 2. You will need to explicitly prove that §3 first using a §4 block.\n"
+"\n"
+"**Lean Quirk Alert:** If you just write §5, Lean will assume 2 and 10 are natural numbers (§6), but our theorems expect integers (§7). To fix this, you must explicitly tell Lean the type of at least one number.\n"
+"Write your statement like this: §8"
 msgstr ""
 
 #: Game.Levels.Congruence.L05_mul_const
@@ -2158,6 +2421,16 @@ msgid "*Game version: 1.0*\n"
 "and divisibility, translating classical pen-and-paper mathematics into rigorous code."
 msgstr ""
 
+#: Game.Levels.DivRules
+msgid "Welcome to World 5: Divisibility Rules!\n"
+"\n"
+"You have already defeated the final boss and conquered the hardest world in the game. Consider this world your playable epilogue — a pure showcase of your newfound power.\n"
+"\n"
+"Do you remember learning divisibility rules in school? \"A number is divisible by 9 if the sum of its digits is divisible by 9\", or \"A number is divisible by 10 if it ends in 0\".\n"
+"\n"
+"In this epilogue, we won't just memorize these rules — we will prove them! You'll see that with the massive toolkit you built in the previous worlds, these legendary rules are actually trivial consequences of modular arithmetic. Let's reap the rewards of your hard work!"
+msgstr ""
+
 #: Game.Levels.GCD.L08_cancel_general
 msgid "🎉 Incredible! You just built the full cancellation law for modular congruences by gluing together two previous theorems and one careful algebraic cancellation. This is exactly how real number-theory results get assembled from smaller pieces."
 msgstr ""
@@ -2236,6 +2509,37 @@ msgstr ""
 
 #: Game.Levels.Congruence.L07_add_mul_mod
 msgid "Shifting by the Modulus"
+msgstr ""
+
+#: Game.Levels.DivRules.L06_div3
+msgid "Divisibility by 3"
+msgstr ""
+
+#: Game.Doc.Theorems.DivRules
+msgid "**Divisibility by 3**\n"
+"\n"
+"Since 3 divides 9, a number is congruent to the sum of its digits modulo 3, just like with 9."
+msgstr ""
+
+#. §0: $c_2$
+#. §1: $c_1$
+#. §2: $c_0$
+#. §3: $c_2 \\cdot 10^2 + c_1 \\cdot 10 + c_0$
+#. §4: $c_2 \\cdot 1^2 + c_1 \\cdot 1 + c_0$
+#. §5: $10 \\equiv 1 \\pmod 9$
+#. §6: `polynomial_cong`
+#: Game.Levels.DivRules.L05_div9
+msgid "Here is the famous rule: \"A number is divisible by 9 if the sum of its digits is divisible by 9\".\n"
+"\n"
+"To prove this, we need a formal way to write a number digit by digit. Think about how our base-10 system works. A 3-digit number like **345** is literally **3 * 100 + 4 * 10 + 5**.\n"
+"If we call the individual digits §0, §1, and §2, the number is written exactly as §3.\n"
+"\n"
+"Notice anything? This is a polynomial evaluated at 10!\n"
+"We want to show it is congruent to the sum of its digits: §4, which is the exact same polynomial evaluated at 1.\n"
+"\n"
+"Since §5, your ultimate weapon §6 from World 4 will solve this instantly.\n"
+"\n"
+"*(We prove this here for 3-digit numbers as a clean, concrete illustration — the exact same argument, with a longer polynomial, proves it for numbers of any length.)*"
 msgstr ""
 
 #. §0: $m$
@@ -2404,25 +2708,6 @@ msgid "**Splitting the Modulus**\n"
 "If a difference §3 is a multiple of §4 (§5), it must logically be a multiple of §6 and a multiple of §7.\n"
 "So if two numbers are congruent modulo 15, they are automatically congruent modulo 3 and modulo 5.\n"
 "This is a crucial stepping stone towards the Chinese Remainder Theorem!"
-msgstr ""
-
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $a$
-#. §2: $b$
-#. §3: $m$
-#. §4: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b + c_0 \\pmod m$
-#. §5: `mod_pow`
-#. §6: `mod_add`
-#. §7: `mod_mul_const`
-#. §8: `mod_refl`
-#: Game.Levels.LinCong.L11_poly
-msgid "You did it — the mountain is behind you. This last level isn't here to test you; it's a victory lap.\n"
-"\n"
-"All the tools you've built — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if §0, then **any** polynomial with integer coefficients evaluated at §1 and §2 stays congruent modulo §3 too.\n"
-"\n"
-"Let's prove it for a quadratic: §4.\n"
-"\n"
-"Nothing new to invent here — just snap together §5, §6, §7, and §8 from World 2, piece by piece, and enjoy watching it all just... work."
 msgstr ""
 
 #: Game.Levels.Congruence.L06_mul

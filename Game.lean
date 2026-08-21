@@ -3,6 +3,7 @@ import Game.Levels.Divisibility
 import Game.Levels.Congruence
 import Game.Levels.GCD
 import Game.Levels.LinCong
+import Game.Levels.DivRules
 
 Title "Number Theory Game"
 
@@ -48,6 +49,7 @@ and divisibility, translating classical pen-and-paper mathematics into rigorous 
 Dependency Divisibility → Congruence
 Dependency Congruence → GCD
 Dependency GCD → LinCong
+Dependency LinCong → DivRules
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en"

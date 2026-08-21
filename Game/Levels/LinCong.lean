@@ -17,7 +17,8 @@ Introduction
 "
 Welcome to World 4: Linear Congruences!
 
-In this final world, we bring everything together. You will use your knowledge of the GCD, Bézout's identity, and modular arithmetic to solve actual equations of the form $a \\cdot x \\equiv b \\pmod m$.
+Brace yourself — this is the hardest and most complex world in the game.
+In this world, we bring everything together. You will use your knowledge of the GCD, Bézout's identity, and modular arithmetic to solve actual equations of the form $a \\cdot x \\equiv b \\pmod m$.
 
-We will discover when these equations have solutions, how to find modular inverses, prove the famous Euclid's Lemma, and culminate our journey with the Chinese Remainder Theorem and polynomial congruences!
+We will discover when these equations have solutions, how to find modular inverses, prove the famous Euclid's Lemma, and finally face the ultimate boss of the game: the Chinese Remainder Theorem!
 "

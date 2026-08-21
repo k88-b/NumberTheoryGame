@@ -7,7 +7,7 @@ Level 11
 Title "Polynomial Congruences (Victory Lap)"
 
 Introduction "
-You did it — the mountain is behind you. This last level isn't here to test you; it's a victory lap.
+You did it — the mountain of linear congruences is behind you. This last level of the world isn't here to test you; it's a victory lap.
 
 All the tools you've built — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if $a \\equiv b \\pmod m$, then **any** polynomial with integer coefficients evaluated at $a$ and $b$ stays congruent modulo $m$ too.
 
@@ -38,10 +38,12 @@ Statement polynomial_cong (a b c0 c1 c2 m : ℤ) (h : a ≡ b (mod m)) : (c2 * a
   have h_sum12 := mod_add (c2 * a^2) (c2 * b^2) (c1 * a) (c1 * b) m h_term2 h_term1
   exact mod_add (c2 * a^2 + c1 * a) (c2 * b^2 + c1 * b) c0 c0 m h_sum12 h_term0
 
+
 Conclusion "
-And there it is — modular arithmetic behaving exactly like a ring should, addition and multiplication playing nicely with congruences all the way up to polynomials.
+🎉 Congratulations on completing World 4! 🎉
 
-Thanks for playing through all four worlds — from the first divisibility proof to the Chinese Remainder Theorem. You built every piece of this theory yourself, one `have` at a time.
+And there it is — modular arithmetic behaving exactly like a ring should!
 
-🎉 Congratulations on completing the Number Theory Game! 🎉
+Next up is World 5 (Divisibility Rules). Think of it as a playable epilogue! You have already beaten the hardest parts of the game. Now, you get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math problems you learned in school.
 "
+

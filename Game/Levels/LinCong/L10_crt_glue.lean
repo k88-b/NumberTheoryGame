@@ -56,7 +56,7 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
   ring
 
 Conclusion "
-🎉 YOU BEAT THE GAME! 🎉
+🎉 YOU DEFEATED THE FINAL BOSS! 🎉
 
 Together, `crt_exists` and `crt_glue` give you the full Chinese Remainder Theorem: a system of coprime congruences always has a solution, and that solution is unique modulo the product.
 

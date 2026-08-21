@@ -3,12 +3,14 @@
 An interactive game that teaches integer arithmetic and Number Theory through theorem proving in Lean 4. It uses the Lean4 Game Engine and is designed to run live at [adam.math.hhu.de](https://adam.math.hhu.de).
 
 ## Game Content
-The game translates classical pen-and-paper mathematics into rigorous code, introducing players to fundamental properties of integers. It currently consists of 4 worlds:
+The game translates classical pen-and-paper mathematics into rigorous code, introducing players to fundamental properties of integers. It currently consists of 5 worlds:
 
 * **Divisibility Club**: The basics of divisibility ($a \mid b$), providing a foundation for integer arithmetic.
 * **Congruence**: An introduction to modular arithmetic ($a \equiv b \pmod m$) and its algebraic properties.
 * **GCD (In Search of the GCD)**: Defining the Greatest Common Divisor using Bézout's identity and proving the General Cancellation Law.
 * **Linear Congruences and CRT**: Bringing everything together to solve linear equations ($a \cdot x \equiv b \pmod m$), find modular inverses, and prove fundamental results like Euclid's Lemma and the Chinese Remainder Theorem.
+* **Divisibility Rules**: A playable epilogue that reaps the rewards of the previous worlds, formally proving the classic divisibility rules from school (for 2, 3, 4, 5, 9, 10, and 11) as direct consequences of modular arithmetic and polynomial congruences.
+
 
 
 ## Prerequisites
