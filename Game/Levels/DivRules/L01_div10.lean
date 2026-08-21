@@ -25,7 +25,7 @@ This is a direct consequence of `mod_add_multiple` from World 2! You just need t
 
 /-- The remainder of a number modulo 10 is its last digit. -/
 Statement div10_rule (k d : ℤ) : (10 * k + d) ≡ d (mod 10) := by
-  Hint (hidden := true) "Rewrite the goal into the shape `mod_add_multiple` expects: try `have h_eq : 10 * {k} + {d} = {d} + {k} * 10 := by ring`, then `rw [h_eq]` and finish with `exact mod_add_multiple {d} {k} 10`."
+  Hint (hidden := true) "Rewrite the goal into the shape `mod_add_multiple` expects: try `have h_eq : 10 * {k} + {d} = {d} + {k} * 10`"
   have h_eq : 10 * k + d = d + k * 10 := by ring
   rw [h_eq]
   exact mod_add_multiple d k 10
