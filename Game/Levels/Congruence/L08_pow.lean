@@ -6,17 +6,6 @@ World "Congruence"
 Level 8
 Title "Powers of Congruences"
 
-/--
-The `induction'` tactic is used to prove statements for all natural numbers `n`.
-Typing `induction' n with d ih` splits your goal into two cases: the base case (`n = 0`) and the inductive step (`n = d + 1`), giving you the induction hypothesis `ih`.
--/
-TacticDoc induction'
-
-/--
-`pow_succ` is a theorem from Mathlib that states $a^{n+1} = a^n \cdot a$.
-Use `rw [pow_succ]` when dealing with powers in induction.
--/
-TheoremDoc pow_succ as "pow_succ" in "Algebra"
 
 NewTactic induction'
 NewTheorem pow_succ
@@ -32,8 +21,6 @@ Type `induction' n with d ih`. Lean will generate two goals for you:
 *Hint:* In the inductive step, you will need to break $a^{d+1}$ into $a^d \\cdot a$. You can do this by typing `rw [pow_succ]`. You will need to do this twice (once for $a$ and once for $b$). After that, remember that you already know how to multiply congruences!
 "
 
-/-- Congruences can be raised to a natural power. -/
-TheoremDoc mod_pow as "mod_pow" in "Congruence"
 
 /-- Powers of congruences. -/
 Statement mod_pow (a b m : ℤ) (n : ℕ) (h : a ≡ b (mod m)) : (a^n) ≡ (b^n) (mod m) := by

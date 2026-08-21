@@ -16,15 +16,6 @@ Let's prove it for a quadratic: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b +
 Nothing new to invent here — just snap together `mod_pow`, `mod_add`, `mod_mul_const`, and `mod_refl` from World 2, piece by piece, and enjoy watching it all just... work.
 "
 
-/--
-**Polynomial Congruences**
-
-If $a \equiv b \pmod m$, then $P(a) \equiv P(b) \pmod m$ for any integer polynomial $P$.
-
-**Intuition:**
-This is the reason modular arithmetic is genuinely useful and not just a curiosity: congruence mod $m$ is compatible with *every* polynomial operation, so you can reduce numbers mod $m$ at any point in a calculation without changing the final remainder. It's what makes "clock arithmetic" behave like real arithmetic.
--/
-TheoremDoc polynomial_cong as "polynomial_cong" in "LinCong"
 
 Statement polynomial_cong (a b c0 c1 c2 m : ℤ) (h : a ≡ b (mod m)) : (c2 * a^2 + c1 * a + c0) ≡ (c2 * b^2 + c1 * b + c0) (mod m) := by
   have h_pow2 : (a^2) ≡ (b^2) (mod m) := mod_pow a b m 2 h

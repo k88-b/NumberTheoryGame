@@ -17,11 +17,6 @@ Strategy:
 3. `obtain` witnesses from both new facts, `use` their sum, then `rw` and `ring` to finish — exactly the witness-gluing pattern you used for `dvd_trans` in World 1.
 "
 
-/--
-**The Bézout Definition Really Gives the Greatest Common Divisor**
-...
--/
-TheoremDoc gcd_is_greatest as "gcd_is_greatest" in "GCD"
 
 /-- Any greatest-common-divisor witness dominates every common divisor. -/
 Statement gcd_is_greatest (a b c d : ℤ) (h : IsGCD(a, b) d) (hca : c ∣ a) (hcb : c ∣ b) : c ∣ d := by

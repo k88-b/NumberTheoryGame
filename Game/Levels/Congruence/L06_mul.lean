@@ -6,10 +6,6 @@ World "Congruence"
 Level 6
 Title "Multiplying Congruences"
 
-/--
-The `exact` tactic closes a goal if you provide a theorem that perfectly matches the goal.
--/
-TacticDoc exact
 
 NewTactic exact
 
@@ -29,18 +25,6 @@ Applying `mod_mul_const` to $c \\equiv d$ with multiplier $b$ will give you $c \
 Use `have` to build your intermediate steps, and then use the `exact` tactic to finish the proof by providing `mod_trans`!
 "
 
-/--
-**Multiplying Congruences**
-
-If $a \equiv b \pmod m$ and $c \equiv d \pmod m$, then $(a \cdot c) \equiv (b \cdot d) \pmod m$.
-
-**Intuition:**
-Just like addition, you can multiply remainders directly!
-Modulo 10: $12 \equiv 2$ and $13 \equiv 3$.
-If we multiply them: $12 \cdot 13 = 156$.
-And $156 \equiv 6 \pmod{10}$. Notice that $2 \cdot 3$ is exactly $6$.
--/
-TheoremDoc mod_mul as "mod_mul" in "Congruence"
 
 /-- If two pairs of numbers are congruent, their products are congruent. -/
 Statement mod_mul (a b c d m : ℤ) (h1 : a ≡ b (mod m)) (h2 : c ≡ d (mod m)) : (a * c) ≡ (b * d) (mod m) := by

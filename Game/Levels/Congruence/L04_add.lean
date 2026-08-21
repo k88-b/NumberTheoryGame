@@ -15,19 +15,6 @@ To prove this, you need to `unfold ModEq at *`, extract the witnesses from both 
 *Hint:* You will need to rewrite $(a + c) - (b + d)$ into $(a - b) + (c - d)$. Use the `have` tactic!
 "
 
-/--
-**Adding Congruences**
-
-If $a \equiv b \pmod m$ and $c \equiv d \pmod m$, then $(a + c) \equiv (b + d) \pmod m$.
-
-**Intuition:**
-If two pairs of numbers have the same remainder when divided by $m$, their sums will also have the same remainder.
-For example, modulo 10 (which just looks at the last digit):
-If $12 \equiv 2 \pmod{10}$ and $25 \equiv 5 \pmod{10}$, then $12 + 25 = 37$, which is $\equiv 7 \pmod{10}$.
-Notice that $2 + 5 = 7$. We just added the remainders safely!
--/
-TheoremDoc mod_add as "mod_add" in "Congruence"
-
 
 /-- If two pairs of numbers are congruent, their sums are congruent. -/
 Statement mod_add (a b c d m : ℤ) (h1 : a ≡ b (mod m)) (h2 : c ≡ d (mod m)) : (a + c) ≡ (b + d) (mod m) := by

@@ -16,12 +16,6 @@ Substituting $d$, we get $b = a \\cdot (u \\cdot k) + m \\cdot (v \\cdot k)$.
 Can you figure out what the solution $x$ should be?
 "
 
-/--
-**Solvability (Sufficient Condition)**
-
-If $d = \text{gcd}(a, m)$ and $d \mid b$, then $\exists x, a \cdot x \equiv b \pmod m$.
--/
-TheoremDoc lin_cong_suff as "lin_cong_suff" in "LinCong"
 
 Statement lin_cong_suff (a b m d : ℤ) (hd : IsGCD(a, m) d) (hb : d ∣ b) : ∃ x, (a * x) ≡ b (mod m) := by
   unfold IsGCD at hd

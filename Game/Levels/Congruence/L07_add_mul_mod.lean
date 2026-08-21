@@ -14,8 +14,6 @@ $a + k \\cdot m \\equiv a \\pmod m$.
 Try to prove this directly by unfolding the definition.
 "
 
-/-- Adding a multiple of the modulus does not change the congruence. -/
-TheoremDoc mod_add_multiple as "mod_add_multiple" in "Congruence"
 
 /-- Shifting a number by a multiple of m. -/
 Statement mod_add_multiple (a k m : ℤ) : (a + k * m) ≡ a (mod m) := by

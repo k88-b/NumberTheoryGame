@@ -14,8 +14,6 @@ This is a direct application of what you already know.
 Rewrite $a \\cdot c - b \\cdot c$ as $(a - b) \\cdot c$ and close the goal!
 "
 
-/-- You can multiply both sides of a congruence by an integer. -/
-TheoremDoc mod_mul_const as "mod_mul_const" in "Congruence"
 
 /-- Multiplying a congruence by a constant. -/
 Statement mod_mul_const (a b c m : ℤ) (h : a ≡ b (mod m)) : (a * c) ≡ (b * c) (mod m) := by

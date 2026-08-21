@@ -5,18 +5,6 @@ World "Divisibility"
 Level 2
 Title "What exactly does 'divides' mean?"
 
-/--
-The `intro` tactic is used to introduce variables from a \"For all\" ($\\forall$) statement
-or to assume the premise of an implication ($\\implies$).
-For example, if the goal is `∀ a, P a`, typing `intro a` moves `a` into your context.
--/
-TacticDoc intro
-
-/--
-The `ring` tactic automatically proves algebraic equalities like `x + y = y + x`
-or `x * 1 = x`. It is a powerful tool so you don't have to manually apply axioms.
--/
-TacticDoc ring
 
 NewTactic intro ring
 
@@ -31,8 +19,6 @@ After that, remember that $1 \\mid a$ means $a = 1 \\cdot k$ for some $k$. What 
 Use the `use` tactic, and then close the algebra with our new super-tactic: `ring`.
 "
 
-/-- 1 divides any integer. -/
-TheoremDoc one_dvd as "one_dvd" in "Divisibility"
 
 /-- 1 divides every integer. -/
 Statement one_dvd : ∀ a : ℤ, 1 ∣ a := by

@@ -20,17 +20,6 @@ Formally: $x \\equiv a \\pmod m$ and $x \\equiv a \\pmod n$ means $m \\mid (x - 
 Take it one `have` at a time — you already have every tool you need.
 "
 
-/--
-**Glued Modulus**
-
-If $x \equiv a \pmod m$ and $x \equiv a \pmod n$ with coprime moduli, then $x \equiv a \pmod{m \cdot n}$.
-
-**Intuition:**
-$x - a$ is a multiple of both $m$ and $n$ separately. If $m$ and $n$ share no common factor, the only way a number can be built from both is by being a multiple of their product $m \cdot n$ — nothing is double-counted. This is exactly why coprimality matters: if $m = n = 2$, a number could be a multiple of both without being a multiple of $m \cdot n = 4$ (e.g. $x - a = 2$).
-
-**Example:** $12$ is a multiple of both $3$ and $4$ (coprime!), and indeed $12$ is a multiple of $3 \cdot 4 = 12$.
--/
-TheoremDoc crt_glue as "crt_glue" in "LinCong"
 
 Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n)) (h_coprime : IsGCD(m, n) 1) : x ≡ a (mod m * n) := by
   unfold ModEq at hm hn ⊢

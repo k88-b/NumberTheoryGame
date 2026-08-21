@@ -12,12 +12,6 @@ If $x$ and $y$ are both inverses of $a$ modulo $m$, are they the same?
 We know $a \\cdot x \\equiv 1 \\pmod m$ and $a \\cdot y \\equiv 1 \\pmod m$. This implies $a \\cdot x \\equiv a \\cdot y \\pmod m$. Since $a$ has an inverse, $a$ and $m$ are coprime. You can now use your ultimate weapon from World 3: `mod_cancel_coprime`!
 "
 
-/--
-**Uniqueness of Inverse**
-
-If $a \cdot x \equiv 1 \pmod m$ and $a \cdot y \equiv 1 \pmod m$, then $x \equiv y \pmod m$.
--/
-TheoremDoc inv_unique as "inv_unique" in "LinCong"
 
 Statement inv_unique (a x y m : ℤ) (hx : (a * x) ≡ 1 (mod m)) (hy : (a * y) ≡ 1 (mod m)) : x ≡ y (mod m) := by
   have h_coprime : IsGCD(a, m) 1 := by

@@ -13,12 +13,6 @@ They are not necessarily congruent modulo $m$, but they **are** congruent modulo
 This perfectly mirrors `mod_cancel_general` from World 3. You can reuse it directly!
 "
 
-/--
-**Congruent Solutions modulo $m/d$**
-
-All solutions to $a \cdot x \equiv b \pmod m$ are congruent modulo $m/d$.
--/
-TheoremDoc lin_cong_sol_equiv as "lin_cong_sol_equiv" in "LinCong"
 
 Statement lin_cong_sol_equiv (a b m d a1 m1 x1 x2 : ℤ) (hd_not_zero : d ≠ 0) (hd : IsGCD(a, m) d) (ha : a = a1 * d) (hm : m = m1 * d) (h1 : (a * x1) ≡ b (mod m)) (h2 : (a * x2) ≡ b (mod m)) : x1 ≡ x2 (mod m1) := by
   have h_trans : (a * x1) ≡ (a * x2) (mod m) := by

@@ -14,12 +14,6 @@ Let $d = gcd(a, m)$. If a solution $x$ exists, it is strictly necessary that $d$
 Unfold the definitions, and apply `dvd_mul_of_dvd_left` from World 3!
 "
 
-/--
-**Solvability (Necessary Condition)**
-
-If $d = \text{gcd}(a, m)$ and $a \cdot x \equiv b \pmod m$ has a solution, then $d \mid b$.
--/
-TheoremDoc lin_cong_nec as "lin_cong_nec" in "LinCong"
 
 Statement lin_cong_nec (a b x m d : ℤ) (hd : IsGCD(a, m) d) (hx : (a * x) ≡ b (mod m)) : d ∣ b := by
   unfold IsGCD at hd

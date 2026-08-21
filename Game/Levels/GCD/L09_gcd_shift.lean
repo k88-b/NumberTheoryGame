@@ -22,29 +22,7 @@ Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and
 3. Finally, `d1 ∣ d2` and `d2 ∣ d1`, together with `0 ≤ d1` and `0 ≤ d2`, give `d1 = d2` by the antisymmetry lemma (`Int.dvd_antisymm`) that has just been added to your inventory!
 "
 
-/--
-**Shift Invariance of the GCD**
 
-For any integers $a, k, m$, and non-negative gcd-witnesses $d_1, d_2$:
-if `IsGCD(a + m * k, m) d1` and `IsGCD(a, m) d2`, then $d_1 = d_2$.
-
-**Why this matters:**
-This is the *engine* of the Euclidean Algorithm for computing GCDs: $\gcd(a + mk, m) = \gcd(a, m)$ for any integer $k$. In particular, replacing $a$ by its remainder after dividing by $m$ never changes the GCD with $m$ — which is exactly what lets the Euclidean Algorithm shrink its numbers step by step until it reaches the answer.
--/
-TheoremDoc gcd_shift_invariant as "gcd_shift_invariant" in "GCD"
-
-
-/--
-**Antisymmetry of Divisibility (for non-negative integers)**
-
-If $0 \le d_1$, $0 \le d_2$, $d_1 \mid d_2$, and $d_2 \mid d_1$, then $d_1 = d_2$.
-
-**Why we need it:**
-Divisibility on all of $\mathbb{Z}$ only forms a *pre-order*: two different numbers can divide each other, as long as one is the negative of the other. Restricted to non-negative integers, though, divisibility becomes a genuine **partial order**: "mutual divisibility" really does collapse to equality.
-
-In this boss level, we will show two gcd-witnesses divide each other, and use exactly this theorem to conclude they must be the *same* number.
--/
-TheoremDoc Int.dvd_antisymm as "dvd_antisymm" in "Divisibility"
 
 NewTheorem Int.dvd_antisymm
 

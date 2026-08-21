@@ -14,8 +14,6 @@ In other words, if $a \\equiv b \\pmod m$ and $d \\mid m$, then $a \\equiv b \\p
 *Hint:* You can solve this by unfolding `ModEq` entirely and manipulating the witnesses, OR you can remember `dvd_trans` from World 1, which states that if $x \\mid y$ and $y \\mid z$, then $x \\mid z$!
 "
 
-/-- If a = b (mod m) and d | m, then a = b (mod d). -/
-TheoremDoc mod_shrink as "mod_shrink" in "Congruence"
 
 /-- Decreasing the modulus to a divisor. -/
 Statement mod_shrink (a b m d : ℤ) (h1 : a ≡ b (mod m)) (h2 : d ∣ m) : a ≡ b (mod d) := by

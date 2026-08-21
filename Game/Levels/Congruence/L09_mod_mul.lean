@@ -15,8 +15,6 @@ $a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$.
 Unfold the definition and look closely at the algebra.
 "
 
-/-- You can multiply the modulus and the values by a constant. -/
-TheoremDoc mod_scale as "mod_scale" in "Congruence"
 
 /-- Scaling the modulus. -/
 Statement mod_scale (a b c m : ℤ) (h : a ≡ b (mod m)) : (a * c) ≡ (b * c) (mod (m * c)) := by

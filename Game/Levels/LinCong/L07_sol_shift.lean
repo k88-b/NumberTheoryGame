@@ -13,12 +13,6 @@ $a(x_0 + t \\cdot m_1) \\equiv b \\pmod m$.
 Use $a = a_1 \\cdot d$ (from `IsGCD`) and the property of shifting modulo $m$ (`mod_add_multiple`) to finish the job!
 "
 
-/--
-**Shifting the Solution**
-
-Any shift of a solution by a multiple of $m/d$ yields another valid solution.
--/
-TheoremDoc lin_cong_sol_shift as "lin_cong_sol_shift" in "LinCong"
 
 Statement lin_cong_sol_shift (a b m d m1 x0 t : ℤ) (hd : IsGCD(a, m) d) (hm : m = m1 * d) (h0 : (a * x0) ≡ b (mod m)) : (a * (x0 + t * m1)) ≡ b (mod m) := by
   unfold IsGCD at hd

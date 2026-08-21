@@ -6,11 +6,6 @@ World "Congruence"
 Level 2
 Title "Symmetry of Congruences"
 
-/--
-The `have` tactic allows you to prove intermediate steps.
-Typing `have h : X = Y := by ring` creates a new hypothesis `h` in your context.
--/
-TacticDoc «have»
 
 NewTactic «have»
 
@@ -38,17 +33,6 @@ If you ever formulate your equality the other way around, for example `have h_eq
 *(To type the left arrow `←`, simply type `\\l` and press Space)*
 "
 
-/--
-**Symmetry of Congruences**
-
-If $a \equiv b \pmod m$, then $b \equiv a \pmod m$.
-
-**Intuition:**
-If the difference between $a$ and $b$ is a multiple of $m$, the difference between $b$ and $a$ is just the same multiple with a negative sign.
-For example, $17 \equiv 5 \pmod{12}$ because $17 - 5 = 12$.
-Conversely, $5 \equiv 17 \pmod{12}$ because $5 - 17 = -12$, which is still a multiple of $12$ ($12 \cdot -1$).
--/
-TheoremDoc mod_symm as "mod_symm" in "Congruence"
 
 /-- Congruence modulo m is symmetric. -/
 Statement mod_symm (a b m : ℤ) (h : a ≡ b (mod m)) : b ≡ a (mod m) := by

@@ -16,12 +16,6 @@ By our definition, this immediately gives us a Bézout identity: there exist int
 This direction is really just unpacking the definition: `unfold IsGCD at h` to get access to the pieces, `obtain` to peel them apart, and hand the pieces straight back with `use`.
 "
 
-/--
-**Coprimality Implies a Bézout Identity**
-
-If `IsGCD(c, m) 1`, then there exist integers $x, y$ with $c \cdot x + m \cdot y = 1$.
--/
-TheoremDoc coprime_imp_bezout as "coprime_imp_bezout" in "GCD"
 
 /-- Coprimality gives a Bézout identity. -/
 Statement coprime_imp_bezout (c m : ℤ) (h :  IsGCD(c, m) 1) : ∃ x y : ℤ, c * x + m * y = 1 := by

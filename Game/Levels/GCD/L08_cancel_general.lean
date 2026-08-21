@@ -20,15 +20,6 @@ If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and $\\text{IsGCD}(c, m) d \\neq 0$,
 This is exactly the reuse pattern from `mod_mul` back in World 2: build small intermediate facts with `have`, then `exact` the final theorem.
 "
 
-/--
-**The General Cancellation Law**
-
-If $a \cdot c \equiv b \cdot c \pmod m$, `IsGCD(c, m) d` with $d \neq 0$, $c = c_1 \cdot d$ and $m = m_1 \cdot d$, then $a \equiv b \pmod{m_1}$.
-
-**Intuition:**
-This is the fully general version of "dividing" a congruence: you can always cancel a factor $c$ out of a congruence, as long as you also divide the modulus by whatever $c$ and $m$ have in common (`such that IsGCD(c, m) d)`. The coprime case (Level 6) is just the special case $d = 1$, where the modulus doesn't need to shrink at all.
--/
-TheoremDoc mod_cancel_general as "mod_cancel_general" in "Congruence"
 
 /-- The fully general cancellation law for congruences. -/
 Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c) ≡ (b * c) (mod m)) (h2 : IsGCD(c, m) d) (hc : c = c1 * d) (hm : m = m1 * d) : a ≡ b (mod m1) := by

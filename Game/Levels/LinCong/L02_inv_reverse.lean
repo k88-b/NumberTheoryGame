@@ -12,12 +12,6 @@ Does it work the other way? If $a$ has a modular inverse modulo $m$, must $a$ an
 Absolutely. If $a \\cdot x \\equiv 1 \\pmod m$, it means $a \\cdot x - 1 = m \\cdot k$, which you can rearrange into a Bézout identity for $1$. You proved in World 3 (`bezout_imp_coprime`) that this forces the GCD to be 1!
 "
 
-/--
-**Reverse Inverse**
-
-If $a \cdot x \equiv 1 \pmod m$ for some $x$, then $\text{IsGCD}(a, m) 1$.
--/
-TheoremDoc inv_implies_coprime as "inv_implies_coprime" in "LinCong"
 
 Statement inv_implies_coprime (a m : ℤ) (h : ∃ x, (a * x) ≡ 1 (mod m)) : IsGCD(a, m) 1 := by
   obtain ⟨x, hx⟩ := h

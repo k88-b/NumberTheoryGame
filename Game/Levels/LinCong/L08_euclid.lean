@@ -15,12 +15,6 @@ Notice that $m \\mid (a \\cdot c)$ is exactly the same as saying $a \\cdot c \\e
 Since $c$ is coprime to $m$, can we just cancel $c$? Yes, you have `mod_cancel_coprime`!
 "
 
-/--
-**Euclid's Lemma**
-
-If $m \mid (a \cdot c)$ and $c$ is coprime to $m$, then $m \mid a$.
--/
-TheoremDoc euclids_lemma as "euclids_lemma" in "LinCong"
 
 Statement euclids_lemma (a c m : ℤ) (h_div : m ∣ a * c) (h_coprime : IsGCD(c, m) 1) : m ∣ a := by
   have h_cong_direct : (a * c) ≡ (0 * c) (mod m) := by

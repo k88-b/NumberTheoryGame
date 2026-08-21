@@ -5,18 +5,6 @@ World "Divisibility"
 Level 5
 Title "Chain of Divisors (Boss)"
 
-/--
-The `obtain` tactic extracts a witness from a hypothesis that contains an \"exists\" ($\exists$).
-If you have a hypothesis `h : x ∣ y` (which means `∃ k, y = x * k`), you can type
-`obtain ⟨k, hk⟩ := h` to get the variable `k` and the equation `hk : y = x * k`.
--/
-TacticDoc obtain
-
-/--
-The `rw` (rewrite) tactic replaces a term with an equivalent term based on an equality you have.
-If you have `h : A = B`, typing `rw [h]` will replace `A` with `B` in your goal.
--/
-TacticDoc rw
 
 NewTactic obtain rw
 
@@ -37,21 +25,6 @@ Finally, use the `rw` (rewrite) tactic. `rw [hk2]` will replace `y` in your goal
 
 Good luck!
 "
-
-/--
-**Transitivity of Divisibility**
-
-If $a$ divides $b$, and $b$ divides $c$, then $a$ divides $c$.
-
-**Intuition:**
-Think of it as building blocks. If a stick $b$ is made of exactly 3 blocks of $a$,
-and a stick $c$ is made of exactly 4 sticks of $b$, then $c$ is made of $3 \cdot 4 = 12$ blocks of $a$.
-Divisibility chains perfectly!
-
-**In Lean:**
-If you have `h1 : a ∣ b` and `h2 : b ∣ c`, applying this theorem proves `a ∣ c`.
--/
-TheoremDoc dvd_trans as "dvd_trans" in "Divisibility"
 
 
 /-- Divisibility is transitive. -/

@@ -51,3 +51,22 @@ The Bézout condition sidesteps all of that. It turns out (and you will prove it
 -/
 DefinitionDoc IsGCD as "IsGCD(a, b) d"
 
+
+/--
+**Divisibility ($a \mid b$)**
+
+We say that an integer $a$ **divides** an integer $b$ (written as $a \mid b$) if $b$ is a multiple of $a$.
+Formally, this means there exists some integer $k$ such that:
+$$b = a \cdot k$$
+
+**Examples:**
+* $3 \mid 12$ is true because $12 = 3 \cdot 4$ (here our witness is $k = 4$).
+* $5 \mid -15$ is true because $-15 = 5 \cdot (-3)$ (here $k = -3$).
+* $7 \mid 0$ is true because $0 = 7 \cdot 0$ (here $k = 0$).
+* $4 \mid 14$ is **false**, because there is no integer $k$ that makes $14 = 4 \cdot k$.
+
+**How it works in Lean:**
+When you see $a \mid b$ in your goal, Lean translates this under the hood to an \"exists\" statement: `∃ k, b = a * k`.
+To prove it, you must provide the exact value of $k$ using the `use` tactic (for example, `use 4`).
+-/
+DefinitionDoc Dvd.dvd as "a ∣ b"

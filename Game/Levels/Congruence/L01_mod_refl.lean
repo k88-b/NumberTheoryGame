@@ -1,17 +1,13 @@
 import GameServer
 import Mathlib.Tactic
 import Game.Levels.Defs
+import Game.Doc.Tactics
+import Game.Doc.Theorems.Congruence
 
 World "Congruence"
 Level 1
 Title "Modular Arithmetic: Reflexivity"
 
-
-/--
-The `unfold` tactic replaces a definition with its underlying meaning.
-If your goal contains `a ≡ b (mod m)`, typing `unfold ModEq` will change it to `m ∣ a - b`.
--/
-TacticDoc unfold
 
 NewDefinition ModEq
 NewTactic unfold
@@ -27,9 +23,6 @@ When you see this notation in the goal, you should type `unfold ModEq` to reveal
 
 Let's prove that modular arithmetic is reflexive: $a \\equiv a \\pmod m$.
 "
-
-/-- Modular arithmetic is reflexive. -/
-TheoremDoc mod_refl as "mod_refl" in "Congruence"
 
 /-- Every integer is congruent to itself. -/
 Statement mod_refl (a m : ℤ) : a ≡ a (mod m) := by

@@ -12,12 +12,6 @@ Now the other direction: if there exist integers $x, y$ with $c \\cdot x + m \\c
 Yes — and to prove it, remember `one_dvd` from World 1: *every* integer is divisible by $1$. So the \"common divisor\" half of the definition (`1 ∣ c` and `1 ∣ m`) comes completely for free! All that's left is to hand back the Bézout identity you were already given.
 "
 
-/--
-**A Bézout Identity with 1 Implies Coprimality**
-
-If there exist integers $x, y$ with $c \cdot x + m \cdot y = 1$, then `IsGCD(c, m) 1`.
--/
-TheoremDoc bezout_imp_coprime as "bezout_imp_coprime" in "GCD"
 
 /-- A Bézout identity implies coprimality. -/
 Statement bezout_imp_coprime (c m : ℤ) (h : ∃ x y : ℤ, c * x + m * y = 1) :  IsGCD(c, m) 1 := by
