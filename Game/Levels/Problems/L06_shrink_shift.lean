@@ -18,8 +18,8 @@ This level tests your ability to chain `have` statements and piece together diff
 "
 
 Statement (x : ℤ) (h : x ≡ 23 (mod 100)) : x ≡ 3 (mod 4) := by
-  Hint "First, prove that 4 divides 100: `have h_div : 4 ∣ 100 := by ...`"
-  have h_div : (4: ℤ) ∣ 100 := by
+  Hint "First, prove that 4 divides 100: `have h_div : (4 : ℤ) ∣ 100 := by ...`"
+  have h_div : (4 : ℤ) ∣ 100 := by
     use 25
     ring
 
