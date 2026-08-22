@@ -17,6 +17,12 @@ Formally: $x \\equiv a \\pmod m$ and $x \\equiv a \\pmod n$ means $m \\mid (x - 
 
 **One trap to watch for:** `euclids_lemma` expects coprimality as `IsGCD(n, m) 1`, but your hypothesis is `IsGCD(m, n) 1` — arguments swapped! You'll need to prove the symmetric version yourself first (a short unfold-and-swap, just like `bezout_imp_coprime` back in World 3).
 
+**Strategy:**
+1. **Equate the witnesses:** Extract the witnesses for $x - a$, set them equal, and deduce that $m \\mid (k_2 \\cdot n)$.
+2. **Swap the GCD:** Prove the symmetric version of your coprimality hypothesis (since `euclids_lemma` expects `IsGCD(n, m) 1` instead of `m, n`).
+3. **Apply Euclid's Lemma:** Use the lemma to conclude that $m$ must entirely divide $k_2$.
+4. **Finish the algebra:** Substitute this new divisibility witness back into your original equation.
+
 Take it one `have` at a time — you already have every tool you need.
 "
 
@@ -26,16 +32,17 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
   obtain ⟨k1, hk1⟩ := hm
   obtain ⟨k2, hk2⟩ := hn
 
-  Hint "From `{hk1}` and `{hk2}` you have two expressions for `{x} - {a}`. Set them equal with `have h_eq : {m} * {k1} = {n} * {k2}`."
-
+  Hint "Following the strategy, start by creating an equation that sets your two expressions for `x - a` equal to each other: `have h_eq : {m} * {k1} = {n} * {k2} := by ...`"
   have h_eq : m * k1 = n * k2 := by rw [← hk1, hk2]
 
-  Hint (hidden := true) "From `{h_eq}`, `{m}` divides `{k2} * {n}` (same product, reordered). Build `have h_div : {m} ∣ ({k2} * {n})` as the pair `⟨{k1}, _⟩`, closing the remaining goal with `rw` and `{h_eq}`."
+  Hint "Now prove that `{m}` divides `{k2} * {n}`. Create a standard divisibility proof using a `have` block: `use {k1}` as the witness, and rearrange terms with `ring` to apply your `{h_eq}`."
+  have h_div : m ∣ (k2 * n) := by
+    use k1
+    have h_eq2 : k2 * n = n * k2 := by ring
+    rw [h_eq2]
+    rw [← h_eq]
 
-  have h_div : m ∣ (k2 * n) := ⟨k1, by rw [mul_comm k2 n, ← h_eq]⟩
-
-  Hint "`euclids_lemma` needs coprimality as `IsGCD({n}, {m}) 1`, but `{h_coprime}` is `IsGCD({m}, {n}) 1` — swapped! Prove `have h_coprime_symm : IsGCD({n}, {m}) 1 := by ...` first, unfolding and swapping the Bézout witnesses."
-
+  Hint "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove `have h_coprime_symm : IsGCD({n}, {m}) 1 := by ...` by unfolding the definition and providing the swapped Bézout witnesses."
   have h_coprime_symm : IsGCD(n, m) 1 := by
     unfold IsGCD at h_coprime ⊢
     obtain ⟨_, u, v, huv⟩ := h_coprime
@@ -47,8 +54,7 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
       have h_eq3 : n * v + m * u = m * u + n * v := by ring
       rw [h_eq3, huv]
 
-  Hint (hidden := true) "Now apply `euclids_lemma {k2} {n} {m} {h_div} h_coprime_symm` to get `{m} ∣ {k2}`, then finish by rewriting `{hk2}` with that witness."
-
+  Hint (hidden := true) "Now apply `euclids_lemma` to extract a new witness showing that `{m} ∣ {k2}`. Finally, `use` that witness to solve the main goal!"
   obtain ⟨k3, hk3⟩ := euclids_lemma k2 n m h_div h_coprime_symm
   use k3
   rw [hk2, hk3]

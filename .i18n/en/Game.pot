@@ -105,6 +105,13 @@ msgid "**Glued Modulus**\n"
 "**Example:** §12 is a multiple of both §13 and §14 (coprime!), and indeed §15 is a multiple of §16."
 msgstr ""
 
+#. §0: `euclids_lemma`
+#. §1: `«{m}» ∣ «{k2}»`
+#. §2: `use`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "Now apply §0 to extract a new witness showing that §1. Finally, §2 that witness to solve the main goal!"
+msgstr ""
+
 #: Game.Levels.Divisibility
 msgid "Divisibility Club"
 msgstr ""
@@ -132,23 +139,6 @@ msgstr ""
 msgid "Use §0. Look closely at its arguments: §1. Here, it's §2."
 msgstr ""
 
-#. §0: $x$
-#. §1: $y$
-#. §2: $a$
-#. §3: $m$
-#. §4: $a \\cdot x \\equiv 1 \\pmod m$
-#. §5: $a \\cdot y \\equiv 1 \\pmod m$
-#. §6: $a \\cdot x \\equiv a \\cdot y \\pmod m$
-#. §7: $a$
-#. §8: $a$
-#. §9: $m$
-#. §10: `mod_cancel_coprime`
-#: Game.Levels.LinCong.L03_inv_unique
-msgid "If §0 and §1 are both inverses of §2 modulo §3, are they the same?\n"
-"\n"
-"We know §4 and §5. This implies §6. Since §7 has an inverse, §8 and §9 are coprime. You can now use your ultimate weapon from World 3: §10!"
-msgstr ""
-
 #: Game.Levels.LinCong.L02_inv_reverse
 msgid "Great! Reversibility is confirmed. Having a modular inverse is *exactly equivalent* to being coprime to the modulus."
 msgstr ""
@@ -157,6 +147,16 @@ msgstr ""
 msgid "**Divisibility by 2**\n"
 "\n"
 "Since 2 divides 10, the remainder of any number modulo 2 depends entirely on its last digit."
+msgstr ""
+
+#. §0: `«{m}»`
+#. §1: `«{k2}» * «{n}»`
+#. §2: `have`
+#. §3: `use «{k1}»`
+#. §4: `ring`
+#. §5: `«{h_eq}»`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "Now prove that §0 divides §1. Create a standard divisibility proof using a §2 block: §3 as the witness, and rearrange terms with §4 to apply your §5."
 msgstr ""
 
 #. §0: `mod_trans`
@@ -1050,50 +1050,11 @@ msgstr ""
 msgid "You need to show that 3 and 10 are coprime. §0"
 msgstr ""
 
-#. §0: $m$
-#. §1: $n$
-#. §2: $m \\cdot n$
-#. §3: $m$
-#. §4: $n$
-#. §5: $x \\equiv a \\pmod m$
-#. §6: $x \\equiv a \\pmod n$
-#. §7: $m \\mid (x - a)$
-#. §8: $n \\mid (x - a)$
-#. §9: `euclids_lemma`
-#. §10: `IsGCD(n, m) 1`
-#. §11: `IsGCD(m, n) 1`
-#. §12: `bezout_imp_coprime`
-#. §13: `have`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "This is it — the final boss of the Number Theory Game!\n"
-"\n"
-"Everything you've built across four worlds — Bézout's identity, the cancellation laws, Euclid's Lemma, and CRT existence from the last level — comes together right here.\n"
-"\n"
-"The second half of CRT: if two numbers share the same remainder modulo §0 and modulo §1 separately, they share the same remainder modulo §2 — provided §3 and §4 are coprime.\n"
-"\n"
-"Formally: §5 and §6 means §7 and §8. Extract the witnesses, equate them, and reach for **Euclid's Lemma**.\n"
-"\n"
-"**One trap to watch for:** §9 expects coprimality as §10, but your hypothesis is §11 — arguments swapped! You'll need to prove the symmetric version yourself first (a short unfold-and-swap, just like §12 back in World 3).\n"
-"\n"
-"Take it one §13 at a time — you already have every tool you need."
-msgstr ""
-
 #. §0: `«{a}» = «{d}» * «{k}»`
 #. §1: `«{a}» * «{b}» = «{d}» * («{k}» * «{b}»)`
 #. §2: `use «{k}» * «{b}»`
 #: Game.Levels.GCD.L01_dvd_mul
 msgid "Since §0, you want to show §1. Try to §2."
-msgstr ""
-
-#. §0: `«{h_eq}»`
-#. §1: `«{m}»`
-#. §2: `«{k2}» * «{n}»`
-#. §3: `have h_div : «{m}» ∣ («{k2}» * «{n}»)`
-#. §4: `⟨«{k1}», _⟩`
-#. §5: `rw`
-#. §6: `«{h_eq}»`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "From §0, §1 divides §2 (same product, reordered). Build §3 as the pair §4, closing the remaining goal with §5 and §6."
 msgstr ""
 
 #: Game.Doc.Theorems.Congruence
@@ -1575,6 +1536,12 @@ msgid "Two integers §0 and §1 are called **coprime** (or *relatively prime*) e
 "This direction is really just unpacking the definition: §8 to get access to the pieces, §9 to peel them apart, and hand the pieces straight back with §10."
 msgstr ""
 
+#. §0: `x - a`
+#. §1: `have h_eq : «{m}» * «{k1}» = «{n}» * «{k2}» := by ...`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "Following the strategy, start by creating an equation that sets your two expressions for §0 equal to each other: §1"
+msgstr ""
+
 #. §0: $a$
 #. §1: $m$
 #. §2: $a$
@@ -1599,13 +1566,6 @@ msgstr ""
 
 #: Game.Levels.Problems.L02_cancel
 msgid "Excellent! You proved a concrete GCD on the fly to unlock the power of your cancellation theorem."
-msgstr ""
-
-#. §0: `euclids_lemma «{k2}» «{n}» «{m}» «{h_div}» h_coprime_symm`
-#. §1: `«{m}» ∣ «{k2}»`
-#. §2: `«{hk2}»`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "Now apply §0 to get §1, then finish by rewriting §2 with that witness."
 msgstr ""
 
 #. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
@@ -2020,20 +1980,52 @@ msgstr ""
 msgid "The General Cancellation Law"
 msgstr ""
 
+#. §0: $m$
+#. §1: $n$
+#. §2: $m \\cdot n$
+#. §3: $m$
+#. §4: $n$
+#. §5: $x \\equiv a \\pmod m$
+#. §6: $x \\equiv a \\pmod n$
+#. §7: $m \\mid (x - a)$
+#. §8: $n \\mid (x - a)$
+#. §9: $x - a$
+#. §10: $m \\mid (k_2 \\cdot n)$
+#. §11: `euclids_lemma`
+#. §12: `IsGCD(n, m) 1`
+#. §13: `m, n`
+#. §14: $m$
+#. §15: $k_2$
+#. §16: `euclids_lemma`
+#. §17: `IsGCD(n, m) 1`
+#. §18: `IsGCD(m, n) 1`
+#. §19: `bezout_imp_coprime`
+#. §20: `have`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "This is it — the final boss of the Number Theory Game!\n"
+"\n"
+"Everything you've built across four worlds — Bézout's identity, the cancellation laws, Euclid's Lemma, and CRT existence from the last level — comes together right here.\n"
+"\n"
+"The second half of CRT: if two numbers share the same remainder modulo §0 and modulo §1 separately, they share the same remainder modulo §2 — provided §3 and §4 are coprime.\n"
+"\n"
+"Formally: §5 and §6 means §7 and §8. Extract the witnesses, equate them, and reach for **Euclid's Lemma**.\n"
+"\n"
+"**Strategy:**\n"
+"1. **Equate the witnesses:** Extract the witnesses for §9, set them equal, and deduce that §10.\n"
+"2. **Swap the GCD:** Prove the symmetric version of your coprimality hypothesis (since §11 expects §12 instead of §13).\n"
+"3. **Apply Euclid's Lemma:** Use the lemma to conclude that §14 must entirely divide §15.\n"
+"4. **Finish the algebra:** Substitute this new divisibility witness back into your original equation.\n"
+"\n"
+"**One trap to watch for:** §16 expects coprimality as §17, but your hypothesis is §18 — arguments swapped! You'll need to prove the symmetric version yourself first (a short unfold-and-swap, just like §19 back in World 3).\n"
+"\n"
+"Take it one §20 at a time — you already have every tool you need."
+msgstr ""
+
 #. §0: `mul_left_cancel₀`
 #. §1: `«{d}» * something = «{d}» * 1`
 #. §2: `have h_eq : «{d}» * («{c1}» * «{x}» + «{m1}» * «{y}») = «{d}» * 1`
 #: Game.Levels.GCD.L07_gcd_div_coprime
 msgid "To use §0, you need to set up an equation of the exact form §1. Try creating it with §2."
-msgstr ""
-
-#. §0: `euclids_lemma`
-#. §1: `IsGCD(«{n}», «{m}») 1`
-#. §2: `«{h_coprime}»`
-#. §3: `IsGCD(«{m}», «{n}») 1`
-#. §4: `have h_coprime_symm : IsGCD(«{n}», «{m}») 1 := by ...`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "§0 needs coprimality as §1, but §2 is §3 — swapped! Prove §4 first, unfolding and swapping the Bézout witnesses."
 msgstr ""
 
 #: Game.Levels.Congruence.L02_mod_symm
@@ -2057,14 +2049,6 @@ msgstr ""
 
 #: Game.Levels.Divisibility.L03_dvd_refl
 msgid "Every integer divides itself."
-msgstr ""
-
-#. §0: `«{hk1}»`
-#. §1: `«{hk2}»`
-#. §2: `«{x}» - «{a}»`
-#. §3: `have h_eq : «{m}» * «{k1}» = «{n}» * «{k2}»`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "From §0 and §1 you have two expressions for §2. Set them equal with §3."
 msgstr ""
 
 #. §0: $a$
@@ -2664,6 +2648,11 @@ msgid "Here is a very simple but incredibly important rule.\n"
 "Try to prove this directly by unfolding the definition."
 msgstr ""
 
+#. §0: `have h_coprime_symm : IsGCD(«{n}», «{m}») 1 := by ...`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove §0 by unfolding the definition and providing the swapped Bézout witnesses."
+msgstr ""
+
 #. §0: `have`
 #. §1: `at *`
 #: Game.Levels.Congruence.L02_mod_symm
@@ -3004,6 +2993,34 @@ msgid "**Splitting the Modulus**\n"
 "If a difference §3 is a multiple of §4 (§5), it must logically be a multiple of §6 and a multiple of §7.\n"
 "So if two numbers are congruent modulo 15, they are automatically congruent modulo 3 and modulo 5.\n"
 "This is a crucial stepping stone towards the Chinese Remainder Theorem!"
+msgstr ""
+
+#. §0: $x$
+#. §1: $y$
+#. §2: $a$
+#. §3: $m$
+#. §4: $a \\cdot x \\equiv 1 \\pmod m$
+#. §5: $a \\cdot y \\equiv 1 \\pmod m$
+#. §6: $a \\cdot x \\equiv a \\cdot y \\pmod m$
+#. §7: $a$
+#. §8: $a$
+#. §9: $m$
+#. §10: `mod_cancel_coprime`
+#. §11: `inv_implies_coprime`
+#. §12: `∃ k, a * k ≡ 1`
+#. §13: $x$
+#. §14: $a \\cdot x \\equiv a \\cdot y \\pmod m$
+#. §15: `mod_cancel_coprime`
+#. §16: $x \\cdot a \\equiv y \\cdot a$
+#: Game.Levels.LinCong.L03_inv_unique
+msgid "If §0 and §1 are both inverses of §2 modulo §3, are they the same?\n"
+"\n"
+"We know §4 and §5. This implies §6. Since §7 has an inverse, §8 and §9 are coprime. You can now use your ultimate weapon from World 3: §10!\n"
+"\n"
+"**Strategy:**\n"
+"1. **Prove coprimality:** The theorem §11 (from the previous level) requires a proof that *some* inverse exists (§12). You can provide §13 as the witness to build this existence proof, and then extract the coprimality fact.\n"
+"2. **Equate the terms:** Use symmetry and transitivity to link your two main hypotheses into §14.\n"
+"3. **Cancel the factor:** Prepare your congruence for §15. The theorem expects the common factor to be on the *right* side (§16), so you will need to swap the multiplication order before applying the cancellation law."
 msgstr ""
 
 #: Game.Levels.Congruence.L06_mul
