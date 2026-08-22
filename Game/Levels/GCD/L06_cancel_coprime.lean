@@ -36,5 +36,5 @@ Statement mod_cancel_coprime (a b c m : ℤ) (h1 : (a * c) ≡ (b * c) (mod m)) 
   ring
 
 Conclusion "
-🎉 That's the heart of this world, conquered! `mod_cancel_coprime` is now yours — it is the single most important tool you will use going forward.
+That's the heart of this world, conquered! `mod_cancel_coprime` is now yours — it is the single most important tool you will use going forward.
 "
