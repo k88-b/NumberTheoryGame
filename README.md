@@ -10,8 +10,7 @@ The game translates classical pen-and-paper mathematics into rigorous code, intr
 * **GCD (In Search of the GCD)**: Defining the Greatest Common Divisor using Bézout's identity and proving the General Cancellation Law.
 * **Linear Congruences and CRT**: Bringing everything together to solve linear equations ($a \cdot x \equiv b \pmod m$), find modular inverses, and prove fundamental results like Euclid's Lemma and the Chinese Remainder Theorem.
 * **Divisibility Rules**: A short breather before the finale. You will formally prove the classic divisibility rules from school (for 2, 3, 4, 5, 9, 10, and 11) as direct consequences of modular arithmetic and polynomial congruences.
-* **Problems**: The grand finale! Players apply their massive toolkit of abstract theorems to crush concrete numerical challenges, compute huge powers, solve linear congruences, and use the Chinese Remainder Theorem in practice.
-
+* **Problems**: The grand finale! You apply your massive toolkit of abstract theorems to crush concrete numerical challenges, compute huge powers, solve linear congruences, and use the Chinese Remainder Theorem in practice.
 
 
 ## Prerequisites
