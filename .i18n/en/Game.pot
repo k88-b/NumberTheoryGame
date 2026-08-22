@@ -735,6 +735,14 @@ msgstr ""
 msgid "Nice! Exactly the same logic applies to 5, since 5 ∣ 10 too — that's exactly what the next level does."
 msgstr ""
 
+#: Game.Levels.DivRules.L07_div11
+msgid "🏆 AMAZING! 🏆\n"
+"\n"
+"You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.\n"
+"\n"
+"You are now fully prepared. Take a deep breath — it is time to enter the final world, \"Problems\", where you will apply everything you've learned to crack actual numerical challenges!"
+msgstr ""
+
 #. §0: $d \\mid b$
 #: Game.Levels.LinCong.L04_sol_nec
 msgid "Nice! You successfully extracted the divisibility parts of the GCD to prove §0."
@@ -2416,14 +2424,6 @@ msgstr ""
 #: Game.Doc.Theorems.Congruence
 msgid "§0 is a theorem from Mathlib that states §1.\n"
 "Use §2 when dealing with powers in induction."
-msgstr ""
-
-#: Game.Levels.DivRules.L07_div11
-msgid "🏆 AMAZING! 🏆\n"
-"\n"
-"You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.\n"
-"\n"
-"You are now fully prepared. Take a deep breath — it is time to enter the final world, \"Concrete Problems\", where you will apply everything you've learned to crack actual numerical challenges!"
 msgstr ""
 
 #: Game.Levels.Problems.L01_large_powers

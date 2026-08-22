@@ -7,6 +7,7 @@ Level 2
 Title "Meeting the GCD"
 
 NewDefinition IsGCD
+NewHiddenDefinition «IsGCD(»
 
 Introduction "
 Time to meet the star of this world: the **Greatest Common Divisor**.
