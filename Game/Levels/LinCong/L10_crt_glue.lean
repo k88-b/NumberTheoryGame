@@ -28,7 +28,8 @@ Take it one `have` at a time — you already have every tool you need.
 
 
 Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n)) (h_coprime : IsGCD(m, n) 1) : x ≡ a (mod m * n) := by
-  unfold ModEq at hm hn ⊢
+  unfold ModEq at hm hn
+  unfold ModEq
   obtain ⟨k1, hk1⟩ := hm
   obtain ⟨k2, hk2⟩ := hn
 
@@ -44,7 +45,8 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
 
   Hint "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove `have h_coprime_symm : IsGCD({n}, {m}) 1 := by ...` by unfolding the definition and providing the swapped Bézout witnesses."
   have h_coprime_symm : IsGCD(n, m) 1 := by
-    unfold IsGCD at h_coprime ⊢
+    unfold IsGCD at h_coprime
+    unfold IsGCD
     obtain ⟨_, u, v, huv⟩ := h_coprime
     constructor
     · constructor
