@@ -46,7 +46,7 @@ Conclusion "
 🎉 AMAZING! 🎉
 
 You have conquered World 2! You've successfully built an entire algebraic toolkit for congruences.
-You learned how to use `induction`, how to break down logical conjunctions with `constructor`, and how to confidently rewrite backwards using `←` (`\\l`)!
+You learned how to use `induction'`, how to break down logical conjunctions with `constructor`, and how to confidently rewrite backwards using `←` (`\\l`)!
 
 Next up is World 3, where we will dive into the Greatest Common Divisor (GCD) and learn how to *cancel* numbers out of congruences.
 "
