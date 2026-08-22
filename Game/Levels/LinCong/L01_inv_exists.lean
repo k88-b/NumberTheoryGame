@@ -15,7 +15,7 @@ Level 1
 Title "Existence of the Inverse"
 
 Introduction "
-First, let's explore **modular inverses**. If $a$ and $m$ are coprime ($gcd(a, m) = 1$), does there exist an $x$ such that $a \\cdot x \\equiv 1 \\pmod m$?
+First, let's explore **modular inverses**. If $a$ and $m$ are coprime ($\\gcd(a, m) = 1$), does there exist an $x$ such that $a \\cdot x \\equiv 1 \\pmod m$?
 
 Yes! And Bézout's identity gives us exactly the proof. Since $a$ and $m$ are coprime, we know $a \\cdot x + m \\cdot y = 1$. The $x$ from this identity is exactly the inverse we are looking for.
 
