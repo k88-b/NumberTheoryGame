@@ -17,5 +17,5 @@ Welcome to World 3: In Search of the GCD!
 
 In the previous worlds, you learned how to add and multiply congruences. But what about division? Can we just cancel out common factors? Not always! To safely cancel factors in modular arithmetic, we need to deeply understand the Greatest Common Divisor (GCD).
 
-In this world, we will define the GCD using Bezout's identity, prove its properties, and unlock the ultimate tool for number theory: the General Cancellation Law. Let's find that GCD!
+In this world, we will define the GCD using Bezout's identity, prove its properties, unlock the ultimate tool for number theory: the General Cancellation Law, and finish by proving the shift invariance that powers the Euclidean Algorithm. Let's find that GCD!
 "
