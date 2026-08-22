@@ -1,6 +1,8 @@
 import GameServer
 import Mathlib.Tactic
 import Game.Levels.Definitions
+import Game.Doc.Definitions
+import Game.Doc.Tactics
 
 import Game.Levels.GCD
 import Game.Levels.Congruence
