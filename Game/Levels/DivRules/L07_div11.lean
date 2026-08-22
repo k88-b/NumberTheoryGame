@@ -4,7 +4,7 @@ import Game.Levels.DivRules.L06_div3
 
 World "DivRules"
 Level 7
-Title "Divisibility by 11 (Grand Finale)"
+Title "Divisibility by 11 (Boss)"
 
 Introduction "
 For our final trick: the alternating sum of digits rule for 11.
@@ -30,8 +30,5 @@ Conclusion "
 
 You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.
 
-By building formal properties step-by-step from the very definition of divisibility, you've conquered this entire mathematical landscape. You didn't just learn Number Theory — you wrote the proofs yourself, perfectly verified by a computer.
-
-🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉
-Thank you for playing.
+You are now fully prepared. Take a deep breath — it is time to enter the final world, \"Problems\", where you will apply everything you've learned to crack actual numerical challenges!
 "

@@ -15,9 +15,9 @@ Introduction
 "
 Welcome to World 5: Divisibility Rules!
 
-You have already defeated the final boss and conquered the hardest world in the game. Consider this world your playable epilogue — a pure showcase of your newfound power.
+You have already defeated the final boss of the abstract theory and conquered the hardest world in the game. Consider this world a breather — a fun interlude and a warm-up for the real numerical challenges that await you in the grand finale.
 
 Do you remember learning divisibility rules in school? \"A number is divisible by 9 if the sum of its digits is divisible by 9\", or \"A number is divisible by 10 if it ends in 0\".
 
-In this epilogue, we won't just memorize these rules — we will prove them! You'll see that with the massive toolkit you built in the previous worlds, these legendary rules are actually trivial consequences of modular arithmetic. Let's reap the rewards of your hard work!
+In this world, we won't just memorize these rules — we will prove them! Let's enjoy a short rest by seeing how your massive toolkit trivially solves these classic rules, before we head into the ultimate proving grounds.
 "

@@ -4,6 +4,7 @@ import Game.Levels.Congruence
 import Game.Levels.GCD
 import Game.Levels.LinCong
 import Game.Levels.DivRules
+import Game.Levels.Problems
 
 Title "Number Theory Game"
 
@@ -50,6 +51,7 @@ Dependency Divisibility → Congruence
 Dependency Congruence → GCD
 Dependency GCD → LinCong
 Dependency LinCong → DivRules
+Dependency DivRules → Problems
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en"

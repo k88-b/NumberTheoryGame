@@ -44,6 +44,6 @@ Conclusion "
 
 And there it is — modular arithmetic behaving exactly like a ring should!
 
-Next up is World 5 (Divisibility Rules). Think of it as a playable epilogue! You have already beaten the hardest parts of the game. Now, you get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math problems you learned in school.
+Next up is World 5 (Divisibility Rules). Think of it as a short breather after the heavy lifting of linear congruences, and a perfect preparation for the final practical challenges ahead. You get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math rules you learned in school.
 "
 

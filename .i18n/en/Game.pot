@@ -1,12 +1,20 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-21\n"
+"POT-Creation-Date: 2026-08-22\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
+
+#. §0: $10 \\cdot u + 3 \\cdot v = 1$
+#. §1: `use 1, -3`
+#: Game.Levels.Problems.L03_crt
+#: Game.Levels.Problems.L04_lincong
+#: Game.Levels.Problems.L05_euclid
+msgid "Find §0. Try §1."
+msgstr ""
 
 #: Game.Levels.LinCong.L04_sol_nec
 msgid "Solvability: Necessary Condition"
@@ -37,6 +45,10 @@ msgid "# Welcome to the Number Theory Game\n"
 "those who read the help texts on the left side of the screen.\n"
 "\n"
 "To start, click on the **Divisibility Club**."
+msgstr ""
+
+#: Game.Levels.Problems.L01_large_powers
+msgid "Huge Powers"
 msgstr ""
 
 #: Game.Levels.Divisibility.L01_first_proof
@@ -97,6 +109,10 @@ msgstr ""
 msgid "Divisibility Club"
 msgstr ""
 
+#: Game.Levels.Problems.L04_lincong
+msgid "Solving Linear Congruences"
+msgstr ""
+
 #: Game.Levels.GCD.L03_gcd_greatest
 msgid "Any greatest-common-divisor witness dominates every common divisor."
 msgstr ""
@@ -107,6 +123,13 @@ msgid "**Divisibility by 9**\n"
 "\n"
 "A number is congruent to the sum of its digits modulo 9.\n"
 "This works beautifully because any number can be written as a polynomial evaluated at 10, and §0."
+msgstr ""
+
+#. §0: `euclids_lemma`
+#. §1: `euclids_lemma a c m h_div h_coprime`
+#. §2: `euclids_lemma x 3 10 h h_gcd`
+#: Game.Levels.Problems.L05_euclid
+msgid "Use §0. Look closely at its arguments: §1. Here, it's §2."
 msgstr ""
 
 #. §0: $x$
@@ -134,6 +157,11 @@ msgstr ""
 msgid "**Divisibility by 2**\n"
 "\n"
 "Since 2 divides 10, the remainder of any number modulo 2 depends entirely on its last digit."
+msgstr ""
+
+#. §0: `mod_trans`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Finally, chain your two congruences together using §0!"
 msgstr ""
 
 #: Game.Levels.DivRules.L02_div2
@@ -185,6 +213,11 @@ msgid "If §0 and §1, is it true that §2?\n"
 "*Hint:* You will need to rewrite §5 into §6. Use the §7 tactic!"
 msgstr ""
 
+#. §0: `have h_div : 4 ∣ 100 := by ...`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "First, prove that 4 divides 100: §0"
+msgstr ""
+
 #. §0: $3 \\mid 9$
 #. §1: `mod_shrink`
 #. §2: `have h3 : (3 : ℤ) ∣ 9 := by ...`
@@ -194,6 +227,10 @@ msgid "If the rule for 9 works, the rule for 3 must come for free, because §0.\
 "Just like you shrank the modulus from 10 down to 2 and 5 earlier, shrink the modulus from 9 to 3 here using §1.\n"
 "\n"
 "Remember Lean's type system! When writing your divisibility fact, make sure to specify the type so Lean doesn't default to natural numbers: §2"
+msgstr ""
+
+#: Game.Levels.Problems.L03_crt
+msgid "The Oracle of CRT"
 msgstr ""
 
 #: Game.Doc.Theorems.DivRules
@@ -208,6 +245,10 @@ msgid "Welcome to World 3: In Search of the GCD!\n"
 "In the previous worlds, you learned how to add and multiply congruences. But what about division? Can we just cancel out common factors? Not always! To safely cancel factors in modular arithmetic, we need to deeply understand the Greatest Common Divisor (GCD).\n"
 "\n"
 "In this world, we will define the GCD using Bezout's identity, prove its properties, and unlock the ultimate tool for number theory: the General Cancellation Law. Let's find that GCD!"
+msgstr ""
+
+#: Game.Levels.Problems.L05_euclid
+msgid "Spot on! Euclid's Lemma is an incredibly powerful tool for analyzing equations with integers, and now you know how to apply it to concrete numbers."
 msgstr ""
 
 #: Game.Levels.Congruence.L02_mod_symm
@@ -240,6 +281,10 @@ msgstr ""
 #. §0: `dvd_mul_of_dvd_left`
 #: Game.Levels.GCD.L01_dvd_mul
 msgid "Perfect! Keep §0 close at hand — you'll use it again and again in this world."
+msgstr ""
+
+#: Game.Levels.Problems
+msgid "Problems"
 msgstr ""
 
 #. §0: $a$
@@ -450,6 +495,11 @@ msgstr ""
 msgid "Divisibility Rules"
 msgstr ""
 
+#. §0: `have h_gcd : IsGCD(5, 7) 1 := by ...`
+#: Game.Levels.Problems.L04_lincong
+msgid "Start by proving the GCD: §0"
+msgstr ""
+
 #: Game.Levels.LinCong.L06_sol_equiv
 msgid "Congruent Solutions"
 msgstr ""
@@ -463,12 +513,38 @@ msgid "**Reverse Inverse**\n"
 "If §0 for some §1, then §2."
 msgstr ""
 
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Masterfully done! You used divisibility to shrink the modulus, manually computed a small remainder, and used transitivity to glue it all together.\n"
+"\n"
+"This is exactly how number theory problems are solved in practice.\n"
+"\n"
+"🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
+"\n"
+"You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.\n"
+"\n"
+"Thank you for playing!"
+msgstr ""
+
 #: Game.Levels.DivRules.L05_div9
 msgid "Divisibility by 9 (The Magic of Polynomials)"
 msgstr ""
 
 #: Game.Doc.Theorems.Divisibility
 msgid "1 divides any integer."
+msgstr ""
+
+#. §0: $x$
+#. §1: $x \\equiv 7 \\pmod{10}$
+#. §2: $x \\equiv 2 \\pmod 3$
+#. §3: `crt_exists`
+#. §4: `IsGCD(10, 3) 1`
+#: Game.Levels.Problems.L03_crt
+msgid "Is there a number that ends in 7 (modulo 10) but leaves a remainder of 2 when divided by 3?\n"
+"In other words, does there exist an §0 such that §1 and §2?\n"
+"\n"
+"Instead of guessing, we can use the §3 theorem you proved in World 4. It guarantees a solution exists as long as the moduli are coprime.\n"
+"\n"
+"All you need to do is prove §4 and feed it to the theorem!"
 msgstr ""
 
 #. §0: `use «{k1}» + «{k2}»`
@@ -494,6 +570,10 @@ msgstr ""
 #. §3: `use -«{y}»`
 #: Game.Levels.LinCong.L01_inv_exists
 msgid "Your goal is §0. From §1 you know §2, so try §3."
+msgstr ""
+
+#: Game.Levels.DivRules.L07_div11
+msgid "Divisibility by 11 (Boss)"
 msgstr ""
 
 #. §0: `«{k1}»`
@@ -526,6 +606,10 @@ msgid "If §0 and §1 are both solutions to §2, how are they related?\n"
 "This perfectly mirrors §5 from World 3. You can reuse it directly!"
 msgstr ""
 
+#: Game.Levels.Problems.L05_euclid
+msgid "Euclid in Practice"
+msgstr ""
+
 #. §0: `have`
 #. §1: `have h : X = Y := by ring`
 #. §2: `h`
@@ -552,6 +636,26 @@ msgid "We are about to build the Chinese Remainder Theorem, but first, we need a
 "Since §5 is coprime to §6, can we just cancel §7? Yes, you have §8!"
 msgstr ""
 
+#. §0: $5 \\cdot x \\equiv 3 \\pmod 7$
+#. §1: `lin_cong_suff`
+#. §2: $a \\cdot x \\equiv b \\pmod m$
+#. §3: $\\gcd(a, m) \\mid b$
+#. §4: $a = 5$
+#. §5: $b = 3$
+#. §6: $m = 7$
+#. §7: `IsGCD(5, 7) 1`
+#. §8: `1 ∣ 3`
+#. §9: `lin_cong_suff`
+#: Game.Levels.Problems.L04_lincong
+msgid "Can we always find a solution to §0?\n"
+"\n"
+"In World 4, you proved §1, which states that §2 has a solution as long as §3.\n"
+"Here §4, §5, and §6. Since 5 and 7 are coprime, their GCD is 1, and 1 certainly divides 3!\n"
+"\n"
+"**Strategy:**\n"
+"Build the GCD proof for §7, and the divisibility proof for §8. Then hand them to §9."
+msgstr ""
+
 #. §0: $b/d$
 #. §1: $x$
 #: Game.Levels.LinCong.L05_sol_suff
@@ -566,12 +670,13 @@ msgstr ""
 msgid "Meeting the GCD"
 msgstr ""
 
-#: Game.Levels.LinCong.L11_poly
-msgid "🎉 Congratulations on completing World 4! 🎉\n"
+#. §0: `lin_cong_suff`
+#. §1: $x = u \\cdot (b/d) = 3 \\cdot 3 = 9$
+#. §2: $5 \\cdot 9 = 45 \\equiv 3 \\pmod 7$
+#: Game.Levels.Problems.L04_lincong
+msgid "Excellent! The theorem constructed the solution under the hood.\n"
 "\n"
-"And there it is — modular arithmetic behaving exactly like a ring should!\n"
-"\n"
-"Next up is World 5 (Divisibility Rules). Think of it as a playable epilogue! You have already beaten the hardest parts of the game. Now, you get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math problems you learned in school."
+"If you trace the algebra of §0, it gives §1, and indeed §2. Abstract theory gives concrete results!"
 msgstr ""
 
 #. §0: `3 ∣ 12`
@@ -658,6 +763,30 @@ msgid "If we want a number §0 to satisfy two separate congruences simultaneousl
 "§7.\n"
 "\n"
 "Try it! Use your algebra skills and the Bézout identity to prove this explicitly."
+msgstr ""
+
+#. §0: $x \\equiv 23 \\pmod{100}$
+#. §1: $x$
+#. §2: `mod_shrink`
+#. §3: $x \\equiv 23 \\pmod 4$
+#. §4: `mod_trans`
+#. §5: `have`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Let's combine multiple theorems into one elegant deduction.\n"
+"If you know that §0, what is the remainder of §1 when divided by 4?\n"
+"\n"
+"Since 4 divides 100, we can safely shrink the modulus using §2. This will give us §3.\n"
+"But 23 is not a standard remainder! We need to step from 23 down to 3 modulo 4, using §4.\n"
+"\n"
+"This level tests your ability to chain §5 statements and piece together different theorems."
+msgstr ""
+
+#: Game.Levels.LinCong.L11_poly
+msgid "🎉 Congratulations on completing World 4! 🎉\n"
+"\n"
+"And there it is — modular arithmetic behaving exactly like a ring should!\n"
+"\n"
+"Next up is World 5 (Divisibility Rules). Think of it as a short breather after the heavy lifting of linear congruences, and a perfect preparation for the final practical challenges ahead. You get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math rules you learned in school."
 msgstr ""
 
 #: Game.Levels.Congruence.L04_add
@@ -824,6 +953,11 @@ msgstr ""
 msgid "Shifting a number by a multiple of m."
 msgstr ""
 
+#. §0: `lin_cong_suff`
+#: Game.Levels.Problems.L04_lincong
+msgid "Apply your theorem! Look at the arguments for §0 in your theorems tab."
+msgstr ""
+
 #: Game.Levels.DivRules.L05_div9
 msgid "Two lines of code to prove a rule that feels like magic in middle school. Because polynomials preserve congruences, substituting 10 for 1 works perfectly."
 msgstr ""
@@ -901,6 +1035,11 @@ msgid "**Dividing by the GCD Gives Coprime Numbers**\n"
 "\n"
 "**Intuition:**\n"
 "This matches your intuition exactly: §5, and dividing both by §6 gives §7 and §8, which indeed satisfy §9. Once you factor out everything two numbers have in common, whatever is left over shares nothing."
+msgstr ""
+
+#. §0: `have h_gcd : IsGCD(3, 10) 1 := by ...`
+#: Game.Levels.Problems.L05_euclid
+msgid "You need to show that 3 and 10 are coprime. §0"
 msgstr ""
 
 #. §0: $m$
@@ -1141,6 +1280,22 @@ msgid "The §0 (rewrite) tactic replaces a term with an equivalent term based on
 "If you have §1, typing §2 will replace §3 with §4 in your goal."
 msgstr ""
 
+#. §0: $17^{100} + 12^{100}$
+#. §1: $17^{100}$
+#. §2: $17 \\equiv 2 \\pmod 5$
+#. §3: $12 \\equiv 2 \\pmod 5$
+#. §4: `have`
+#. §5: `mod_pow`
+#. §6: `mod_add`
+#: Game.Levels.Problems.L01_large_powers
+msgid "Let's start with a classic competition problem: what is the remainder of §0 when divided by 5?\n"
+"\n"
+"If you try to compute §1 directly, the universe will end before you finish. But you know that congruences preserve addition and powers! Since §2 and §3, you can use your abstract theorems to simplify the bases before applying the exponent.\n"
+"\n"
+"**Strategy:**\n"
+"Create intermediate facts using §4 for the base numbers, then raise them to the 100th power using §5, and finally add them together using §6."
+msgstr ""
+
 #. §0: `«{d1}»`
 #. §1: `«{a}»`
 #. §2: `«{a}»`
@@ -1172,6 +1327,13 @@ msgstr ""
 msgid "Chinese Remainder Theorem: Existence"
 msgstr ""
 
+#. §0: `mod_cancel_coprime`
+#. §1: `«{h_swap}»`
+#. §2: `«{h_gcd}»`
+#: Game.Levels.Problems.L02_cancel
+msgid "Now you can finish the proof using §0 with your swapped hypothesis §1 and §2!"
+msgstr ""
+
 #. §0: `x = «{a}» * «{n}» * «{v}» + «{b}» * «{m}» * «{u}»`
 #. §1: `use`
 #. §2: `constructor`
@@ -1181,6 +1343,12 @@ msgstr ""
 
 #: Game.Levels.GCD.L04_coprime_forward
 msgid "Straightforward! You've now confirmed one half of the equivalence: coprimality *implies* a Bézout identity."
+msgstr ""
+
+#. §0: `have h1 : 17 ≡ 2 (mod 5) := by ...`
+#. §1: `ModEq`
+#: Game.Levels.Problems.L01_large_powers
+msgid "Start by proving the base congruences. Create a hypothesis §0. Unfold §1 and use a witness!"
 msgstr ""
 
 #. §0: $a \\cdot x \\equiv b \\pmod m$
@@ -1261,17 +1429,6 @@ msgid "Here's a natural question: if §0 is a gcd of §1 and §2, and we divide 
 "**Strategy:** unfold §14 to get the Bézout identity §15. Substitute §16 and §17 to get §18, i.e. §19. Since §20, you can *cancel* it from both sides using the new theorem §21, leaving exactly the Bézout identity you need for §22 — with the very same §23!"
 msgstr ""
 
-#: Game.Levels.DivRules.L07_div11
-msgid "🏆 AMAZING! 🏆\n"
-"\n"
-"You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.\n"
-"\n"
-"By building formal properties step-by-step from the very definition of divisibility, you've conquered this entire mathematical landscape. You didn't just learn Number Theory — you wrote the proofs yourself, perfectly verified by a computer.\n"
-"\n"
-"🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
-"Thank you for playing."
-msgstr ""
-
 #. §0: `∧`
 #. §1: `constructor`
 #: Game.Levels.GCD.L02_gcd_def
@@ -1312,6 +1469,12 @@ msgid "**CRT Existence**\n"
 "Build §2 from two pieces using Bézout witnesses §3 with §4. The term §5 behaves like \"§6\" modulo §7 (and vanishes modulo §8), while §9 behaves like \"§10\" modulo §11 (and vanishes modulo §12). So §13 picks up §14's value mod §15 and §16's value mod §17 simultaneously.\n"
 "\n"
 "**Example:** solving §18 and §19: here §20, so §21. This gives §22. Check: §23 ✓ and §24 ✓."
+msgstr ""
+
+#. §0: `constructor`
+#. §1: `one_dvd`
+#: Game.Levels.Problems.L02_cancel
+msgid "Use §0 twice, then supply §1 for the divisibility facts."
 msgstr ""
 
 #. §0: `«{a}» * «{x}» + «{m}» * «{y}» = 1`
@@ -1426,11 +1589,34 @@ msgstr ""
 msgid "The GCD Really Is the Greatest"
 msgstr ""
 
+#: Game.Levels.Problems.L02_cancel
+msgid "Excellent! You proved a concrete GCD on the fly to unlock the power of your cancellation theorem."
+msgstr ""
+
 #. §0: `euclids_lemma «{k2}» «{n}» «{m}» «{h_div}» h_coprime_symm`
 #. §1: `«{m}» ∣ «{k2}»`
 #. §2: `«{hk2}»`
 #: Game.Levels.LinCong.L10_crt_glue
 msgid "Now apply §0 to get §1, then finish by rewriting §2 with that witness."
+msgstr ""
+
+#. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
+#. §1: $x \\equiv y \\pmod 9$
+#. §2: `mod_cancel_coprime`
+#. §3: `IsGCD(14, 9) 1`
+#. §4: `intro`
+#. §5: `have`
+#. §6: `IsGCD(14, 9) 1`
+#. §7: `one_dvd`
+#. §8: $14x + 9y = 1$
+#: Game.Levels.Problems.L02_cancel
+msgid "Suppose we know that §0. Can we conclude that §1?\n"
+"\n"
+"In World 3, you proved §2, which says we can cancel a factor if it's coprime to the modulus.\n"
+"To use it here, you first need to prove that 14 and 9 are coprime, meaning §3.\n"
+"\n"
+"**Strategy:**\n"
+"Start by §4 ducing your variables, then build a §5 block to prove §6. Remember that 1 divides everything (§7), and you'll need to find Bézout coefficients for §8."
 msgstr ""
 
 #. §0: `use`
@@ -1525,6 +1711,12 @@ msgid "We know we can add congruences, but can we multiply them?\n"
 "Use §17 to build your intermediate steps, and then use the §18 tactic to finish the proof by providing §19!"
 msgstr ""
 
+#. §0: `mod_shrink`
+#. §1: `have h_shrink := mod_shrink x 23 100 4 h h_div`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Now use §0 to change the modulus: §1"
+msgstr ""
+
 #. §0: `x = «{u}» * «{k}»`
 #. §1: `use «{u}» * «{k}»`
 #. §2: `unfold ModEq`
@@ -1610,6 +1802,17 @@ msgid "**Divisibility by 4**\n"
 "§0."
 msgstr ""
 
+#. §0: `have h_gcd : IsGCD(14, 9) 1 := by ...`
+#: Game.Levels.Problems.L02_cancel
+msgid "First, build your GCD hypothesis: §0"
+msgstr ""
+
+#. §0: `crt_exists`
+#. §1: `exact`
+#: Game.Levels.Problems.L03_crt
+msgid "Now let §0 do the heavy lifting! Look at its signature in the theorems list and apply it with §1."
+msgstr ""
+
 #. §0: `«{a}» * («{x0}» + «{t}» * «{m1}») = «{a}» * «{x0}» + («{a1}» * «{t}») * «{m}»`
 #. §1: `mod_add_multiple`
 #. §2: `«{a}» = «{a1}» * «{d}»`
@@ -1631,8 +1834,9 @@ msgid "Welcome to World 2: Congruences in Action!\n"
 "You will also learn how to manipulate the modulus §0 itself, breaking it apart or scaling it up. Let us dive into the algebra!"
 msgstr ""
 
-#: Game.Levels.DivRules.L07_div11
-msgid "Divisibility by 11 (Grand Finale)"
+#. §0: `have h_gcd : IsGCD(10, 3) 1 := by ...`
+#: Game.Levels.Problems.L03_crt
+msgid "Construct the coprimality proof: §0"
 msgstr ""
 
 #: Game.Levels.LinCong.L03_inv_unique
@@ -1677,6 +1881,11 @@ msgstr ""
 msgid "**Euclid's Lemma**\n"
 "\n"
 "If §0 and §1 is coprime to §2, then §3."
+msgstr ""
+
+#. §0: `exact mod_add ...`
+#: Game.Levels.Problems.L01_large_powers
+msgid "You have congruences for the two parts. Combine them using §0!"
 msgstr ""
 
 #: Game.Levels.Congruence.L03_mod_trans
@@ -1823,6 +2032,12 @@ msgstr ""
 msgid "Symmetry of Congruences"
 msgstr ""
 
+#. §0: $14 \\cdot u + 9 \\cdot v = 1$
+#. §1: `use 2, -3`
+#: Game.Levels.Problems.L02_cancel
+msgid "You need Bézout coefficients where §0. Try §1."
+msgstr ""
+
 #: Game.Levels.GCD.L06_cancel_coprime
 msgid "Cancelling a factor coprime to the modulus."
 msgstr ""
@@ -1902,6 +2117,25 @@ msgid "🎉 INCREDIBLE! 🎉\n"
 "\n"
 "You've mastered the foundational tactics §3, §4, §5, and §6.\n"
 "Get ready for World 2, where we will introduce a massive new concept based on this: Modular Arithmetic (Congruences)!"
+msgstr ""
+
+#. §0: $x \\cdot 3$
+#. §1: $x$
+#. §2: $x$
+#. §3: `euclids_lemma`
+#. §4: $m \\mid (a \\cdot c)$
+#. §5: $\\gcd(c, m) = 1$
+#. §6: $m \\mid a$
+#. §7: $m = 10$
+#. §8: $a = x$
+#. §9: $c = 3$
+#: Game.Levels.Problems.L05_euclid
+msgid "If a number is a multiple of 10, and we know it's written as §0, does 10 divide §1?\n"
+"Yes! Because 3 and 10 share no common factors, the 10 must entirely divide the §2.\n"
+"\n"
+"This is exactly §3 from World 4: if §4 and §5, then §6.\n"
+"\n"
+"Let's prove this explicitly for §7, §8, and §9."
 msgstr ""
 
 #. §0: `use`
@@ -2061,6 +2295,11 @@ msgstr ""
 msgid "You have §0 and §1. Finish the boss by applying §2!"
 msgstr ""
 
+#. §0: `have h_23 : 23 ≡ 3 (mod 4) := by ...`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Next, prove that 23 is congruent to 3 modulo 4 manually: §0"
+msgstr ""
+
 #. §0: `«{h1}»`
 #. §1: `«{h2}»`
 #. §2: `have`
@@ -2140,6 +2379,11 @@ msgid "If two numbers are congruent modulo §0, they are also congruent modulo a
 "*Hint:* You can solve this by unfolding §6 entirely and manipulating the witnesses, OR you can remember §7 from World 1, which states that if §8 and §9, then §10!"
 msgstr ""
 
+#. §0: `have h_div : 1 ∣ 3 := by ...`
+#: Game.Levels.Problems.L04_lincong
+msgid "Now prove that 1 divides 3: §0"
+msgstr ""
+
 #. §0: `mod_add_multiple`
 #. §1: `mod_shrink`
 #: Game.Levels.DivRules.L03_div5
@@ -2174,9 +2418,32 @@ msgid "§0 is a theorem from Mathlib that states §1.\n"
 "Use §2 when dealing with powers in induction."
 msgstr ""
 
+#: Game.Levels.DivRules.L07_div11
+msgid "🏆 AMAZING! 🏆\n"
+"\n"
+"You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.\n"
+"\n"
+"You are now fully prepared. Take a deep breath — it is time to enter the final world, \"Concrete Problems\", where you will apply everything you've learned to crack actual numerical challenges!"
+msgstr ""
+
+#: Game.Levels.Problems.L01_large_powers
+msgid "Beautiful! By using theorems instead of brute force, you reduced a massive calculation to simple logic."
+msgstr ""
+
 #. §0: $m/d$
 #: Game.Levels.LinCong.L06_sol_equiv
 msgid "Excellent! You have shown that any two solutions only differ by multiples of §0."
+msgstr ""
+
+#. §0: `have h2 : 12 ≡ 2 (mod 5) := by ...`
+#: Game.Levels.Problems.L01_large_powers
+msgid "Now do the same for 12: §0"
+msgstr ""
+
+#. §0: `mod_pow`
+#. §1: `have h3 := mod_pow 17 2 5 100 h1`
+#: Game.Levels.Problems.L01_large_powers
+msgid "Now use your theorem from World 2! Apply §0 to your base congruences: §1."
 msgstr ""
 
 #: Game.Levels.LinCong.L09_crt_exists
@@ -2253,6 +2520,12 @@ msgid "Now for the payoff of our definition: let's show that any §0 satisfying 
 "3. §22 witnesses from both new facts, §23 their sum, then §24 and §25 to finish — exactly the witness-gluing pattern you used for §26 in World 1."
 msgstr ""
 
+#. §0: `mod_cancel_coprime`
+#. §1: `have h_swap : (x * 14) ≡ (y * 14) (mod 9) := by ...`
+#: Game.Levels.Problems.L02_cancel
+msgid "The theorem §0 expects the common factor on the *right* side of the multiplication. Create a new hypothesis to swap the order: §1"
+msgstr ""
+
 #. §0: $a \\equiv b \\pmod m$
 #. §1: $P(a) \\equiv P(b) \\pmod m$
 #. §2: $P$
@@ -2306,6 +2579,19 @@ msgid "The §0 theorem lets you cancel a common non-zero factor from an equation
 msgstr ""
 
 #. §0: $a$
+#. §1: $b$
+#. §2: $m$
+#: Game.Levels.Problems
+msgid "Welcome to World 6: Problems!\n"
+"\n"
+"This is it. The grand finale of the Number Theory Game.\n"
+"\n"
+"You've built a massive toolkit of abstract theorems. You've conquered the Chinese Remainder Theorem and relaxed with the divisibility rules. But math isn't just about abstract variables like §0, §1, and §2. It's about solving real problems.\n"
+"\n"
+"In this final world, we will use your theorems to crush concrete numerical problems that would be too massive to compute directly. You'll see how abstract algebra gives you elegant shortcuts to the right answers. Let's put your theory to the ultimate test!"
+msgstr ""
+
+#. §0: $a$
 #. §1: $0 = a \\cdot k$
 #. §2: $k$
 #: Game.Levels.Divisibility.L04_dvd_zero
@@ -2335,6 +2621,16 @@ msgid "What about divisibility by 2? Since §0, we can just shrink the modulus o
 "\n"
 "**Lean Quirk Alert:** If you just write §5, Lean will assume 2 and 10 are natural numbers (§6), but our theorems expect integers (§7). To fix this, you must explicitly tell Lean the type of at least one number.\n"
 "Write your statement like this: §8"
+msgstr ""
+
+#: Game.Levels.DivRules
+msgid "Welcome to World 5: Divisibility Rules!\n"
+"\n"
+"You have already defeated the final boss of the abstract theory and conquered the hardest world in the game. Consider this world a breather — a fun interlude and a warm-up for the real numerical challenges that await you in the grand finale.\n"
+"\n"
+"Do you remember learning divisibility rules in school? \"A number is divisible by 9 if the sum of its digits is divisible by 9\", or \"A number is divisible by 10 if it ends in 0\".\n"
+"\n"
+"In this world, we won't just memorize these rules — we will prove them! Let's enjoy a short rest by seeing how your massive toolkit trivially solves these classic rules, before we head into the ultimate proving grounds."
 msgstr ""
 
 #: Game.Levels.Congruence.L05_mul_const
@@ -2416,14 +2712,8 @@ msgid "*Game version: 1.0*\n"
 "and divisibility, translating classical pen-and-paper mathematics into rigorous code."
 msgstr ""
 
-#: Game.Levels.DivRules
-msgid "Welcome to World 5: Divisibility Rules!\n"
-"\n"
-"You have already defeated the final boss and conquered the hardest world in the game. Consider this world your playable epilogue — a pure showcase of your newfound power.\n"
-"\n"
-"Do you remember learning divisibility rules in school? \"A number is divisible by 9 if the sum of its digits is divisible by 9\", or \"A number is divisible by 10 if it ends in 0\".\n"
-"\n"
-"In this epilogue, we won't just memorize these rules — we will prove them! You'll see that with the massive toolkit you built in the previous worlds, these legendary rules are actually trivial consequences of modular arithmetic. Let's reap the rewards of your hard work!"
+#: Game.Levels.Problems.L02_cancel
+msgid "Cancelling Constants"
 msgstr ""
 
 #: Game.Levels.GCD.L08_cancel_general
@@ -2508,6 +2798,13 @@ msgstr ""
 
 #: Game.Levels.DivRules.L06_div3
 msgid "Divisibility by 3"
+msgstr ""
+
+#. §0: $x = 17$
+#: Game.Levels.Problems.L03_crt
+msgid "Boom. You didn't even have to find the number yourself (though if you do the math, §0 works perfectly). Your abstract theorem did all the work.\n"
+"\n"
+"This is the true power of mathematics!"
 msgstr ""
 
 #: Game.Doc.Theorems.DivRules
@@ -2607,6 +2904,10 @@ msgid "🎉 MAGNIFICENT! 🎉\n"
 "You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
 "\n"
 "You've mastered nested §0, chained §1-based lemma reuse, and careful case-by-case algebra. To be continued in World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!"
+msgstr ""
+
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Shrinking and Shifting"
 msgstr ""
 
 #. §0: $a \\cdot 0 = 0$
