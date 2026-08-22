@@ -9,7 +9,7 @@ Title "The General Cancellation Law"
 Introduction "
 Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!
 
-If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and $\\text{IsGCD}(c, m) d \\neq 0$, and we write $c = c_1 \\cdot d$, $m = m_1 \\cdot d$ (exactly as in Level 7), then $a \\equiv b \\pmod{m_1}$.
+If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and `IsGCD(c, m) d` with $d \\neq 0$, and we write $c = c_1 \\cdot d$, $m = m_1 \\cdot d$ (exactly as in Level 7), then $a \\equiv b \\pmod{m_1}$.
 
 **Strategy — assemble, don't reprove:**
 1. Apply `gcd_div_coprime` (Level 7) to get `IsGCD(c_1, m_1) 1`.
