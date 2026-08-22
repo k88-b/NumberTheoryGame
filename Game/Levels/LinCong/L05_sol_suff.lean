@@ -21,18 +21,16 @@ Statement lin_cong_suff (a b m d : ℤ) (hd : IsGCD(a, m) d) (hb : d ∣ b) : �
   unfold IsGCD at hd
   obtain ⟨_, u, v, huv⟩ := hd
   obtain ⟨k, hk⟩ := hb
-  Hint "As the introduction says, try `x = {u} * {k}`. `use {u} * {k}`, then `unfold ModEq` to see the actual goal."
+  Hint "As the introduction says, try `x = {u} * {k}`. `use {u} * {k}`"
   use u * k
   unfold ModEq
-  Hint (hidden := true) "Your goal is `{m} ∣ ({a} * ({u} * {k}) - {b})`. Since `{b} = {d} * {k}`, try `use -{v} * {k}`, then rewrite `{b}` via `{hk}`."
+  Hint (hidden := true) "Your goal is `{m} ∣ ({a} * ({u} * {k}) - {b})`. Since `{b} = {d} * {k}`, try `use -{v} * {k}`"
   use -v * k
   rw [hk]
-  Hint (hidden := true) "Build the shift identity: `have h_eq : {a} * ({u} * {k}) - {d} * {k} = {m} * (-{v} * {k}) + {k} * ({a} * {u} + {m} * {v} - {d}) := by ring`. The last term vanishes once you plug in `{huv}`."
+  Hint (hidden := true) "Build the shift identity: `have h_eq : {a} * ({u} * {k}) - {d} * {k} = {m} * (-{v} * {k}) + {k} * ({a} * {u} + {m} * {v} - {d})`. The last term vanishes once you plug in `{huv}`."
   have h_eq : a * (u * k) - d * k = m * (-v * k) + k * (a * u + m * v - d) := by ring
-  rw [h_eq]
-  rw [huv]
-  have h_eq2 : m * (-v * k) + k * (d - d) = m * (-v * k) := by ring
-  rw [h_eq2]
+  rw [h_eq, huv]
+  ring
 
 Conclusion "
 Beautiful! You multiplied the Bézout coefficients by $b/d$ to constructively find the solution $x$.

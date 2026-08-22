@@ -31,7 +31,7 @@ Statement mod_mul (a b c d m : ℤ) (h1 : a ≡ b (mod m)) (h2 : c ≡ d (mod m)
   have step1 := mod_mul_const a b c m h1
   have step2 := mod_mul_const c d b m h2
 
-  Hint (hidden := true) "You have `{c} * {b} ≡ {d} * {b}`, but you need `{b} * {c} ≡ {b} * {d}` for transitivity. Try creating it with `have step2_symm : ({b} * {c}) ≡ ({b} * {d}) (mod {m}) := by ...` and prove it by rewriting the terms with `ring`."
+  Hint (hidden := true) "You know that `{c} * {b} ≡ {d} * {b}`. Because multiplication is commutative, this is equivalent to `{b} * {c} ≡ {b} * {d}`. Try proving this flipped version first, so you can smoothly chain everything together with transitivity."
   have step2_symm : (b * c) ≡ (b * d) (mod m) := by
     have hrw1 : b * c = c * b := by ring
     have hrw2 : b * d = d * b := by ring

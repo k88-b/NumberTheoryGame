@@ -40,8 +40,7 @@ Statement mod_symm (a b m : ℤ) (h : a ≡ b (mod m)) : b ≡ a (mod m) := by
   obtain ⟨k, hk⟩ := h
   use -k
   have h_eq : b - a = -(a - b) := by ring
-  rw [h_eq]
-  rw [hk]
+  rw [h_eq, hk]
   ring
 
 Conclusion "

@@ -21,9 +21,8 @@ You already have every tool you need for this one: `obtain` the witness from you
 
 /-- If d divides a, then d divides a * b for any integer b. -/
 Statement dvd_mul_of_dvd_left (a b d : ℤ) (h : d ∣ a) : d ∣ (a * b) := by
-  Hint "Start by extracting the witness from your hypothesis using `obtain ⟨k, hk⟩ := {h}`."
   obtain ⟨k, hk⟩ := h
-  Hint (hidden := true) "Since `{a} = {d} * {k}`, you want to show `{a} * {b} = {d} * ({k} * {b})`. Try to `use {k} * {b}`."
+  Hint (hidden := true) "Once you know a = d·k, substituting into a·b immediately gives d·(k·b). So the multiplier the goal is asking for is your existing k, scaled by b."
   use k * b
   rw [hk]
   ring

@@ -33,16 +33,13 @@ Statement dvd_trans (x y z : ℤ) (h1 : x ∣ y) (h2 : y ∣ z) : x ∣ z := by
   obtain ⟨k2, hk2⟩ := h2
 
   Branch
-    rw [hk2]
-    rw [hk1]
-    Hint "You have successfully rewritten the goal! Now try to `use {k1} * {k2}` as your witness."
+    rw [hk2, hk1]
+    Hint "The goal now expresses z purely in terms of x, k1 and k2 — nothing else is left. Look at what's multiplying x; that's exactly the single number the goal is asking you to supply."
 
-  Hint (hidden := true) "To prove `{x} ∣ {z}`, you need to find a multiplier. Since `{y} = {x} * {k1}` and `{z} = {y} * {k2}`, try to `use {k1} * {k2}` as your witness."
+  Hint (hidden := true) "Think it through: z = y·k2, and y = x·k1, so z = (x·k1)·k2 = x·(k1·k2). A single number built from k1 and k2 already turns x into z — that's the witness this goal wants."
   use k1 * k2
 
-  rw [hk2]
-  rw [hk1]
-
+  rw [hk2, hk1]
   ring
 
 Conclusion "

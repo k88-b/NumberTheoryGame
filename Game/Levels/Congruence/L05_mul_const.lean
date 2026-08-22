@@ -25,6 +25,7 @@ Statement mod_mul_const (a b c m : ℤ) (h : a ≡ b (mod m)) : (a * c) ≡ (b *
   rw [hk]
   ring
 
+
 Conclusion "
 Very smooth. Keep this theorem (`mod_mul_const`) in mind, it will be very useful!
 "

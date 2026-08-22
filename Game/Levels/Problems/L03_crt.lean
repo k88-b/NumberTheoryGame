@@ -16,15 +16,13 @@ All you need to do is prove `IsGCD(10, 3) 1` and feed it to the theorem!
 "
 
 Statement : ∃ x : ℤ, x ≡ 7 (mod 10) ∧ x ≡ 2 (mod 3) := by
-  Hint "Construct the coprimality proof: `have h_gcd : IsGCD(10, 3) 1 := by ...`"
   have h_gcd : IsGCD(10, 3) 1 := by
     unfold IsGCD
     constructor
     · constructor
       · exact one_dvd 10
       · exact one_dvd 3
-    · Hint (hidden := true) "Find $10 \\cdot u + 3 \\cdot v = 1$. Try `use 1, -3`."
-      use 1, -3
+    · use 1, -3
       ring
 
   Hint "Now let `crt_exists` do the heavy lifting! Look at its signature in the theorems list and apply it with `exact`."

@@ -17,16 +17,13 @@ Start by building a `have` block to prove `IsGCD(14, 9) 1`. Remember that 1 divi
 "
 
 Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := by
-  Hint "First, build your GCD hypothesis: `have h_gcd : IsGCD(14, 9) 1 := by ...`"
   have h_gcd : IsGCD(14, 9) 1 := by
     unfold IsGCD
-    Hint (hidden := true) "Use `constructor` twice, then supply `one_dvd` for the divisibility facts."
     constructor
     · constructor
       · exact one_dvd 14
       · exact one_dvd 9
-    · Hint (hidden := true) "You need Bézout coefficients where $14 \\cdot u + 9 \\cdot v = 1$. Try `use 2, -3`."
-      use 2, -3
+    · use 2, -3
       ring
 
   Hint "The theorem `mod_cancel_coprime` expects the common factor on the *right* side of the multiplication. Create a new hypothesis to swap the order: `have h_swap : (x * 14) ≡ (y * 14) (mod 9) := by ...`"

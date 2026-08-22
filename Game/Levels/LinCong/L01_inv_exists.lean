@@ -26,17 +26,14 @@ Use `unfold IsGCD` to extract Bézout's coefficients, and then use algebra!
 Statement inv_exists (a m : ℤ) (h : IsGCD(a, m) 1) : ∃ x : ℤ, (a * x) ≡ 1 (mod m) := by
   unfold IsGCD at h
   obtain ⟨_, x, y, hxy⟩ := h
-  Hint "You have `{a} * {x} + {m} * {y} = 1` from Bézout. This `{x}` is exactly the inverse you're looking for — `use {x}`, then `unfold ModEq` to see what you actually need to prove."
   use x
   unfold ModEq
   Hint (hidden := true) "Your goal is `{m} ∣ ({a} * {x} - 1)`. From `{hxy}` you know `{a} * {x} - 1 = -{m} * {y}`, so try `use -{y}`."
   use -y
-  Hint (hidden := true) "Rewrite `{a} * {x} - 1` using `{hxy}` with `have h_eq : {a} * {x} - 1 = ({a} * {x} + {m} * {y}) - 1 - {m} * {y} := by ring`."
+  Hint (hidden := true) "Rewrite `{a} * {x} - 1` using `{hxy}` with `have h_eq : {a} * {x} - 1 = ({a} * {x} + {m} * {y}) - 1 - {m} * {y}`."
   have h_eq : a * x - 1 = (a * x + m * y) - 1 - m * y := by ring
-  rw [h_eq]
-  rw [hxy]
-  have h_eq2 : 1 - 1 - m * y = m * (-y) := by ring
-  rw [h_eq2]
+  rw [h_eq, hxy]
+  ring
 
 
 Conclusion "

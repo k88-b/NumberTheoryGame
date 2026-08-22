@@ -17,18 +17,15 @@ Build the GCD proof for `IsGCD(5, 7) 1`, and the divisibility proof for `1 ∣ 3
 "
 
 Statement : ∃ x : ℤ, (5 * x) ≡ 3 (mod 7) := by
-  Hint "Start by proving the GCD: `have h_gcd : IsGCD(5, 7) 1 := by ...`"
   have h_gcd : IsGCD(5, 7) 1 := by
     unfold IsGCD
     constructor
     · constructor
       · exact one_dvd 5
       · exact one_dvd 7
-    · Hint (hidden := true) "Find $5 \\cdot u + 7 \\cdot v = 1$. Try `use 3, -2`."
-      use 3, -2
+    · use 3, -2
       ring
 
-  Hint "Now prove that 1 divides 3: `have h_div : 1 ∣ 3 := by ...`"
   have h_div : (1: ℤ) ∣ 3 := by
     use 3
     ring

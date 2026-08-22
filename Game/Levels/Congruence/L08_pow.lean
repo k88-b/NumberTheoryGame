@@ -28,8 +28,7 @@ Statement mod_pow (a b m : ℤ) (n : ℕ) (h : a ≡ b (mod m)) : (a^n) ≡ (b^n
   unfold ModEq
   use 0
   ring
-  rw [pow_succ]
-  rw [pow_succ]
+  rw [pow_succ, pow_succ]
   exact mod_mul (a^d) (b^d) a b m ih h
 
 Conclusion "

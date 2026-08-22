@@ -28,13 +28,12 @@ Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c
   obtain ⟨k, hk⟩ := h1
   rw [hc, hm] at hk
   have e : a * (c1 * d) - b * (c1 * d) = d * (a * c1 - b * c1) := by ring
-  rw [e] at hk
   have e2 : m1 * d * k = d * (m1 * k) := by ring
-  rw [e2] at hk
+  rw [e, e2] at hk
 
   have hk2 : a * c1 - b * c1 = m1 * k := mul_left_cancel₀ hd hk
 
-  Hint (hidden := true) "Now package your result back into a congruence: `have h1' : ({a} * {c1}) ≡ ({b} * {c1}) (mod {m1}) := by ...`. Unfold `ModEq`, `use {k}`, and supply your cancelled equation!"
+  Hint (hidden := true) "You have a plain equation now, {a} * {c1} − {b} * {c1} = {m1} * {k}, but mod_cancel_coprime needs an actual congruence, not a bare equation. Wrap it back up: state the congruence, unfold it, and it reduces to exactly the equation you already have."
   have h1' : (a * c1) ≡ (b * c1) (mod m1) := by
     unfold ModEq
     use k

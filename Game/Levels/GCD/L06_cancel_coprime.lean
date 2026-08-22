@@ -28,11 +28,8 @@ Statement mod_cancel_coprime (a b c m : ℤ) (h1 : (a * c) ≡ (b * c) (mod m)) 
   Hint (hidden := true) "You need a witness for `{m} ∣ ({a} - {b})`. We know `{c} * {x} + {m} * {y} = 1`. Multiplying `({a} - {b})` by this gives `({a} - {b}) * ({c} * {x} + {m} * {y})`. With some algebra, the `{m}` can be factored out. Try to `use {k} * {x} + ({a} - {b}) * {y}`."
   use k * x + (a - b) * y
   have h_eq1 : m * (k * x + (a - b) * y) = (m * k) * x + (a - b) * (m * y) := by ring
-  rw [h_eq1]
-  rw [← hk]
   have h_eq2 : (a * c - b * c) * x + (a - b) * (m * y) = (a - b) * (c * x + m * y) := by ring
-  rw [h_eq2]
-  rw [hxy]
+  rw [h_eq1, ← hk, h_eq2, hxy]
   ring
 
 Conclusion "

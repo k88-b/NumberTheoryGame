@@ -21,8 +21,7 @@ Statement mod_shrink (a b m d : ℤ) (h1 : a ≡ b (mod m)) (h2 : d ∣ m) : a �
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
   use k2 * k1
-  rw [hk1]
-  rw [hk2]
+  rw [hk1, hk2]
   ring
 
 Conclusion "

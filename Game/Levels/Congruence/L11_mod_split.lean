@@ -32,15 +32,13 @@ Statement mod_split (a b m n : ℤ) (h : a ≡ b (mod (m * n))) : (a ≡ b (mod 
   · unfold ModEq at *
     obtain ⟨k, hk⟩ := h
     use n * k
-    have h_eq : m * n * k = m * (n * k) := by ring
-    rw [← h_eq]
-    exact hk
+    rw [hk]
+    ring
   · unfold ModEq at *
     obtain ⟨k, hk⟩ := h
     use m * k
-    have h_eq : m * n * k = n * (m * k) := by ring
-    rw [← h_eq]
-    exact hk
+    rw [hk]
+    ring
 
 Conclusion "
 🎉 AMAZING! 🎉

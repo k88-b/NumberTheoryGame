@@ -17,13 +17,14 @@ Statement inv_implies_coprime (a m : ℤ) (h : ∃ x, (a * x) ≡ 1 (mod m)) : I
   obtain ⟨x, hx⟩ := h
   unfold ModEq at hx
   obtain ⟨k, hk⟩ := hx
-  Hint "You have `{a} * {x} - 1 = {m} * {k}`. To get a Bézout identity `{a} * u + {m} * v = 1`, try `u = {x}` and `v = -{k}`."
+
+  Hint "You know a * {x} − 1 = m * {k}. Rearranged, a * {x} + m * (−{k}) = 1 — exactly a Bézout identity for 1, using the same x and the negation of {k}."
+
   have h_bezout : ∃ u v : ℤ, a * u + m * v = 1 := by
     use x, -k
-    Hint (hidden := true) "Build it with `have h_eq : {a} * {x} + {m} * (-{k}) = ({a} * {x} - 1) - {m} * {k} + 1 := by ring`, then `rw [h_eq, {hk}]` and finish with `ring`."
+    Hint (hidden := true) "To verify a * {x} + m * (−{k}) = 1, rewrite it as (a * {x} − 1) − m * {k} + 1, then substitute a * {x} − 1 = m * {k}. What remains is pure arithmetic."
     have h_eq : a * x + m * (-k) = (a * x - 1) - m * k + 1 := by ring
-    rw [h_eq]
-    rw [hk]
+    rw [h_eq, hk]
     ring
   exact bezout_imp_coprime a m h_bezout
 

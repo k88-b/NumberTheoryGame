@@ -29,8 +29,7 @@ Statement lin_cong_nec (a b x m d : ℤ) (hd : IsGCD(a, m) d) (hx : (a * x) ≡ 
   have h_eq : b = a * x - m * k := by
     rw [← hk]
     ring
-  rw [h_eq]
-  rw [hk1, hk2]
+  rw [h_eq, hk1, hk2]
   ring
 
 Conclusion "

@@ -33,17 +33,16 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
   obtain ⟨k1, hk1⟩ := hm
   obtain ⟨k2, hk2⟩ := hn
 
-  Hint "Following the strategy, start by creating an equation that sets your two expressions for `x - a` equal to each other: `have h_eq : {m} * {k1} = {n} * {k2} := by ...`"
+  Hint "Following the strategy, start by creating an equation that sets your two expressions for `x - a` equal to each other: `have h_eq : {m} * {k1} = {n} * {k2}`"
   have h_eq : m * k1 = n * k2 := by rw [← hk1, hk2]
 
-  Hint "Now prove that `{m}` divides `{k2} * {n}`. Create a standard divisibility proof using a `have` block: `use {k1}` as the witness, and rearrange terms with `ring` to apply your `{h_eq}`."
+  Hint "Now prove that `{m}` divides `{k2} * {n}`."
   have h_div : m ∣ (k2 * n) := by
     use k1
     have h_eq2 : k2 * n = n * k2 := by ring
-    rw [h_eq2]
-    rw [← h_eq]
+    rw [h_eq2, ← h_eq]
 
-  Hint "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove `have h_coprime_symm : IsGCD({n}, {m}) 1 := by ...` by unfolding the definition and providing the swapped Bézout witnesses."
+  Hint "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove `have h_coprime_symm : IsGCD({n}, {m}) 1`."
   have h_coprime_symm : IsGCD(n, m) 1 := by
     unfold IsGCD at h_coprime
     unfold IsGCD
@@ -56,7 +55,7 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
       have h_eq3 : n * v + m * u = m * u + n * v := by ring
       rw [h_eq3, huv]
 
-  Hint (hidden := true) "Now apply `euclids_lemma` to extract a new witness showing that `{m} ∣ {k2}`. Finally, `use` that witness to solve the main goal!"
+  Hint (hidden := true) "Now apply `euclids_lemma` to extract a new witness showing that `{m} ∣ {k2}`."
   obtain ⟨k3, hk3⟩ := euclids_lemma k2 n m h_div h_coprime_symm
   use k3
   rw [hk2, hk3]
