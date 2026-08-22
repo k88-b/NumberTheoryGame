@@ -16,8 +16,7 @@ Before we dive into the Greatest Common Divisor itself, we need one small but ve
 If $d$ divides $a$, does $d$ also divide $a \\cdot b$ for *any* integer $b$?
 Yes! If $a$ is a multiple of $d$, then any multiple of $a$ is automatically a multiple of $d$ too.
 
-You already have every tool you need for this one: `obtain` the witness from your hypothesis, `use` the right witness for the new goal, `rw`, and finish with `ring` — exactly like you did for `dvd_trans` back in World 1.
-"
+You already have every tool you need for this one: `obtain` the witness from your hypothesis, `use` the right witness for the new goal, `rw`, and finish with `ring` — similar to the witness-gluing pattern you used in World 1."
 
 
 /-- If d divides a, then d divides a * b for any integer b. -/
