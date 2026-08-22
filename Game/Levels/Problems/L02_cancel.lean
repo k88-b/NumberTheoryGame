@@ -13,7 +13,7 @@ In World 3, you proved `mod_cancel_coprime`, which says we can cancel a factor i
 To use it here, you first need to prove that 14 and 9 are coprime, meaning `IsGCD(14, 9) 1`.
 
 **Strategy:**
-Start by `intro` ducing your variables, then build a `have` block to prove `IsGCD(14, 9) 1`. Remember that 1 divides everything (`one_dvd`), and you'll need to find Bézout coefficients for $14x + 9y = 1$.
+Start by building a `have` block to prove `IsGCD(14, 9) 1`. Remember that 1 divides everything (`one_dvd`), and you'll need to find Bézout coefficients for $14x + 9y = 1$.
 "
 
 Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := by
