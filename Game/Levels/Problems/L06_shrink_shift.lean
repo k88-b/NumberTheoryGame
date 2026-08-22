@@ -5,7 +5,7 @@ import Game.Levels.Problems.L05_euclid
 
 World "Problems"
 Level 6
-Title "Shrinking and Shifting"
+Title "Shrinking and Shifting (Boss)"
 
 Introduction "
 Let's combine multiple theorems into one elegant deduction.
