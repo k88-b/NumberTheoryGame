@@ -1,6 +1,6 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L09_mod_mul
+import Game.Levels.Congruence.L09_mod_scale
 
 World "Congruence"
 Level 10
