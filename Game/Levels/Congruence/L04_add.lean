@@ -12,7 +12,7 @@ If $a \\equiv b \\pmod m$ and $c \\equiv d \\pmod m$, is it true that $a + c \\e
 Yes! This means we can add two congruences together.
 To prove this, you need to `unfold ModEq at *`, extract the witnesses from both hypotheses using `obtain`, and then use algebra.
 
-*Hint:* You will need to rewrite $(a + c) - (b + d)$ into $(a - b) + (c - d)$. Use the `have` tactic!
+**Hint:** You will need to rewrite $(a + c) - (b + d)$ into $(a - b) + (c - d)$. Use the `have` tactic!
 "
 
 

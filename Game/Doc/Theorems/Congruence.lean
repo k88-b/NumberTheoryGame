@@ -1,7 +1,11 @@
 import GameServer
 
 
-/-- Modular arithmetic is reflexive. -/
+/--
+**Reflexivity of Congruences**
+
+Every integer is congruent to itself: $a \equiv a \pmod m$.
+-/
 TheoremDoc mod_refl as "mod_refl" in "Congruence"
 
 
@@ -42,7 +46,11 @@ Notice that $2 + 5 = 7$. We just added the remainders safely!
 TheoremDoc mod_add as "mod_add" in "Congruence"
 
 
-/-- You can multiply both sides of a congruence by an integer. -/
+/--
+**Multiplying by a Constant**
+
+If $a \equiv b \pmod m$, then $a \cdot c \equiv b \cdot c \pmod m$.
+-/
 TheoremDoc mod_mul_const as "mod_mul_const" in "Congruence"
 
 
@@ -60,7 +68,11 @@ And $156 \equiv 6 \pmod{10}$. Notice that $2 \cdot 3$ is exactly $6$.
 TheoremDoc mod_mul as "mod_mul" in "Congruence"
 
 
-/-- Adding a multiple of the modulus does not change the congruence. -/
+/--
+**Shifting by a Multiple of the Modulus**
+
+For any integer $k$: $a + k \cdot m \equiv a \pmod m$.
+-/
 TheoremDoc mod_add_multiple as "mod_add_multiple" in "Congruence"
 
 
@@ -71,15 +83,27 @@ Use `rw [pow_succ]` when dealing with powers in induction.
 TheoremDoc pow_succ as "pow_succ" in "Algebra"
 
 
-/-- Congruences can be raised to a natural power. -/
+/--
+**Powers of Congruences**
+
+If $a \equiv b \pmod m$, then $a^n \equiv b^n \pmod m$ for any natural number $n$.
+-/
 TheoremDoc mod_pow as "mod_pow" in "Congruence"
 
 
-/-- You can multiply the modulus and the values by a constant. -/
+/--
+**Scaling the Modulus**
+
+If $a \equiv b \pmod m$, then $a \cdot c \equiv b \cdot c \pmod{m \cdot c}$.
+-/
 TheoremDoc mod_scale as "mod_scale" in "Congruence"
 
 
-/-- If a = b (mod m) and d | m, then a = b (mod d). -/
+/--
+**Shrinking the Modulus**
+
+If $a \equiv b \pmod m$ and $d \mid m$, then $a \equiv b \pmod d$.
+-/
 TheoremDoc mod_shrink as "mod_shrink" in "Congruence"
 
 
@@ -94,6 +118,3 @@ So if two numbers are congruent modulo 15, they are automatically congruent modu
 This is a crucial stepping stone towards the Chinese Remainder Theorem!
 -/
 TheoremDoc mod_split as "mod_split" in "Congruence"
-
-
-

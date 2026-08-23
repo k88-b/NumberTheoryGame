@@ -18,5 +18,5 @@ Statement dvd_refl (a : ℤ) : a ∣ a := by
 
 
 Conclusion "
-Easy, right? You are starting to recognize patterns. We call this property 'reflexivity'.
+Nice! You are starting to recognize patterns — we call this property 'reflexivity'.
 "

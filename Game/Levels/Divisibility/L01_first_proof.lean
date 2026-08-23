@@ -19,7 +19,7 @@ Welcome to your first level! In Lean, you write proofs by using **tactics**. Tac
 Our first statement is `3 ∣ 12`, which is read as \"3 divides 12\".
 Check your **Definitions** tab on the right to read exactly what this means mathematically!
 
-*(To type the divides symbol `∣`, type `\\|` or `\\mid` and press Space!)*
+*(To type `∣`, write `\\mid` and press Space.)*
 
 Lean sees `3 ∣ 12` as `∃ k, 12 = 3 * k`.
 To prove this, you need to provide the number $k$. You can do this using the `use` tactic.
@@ -34,3 +34,4 @@ Conclusion "
 Congratulations! You have just written your first proof in Lean 4!
 You used `use` to provide a witness, and Lean automatically closed the obvious equality.
 "
+

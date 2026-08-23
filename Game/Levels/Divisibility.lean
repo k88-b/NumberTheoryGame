@@ -11,9 +11,10 @@ World "Divisibility"
 Title "Divisibility Club"
 
 Introduction "
-Welcome to the Divisibility Club!
+Welcome to World 1: The Divisibility Club!
 
 In this first world, you will learn the basics of Lean 4, how to interact with the system, and how to write your very first proofs. We will explore the mathematical concept of divisibility ($a \\mid b$).
 
 By the end of this world, you will have built a solid foundation for integer arithmetic and proven that divisibility chains perfectly (transitivity). Take your time, read the explanations carefully, and have fun!
 "
+

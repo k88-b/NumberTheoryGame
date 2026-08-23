@@ -29,7 +29,7 @@ TacticDoc ring
 The `obtain` tactic extracts a witness from a hypothesis that contains an \"exists\" ($\exists$) or a logical AND ($\wedge$).
 If you have a hypothesis `h : x ∣ y` (which means `∃ k, y = x * k`), you can type
 `obtain ⟨k, hk⟩ := h` to get the variable `k` and the equation `hk : y = x * k`.
-(To type the angle brackets `⟨` and `⟩`, write `\<` and `\>` then press Space).
+*(To type `⟨` and `⟩`, write `\<` and `\>`, then press Space.)*
 
 **Nested and multiple arguments:**
 For more complex hypotheses, such as `IsGCD(c, m) 1` (which contains multiple nested `∧` and `∃`), you can extract everything at once by providing up to 4 arguments.

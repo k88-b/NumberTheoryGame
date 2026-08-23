@@ -33,7 +33,7 @@ TheoremDoc inv_unique as "inv_unique" in "LinCong"
 /--
 **Solvability (Necessary Condition)**
 
-If $d = \text{gcd}(a, m)$ and $a \cdot x \equiv b \pmod m$ has a solution, then $d \mid b$.
+If $d = \gcd(a, m)$ and $a \cdot x \equiv b \pmod m$ has a solution, then $d \mid b$.
 -/
 TheoremDoc lin_cong_nec as "lin_cong_nec" in "LinCong"
 
@@ -41,7 +41,7 @@ TheoremDoc lin_cong_nec as "lin_cong_nec" in "LinCong"
 /--
 **Solvability (Sufficient Condition)**
 
-If $d = \text{gcd}(a, m)$ and $d \mid b$, then $\exists x, a \cdot x \equiv b \pmod m$.
+If $d = \gcd(a, m)$ and $d \mid b$, then $\exists x, a \cdot x \equiv b \pmod m$.
 -/
 TheoremDoc lin_cong_suff as "lin_cong_suff" in "LinCong"
 
@@ -73,7 +73,7 @@ TheoremDoc euclids_lemma as "euclids_lemma" in "LinCong"
 /--
 **CRT Existence**
 
-If $\text{gcd}(m, n) = 1$, then there exists an $x$ solving both congruences.
+If $\gcd(m, n) = 1$, then there exists an $x$ solving both congruences.
 
 **Intuition:**
 Build $x$ from two pieces using Bézout witnesses $u, v$ with $m \cdot u + n \cdot v = 1$. The term $n \cdot v$ behaves like "$1$" modulo $m$ (and vanishes modulo $n$), while $m \cdot u$ behaves like "$1$" modulo $n$ (and vanishes modulo $m$). So $x = a \cdot n \cdot v + b \cdot m \cdot u$ picks up $a$'s value mod $m$ and $b$'s value mod $n$ simultaneously.

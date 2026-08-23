@@ -13,9 +13,9 @@ We prove the fact that sits at the heart of the **Euclidean Algorithm**: shiftin
 
 Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and $d_2$ is a (non-negative) gcd of $a$ and $m$, then $d_1 = d_2$.
 
-**Lean Syntax Tip:** Before we start, a quick trick! Since `IsGCD` is a nested logical AND (`∧`), you can extract its pieces directly using **dot notation** without destroying the original hypothesis. For example, `h.1.1` gets the very first fact, and `h.1.2` gets the second. Because we will need to pass the intact hypotheses `h1` and `h2` to `gcd_is_greatest` later, using dot notation is safer here than using `obtain`!
+**Syntax Tip:** Before we start, a quick trick! Since `IsGCD` is a nested logical AND (`∧`), you can extract its pieces directly using **dot notation** without destroying the original hypothesis. For example, `h.1.1` gets the very first fact, and `h.1.2` gets the second. Because we will need to pass the intact hypotheses `h1` and `h2` to `gcd_is_greatest` later, using dot notation is safer here than using `obtain`!
 
-**Strategy** (this is a long one — take it one step at a time!):
+**Strategy:** This one's long — take it one step at a time!
 
 1. Show $d_1$ is also a common divisor of $a$ and $m$ (not just of $a + m \\cdot k$): since $a = (a + m \\cdot k) - m \\cdot k$, and $d_1$ divides both $(a + mk)$ and $m$, it divides $a$ too. Now $d_1$ is a common divisor of $a$ and $m$, and $d_2$ is *the greatest one* (Level 3!), so $d_1 \\mid d_2$.
 2. Symmetrically, show $d_2$ is also a common divisor of $(a + m \\cdot k)$ and $m$: since $d_2$ divides both $a$ and $m$, it divides the combination $a + m \\cdot k$ too. Applying Level 3 again (this time with $d_1$ as \"the greatest\"), you get $d_2 \\mid d_1$.

@@ -8,6 +8,8 @@ Level 6
 Title "Shrinking and Shifting (Boss)"
 
 Introduction "
+Welcome to the final boss of World 6!
+
 Let's combine multiple theorems into one elegant deduction.
 If you know that $x \\equiv 23 \\pmod{100}$, what is the remainder of $x$ when divided by 4?
 
@@ -33,11 +35,11 @@ Statement (x : ℤ) (h : x ≡ 23 (mod 100)) : x ≡ 3 (mod 4) := by
   exact mod_trans x 23 3 4 h_shrink h_23
 
 Conclusion "
+🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉
+
 Masterfully done! You used divisibility to shrink the modulus, manually computed a small remainder, and used transitivity to glue it all together.
 
 This is exactly how number theory problems are solved in practice.
-
-🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉
 
 You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.
 

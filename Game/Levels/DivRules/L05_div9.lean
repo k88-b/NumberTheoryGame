@@ -29,5 +29,5 @@ Statement div9_rule_3 (c0 c1 c2 : ℤ) : (c2 * 10^2 + c1 * 10 + c0) ≡ (c2 * 1^
   exact polynomial_cong 10 1 c0 c1 c2 9 h10
 
 Conclusion "
-Two lines of code to prove a rule that feels like magic in middle school. Because polynomials preserve congruences, substituting 10 for 1 works perfectly.
+Beautiful! Two lines of code prove a rule that feels like magic in middle school. Because polynomials preserve congruences, substituting 10 for 1 works perfectly.
 "

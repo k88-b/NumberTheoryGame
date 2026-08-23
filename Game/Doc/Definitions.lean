@@ -32,12 +32,18 @@ In this game, we say $d$ **is a greatest common divisor** of $a$ and $b$ — wri
 
 $$\text{IsGCD}(a, b) d \iff (d \mid a \land d \mid b) \land \exists x, y \in \mathbb{Z},\ a x + b y = d$$
 
-**Why this definition, and not simply "the largest common divisor"?**
-Working with "largest" directly is awkward in Lean: comparing sizes doesn't play well with negative numbers, and proving something is *the* biggest usually means comparing it to every other common divisor one at a time.
+**Intuition:**
+Working with "largest" directly is awkward in Lean: comparing sizes doesn't play well with negative numbers, and proving something is *the* biggest usually means comparing it to every other common divisor one at a time. The Bézout condition sidesteps all of that. It turns out (and you will prove it in the very next level!) that *any* $d$ satisfying condition 2, together with condition 1, is automatically bigger than every other common divisor — for free, with a short proof. So instead of taking "greatest" as the definition, we derive it as a theorem.
 
-The Bézout condition sidesteps all of that. It turns out (and you will prove it in the very next level!) that *any* $d$ satisfying condition 2, together with condition 1, is automatically bigger than every other common divisor — for free, with a short proof. So instead of taking "greatest" as the definition, we derive it as a theorem.
+This definition alone does not force $d \geq 0$ or force $d$ to be unique. In this game we will always keep a specific, non-negative witness in mind.
 
-**A word of caution:** this definition alone does not force $d \geq 0$ or force $d$ to be unique. In this game we will always keep a specific, non-negative witness in mind (for example `IsGCD(2, 3) 1`, never `IsGCD(2, 3) (-1)`, even though $-1$ also happens to satisfy the Bézout condition for $2$ and $3$, up to sign).
+**Examples:**
+* `IsGCD(2, 3) 1`, since $1 \mid 2$, $1 \mid 3$, and $2 \cdot (-1) + 3 \cdot 1 = 1$.
+* `IsGCD(12, 18) 6`, since $6 \mid 12$, $6 \mid 18$, and $12 \cdot (-1) + 18 \cdot 1 = 6$.
+* `IsGCD(2, 3) (-1)` is *also* technically true, up to sign — in this game we always keep the non-negative witness in mind.
+
+**How it works in Lean:**
+When you see `IsGCD(a, b) d` in your goal, `unfold IsGCD` reveals the raw conjunction: `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`. Use `constructor` to split the outer `∧`, and `use` to supply the Bézout witnesses.
 -/
 DefinitionDoc IsGCD as "IsGCD(a, b) d"
 
@@ -48,6 +54,9 @@ DefinitionDoc IsGCD as "IsGCD(a, b) d"
 We say that an integer $a$ **divides** an integer $b$ (written as $a \mid b$) if $b$ is a multiple of $a$.
 Formally, this means there exists some integer $k$ such that:
 $$b = a \cdot k$$
+
+**Intuition:**
+Thinking of $a \mid b$ as "$b$ can be built entirely out of copies of $a$" often makes it easier to reason about than the formal existential statement.
 
 **Examples:**
 * $3 \mid 12$ is true because $12 = 3 \cdot 4$ (here our witness is $k = 4$).

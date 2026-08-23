@@ -7,6 +7,8 @@ Level 7
 Title "Divisibility by 11 (Boss)"
 
 Introduction "
+Welcome to the final boss of World 5!
+
 For our final trick: the alternating sum of digits rule for 11.
 A number is divisible by 11 if $c_0 - c_1 + c_2 - c_3 \\dots$ is divisible by 11.
 
@@ -26,7 +28,7 @@ Statement div11_rule_3 (c0 c1 c2 : ℤ) : (c2 * 10^2 + c1 * 10 + c0) ≡ (c2 * (
   exact polynomial_cong 10 (-1) c0 c1 c2 11 h10
 
 Conclusion "
-🏆 AMAZING! 🏆
+🎉 AMAZING! 🎉
 
 You have proven every major divisibility rule. What seemed like a list of random tricks in school is actually a beautiful, unified theory based on modular arithmetic and polynomials.
 

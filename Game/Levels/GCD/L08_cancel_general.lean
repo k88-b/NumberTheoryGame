@@ -11,7 +11,7 @@ Time to combine the last two levels into the *fully general* cancellation law �
 
 If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and `IsGCD(c, m) d` with $d \\neq 0$, and we write $c = c_1 \\cdot d$, $m = m_1 \\cdot d$ (exactly as in Level 7), then $a \\equiv b \\pmod{m_1}$.
 
-**Strategy — assemble, don't reprove:**
+**Strategy:** Assemble, don't reprove.
 1. Apply `gcd_div_coprime` (Level 7) to get `IsGCD(c_1, m_1) 1`.
 2. Unfold the congruence hypothesis, substitute $c = c_1 \\cdot d$ and $m = m_1 \\cdot d$, and cancel the shared factor $d$ (using `mul_left_cancel₀` again). This will leave you with a plain algebraic equation!
 3. **Reassemble the congruence:** create the specific hypothesis you need using `have h1' : (a * c1) ≡ (b * c1) (mod m1) := by ...`. Prove it by unfolding `ModEq` and using the cancelled equation from step 2.

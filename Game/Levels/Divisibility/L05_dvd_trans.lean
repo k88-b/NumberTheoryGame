@@ -9,13 +9,13 @@ Title "Chain of Divisors (Boss)"
 NewTactic obtain rw
 
 Introduction "
-Welcome to the final boss of the Divisibility Club!
+Welcome to the final boss of World 1!
 
 If $x$ divides $y$, and $y$ divides $z$, does $x$ divide $z$? Yes! This is called **transitivity**, and proving it will require you to combine everything you've learned.
 
 Since `x ∣ y` means there is some multiplier, we want to extract it. Type `obtain ⟨k1, hk1⟩ := h1`.
 
-*(Lean uses special mathematical brackets: to type `⟨`, write `\\<` and press Space. To type `⟩`, write `\\>` and press Space).*
+*(To type `⟨` and `⟩`, write `\\<` and `\\>`, then press Space.)*
 
 Lean will give you a number `k1` and the fact `hk1 : y = x * k1`.
 Do the same for `h2` to get `k2` and `hk2`.

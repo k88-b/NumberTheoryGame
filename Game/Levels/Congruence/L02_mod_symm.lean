@@ -27,10 +27,10 @@ You will need an intermediate mathematical step. You can create one using the `h
 If you type `have h_eq : b - a = -(a - b) := by ring`, Lean will add `h_eq` to your context.
 You can then use `rw [h_eq]` to transform your goal!
 
-**Rewriting backwards**
+**Syntax Tip:**
 By default, `rw [h_eq]` looks for the *left* side of your equality (`b - a`) and replaces it with the *right* side (`-(a - b)`).
 If you ever formulate your equality the other way around, for example `have h_eq : -(a - b) = b - a`, you will need to tell Lean to rewrite from right to left using a left arrow: `rw [← h_eq]`.
-*(To type the left arrow `←`, simply type `\\l` and press Space)*
+*(To type `←`, write `\\l` and press Space.)*
 "
 
 

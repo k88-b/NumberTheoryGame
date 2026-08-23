@@ -11,7 +11,7 @@ If two numbers are congruent modulo $m$, they are also congruent modulo any divi
 
 In other words, if $a \\equiv b \\pmod m$ and $d \\mid m$, then $a \\equiv b \\pmod d$.
 
-*Hint:* You can solve this by unfolding `ModEq` entirely and manipulating the witnesses, OR you can remember `dvd_trans` from World 1, which states that if $x \\mid y$ and $y \\mid z$, then $x \\mid z$!
+**Hint:** You can solve this by unfolding `ModEq` entirely and manipulating the witnesses, OR you can remember `dvd_trans` from World 1, which states that if $x \\mid y$ and $y \\mid z$, then $x \\mid z$!
 "
 
 

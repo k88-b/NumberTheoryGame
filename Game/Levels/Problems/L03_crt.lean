@@ -29,7 +29,7 @@ Statement : ∃ x : ℤ, x ≡ 7 (mod 10) ∧ x ≡ 2 (mod 3) := by
   exact crt_exists 7 2 10 3 h_gcd
 
 Conclusion "
-Boom. You didn't even have to find the number yourself (though if you do the math, $x = 17$ works perfectly). Your abstract theorem did all the work.
+Excellent! You didn't even have to find the number yourself (though if you do the math, $x = 17$ works perfectly). Your abstract theorem did all the work.
 
 This is the true power of mathematics!
 "

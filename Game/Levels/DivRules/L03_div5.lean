@@ -11,7 +11,7 @@ As promised at the end of the last level, let's finish off the pair: since $5 \\
 
 If $10 \\cdot k + d \\equiv d \\pmod{10}$ (Level 1), and $5 \\mid 10$, then `mod_shrink` immediately gives us $10 \\cdot k + d \\equiv d \\pmod 5$ as well.
 
-Same type system reminder as last time: write `have h5 : (5 : ℤ) ∣ 10 := by ...` so Lean doesn't default to natural numbers.
+**Syntax Tip:** Same reminder as last time — write `have h5 : (5 : ℤ) ∣ 10 := by ...` so Lean doesn't default to natural numbers.
 "
 
 /-- The remainder modulo 5 depends only on the last digit. -/

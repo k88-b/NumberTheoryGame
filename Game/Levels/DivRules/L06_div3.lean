@@ -11,7 +11,7 @@ If the rule for 9 works, the rule for 3 must come for free, because $3 \\mid 9$.
 
 Just like you shrank the modulus from 10 down to 2 and 5 earlier, shrink the modulus from 9 to 3 here using `mod_shrink`.
 
-Remember Lean's type system! When writing your divisibility fact, make sure to specify the type so Lean doesn't default to natural numbers: `have h3 : (3 : ℤ) ∣ 9 := by ...`
+**Syntax Tip:** When writing your divisibility fact, make sure to specify the type so Lean doesn't default to natural numbers: `have h3 : (3 : ℤ) ∣ 9 := by ...`
 "
 
 /-- The sum of digits rule for 3. -/

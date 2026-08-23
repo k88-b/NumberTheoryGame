@@ -112,13 +112,6 @@ msgid "**Divisibility by 9**\n"
 "This works beautifully because any number can be written as a polynomial evaluated at 10, and §0."
 msgstr ""
 
-#. §0: `euclids_lemma`
-#. §1: `euclids_lemma a c m h_div h_coprime`
-#. §2: `euclids_lemma x 3 10 h h_gcd`
-#: Game.Levels.Problems.L05_euclid
-msgid "Use §0. Look closely at its arguments: §1. Here, it's §2."
-msgstr ""
-
 #: Game.Levels.Problems.L01_large_powers
 msgid "You now have congruences for each of the two summands. Adding congruences together — from World 2 — is exactly the tool that glues them into the statement you need."
 msgstr ""
@@ -375,10 +368,6 @@ msgid "**Transitivity of Modular Congruence**\n"
 "**Meaning:** This theorem proves that modular arithmetic is a true *equivalence relation*. It means you can chain congruences together step-by-step to reach a conclusion, exactly like you can chain regular equations (§3 and §4)."
 msgstr ""
 
-#: Game.Levels.Problems.L05_euclid
-msgid "You need to show that 3 and 10 are coprime."
-msgstr ""
-
 #: Game.Levels.DivRules.L06_div3
 msgid "Beautiful. The structural similarity of mathematics really shines here."
 msgstr ""
@@ -510,6 +499,45 @@ msgstr ""
 msgid "Congruent Solutions"
 msgstr ""
 
+#. §0: `obtain`
+#. §1: $\\exists$
+#. §2: $\\wedge$
+#. §3: `h : x ∣ y`
+#. §4: `∃ k, y = x * k`
+#. §5: `obtain ⟨k, hk⟩ := h`
+#. §6: `k`
+#. §7: `hk : y = x * k`
+#. §8: `⟨`
+#. §9: `⟩`
+#. §10: `\\<`
+#. §11: `\\>`
+#. §12: `IsGCD(c, m) 1`
+#. §13: `∧`
+#. §14: `∃`
+#. §15: `obtain ⟨_, x, y, hxy⟩ := h`
+#. §16: `_`
+#. §17: `x`
+#. §18: `y`
+#. §19: `hxy`
+#. §20: `∧`
+#. §21: `obtain`
+#. §22: `h.1.1`
+#. §23: `h.1.2`
+#: Game.Doc.Tactics
+msgid "The §0 tactic extracts a witness from a hypothesis that contains an \\\\\"exists\\\\\" (§1) or a logical AND (§2).\n"
+"If you have a hypothesis §3 (which means §4), you can type\n"
+"§5 to get the variable §6 and the equation §7.\n"
+"(To type the angle brackets §8 and §9, write §10 and §11 then press Space).\n"
+"\n"
+"**Nested and multiple arguments:**\n"
+"For more complex hypotheses, such as §12 (which contains multiple nested §13 and §14), you can extract everything at once by providing up to 4 arguments.\n"
+"For example: §15.\n"
+"The underscore §16 is used to discard parts of the hypothesis you don't need (like the divisibility facts), while binding the Bézout witnesses to §17 and §18 and the equation to §19.\n"
+"\n"
+"**Dot notation alternative:**\n"
+"If a hypothesis is just a nested logical AND (§20), you can extract its pieces directly using **dot notation** without destroying the original hypothesis via §21. For example, §22 gets the first fact, and §23 gets the second."
+msgstr ""
+
 #. §0: $a \\cdot x \\equiv 1 \\pmod m$
 #. §1: $x$
 #. §2: $\\text{IsGCD}(a, m) 1$
@@ -577,8 +605,22 @@ msgstr ""
 msgid "Divisibility by 11 (Boss)"
 msgstr ""
 
+#. §0: `use`
+#. §1: `∃ k, 12 = 3 * k`
+#. §2: `use 4`
+#. §3: `12 = 3 * 4`
+#. §4: `∃ x y : ℤ, 2 * x + 3 * y = 1`
+#. §5: `use -1, 1`
+#: Game.Doc.Tactics
+msgid "The §0 tactic is used to provide a \\\\\"witness\\\\\" to prove that something exists.\n"
+"If your goal is §1, typing §2 changes the goal to §3.\n"
+"\n"
+"**Multiple arguments:**\n"
+"If your goal has multiple existentials, for example §4, you can provide multiple witnesses separated by commas: §5."
+msgstr ""
+
 #. §0: $k$
-#: Game.Levels.Congruence.L09_mod_mul
+#: Game.Levels.Congruence.L09_mod_scale
 msgid "Nice! Notice how the witness §0 didn't even need to change!"
 msgstr ""
 
@@ -1186,16 +1228,6 @@ msgstr ""
 msgid "The sum of digits rule for 9."
 msgstr ""
 
-#. §0: `rw`
-#. §1: `h : A = B`
-#. §2: `rw [h]`
-#. §3: `A`
-#. §4: `B`
-#: Game.Doc.Tactics
-msgid "The §0 (rewrite) tactic replaces a term with an equivalent term based on an equality you have.\n"
-"If you have §1, typing §2 will replace §3 with §4 in your goal."
-msgstr ""
-
 #. §0: $17^{100} + 12^{100}$
 #. §1: $17^{100}$
 #. §2: $17 \\equiv 2 \\pmod 5$
@@ -1268,7 +1300,7 @@ msgstr ""
 msgid "Straightforward! You've now confirmed one half of the equivalence: coprimality *implies* a Bézout identity."
 msgstr ""
 
-#: Game.Levels.Congruence.L09_mod_mul
+#: Game.Levels.Congruence.L09_mod_scale
 msgid "Scaling the modulus."
 msgstr ""
 
@@ -1477,22 +1509,13 @@ msgstr ""
 msgid "Excellent! You proved a concrete GCD on the fly to unlock the power of your cancellation theorem."
 msgstr ""
 
-#. §0: `use`
-#. §1: `∃ k, 12 = 3 * k`
-#. §2: `use 4`
-#. §3: `12 = 3 * 4`
-#: Game.Doc.Tactics
-msgid "The §0 tactic is used to provide a \\\\\"witness\\\\\" to prove that something exists.\n"
-"If your goal is §1, typing §2 changes the goal to §3."
-msgstr ""
-
 #. §0: $a$
 #. §1: $b$
 #. §2: $m$
 #. §3: $a \\equiv b \\pmod m$
 #. §4: $c$
 #. §5: $a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$
-#: Game.Levels.Congruence.L09_mod_mul
+#: Game.Levels.Congruence.L09_mod_scale
 msgid "So far, we have only changed the numbers §0 and §1. But what if we want to change the modulus §2 itself?\n"
 "\n"
 "If §3, then multiplying everything (including the modulus) by §4 preserves the truth of the statement:\n"
@@ -1749,6 +1772,23 @@ msgstr ""
 msgid "Number Theory Game"
 msgstr ""
 
+#. §0: `unfold`
+#. §1: `a ≡ b (mod m)`
+#. §2: `unfold ModEq`
+#. §3: `m ∣ a - b`
+#. §4: `unfold`
+#. §5: `h`
+#. §6: `unfold ModEq at h`
+#. §7: `unfold ModEq at *`
+#: Game.Doc.Tactics
+msgid "The §0 tactic replaces a definition with its underlying meaning.\n"
+"If your goal contains §1, typing §2 will change it to §3.\n"
+"\n"
+"**Targeting hypotheses:**\n"
+"By default, §4 applies only to the goal. You can unfold a definition inside a specific hypothesis §5 by typing §6.\n"
+"To unfold it everywhere (in all hypotheses and the goal at once), use §7."
+msgstr ""
+
 #: Game.Levels.GCD.L03_gcd_greatest
 msgid "Use the theorem from Level 1!"
 msgstr ""
@@ -1774,7 +1814,7 @@ msgstr ""
 msgid "Masterful! You just constructed a proof entirely by gluing together previous theorems. This is how real mathematics is built!"
 msgstr ""
 
-#: Game.Levels.Congruence.L09_mod_mul
+#: Game.Levels.Congruence.L09_mod_scale
 msgid "Scaling the Modulus"
 msgstr ""
 
@@ -2362,15 +2402,6 @@ msgstr ""
 msgid "Chinese Remainder Theorem: Glued (Boss)"
 msgstr ""
 
-#. §0: `unfold`
-#. §1: `a ≡ b (mod m)`
-#. §2: `unfold ModEq`
-#. §3: `m ∣ a - b`
-#: Game.Doc.Tactics
-msgid "The §0 tactic replaces a definition with its underlying meaning.\n"
-"If your goal contains §1, typing §2 will change it to §3."
-msgstr ""
-
 #: Game.Levels.GCD.L09_gcd_shift
 msgid "A Shift Doesn't Change the GCD (Boss)"
 msgstr ""
@@ -2459,6 +2490,37 @@ msgstr ""
 msgid "Beautiful! Together, the last two levels show that §0 and \"a Bézout identity with 1 exists\" are two ways of saying exactly the same thing. From now on, feel free to think of *coprime* simply as \"Bézout equals 1\"."
 msgstr ""
 
+#. §0: `rw`
+#. §1: `h : A = B`
+#. §2: `rw [h]`
+#. §3: `A`
+#. §4: `B`
+#. §5: `rw [h1, h2]`
+#. §6: `rw`
+#. §7: `←`
+#. §8: `\\l`
+#. §9: `rw [← h]`
+#. §10: `rw`
+#. §11: `h1`
+#. §12: `at`
+#. §13: `rw [h_eq] at h1`
+#. §14: `at *`
+#. §15: `rw [h_eq] at *`
+#: Game.Doc.Tactics
+msgid "The §0 (rewrite) tactic replaces a term with an equivalent term based on an equality you have.\n"
+"If you have §1, typing §2 will replace §3 with §4 in your goal.\n"
+"\n"
+"**Multiple arguments:**\n"
+"You can chain rewrites by putting multiple hypotheses in the brackets, separated by commas: §5. Lean will apply them sequentially.\n"
+"\n"
+"**Rewriting backwards:**\n"
+"By default, §6 replaces the left side of an equality with the right side. To rewrite from right to left, use the §7 symbol (type §8 and Space): §9.\n"
+"\n"
+"**Targeting hypotheses:**\n"
+"By default, §10 changes the goal. You can rewrite inside a hypothesis §11 by using §12: §13.\n"
+"You can also rewrite everywhere (in all hypotheses and the goal at once) using §14: §15."
+msgstr ""
+
 #: Game.Levels.GCD.L08_cancel_general
 msgid "Incredible! You just built the full cancellation law for modular congruences by gluing together two previous theorems and one careful algebraic cancellation. This is exactly how real number-theory results get assembled from smaller pieces."
 msgstr ""
@@ -2513,19 +2575,6 @@ msgstr ""
 #: Game.Levels.Congruence.L02_mod_symm
 msgid "Beautiful! You used §0 to build a bridge between algebra you know and algebra you need, and successfully learned how to use §1.\n"
 "Working with negative variables is a core skill in integer arithmetic."
-msgstr ""
-
-#. §0: `obtain`
-#. §1: $\\exists$
-#. §2: `h : x ∣ y`
-#. §3: `∃ k, y = x * k`
-#. §4: `obtain ⟨k, hk⟩ := h`
-#. §5: `k`
-#. §6: `hk : y = x * k`
-#: Game.Doc.Tactics
-msgid "The §0 tactic extracts a witness from a hypothesis that contains an \\\\\"exists\\\\\" (§1).\n"
-"If you have a hypothesis §2 (which means §3), you can type\n"
-"§4 to get the variable §5 and the equation §6."
 msgstr ""
 
 #: Game.Levels.Congruence.L10_mod_dvd
