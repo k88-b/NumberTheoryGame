@@ -120,10 +120,6 @@ msgid "**Divisibility by 9**\n"
 "This works beautifully because any number can be written as a polynomial evaluated at 10, and §0."
 msgstr ""
 
-#: Game.Levels.Problems.L01_large_powers
-msgid "You now have congruences for each of the two summands. Adding congruences together — from World 2 — is exactly the tool that glues them into the statement you need."
-msgstr ""
-
 #. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
 #. §1: `IsGCD(c, m) d`
 #. §2: $d \\neq 0$
@@ -1587,10 +1583,6 @@ msgstr ""
 msgid "That's the heart of this world, conquered! §0 is now yours — it is the single most important tool you will use going forward."
 msgstr ""
 
-#: Game.Levels.Problems.L01_large_powers
-msgid "Now do the same for 12."
-msgstr ""
-
 #: Game.Levels.Congruence.L01_mod_refl
 msgid "Every integer is congruent to itself."
 msgstr ""
@@ -1892,11 +1884,6 @@ msgstr ""
 msgid "Scaling the Modulus"
 msgstr ""
 
-#. §0: `mod_add_multiple`
-#: Game.Levels.DivRules.L01_div10
-msgid "Rewrite the goal into the shape §0"
-msgstr ""
-
 #: Game.Levels.Congruence.L06_mul
 msgid "Multiplying Congruences"
 msgstr ""
@@ -1912,11 +1899,6 @@ msgstr ""
 msgid "**Uniqueness of Inverse**\n"
 "\n"
 "If §0 and §1, then §2."
-msgstr ""
-
-#. §0: `mod_pow`
-#: Game.Levels.Problems.L01_large_powers
-msgid "Now use your theorem from World 2! Apply §0 to your base congruences."
 msgstr ""
 
 #. §0: $a \\equiv b \\pmod m$

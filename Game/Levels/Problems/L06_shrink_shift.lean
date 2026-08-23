@@ -26,7 +26,7 @@ Statement (x : ℤ) (h : x ≡ 23 (mod 100)) : x ≡ 3 (mod 4) := by
 
   have h_shrink := mod_shrink x 23 100 4 h h_div
 
-  Hint "Prove that 23 is congruent to 3 modulo 4 manually: `have h_23 : 23 ≡ 3 (mod 4)`"
+  Hint "Prove that 23 is congruent to 3 modulo 4"
   have h_23 : 23 ≡ 3 (mod 4) := by
     unfold ModEq
     use 5

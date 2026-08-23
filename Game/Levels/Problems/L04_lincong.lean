@@ -17,7 +17,7 @@ Build the GCD proof for `IsGCD(5, 7) 1`, and the divisibility proof for `1 ∣ 3
 "
 
 Statement : ∃ x : ℤ, (5 * x) ≡ 3 (mod 7) := by
-  have h_gcd : IsGCD(5, 7) 1 := by
+  have h_gcd : IsGCD 5 7 1 := by
     unfold IsGCD
     constructor
     · constructor

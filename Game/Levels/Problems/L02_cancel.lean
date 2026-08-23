@@ -17,7 +17,7 @@ Start by building a `have` block to prove `IsGCD(14, 9) 1`. Remember that 1 divi
 "
 
 Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := by
-  have h_gcd : IsGCD(14, 9) 1 := by
+  have h_gcd : IsGCD 14 9 1 := by
     unfold IsGCD
     constructor
     · constructor
@@ -26,7 +26,8 @@ Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := b
     · use 2, -3
       ring
 
-  Hint "The theorem `mod_cancel_coprime` expects the common factor on the *right* side of the multiplication. Create a new hypothesis to swap the order: `have h_swap : (x * 14) ≡ (y * 14) (mod 9) := by ...`"
+  Hint "The theorem `mod_cancel_coprime` expects the common factor on the *right* side of the multiplication. Create a new hypothesis to swap the order"
+
   have h_swap : (x * 14) ≡ (y * 14) (mod 9) := by
     have hrw1 : x * 14 = 14 * x := by ring
     have hrw2 : y * 14 = 14 * y := by ring

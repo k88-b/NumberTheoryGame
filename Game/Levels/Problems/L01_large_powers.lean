@@ -29,17 +29,14 @@ Statement : (17^100 + 12^100) ≡ (2^100 + 2^100) (mod 5) := by
     use 3
     ring
 
-  Hint (hidden := true) "Now do the same for 12."
   have h2 : 12 ≡ 2 (mod 5) := by
     unfold ModEq
     use 2
     ring
 
-  Hint "Now use your theorem from World 2! Apply `mod_pow` to your base congruences."
   have h3 := mod_pow 17 2 5 100 h1
   have h4 := mod_pow 12 2 5 100 h2
 
-  Hint "You now have congruences for each of the two summands. Adding congruences together — from World 2 — is exactly the tool that glues them into the statement you need."
   exact mod_add (17^100) (2^100) (12^100) (2^100) 5 h3 h4
 
 Conclusion "
