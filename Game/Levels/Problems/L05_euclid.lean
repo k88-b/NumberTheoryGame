@@ -16,7 +16,6 @@ Let's prove this explicitly for $m = 10$, $a = x$, and $c = 3$.
 "
 
 Statement (x : ℤ) (h : 10 ∣ x * 3) : 10 ∣ x := by
-  Hint "You need to show that 3 and 10 are coprime."
   have h_gcd : IsGCD(3, 10) 1 := by
     unfold IsGCD
     constructor
@@ -26,7 +25,6 @@ Statement (x : ℤ) (h : 10 ∣ x * 3) : 10 ∣ x := by
     · use -3, 1
       ring
 
-  Hint "Use `euclids_lemma`. Look closely at its arguments: `euclids_lemma a c m h_div h_coprime`. Here, it's `euclids_lemma x 3 10 h h_gcd`."
   exact euclids_lemma x 3 10 h h_gcd
 
 Conclusion "
