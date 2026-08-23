@@ -44,6 +44,8 @@ This definition alone does not force $d \geq 0$ or force $d$ to be unique. In th
 
 **How it works in Lean:**
 When you see `IsGCD(a, b) d` in your goal, `unfold IsGCD` reveals the raw conjunction: `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`. Use `constructor` to split the outer `∧`, and `use` to supply the Bézout witnesses.
+
+The notation `IsGCD(a, b) d` is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with `have`), you need to use the standard Lean syntax without parentheses or commas: `IsGCD a b d`.
 -/
 DefinitionDoc IsGCD as "IsGCD(a, b) d"
 

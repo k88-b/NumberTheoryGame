@@ -13,6 +13,8 @@ Time to meet the star of this world: the **Greatest Common Divisor**.
 
 Instead of defining $\\text{IsGCD}(a,b)$ as \"the largest number that divides both\", we use an equivalent but far more Lean-friendly definition, based on **Bézout's identity**. Check the **Definitions** tab for the full explanation!
 
+**Lean Syntax Tip:** The notation `IsGCD(a, b) d` is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with `have`), you need to use the standard Lean syntax without parentheses or commas: `IsGCD a b d`.
+
 As a warm-up, let's confirm that $1$ is a greatest common divisor of $2$ and $3$: `IsGCD(2, 3) 1`.
 
 Start with `unfold IsGCD` to reveal the raw conjunction. Your goal is then an `∧` of an `∧` and an `∃`. You already know `constructor` splits an `∧` into two goals — you'll need it *twice*, since the first part (`d ∣ a ∧ d ∣ b`) is itself a conjunction.

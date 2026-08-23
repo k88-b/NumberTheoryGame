@@ -13,6 +13,7 @@ In other words, does there exist an $x$ such that $x \\equiv 7 \\pmod{10}$ and $
 Instead of guessing, we can use the `crt_exists` theorem you proved in World 4. It guarantees a solution exists as long as the moduli are coprime.
 
 All you need to do is prove `IsGCD(10, 3) 1` and feed it to the theorem!
+*(Remember the syntax tip from the previous level: you need to use the standard Lean syntax `IsGCD 10 3 1` in your `have` block.)*
 "
 
 Statement : ∃ x : ℤ, x ≡ 7 (mod 10) ∧ x ≡ 2 (mod 3) := by
