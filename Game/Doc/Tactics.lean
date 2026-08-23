@@ -3,6 +3,9 @@ import GameServer
 /--
 The `use` tactic is used to provide a \"witness\" to prove that something exists.
 If your goal is `∃ k, 12 = 3 * k`, typing `use 4` changes the goal to `12 = 3 * 4`.
+
+**Multiple arguments:**
+If your goal has multiple existentials, for example `∃ x y : ℤ, 2 * x + 3 * y = 1`, you can provide multiple witnesses separated by commas: `use -1, 1`.
 -/
 TacticDoc use
 
@@ -23,9 +26,18 @@ TacticDoc ring
 
 
 /--
-The `obtain` tactic extracts a witness from a hypothesis that contains an \"exists\" ($\exists$).
+The `obtain` tactic extracts a witness from a hypothesis that contains an \"exists\" ($\exists$) or a logical AND ($\wedge$).
 If you have a hypothesis `h : x ∣ y` (which means `∃ k, y = x * k`), you can type
 `obtain ⟨k, hk⟩ := h` to get the variable `k` and the equation `hk : y = x * k`.
+(To type the angle brackets `⟨` and `⟩`, write `\<` and `\>` then press Space).
+
+**Nested and multiple arguments:**
+For more complex hypotheses, such as `IsGCD(c, m) 1` (which contains multiple nested `∧` and `∃`), you can extract everything at once by providing up to 4 arguments.
+For example: `obtain ⟨_, x, y, hxy⟩ := h`.
+The underscore `_` is used to discard parts of the hypothesis you don't need (like the divisibility facts), while binding the Bézout witnesses to `x` and `y` and the equation to `hxy`.
+
+**Dot notation alternative:**
+If a hypothesis is just a nested logical AND (`∧`), you can extract its pieces directly using **dot notation** without destroying the original hypothesis via `obtain`. For example, `h.1.1` gets the first fact, and `h.1.2` gets the second.
 -/
 TacticDoc obtain
 
@@ -33,6 +45,16 @@ TacticDoc obtain
 /--
 The `rw` (rewrite) tactic replaces a term with an equivalent term based on an equality you have.
 If you have `h : A = B`, typing `rw [h]` will replace `A` with `B` in your goal.
+
+**Multiple arguments:**
+You can chain rewrites by putting multiple hypotheses in the brackets, separated by commas: `rw [h1, h2]`. Lean will apply them sequentially.
+
+**Rewriting backwards:**
+By default, `rw` replaces the left side of an equality with the right side. To rewrite from right to left, use the `←` symbol (type `\l` and Space): `rw [← h]`.
+
+**Targeting hypotheses:**
+By default, `rw` changes the goal. You can rewrite inside a hypothesis `h1` by using `at`: `rw [h_eq] at h1`.
+You can also rewrite everywhere (in all hypotheses and the goal at once) using `at *`: `rw [h_eq] at *`.
 -/
 TacticDoc rw
 
@@ -40,6 +62,10 @@ TacticDoc rw
 /--
 The `unfold` tactic replaces a definition with its underlying meaning.
 If your goal contains `a ≡ b (mod m)`, typing `unfold ModEq` will change it to `m ∣ a - b`.
+
+**Targeting hypotheses:**
+By default, `unfold` applies only to the goal. You can unfold a definition inside a specific hypothesis `h` by typing `unfold ModEq at h`.
+To unfold it everywhere (in all hypotheses and the goal at once), use `unfold ModEq at *`.
 -/
 TacticDoc unfold
 
@@ -69,6 +95,3 @@ The `constructor` tactic is used to prove goals consisting of a logical AND ($\w
 It splits the goal `P ∧ Q` into two separate goals: `P` and `Q`.
 -/
 TacticDoc constructor
-
-
-
