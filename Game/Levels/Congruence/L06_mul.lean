@@ -22,6 +22,8 @@ You can explicitly apply a theorem to variables to create a new hypothesis:
 **Watch out for the order of multiplication!**
 Applying `mod_mul_const` to $c \\equiv d$ with multiplier $b$ will give you $c \\cdot b \\equiv d \\cdot b$. You will need to manually flip the order to $b \\cdot c \\equiv b \\cdot d$ using a `have` block and `rw` before you can chain them together!
 
+*(Reminder: to type the `≡` symbol in your `have` statement, type `\\==` and press Space)*
+
 Use `have` to build your intermediate steps, and then use the `exact` tactic to finish the proof by providing `mod_trans`!
 "
 

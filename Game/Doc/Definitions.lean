@@ -18,6 +18,8 @@ This is a mathematical way of saying that $a$ and $b$ leave the *same remainder*
 
 **How it works in Lean:**
 We created a custom notation $a \equiv b \pmod m$ to represent a function called `ModEq`. When you see this notation in your goal or hypotheses, you can use the `unfold ModEq` tactic. This will strip away the formatting and reveal the underlying divisibility statement: `m ∣ a - b`.
+
+*(To type the congruence symbol `≡`, type `\==` and press Space)*
 -/
 DefinitionDoc ModEq as "a ≡ b (mod m)"
 
@@ -69,5 +71,7 @@ Thinking of $a \mid b$ as "$b$ can be built entirely out of copies of $a$" often
 **How it works in Lean:**
 When you see $a \mid b$ in your goal, Lean translates this under the hood to an \"exists\" statement: `∃ k, b = a * k`.
 To prove it, you must provide the exact value of $k$ using the `use` tactic (for example, `use 4`).
+
+*(To type the divides symbol `∣`, type `\mid` or `\|` and press Space!)*
 -/
 DefinitionDoc Dvd.dvd as "a ∣ b"
