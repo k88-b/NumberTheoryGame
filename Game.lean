@@ -54,7 +54,7 @@ Dependency LinCong → DivRules
 Dependency DivRules → Problems
 
 /-! Information to be displayed on the servers landing page. -/
-Languages "en"
+Languages "en" "ru"
 CaptionShort "An interactive introduction to Number Theory and modular arithmetic."
 CaptionLong "In this game, you will learn the foundations of number theory.
 Starting with basic divisibility, you will construct a full toolkit for
