@@ -42,18 +42,8 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
     have h_eq2 : k2 * n = n * k2 := by ring
     rw [h_eq2, ← h_eq]
 
-  Hint "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove `have h_coprime_symm : IsGCD({n}, {m}) 1`."
-  have h_coprime_symm : IsGCD(n, m) 1 := by
-    unfold IsGCD at h_coprime
-    unfold IsGCD
-    obtain ⟨_, u, v, huv⟩ := h_coprime
-    constructor
-    · constructor
-      · exact one_dvd n
-      · exact one_dvd m
-    · use v, u
-      have h_eq3 : n * v + m * u = m * u + n * v := by ring
-      rw [h_eq3, huv]
+  Hint "Before applying Euclid's Lemma, apply `gcd_symm` to `{h_coprime}` so it matches the expected order for `{n}` and `{m}`."
+  have h_coprime_symm := gcd_symm m n 1 h_coprime
 
   Hint (hidden := true) "Now apply `euclids_lemma` to extract a new witness showing that `{m} ∣ {k2}`."
   obtain ⟨k3, hk3⟩ := euclids_lemma k2 n m h_div h_coprime_symm

@@ -45,6 +45,14 @@ TheoremDoc bezout_imp_coprime as "bezout_imp_coprime" in "GCD"
 
 
 /--
+**Symmetry of the GCD**
+
+If `IsGCD(a, b) d`, then `IsGCD(b, a) d`.
+-/
+TheoremDoc gcd_symm as "gcd_symm" in "GCD"
+
+
+/--
 **Cancellation Law for Coprime Factors**
 
 If $a \cdot c \equiv b \cdot c \pmod m$ and `IsGCD(c, m) 1`, then $a \equiv b \pmod m$.
