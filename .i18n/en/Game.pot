@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-24\n"
+"POT-Creation-Date: 2026-08-26\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -196,7 +196,7 @@ msgstr ""
 #. §15: `mod_mul`
 #. §16: `have`
 #. §17: `exact`
-#: Game.Levels.GCD.L08_cancel_general
+#: Game.Levels.GCD.L09_cancel_general
 msgid "Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!\n"
 "\n"
 "If §0 and §1 with §2, and we write §3, §4 (exactly as in Level 7), then §5.\n"
@@ -469,10 +469,15 @@ msgstr ""
 msgid "Beautiful. The structural similarity of mathematics really shines here."
 msgstr ""
 
+#. §0: `gcd_symm`
+#: Game.Levels.GCD.L06_gcd_symm
+msgid "Nice and easy! This lemma will be saved as §0. It will save you from doing boring manual variable-swapping when you tackle the Chinese Remainder Theorem later on."
+msgstr ""
+
 #. §0: `gcd_is_greatest`
 #. §1: `«{h1}»`
 #. §2: `«{d2}» ∣ «{d1}»`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "Almost there! Apply §0 on §1 to show §2."
 msgstr ""
 
@@ -487,7 +492,7 @@ msgid "The §0 tactic is used to prove statements for all natural numbers §1.\n
 "Typing §2 splits your goal into two cases: the base case (§3) and the inductive step (§4), giving you the induction hypothesis §5."
 msgstr ""
 
-#: Game.Levels.GCD.L07_gcd_div_coprime
+#: Game.Levels.GCD.L08_gcd_div_coprime
 msgid "Dividing by the GCD Gives Coprime Numbers"
 msgstr ""
 
@@ -857,12 +862,16 @@ msgstr ""
 #. §2: `gcd_is_greatest`
 #. §3: `«{h2}»`
 #. §4: `«{d1}» ∣ «{d2}»`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "Now that you know §0 and §1, use the theorem §2 (from Level 3) on §3 to show that §4."
 msgstr ""
 
 #: Game.Levels.DivRules.L02_div2
 msgid "Nice! Exactly the same logic applies to 5, since 5 ∣ 10 too — that's exactly what the next level does."
+msgstr ""
+
+#: Game.Levels.GCD.L06_gcd_symm
+msgid "The GCD is symmetric."
 msgstr ""
 
 #. §0: $d \\mid b$
@@ -1087,7 +1096,7 @@ msgstr ""
 msgid "Congruence modulo m is transitive."
 msgstr ""
 
-#: Game.Levels.GCD.L07_gcd_div_coprime
+#: Game.Levels.GCD.L08_gcd_div_coprime
 msgid "Dividing by the gcd produces coprime numbers."
 msgstr ""
 
@@ -1135,6 +1144,10 @@ msgid "Welcome to the final boss of World 1!\n"
 "Good luck!"
 msgstr ""
 
+#: Game.Levels.GCD.L06_gcd_symm
+msgid "Symmetry of the GCD"
+msgstr ""
+
 #. §0: `crt_exists`
 #. §1: `crt_glue`
 #: Game.Levels.LinCong.L10_crt_glue
@@ -1147,7 +1160,22 @@ msgid "🎉 YOU DEFEATED THE FINAL BOSS! 🎉\n"
 "One more level awaits — not to test you further, but to let you enjoy the view."
 msgstr ""
 
-#: Game.Levels.GCD.L08_cancel_general
+#. §0: $d$
+#. §1: $a$
+#. §2: $b$
+#. §3: $b$
+#. §4: $a$
+#. §5: `IsGCD(a, b) d ⟹  IsGCD(b, a) d`
+#: Game.Levels.GCD.L06_gcd_symm
+msgid "Before we move on to the cancellation laws, let's prove a very simple but handy property: symmetry.\n"
+"\n"
+"If §0 is a greatest common divisor of §1 and §2, then it is also a greatest common divisor of §3 and §4.\n"
+"Formally: §5.\n"
+"\n"
+"You will need to unpack the definition, swap the two divisibility facts, and swap the order of the Bézout coefficients!"
+msgstr ""
+
+#: Game.Levels.GCD.L09_cancel_general
 msgid "You have a plain equation now, «{a}» * «{c1}» − «{b}» * «{c1}» = «{m1}» * «{k}», but mod_cancel_coprime needs an actual congruence, not a bare equation. Wrap it back up: state the congruence, unfold it, and it reduces to exactly the equation you already have."
 msgstr ""
 
@@ -1187,7 +1215,7 @@ msgstr ""
 #. §3: `(«{a}» - «{b}») * («{c}» * «{x}» + «{m}» * «{y}»)`
 #. §4: `«{m}»`
 #. §5: `use «{k}» * «{x}» + («{a}» - «{b}») * «{y}»`
-#: Game.Levels.GCD.L06_cancel_coprime
+#: Game.Levels.GCD.L07_cancel_coprime
 msgid "You need a witness for §0. We know §1. Multiplying §2 by this gives §3. With some algebra, the §4 can be factored out. Try to §5."
 msgstr ""
 
@@ -1254,7 +1282,7 @@ msgstr ""
 #. §1: `«{a}»`
 #. §2: `«{a}»`
 #. §3: `(«{a}» + «{m}» * «{k}») - «{m}» * «{k}»`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "First step: show that §0 divides §1. Think of §2 as §3."
 msgstr ""
 
@@ -1329,11 +1357,6 @@ msgstr ""
 #. §2: `«{h_gcd}»`
 #: Game.Levels.Problems.L02_cancel
 msgid "Now you can finish the proof using §0 with your swapped hypothesis §1 and §2!"
-msgstr ""
-
-#. §0: `have h_coprime_symm : IsGCD(«{n}», «{m}») 1`
-#: Game.Levels.LinCong.L10_crt_glue
-msgid "Before applying Euclid's Lemma, you need coprimality in the correct order. Prove §0."
 msgstr ""
 
 #. §0: $m$
@@ -1419,7 +1442,7 @@ msgstr ""
 #. §21: `mul_left_cancel₀`
 #. §22: $c_1, m_1$
 #. §23: $x, y$
-#: Game.Levels.GCD.L07_gcd_div_coprime
+#: Game.Levels.GCD.L08_gcd_div_coprime
 msgid "Here's a natural question: if §0 is a gcd of §1 and §2, and we divide both §3 and §4 by §5 (writing §6 and §7), are the quotients §8 and §9 coprime?\n"
 "\n"
 "Yes — and this is exactly what will let us reduce a *general* cancellation problem to the coprime case you just solved.\n"
@@ -1595,12 +1618,12 @@ msgstr ""
 msgid "A Bézout identity implies coprimality."
 msgstr ""
 
-#: Game.Levels.GCD.L08_cancel_general
+#: Game.Levels.GCD.L09_cancel_general
 msgid "The fully general cancellation law for congruences."
 msgstr ""
 
 #. §0: `mod_cancel_coprime`
-#: Game.Levels.GCD.L06_cancel_coprime
+#: Game.Levels.GCD.L07_cancel_coprime
 msgid "That's the heart of this world, conquered! §0 is now yours — it is the single most important tool you will use going forward."
 msgstr ""
 
@@ -1632,7 +1655,7 @@ msgstr ""
 #. §21: `have`
 #. §22: `ring`
 #. §23: `rw`
-#: Game.Levels.GCD.L06_cancel_coprime
+#: Game.Levels.GCD.L07_cancel_coprime
 msgid "Here is the central theorem of this world — and one of the most useful facts in all of number theory.\n"
 "\n"
 "If §0, and §1 is coprime to §2 (§3), can we conclude §4? In other words: can we *cancel* the common factor §5 from both sides of a congruence?\n"
@@ -1845,7 +1868,7 @@ msgstr ""
 #. §0: `«{d2}» ∣ «{a}» + «{m}» * «{k}»`
 #. §1: `«{d2}» ∣ «{a}»`
 #. §2: `«{d2}» ∣ «{m}»`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "Symmetrically, show §0 using the fact that §1 and §2."
 msgstr ""
 
@@ -1923,7 +1946,7 @@ msgstr ""
 msgid "Great! Because §0, and §1, it immediately follows that §2."
 msgstr ""
 
-#: Game.Levels.GCD.L08_cancel_general
+#: Game.Levels.GCD.L09_cancel_general
 msgid "The General Cancellation Law"
 msgstr ""
 
@@ -1973,7 +1996,7 @@ msgstr ""
 #. §43: `0 ≤ d2`
 #. §44: `d1 = d2`
 #. §45: `Int.dvd_antisymm`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "Welcome to the final boss of World 3!\n"
 "\n"
 "We prove the fact that sits at the heart of the **Euclidean Algorithm**: shifting a number by a multiple of §0 does not change its greatest common divisor with §1.\n"
@@ -1991,7 +2014,7 @@ msgstr ""
 
 #. §0: `mul_left_cancel₀`
 #. §1: `«{d}» * something = «{d}» * 1`
-#: Game.Levels.GCD.L07_gcd_div_coprime
+#: Game.Levels.GCD.L08_gcd_div_coprime
 msgid "To use §0, you need to set up an equation of the exact form §1."
 msgstr ""
 
@@ -2061,7 +2084,7 @@ msgstr ""
 msgid "Prove that 23 is congruent to 3 modulo 4"
 msgstr ""
 
-#: Game.Levels.GCD.L06_cancel_coprime
+#: Game.Levels.GCD.L07_cancel_coprime
 msgid "Cancelling a factor coprime to the modulus."
 msgstr ""
 
@@ -2216,18 +2239,18 @@ msgid "**Transitivity of Divisibility**\n"
 "Divisibility chains perfectly! In Lean, if you have §13 and §14, applying this theorem proves §15."
 msgstr ""
 
+#: Game.Levels.LinCong.L03_inv_unique
+msgid "The Inverse is Unique"
+msgstr ""
+
 #. §0: `intro a`
 #. §1: `one_dvd`
 #: Game.Levels.Divisibility.L02_what_is_dvd
 msgid "Great job! §0 is a tactic you will use constantly whenever you need to prove a statement for *any* element. Notice that this theorem is now saved in your inventory as §1!"
 msgstr ""
 
-#: Game.Levels.LinCong.L03_inv_unique
-msgid "The Inverse is Unique"
-msgstr ""
-
 #. §0: `gcd_div_coprime`
-#: Game.Levels.GCD.L07_gcd_div_coprime
+#: Game.Levels.GCD.L08_gcd_div_coprime
 msgid "Great! §0 is now saved — it's the missing piece that will let us cancel factors that aren't necessarily coprime to the modulus, in the very next level."
 msgstr ""
 
@@ -2298,18 +2321,18 @@ msgstr ""
 #. §0: `«{d1}» ∣ «{d2}»`
 #. §1: `«{d2}» ∣ «{d1}»`
 #. §2: `Int.dvd_antisymm`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "You have §0 and §1. Finish the boss by applying §2!"
 msgstr ""
 
 #. §0: `«{h1}»`
 #. §1: `«{h2}»`
 #. §2: `have`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "Start by extracting the four divisibility facts from §0 and §1 using the dot notation explained in the introduction. Create new hypotheses for them using §2."
 msgstr ""
 
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "Shifting by a multiple of m does not change the gcd with m."
 msgstr ""
 
@@ -2417,6 +2440,11 @@ msgstr ""
 msgid "The exercise statement: 3 divides 12."
 msgstr ""
 
+#. §0: `have h_exists : ∃ k, («{a}» * k) ≡ 1 (mod «{m}»)`
+#: Game.Levels.LinCong.L03_inv_unique
+msgid "Following step 1 of the strategy, create a proof that *some* inverse exists using «{x}» as the witness: §0."
+msgstr ""
+
 #. §0: $a \\equiv b \\pmod m$
 #. §1: $a$
 #. §2: $b$
@@ -2466,11 +2494,6 @@ msgid "**Modular Congruence (§0)**\n"
 "*(To type the congruence symbol §26, type §27 and press Space)*"
 msgstr ""
 
-#. §0: `have h_exists : ∃ k, («{a}» * k) ≡ 1 (mod «{m}»)`
-#: Game.Levels.LinCong.L03_inv_unique
-msgid "Following step 1 of the strategy, create a proof that *some* inverse exists using «{x}» as the witness: §0."
-msgstr ""
-
 #. §0: $10 \\cdot k + d \\equiv d \\pmod{10}$
 #: Game.Doc.Theorems.DivRules
 msgid "**Divisibility by 10**\n"
@@ -2489,6 +2512,14 @@ msgstr ""
 #: Game.Doc.Theorems.Congruence
 msgid "§0 is a theorem from Mathlib that states §1.\n"
 "Use §2 when dealing with powers in induction."
+msgstr ""
+
+#. §0: `IsGCD(a, b) d`
+#. §1: `IsGCD(b, a) d`
+#: Game.Doc.Theorems.GCD
+msgid "**Symmetry of the GCD**\n"
+"\n"
+"If §0, then §1."
 msgstr ""
 
 #: Game.Levels.Problems.L01_large_powers
@@ -2526,7 +2557,7 @@ msgstr ""
 msgid "Magnificent! This explicit witness construction sits at the core of CRT."
 msgstr ""
 
-#: Game.Levels.GCD.L06_cancel_coprime
+#: Game.Levels.GCD.L07_cancel_coprime
 msgid "The Cancellation Law (Coprime Case)"
 msgstr ""
 
@@ -2560,11 +2591,19 @@ msgstr ""
 msgid "The remainder modulo 2 depends only on the last digit."
 msgstr ""
 
+#. §0: `gcd_symm`
+#. §1: `«{h_coprime}»`
+#. §2: `«{n}»`
+#. §3: `«{m}»`
+#: Game.Levels.LinCong.L10_crt_glue
+msgid "Before applying Euclid's Lemma, apply §0 to §1 so it matches the expected order for §2 and §3."
+msgstr ""
+
 #: Game.Levels.LinCong.L10_crt_glue
 msgid "Chinese Remainder Theorem: Glued (Boss)"
 msgstr ""
 
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "A Shift Doesn't Change the GCD (Boss)"
 msgstr ""
 
@@ -2661,7 +2700,7 @@ msgid "The §0 (rewrite) tactic replaces a term with an equivalent term based on
 "You can also rewrite everywhere (in all hypotheses and the goal at once) using §14: §15."
 msgstr ""
 
-#: Game.Levels.GCD.L08_cancel_general
+#: Game.Levels.GCD.L09_cancel_general
 msgid "Incredible! You just built the full cancellation law for modular congruences by gluing together two previous theorems and one careful algebraic cancellation. This is exactly how real number-theory results get assembled from smaller pieces."
 msgstr ""
 
@@ -2897,7 +2936,7 @@ msgstr ""
 
 #. §0: `obtain`
 #. §1: `have`
-#: Game.Levels.GCD.L09_gcd_shift
+#: Game.Levels.GCD.L10_gcd_shift
 msgid "🎉 MAGNIFICENT! 🎉\n"
 "\n"
 "You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
@@ -2983,25 +3022,6 @@ msgstr ""
 msgid "Great work! Together, Levels 6 and 7 give us the complete description of the set of solutions: an arithmetic progression with step §0."
 msgstr ""
 
-#. §0: $a \\equiv b \\pmod{m \\cdot n}$
-#. §1: $a \\equiv b \\pmod m$
-#. §2: $a \\equiv b \\pmod n$
-#. §3: $(a - b)$
-#. §4: $15$
-#. §5: $3 \\cdot 5$
-#. §6: $3$
-#. §7: $5$
-#: Game.Doc.Theorems.Congruence
-msgid "**Splitting the Modulus**\n"
-"\n"
-"If §0, then §1 and §2.\n"
-"\n"
-"**Intuition:**\n"
-"If a difference §3 is a multiple of §4 (§5), it must logically be a multiple of §6 and a multiple of §7.\n"
-"So if two numbers are congruent modulo 15, they are automatically congruent modulo 3 and modulo 5.\n"
-"This is a crucial stepping stone towards the Chinese Remainder Theorem!"
-msgstr ""
-
 #. §0: $x$
 #. §1: $y$
 #. §2: $a$
@@ -3028,6 +3048,25 @@ msgid "If §0 and §1 are both inverses of §2 modulo §3, are they the same?\n"
 "1. **Prove coprimality:** The theorem §11 (from the previous level) requires a proof that *some* inverse exists (§12). You can provide §13 as the witness to build this existence proof, and then extract the coprimality fact.\n"
 "2. **Equate the terms:** Use symmetry and transitivity to link your two main hypotheses into §14.\n"
 "3. **Cancel the factor:** Prepare your congruence for §15. The theorem expects the common factor to be on the *right* side (§16), so you will need to swap the multiplication order before applying the cancellation law."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod{m \\cdot n}$
+#. §1: $a \\equiv b \\pmod m$
+#. §2: $a \\equiv b \\pmod n$
+#. §3: $(a - b)$
+#. §4: $15$
+#. §5: $3 \\cdot 5$
+#. §6: $3$
+#. §7: $5$
+#: Game.Doc.Theorems.Congruence
+msgid "**Splitting the Modulus**\n"
+"\n"
+"If §0, then §1 and §2.\n"
+"\n"
+"**Intuition:**\n"
+"If a difference §3 is a multiple of §4 (§5), it must logically be a multiple of §6 and a multiple of §7.\n"
+"So if two numbers are congruent modulo 15, they are automatically congruent modulo 3 and modulo 5.\n"
+"This is a crucial stepping stone towards the Chinese Remainder Theorem!"
 msgstr ""
 
 #. §0: `«{m}»`

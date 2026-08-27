@@ -3,10 +3,11 @@ import Game.Levels.GCD.L02_gcd_def
 import Game.Levels.GCD.L03_gcd_greatest
 import Game.Levels.GCD.L04_coprime_forward
 import Game.Levels.GCD.L05_coprime_backward
-import Game.Levels.GCD.L06_cancel_coprime
-import Game.Levels.GCD.L07_gcd_div_coprime
-import Game.Levels.GCD.L08_cancel_general
-import Game.Levels.GCD.L09_gcd_shift
+import Game.Levels.GCD.L06_gcd_symm
+import Game.Levels.GCD.L07_cancel_coprime
+import Game.Levels.GCD.L08_gcd_div_coprime
+import Game.Levels.GCD.L09_cancel_general
+import Game.Levels.GCD.L10_gcd_shift
 
 World "GCD"
 Title "In Search of the GCD"

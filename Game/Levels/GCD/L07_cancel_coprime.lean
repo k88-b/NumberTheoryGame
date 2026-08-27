@@ -1,9 +1,10 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L05_coprime_backward
+import Game.Levels.GCD.L06_gcd_symm
+
 
 World "GCD"
-Level 6
+Level 7
 Title "The Cancellation Law (Coprime Case)"
 
 Introduction "

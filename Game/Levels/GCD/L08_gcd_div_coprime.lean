@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L06_cancel_coprime
+import Game.Levels.GCD.L07_cancel_coprime
 
 World "GCD"
-Level 7
+Level 8
 Title "Dividing by the GCD Gives Coprime Numbers"
 
 Introduction "
