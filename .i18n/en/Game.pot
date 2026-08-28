@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26\n"
+"POT-Creation-Date: 2026-08-29\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -208,6 +208,27 @@ msgid "Time to combine the last two levels into the *fully general* cancellation
 "4. Feed both pieces into §14 (Level 6) to finish in one line!\n"
 "\n"
 "This is exactly the reuse pattern from §15 back in World 2: build small intermediate facts with §16, then §17 the final theorem."
+msgstr ""
+
+#. §0: `ring`
+#. §1: `x + y = y + x`
+#. §2: `x * 1 = x`
+#. §3: `ring`
+#. §4: `+`
+#. §5: `-`
+#. §6: `*`
+#. §7: `^`
+#. §8: `ℤ`
+#. §9: `ℚ`
+#. §10: `ℝ`
+#. §11: `ℕ`
+#: Game.Doc.Tactics
+msgid "The §0 tactic automatically proves algebraic equalities like §1\n"
+"or §2. It is a powerful tool so you don't have to manually apply axioms.\n"
+"\n"
+"**What it works with:**\n"
+"§3 works with expressions involving addition (§4), subtraction (§5), multiplication (§6), and powers (§7) with natural exponents.\n"
+"It relies on the fundamental rules of commutativity, associativity, and distributivity, and evaluates expressions in any commutative ring structure (such as integers §8, rational numbers §9, and real numbers §10, as well as natural numbers §11)."
 msgstr ""
 
 #: Game.Levels.LinCong.L02_inv_reverse
@@ -742,14 +763,6 @@ msgid "We know we can add congruences, but can we multiply them?\n"
 "*(Reminder: to type the §17 symbol in your §18 statement, type §19 and press Space)*\n"
 "\n"
 "Use §20 to build your intermediate steps, and then use the §21 tactic to finish the proof by providing §22!"
-msgstr ""
-
-#. §0: `have`
-#. §1: `have h : X = Y := by ring`
-#. §2: `h`
-#: Game.Doc.Tactics
-msgid "The §0 tactic allows you to prove intermediate steps.\n"
-"Typing §1 creates a new hypothesis §2 in your context."
 msgstr ""
 
 #. §0: $m \\mid (a \\cdot c)$
@@ -1498,14 +1511,6 @@ msgstr ""
 msgid "Since 100 = 25 * 4, the term 100 * k is already a multiple of 4. Restate the goal as d plus that multiple of 4, in the shape mod_add_multiple expects."
 msgstr ""
 
-#. §0: `ring`
-#. §1: `x + y = y + x`
-#. §2: `x * 1 = x`
-#: Game.Doc.Tactics
-msgid "The §0 tactic automatically proves algebraic equalities like §1\n"
-"or §2. It is a powerful tool so you don't have to manually apply axioms."
-msgstr ""
-
 #. §0: `x - a`
 #. §1: `have h_eq : «{m}» * «{k1}» = «{n}» * «{k2}»`
 #: Game.Levels.LinCong.L10_crt_glue
@@ -1789,6 +1794,26 @@ msgstr ""
 
 #: Game.Levels.LinCong.L03_inv_unique
 msgid "Exactly! Using the cancellation law on congruences works wonderfully here."
+msgstr ""
+
+#. §0: `have`
+#. §1: `h`
+#. §2: `have h : assumption`
+#. §3: `<proof steps>`
+#. §4: `:= by`
+#. §5: `have h : assumption := by <proof steps>`
+#: Game.Doc.Tactics
+msgid "The §0 tactic allows you to prove intermediate steps.\n"
+"Once proven, a new hypothesis §1 is added to your context for the rest of the proof.\n"
+"\n"
+"**Using a proof block:**\n"
+"You can state the assumption and provide the proof on the following lines:\n"
+"§2\n"
+"§3\n"
+"\n"
+"**Using an inline proof:**\n"
+"For shorter proofs, you can provide the proof on the same line using §4:\n"
+"§5"
 msgstr ""
 
 #. §0: $10 \\equiv -1 \\pmod{11}$

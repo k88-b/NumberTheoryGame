@@ -19,8 +19,14 @@ TacticDoc intro
 
 
 /--
-The `ring` tactic automatically proves algebraic equalities like `x + y = y + x`
-or `x * 1 = x`. It is a powerful tool so you don't have to manually apply axioms.
+The `ring` tactic automatically proves algebraic equalities by expanding and rearranging expressions.
+It is a powerful tool so you don't have to manually apply basic axioms like commutativity or distributivity (e.g., `x + y = y + x` or `x * 1 = x`).
+
+**What it works with:**
+`ring` works on equations involving addition (`+`), subtraction (`-`), multiplication (`*`), and natural number exponents (`^`) within commutative rings (such as integers `ℤ`, rationals `ℚ`, or reals `ℝ`).
+
+**What it does NOT work with:**
+It cannot handle division (`/`), modulo arithmetic (`%`) or non-commutative structures (like matrices).
 -/
 TacticDoc ring
 
@@ -71,8 +77,18 @@ TacticDoc unfold
 
 
 /--
-The `have` tactic allows you to prove intermediate steps.
-Typing `have h : X = Y := by ring` creates a new hypothesis `h` in your context.
+The `have` tactic allows you to prove intermediate steps. Once proven, a new hypothesis `h` is added to your context for the rest of the proof.
+
+You are not limited to basic equalities (`X = Y`). You can use `have` for any proposition, such as modular equivalences (`a ≡ b (mod m)`), divisibility (`x ∣ y`), or predicates like `IsGCD(a, b) 1`.
+
+**Using a proof block:**
+You can state the assumption and provide the proof on the following lines. This sets your intermediate assumption as the current goal:
+`have h : a ≡ b (mod m)`
+`<proof steps>`
+
+**Using an inline proof:**
+For shorter proofs, you can provide the proof on the same line using `:= by`:
+`have h : IsGCD(a, b) 1 := by <proof steps>`
 -/
 TacticDoc «have»
 
