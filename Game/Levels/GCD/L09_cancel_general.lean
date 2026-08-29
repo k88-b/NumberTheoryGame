@@ -11,6 +11,8 @@ Time to combine the last two levels into the *fully general* cancellation law �
 
 If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and `IsGCD(c, m) d` with $d \\neq 0$, and we write $c = c_1 \\cdot d$, $m = m_1 \\cdot d$ (exactly as in Level 7), then $a \\equiv b \\pmod{m_1}$.
 
+**Lean Syntax Tip:** The notation `IsGCD(a, b) d` is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with `have`), you need to use the standard Lean syntax without parentheses or commas: `IsGCD a b d`.
+
 **Strategy:** Assemble, don't reprove.
 1. Apply `gcd_div_coprime` (Level 7) to get `IsGCD(c_1, m_1) 1`.
 2. Unfold the congruence hypothesis, substitute $c = c_1 \\cdot d$ and $m = m_1 \\cdot d$, and cancel the shared factor $d$ (using `mul_left_cancel₀` again). This will leave you with a plain algebraic equation!
@@ -23,7 +25,7 @@ This is exactly the reuse pattern from `mod_mul` back in World 2: build small in
 
 /-- The fully general cancellation law for congruences. -/
 Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c) ≡ (b * c) (mod m)) (h2 : IsGCD(c, m) d) (hc : c = c1 * d) (hm : m = m1 * d) : a ≡ b (mod m1) := by
-  have hcoprime : IsGCD(c1, m1) 1
+  have hcoprime : IsGCD c1 m1 1
   · exact gcd_div_coprime c m d c1 m1 hd h2 hc hm
   unfold ModEq at h1
   obtain ⟨k, hk⟩ := h1
@@ -46,6 +48,7 @@ Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c
     use k
 
   exact mod_cancel_coprime a b c1 m1 h1' hcoprime
+
 
 Conclusion "
 Incredible! You just built the full cancellation law for modular congruences by gluing together two previous theorems and one careful algebraic cancellation. This is exactly how real number-theory results get assembled from smaller pieces.

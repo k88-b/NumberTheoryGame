@@ -12,7 +12,7 @@ Suppose we know that $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$. Can we conclude
 In World 3, you proved `mod_cancel_coprime`, which says we can cancel a factor if it's coprime to the modulus.
 To use it here, you first need to prove that 14 and 9 are coprime, meaning `IsGCD(14, 9) 1`.
 
-**Lean Syntax Tip:** The notation `IsGCD(a, b) d` is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with `have`), you need to use the standard Lean syntax without parentheses or commas: `IsGCD a b d`.
+*(Remember the syntax tip: when writing your own code with `have`, you need to use the standard Lean syntax without parentheses or commas, like `IsGCD 14 9 1`)*
 "
 
 Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := by
