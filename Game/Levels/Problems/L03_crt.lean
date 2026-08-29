@@ -17,8 +17,8 @@ All you need to do is prove `IsGCD(10, 3) 1` and feed it to the theorem!
 "
 
 Statement : ∃ x : ℤ, x ≡ 7 (mod 10) ∧ x ≡ 2 (mod 3) := by
-  have h_gcd : IsGCD 10 3 1 := by
-    unfold IsGCD
+  have h_gcd : IsGCD 10 3 1
+  · unfold IsGCD
     constructor
     · constructor
       · exact one_dvd 10

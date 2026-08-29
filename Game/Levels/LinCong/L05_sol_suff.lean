@@ -20,15 +20,21 @@ Can you figure out what the solution $x$ should be?
 Statement lin_cong_suff (a b m d : ℤ) (hd : IsGCD(a, m) d) (hb : d ∣ b) : ∃ x, (a * x) ≡ b (mod m) := by
   unfold IsGCD at hd
   obtain ⟨_, u, v, huv⟩ := hd
+
   obtain ⟨k, hk⟩ := hb
+
   Hint "As the introduction says, try `x = {u} * {k}`. `use {u} * {k}`"
   use u * k
   unfold ModEq
+
   Hint (hidden := true) "Your goal is `{m} ∣ ({a} * ({u} * {k}) - {b})`. Since `{b} = {d} * {k}`, try `use -{v} * {k}`"
   use -v * k
   rw [hk]
+
   Hint (hidden := true) "Build the shift identity: `have h_eq : {a} * ({u} * {k}) - {d} * {k} = {m} * (-{v} * {k}) + {k} * ({a} * {u} + {m} * {v} - {d})`. The last term vanishes once you plug in `{huv}`."
-  have h_eq : a * (u * k) - d * k = m * (-v * k) + k * (a * u + m * v - d) := by ring
+  have h_eq : a * (u * k) - d * k = m * (-v * k) + k * (a * u + m * v - d)
+  · ring
+
   rw [h_eq, huv]
   ring
 

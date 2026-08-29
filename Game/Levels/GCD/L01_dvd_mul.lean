@@ -1,5 +1,6 @@
 import GameServer
 import Mathlib.Tactic
+import Game.Metadata
 import Game.Levels.Definitions
 import Game.Doc.Definitions
 import Game.Doc.Tactics
@@ -25,6 +26,7 @@ Statement dvd_mul_of_dvd_left (a b d : ℤ) (h : d ∣ a) : d ∣ (a * b) := by
   Hint (hidden := true) "Once you know a = d·k, substituting into a·b immediately gives d·(k·b). So the multiplier the goal is asking for is your existing k, scaled by b."
   use k * b
   rw [hk]
+
   ring
 
 Conclusion "

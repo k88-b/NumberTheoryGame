@@ -16,21 +16,27 @@ To use it here, you first need to prove that 14 and 9 are coprime, meaning `IsGC
 "
 
 Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := by
-  have h_gcd : IsGCD 14 9 1 := by
-    unfold IsGCD
-    constructor
-    · constructor
-      · exact one_dvd 14
-      · exact one_dvd 9
-    · use 2, -3
-      ring
+  have h_gcd : IsGCD 14 9 1
+  unfold IsGCD
+  constructor
+  · constructor
+    · exact one_dvd 14
+    · exact one_dvd 9
+  · use 2, -3
+    ring
 
   Hint "The theorem `mod_cancel_coprime` expects the common factor on the *right* side of the multiplication. Create a new hypothesis to swap the order"
 
-  have h_swap : (x * 14) ≡ (y * 14) (mod 9) := by
-    have hrw1 : x * 14 = 14 * x := by ring
-    have hrw2 : y * 14 = 14 * y := by ring
+  have h_swap : (x * 14) ≡ (y * 14) (mod 9)
+
+  · have hrw1 : x * 14 = 14 * x
+    · ring
+
+    have hrw2 : y * 14 = 14 * y
+    · ring
+
     rw [hrw1, hrw2]
+
     exact h
 
   Hint "Now you can finish the proof using `mod_cancel_coprime` with your swapped hypothesis `{h_swap}` and `{h_gcd}`!"

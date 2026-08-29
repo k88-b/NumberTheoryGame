@@ -34,22 +34,30 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
   obtain ⟨k2, hk2⟩ := hn
 
   Hint "Following the strategy, start by creating an equation that sets your two expressions for `x - a` equal to each other: `have h_eq : {m} * {k1} = {n} * {k2}`"
-  have h_eq : m * k1 = n * k2 := by rw [← hk1, hk2]
+  have h_eq : m * k1 = n * k2
+  · rw [← hk1, hk2]
 
   Hint "Now prove that `{m}` divides `{k2} * {n}`."
-  have h_div : m ∣ (k2 * n) := by
-    use k1
-    have h_eq2 : k2 * n = n * k2 := by ring
+  have h_div : m ∣ (k2 * n)
+  · use k1
+
+    have h_eq2 : k2 * n = n * k2
+    · ring
+
     rw [h_eq2, ← h_eq]
 
   Hint "Before applying Euclid's Lemma, apply `gcd_symm` to `{h_coprime}` so it matches the expected order for `{n}` and `{m}`."
-  have h_coprime_symm := gcd_symm m n 1 h_coprime
+  have h_coprime_symm : IsGCD n m 1
+  · exact gcd_symm m n 1 h_coprime
 
   Hint (hidden := true) "Now apply `euclids_lemma` to extract a new witness showing that `{m} ∣ {k2}`."
   obtain ⟨k3, hk3⟩ := euclids_lemma k2 n m h_div h_coprime_symm
+
   use k3
   rw [hk2, hk3]
+
   ring
+
 
 Conclusion "
 🎉 YOU DEFEATED THE FINAL BOSS! 🎉

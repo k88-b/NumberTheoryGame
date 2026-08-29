@@ -31,35 +31,52 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
     (h1 : IsGCD(a + m * k, m) d1) (h2 : IsGCD(a, m) d2) : d1 = d2 := by
 
   Hint "Start by extracting the four divisibility facts from `{h1}` and `{h2}` using the dot notation explained in the introduction. Create new hypotheses for them using `have`."
-  have hd1_amk : d1 ∣ a + m * k := h1.1.1
-  have hd1_m : d1 ∣ m := h1.1.2
-  have hd2_a : d2 ∣ a := h2.1.1
-  have hd2_m : d2 ∣ m := h2.1.2
+
+  have hd1_amk : d1 ∣ a + m * k
+  · exact h1.1.1
+
+  have hd1_m : d1 ∣ m
+  · exact h1.1.2
+
+  have hd2_a : d2 ∣ a
+  · exact h2.1.1
+
+  have hd2_m : d2 ∣ m
+  · exact h2.1.2
 
   Hint "First step: show that `{d1}` divides `{a}`. Think of `{a}` as `({a} + {m} * {k}) - {m} * {k}`."
-  have hd1_a : d1 ∣ a := by
-    obtain ⟨x, hx⟩ := hd1_amk
+
+  have hd1_a : d1 ∣ a
+  · obtain ⟨x, hx⟩ := hd1_amk
     obtain ⟨y, hy⟩ := hd1_m
     use x - y * k
-    have h_eq1 : a = (a + m * k) - m * k := by ring
+
+    have h_eq1 : a = (a + m * k) - m * k
+    · ring
+
     rw [h_eq1, hx, hy]
     ring
 
   Hint "Now that you know `{d1} ∣ {a}` and `{d1} ∣ {m}`, use the theorem `gcd_is_greatest` (from Level 3) on `{h2}` to show that `{d1} ∣ {d2}`."
-  have hd1_d2 : d1 ∣ d2 := gcd_is_greatest a m d1 d2 h2 hd1_a hd1_m
+
+  have hd1_d2 : d1 ∣ d2
+  · exact gcd_is_greatest a m d1 d2 h2 hd1_a hd1_m
 
   Hint "Symmetrically, show `{d2} ∣ {a} + {m} * {k}` using the fact that `{d2} ∣ {a}` and `{d2} ∣ {m}`."
-  have hd2_amk : d2 ∣ a + m * k := by
-    obtain ⟨x, hx⟩ := hd2_a
+
+  have hd2_amk : d2 ∣ a + m * k
+  · obtain ⟨x, hx⟩ := hd2_a
     obtain ⟨y, hy⟩ := hd2_m
     use x + y * k
     rw [hx, hy]
     ring
 
   Hint "Almost there! Apply `gcd_is_greatest` on `{h1}` to show `{d2} ∣ {d1}`."
-  have hd2_d1 : d2 ∣ d1 := gcd_is_greatest (a + m * k) m d2 d1 h1 hd2_amk hd2_m
+  have hd2_d1 : d2 ∣ d1
+  · exact gcd_is_greatest (a + m * k) m d2 d1 h1 hd2_amk hd2_m
 
   Hint "You have `{d1} ∣ {d2}` and `{d2} ∣ {d1}`. Finish the boss by applying `Int.dvd_antisymm`!"
+
   exact Int.dvd_antisymm hd1 hd2 hd1_d2 hd2_d1
 
 

@@ -190,7 +190,7 @@ msgstr ""
 #. §9: $m = m_1 \\cdot d$
 #. §10: $d$
 #. §11: `mul_left_cancel₀`
-#. §12: `have h1' : (a * c1) ≡ (b * c1) (mod m1) := by ...`
+#. §12: `have h1' : (a * c1) ≡ (b * c1) (mod m1)`
 #. §13: `ModEq`
 #. §14: `mod_cancel_coprime`
 #. §15: `mod_mul`
@@ -208,27 +208,6 @@ msgid "Time to combine the last two levels into the *fully general* cancellation
 "4. Feed both pieces into §14 (Level 6) to finish in one line!\n"
 "\n"
 "This is exactly the reuse pattern from §15 back in World 2: build small intermediate facts with §16, then §17 the final theorem."
-msgstr ""
-
-#. §0: `ring`
-#. §1: `x + y = y + x`
-#. §2: `x * 1 = x`
-#. §3: `ring`
-#. §4: `+`
-#. §5: `-`
-#. §6: `*`
-#. §7: `^`
-#. §8: `ℤ`
-#. §9: `ℚ`
-#. §10: `ℝ`
-#. §11: `ℕ`
-#: Game.Doc.Tactics
-msgid "The §0 tactic automatically proves algebraic equalities like §1\n"
-"or §2. It is a powerful tool so you don't have to manually apply axioms.\n"
-"\n"
-"**What it works with:**\n"
-"§3 works with expressions involving addition (§4), subtraction (§5), multiplication (§6), and powers (§7) with natural exponents.\n"
-"It relies on the fundamental rules of commutativity, associativity, and distributivity, and evaluates expressions in any commutative ring structure (such as integers §8, rational numbers §9, and real numbers §10, as well as natural numbers §11)."
 msgstr ""
 
 #: Game.Levels.LinCong.L02_inv_reverse
@@ -255,7 +234,7 @@ msgstr ""
 #. §2: $5 \\mid 10$
 #. §3: `mod_shrink`
 #. §4: $10 \\cdot k + d \\equiv d \\pmod 5$
-#. §5: `have h5 : (5 : ℤ) ∣ 10 := by ...`
+#. §5: `have h5 : (5 : ℤ) ∣ 10`
 #: Game.Levels.DivRules.L03_div5
 msgid "As promised at the end of the last level, let's finish off the pair: since §0 too, the exact same trick that worked for 2 also nails the rule for 5.\n"
 "\n"
@@ -332,6 +311,56 @@ msgstr ""
 
 #: Game.Levels.Congruence.L05_mul_const
 msgid "Multiplying a congruence by a constant."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $b \\equiv a \\pmod m$
+#. §2: `at`
+#. §3: `unfold`
+#. §4: `rw`
+#. §5: `unfold ModEq at h`
+#. §6: `h`
+#. §7: `unfold ModEq at *`
+#. §8: `rw [h_eq] at h1`
+#. §9: `h_eq`
+#. §10: `h1`
+#. §11: `unfold ModEq at *`
+#. §12: $m \\mid (a - b)$
+#. §13: $a - b = m \\cdot k$
+#. §14: $m \\mid (b - a)$
+#. §15: $b - a = m \\cdot ?$
+#. §16: $b - a = -(a - b)$
+#. §17: $-k$
+#. §18: `have h_eq : b - a = -(a - b)`
+#. §19: `h_eq`
+#. §20: `rw [h_eq]`
+#. §21: `rw [h_eq]`
+#. §22: `b - a`
+#. §23: `-(a - b)`
+#. §24: `have h_eq : -(a - b) = b - a`
+#. §25: `rw [← h_eq]`
+#. §26: `←`
+#. §27: `\\l`
+#: Game.Levels.Congruence.L02_mod_symm
+msgid "If §0, is it true that §1?\n"
+"\n"
+"Before we dive into the math, let's learn a crucial syntactic trick: the **§2** keyword.\n"
+"By default, tactics like §3 or §4 only apply to your *goal*. But often you need to modify your *hypotheses* (your assumptions).\n"
+"* §5 will unfold the definition only inside the hypothesis §6.\n"
+"* §7 will unfold it *everywhere* (in all hypotheses and the goal at once).\n"
+"* You can also do this with rewrites: §8 will rewrite using §9 inside §10.\n"
+"\n"
+"Start this proof by typing §11. Then let's unpack the algebra:\n"
+"We assume §12, so §13.\n"
+"We need to prove §14, which means §15.\n"
+"Since §16, the multiplier should be §17.\n"
+"\n"
+"If you type §18, Lean will create a new goal asking you to prove this exact equation. Once you prove it, Lean will add §19 to your context so you can use §20 to transform your main goal!\n"
+"\n"
+"**Syntax Tip:**\n"
+"By default, §21 looks for the *left* side of your equality (§22) and replaces it with the *right* side (§23).\n"
+"If you ever formulate your equality the other way around, for example §24, you will need to tell Lean to rewrite from right to left using a left arrow: §25.\n"
+"*(To type §26, write §27 and press Space.)*"
 msgstr ""
 
 #. §0: $10 \\cdot k + d$
@@ -724,47 +753,6 @@ msgstr ""
 msgid "Euclid in Practice"
 msgstr ""
 
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $c \\equiv d \\pmod m$
-#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
-#. §3: `mod_trans`
-#. §4: $a \\cdot c$
-#. §5: $b \\cdot c$
-#. §6: $b \\cdot c$
-#. §7: $b \\cdot d$
-#. §8: `have h3 := mod_mul_const a b c m h1`
-#. §9: $a \\cdot c \\equiv b \\cdot c \\pmod m$
-#. §10: `mod_mul_const`
-#. §11: $c \\equiv d$
-#. §12: $b$
-#. §13: $c \\cdot b \\equiv d \\cdot b$
-#. §14: $b \\cdot c \\equiv b \\cdot d$
-#. §15: `have`
-#. §16: `rw`
-#. §17: `≡`
-#. §18: `have`
-#. §19: `\\==`
-#. §20: `have`
-#. §21: `exact`
-#. §22: `mod_trans`
-#: Game.Levels.Congruence.L06_mul
-msgid "We know we can add congruences, but can we multiply them?\n"
-"If §0 and §1, is §2?\n"
-"\n"
-"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
-"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
-"\n"
-"You can explicitly apply a theorem to variables to create a new hypothesis:\n"
-"§8 will prove that §9.\n"
-"\n"
-"**Watch out for the order of multiplication!**\n"
-"Applying §10 to §11 with multiplier §12 will give you §13. You will need to manually flip the order to §14 using a §15 block and §16 before you can chain them together!\n"
-"\n"
-"*(Reminder: to type the §17 symbol in your §18 statement, type §19 and press Space)*\n"
-"\n"
-"Use §20 to build your intermediate steps, and then use the §21 tactic to finish the proof by providing §22!"
-msgstr ""
-
 #. §0: $m \\mid (a \\cdot c)$
 #. §1: $\\text{gcd}(c, m) = 1$
 #. §2: $m \\mid a$
@@ -881,6 +869,46 @@ msgstr ""
 
 #: Game.Levels.DivRules.L02_div2
 msgid "Nice! Exactly the same logic applies to 5, since 5 ∣ 10 too — that's exactly what the next level does."
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
+#. §3: `mod_trans`
+#. §4: $a \\cdot c$
+#. §5: $b \\cdot c$
+#. §6: $b \\cdot c$
+#. §7: $b \\cdot d$
+#. §8: `have h3 : (a * c) ≡ (b * c) (mod m)`
+#. §9: `exact mod_mul_const a b c m h1`
+#. §10: `mod_mul_const`
+#. §11: $c \\equiv d$
+#. §12: $b$
+#. §13: $c \\cdot b \\equiv d \\cdot b$
+#. §14: $b \\cdot c \\equiv b \\cdot d$
+#. §15: `have`
+#. §16: `rw`
+#. §17: `≡`
+#. §18: `have`
+#. §19: `\\==`
+#. §20: `have`
+#. §21: `exact`
+#. §22: `mod_trans`
+#: Game.Levels.Congruence.L06_mul
+msgid "We know we can add congruences, but can we multiply them?\n"
+"If §0 and §1, is §2?\n"
+"\n"
+"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
+"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
+"\n"
+"You can explicitly state a new hypothesis and then apply a theorem to prove it. For example, typing §8 creates a new goal, which you can immediately close using §9\n"
+"\n"
+"**Watch out for the order of multiplication!**\n"
+"Applying §10 to §11 with multiplier §12 will give you §13. You will need to manually flip the order to §14 using a §15 block and §16 before you can chain them together!\n"
+"\n"
+"*(Reminder: to type the §17 symbol in your §18 statement, type §19 and press Space)*\n"
+"\n"
+"Use §20 to build your intermediate steps, and then use the §21 tactic to finish the proof by providing §22!"
 msgstr ""
 
 #: Game.Levels.GCD.L06_gcd_symm
@@ -1070,10 +1098,10 @@ msgstr ""
 #. §2: `mod_shrink`
 #. §3: $2 \\mid 10$
 #. §4: `have`
-#. §5: `have h2 : 2 ∣ 10 := by ...`
+#. §5: `have h2 : 2 ∣ 10`
 #. §6: `ℕ`
 #. §7: `ℤ`
-#. §8: `have h2 : (2 : ℤ) ∣ 10 := by ...`
+#. §8: `have h2 : (2 : ℤ) ∣ 10`
 #. §9: `ℤ`
 #. §10: `\\Z`
 #: Game.Levels.DivRules.L02_div2
@@ -1302,59 +1330,6 @@ msgstr ""
 #. §0: `obtain`
 #: Game.Levels.Congruence.L04_add
 msgid "Excellent! You combined two witnesses using §0 and proved your first arithmetic rule for congruences."
-msgstr ""
-
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $b \\equiv a \\pmod m$
-#. §2: `at`
-#. §3: `unfold`
-#. §4: `rw`
-#. §5: `unfold ModEq at h`
-#. §6: `h`
-#. §7: `unfold ModEq at *`
-#. §8: `rw [h_eq] at h1`
-#. §9: `h_eq`
-#. §10: `h1`
-#. §11: `unfold ModEq at *`
-#. §12: $m \\mid (a - b)$
-#. §13: $a - b = m \\cdot k$
-#. §14: $m \\mid (b - a)$
-#. §15: $b - a = m \\cdot ?$
-#. §16: $b - a = -(a - b)$
-#. §17: $-k$
-#. §18: `have`
-#. §19: `have h_eq : b - a = -(a - b) := by ring`
-#. §20: `h_eq`
-#. §21: `rw [h_eq]`
-#. §22: `rw [h_eq]`
-#. §23: `b - a`
-#. §24: `-(a - b)`
-#. §25: `have h_eq : -(a - b) = b - a`
-#. §26: `rw [← h_eq]`
-#. §27: `←`
-#. §28: `\\l`
-#: Game.Levels.Congruence.L02_mod_symm
-msgid "If §0, is it true that §1?\n"
-"\n"
-"Before we dive into the math, let's learn a crucial syntactic trick: the **§2** keyword.\n"
-"By default, tactics like §3 or §4 only apply to your *goal*. But often you need to modify your *hypotheses* (your assumptions).\n"
-"* §5 will unfold the definition only inside the hypothesis §6.\n"
-"* §7 will unfold it *everywhere* (in all hypotheses and the goal at once).\n"
-"* You can also do this with rewrites: §8 will rewrite using §9 inside §10.\n"
-"\n"
-"Start this proof by typing §11. Then let's unpack the algebra:\n"
-"We assume §12, so §13.\n"
-"We need to prove §14, which means §15.\n"
-"Since §16, the multiplier should be §17.\n"
-"\n"
-"You will need an intermediate mathematical step. You can create one using the §18 tactic.\n"
-"If you type §19, Lean will add §20 to your context.\n"
-"You can then use §21 to transform your goal!\n"
-"\n"
-"**Syntax Tip:**\n"
-"By default, §22 looks for the *left* side of your equality (§23) and replaces it with the *right* side (§24).\n"
-"If you ever formulate your equality the other way around, for example §25, you will need to tell Lean to rewrite from right to left using a left arrow: §26.\n"
-"*(To type §27, write §28 and press Space.)*"
 msgstr ""
 
 #: Game.Levels.LinCong.L09_crt_exists
@@ -1796,26 +1771,6 @@ msgstr ""
 msgid "Exactly! Using the cancellation law on congruences works wonderfully here."
 msgstr ""
 
-#. §0: `have`
-#. §1: `h`
-#. §2: `have h : assumption`
-#. §3: `<proof steps>`
-#. §4: `:= by`
-#. §5: `have h : assumption := by <proof steps>`
-#: Game.Doc.Tactics
-msgid "The §0 tactic allows you to prove intermediate steps.\n"
-"Once proven, a new hypothesis §1 is added to your context for the rest of the proof.\n"
-"\n"
-"**Using a proof block:**\n"
-"You can state the assumption and provide the proof on the following lines:\n"
-"§2\n"
-"§3\n"
-"\n"
-"**Using an inline proof:**\n"
-"For shorter proofs, you can provide the proof on the same line using §4:\n"
-"§5"
-msgstr ""
-
 #. §0: $10 \\equiv -1 \\pmod{11}$
 #: Game.Doc.Theorems.DivRules
 msgid "**Divisibility by 11**\n"
@@ -1904,7 +1859,7 @@ msgstr ""
 
 #. §0: $3 \\mid 9$
 #. §1: `mod_shrink`
-#. §2: `have h3 : (3 : ℤ) ∣ 9 := by ...`
+#. §2: `have h3 : (3 : ℤ) ∣ 9`
 #: Game.Levels.DivRules.L06_div3
 msgid "If the rule for 9 works, the rule for 3 must come for free, because §0.\n"
 "\n"
@@ -2035,6 +1990,30 @@ msgid "Welcome to the final boss of World 3!\n"
 "1. Show §17 is also a common divisor of §18 and §19 (not just of §20): since §21, and §22 divides both §23 and §24, it divides §25 too. Now §26 is a common divisor of §27 and §28, and §29 is *the greatest one* (Level 3!), so §30.\n"
 "2. Symmetrically, show §31 is also a common divisor of §32 and §33: since §34 divides both §35 and §36, it divides the combination §37 too. Applying Level 3 again (this time with §38 as \"the greatest\"), you get §39.\n"
 "3. Finally, §40 and §41, together with §42 and §43, give §44 by the antisymmetry lemma (§45) that has just been added to your inventory!"
+msgstr ""
+
+#. §0: `have`
+#. §1: `h`
+#. §2: `X = Y`
+#. §3: `have`
+#. §4: `a ≡ b (mod m)`
+#. §5: `x ∣ y`
+#. §6: `IsGCD(a, b) 1`
+#. §7: `:=`
+#. §8: `have h : a ≡ b (mod m)`
+#. §9: `<proof steps>`
+#: Game.Doc.Tactics
+msgid "The §0 tactic allows you to prove intermediate steps. Once proven, a new hypothesis §1 is added to your context for the rest of the proof.\n"
+"\n"
+"You are not limited to basic equalities (§2). You can use §3 for any proposition, such as modular equivalences (§4), divisibility (§5), or predicates like §6.\n"
+"\n"
+"\n"
+"**Important:** In this game, the assignment syntax (§7) is disabled. You must state the assumption and provide the proof on the following line.\n"
+"\n"
+"**Using a proof block:**\n"
+"You can state the assumption and provide the proof on the following lines. This sets your intermediate assumption as the current goal:\n"
+"§8\n"
+"§9"
 msgstr ""
 
 #. §0: `mul_left_cancel₀`
@@ -3036,6 +3015,30 @@ msgid "To prove that §0 is a true equivalence relation, we must prove **transit
 "2. §5 the witnesses §6 and §7 from your hypotheses.\n"
 "3. Use algebra (§8) to rewrite §9 as §10.\n"
 "4. Apply your rewrites and let §11 finish the job!"
+msgstr ""
+
+#. §0: `ring`
+#. §1: `x + y = y + x`
+#. §2: `x * 1 = x`
+#. §3: `ring`
+#. §4: `+`
+#. §5: `-`
+#. §6: `*`
+#. §7: `^`
+#. §8: `ℤ`
+#. §9: `ℚ`
+#. §10: `ℝ`
+#. §11: `/`
+#. §12: `%`
+#: Game.Doc.Tactics
+msgid "The §0 tactic automatically proves algebraic equalities by expanding and rearranging expressions.\n"
+"It is a powerful tool so you don't have to manually apply basic axioms like commutativity or distributivity (e.g., §1 or §2).\n"
+"\n"
+"**What it works with:**\n"
+"§3 works on equations involving addition (§4), subtraction (§5), multiplication (§6), and natural number exponents (§7) within commutative rings (such as integers §8, rationals §9, or reals §10).\n"
+"\n"
+"**What it does NOT work with:**\n"
+"It cannot handle division (§11), modulo arithmetic (§12) or non-commutative structures (like matrices)."
 msgstr ""
 
 #: Game.Levels.Congruence.L11_mod_split

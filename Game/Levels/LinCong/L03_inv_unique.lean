@@ -18,20 +18,28 @@ We know $a \\cdot x \\equiv 1 \\pmod m$ and $a \\cdot y \\equiv 1 \\pmod m$. Thi
 "
 
 
-Statement inv_unique (a x y m : ℤ) (hx : (a * x) ≡ 1 (mod m)) (hy : (a * y) ≡ 1 (mod m)) : x ≡ y (mod m) := by
+Statement inv_unique_mod (a x y m : ℤ) (hx : (a * x) ≡ 1 (mod m)) (hy : (a * y) ≡ 1 (mod m)) : x ≡ y (mod m) := by
   Hint "Following step 1 of the strategy, create a proof that *some* inverse exists using {x} as the witness: `have h_exists : ∃ k, ({a} * k) ≡ 1 (mod {m})`."
-  have h_exists : ∃ k, (a * k) ≡ 1 (mod m) := by
-    use x
 
-  have h_coprime : IsGCD(a, m) 1 := inv_implies_coprime a m h_exists
+  have h_exists : ∃ k, (a * k) ≡ 1 (mod m)
+  · use x
 
-  have h_trans : (a * x) ≡ (a * y) (mod m) := by
-    have hy_symm := mod_symm (a * y) 1 m hy
+  have h_coprime : IsGCD a m 1
+  · exact inv_implies_coprime a m h_exists
+
+  have h_trans : (a * x) ≡ (a * y) (mod m)
+  · have hy_symm : 1 ≡ (a * y) (mod m)
+    · exact mod_symm (a * y) 1 m hy
+
     exact mod_trans (a * x) 1 (a * y) m hx hy_symm
 
-  have h_eq : (x * a) ≡ (y * a) (mod m) := by
-    have hrw1 : x * a = a * x := by ring
-    have hrw2 : y * a = a * y := by ring
+  have h_eq : (x * a) ≡ (y * a) (mod m)
+  · have hrw1 : x * a = a * x
+    · ring
+
+    have hrw2 : y * a = a * y
+    · ring
+
     rw [hrw1, hrw2]
     exact h_trans
 

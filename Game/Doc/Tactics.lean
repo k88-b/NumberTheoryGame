@@ -81,14 +81,13 @@ The `have` tactic allows you to prove intermediate steps. Once proven, a new hyp
 
 You are not limited to basic equalities (`X = Y`). You can use `have` for any proposition, such as modular equivalences (`a ≡ b (mod m)`), divisibility (`x ∣ y`), or predicates like `IsGCD(a, b) 1`.
 
+
+**Important:** In this game, the assignment syntax (`:=`) is disabled. You must state the assumption and provide the proof on the following line.
+
 **Using a proof block:**
 You can state the assumption and provide the proof on the following lines. This sets your intermediate assumption as the current goal:
 `have h : a ≡ b (mod m)`
 `<proof steps>`
-
-**Using an inline proof:**
-For shorter proofs, you can provide the proof on the same line using `:= by`:
-`have h : IsGCD(a, b) 1 := by <proof steps>`
 -/
 TacticDoc «have»
 

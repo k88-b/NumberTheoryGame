@@ -24,7 +24,10 @@ Statement gcd_symm (a b d : ℤ) (h : IsGCD(a, b) d) : IsGCD(b, a) d := by
     · exact hdb
     · exact hda
   use y, x
-  have h_eq : b * y + a * x = a * x + b * y := by ring
+
+  have h_eq : b * y + a * x = a * x + b * y
+  · ring
+
   rw [h_eq, hxy]
 
 Conclusion "

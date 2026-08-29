@@ -13,3 +13,17 @@ a suggestion.
 in a random order. Therefore, you should keep the structure of one file Lean file per world
 which imports all its levels.
 -/
+
+-- Workaround: lean4game doesn't show errors inside the proof term of  `have _ := _`,
+-- so we disable it
+
+syntax (name := gameHave) "have" letConfig letDecl : tactic
+
+macro_rules (kind := gameHave)
+  | `(tactic| have $_:letId $_* : $_ :=%$tk $_) => do
+    Lean.Macro.throwErrorAt tk "`have _ := _` cannot be used in this game. \
+    There is a bug which would not display errors inside the proof term. \
+     Please use `have _ : _` and provide the proof on the next lines."
+    `(tactic| skip)
+
+

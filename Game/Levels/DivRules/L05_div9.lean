@@ -22,10 +22,11 @@ Since $10 \\equiv 1 \\pmod 9$, your ultimate weapon `polynomial_cong` from World
 
 /-- The sum of digits rule for 9. -/
 Statement div9_rule_3 (c0 c1 c2 : ℤ) : (c2 * 10^2 + c1 * 10 + c0) ≡ (c2 * 1^2 + c1 * 1 + c0) (mod 9) := by
-  have h10 : 10 ≡ 1 (mod 9) := by
-    unfold ModEq
+  have h10 : 10 ≡ 1 (mod 9)
+  · unfold ModEq
     use 1
     ring
+
   exact polynomial_cong 10 1 c0 c1 c2 9 h10
 
 Conclusion "

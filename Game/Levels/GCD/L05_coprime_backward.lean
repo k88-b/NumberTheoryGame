@@ -21,6 +21,7 @@ Statement bezout_imp_coprime (c m : ℤ) (h : ∃ x y : ℤ, c * x + m * y = 1) 
     · Hint (hidden := true) "Remember the theorem `one_dvd` from World 1? It proves that 1 divides everything."
       exact one_dvd c
     · exact one_dvd m
+
   · exact h
 
 Conclusion "

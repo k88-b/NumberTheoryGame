@@ -18,8 +18,11 @@ Notice that $100 = 25 \\cdot 4$. Use `mod_add_multiple` just like in Level 1!
 /-- The remainder modulo 4 depends only on the last two digits. -/
 Statement div4_rule (k d : ℤ) : (100 * k + d) ≡ d (mod 4) := by
   Hint (hidden := true) "Since 100 = 25 * 4, the term 100 * k is already a multiple of 4. Restate the goal as d plus that multiple of 4, in the shape mod_add_multiple expects."
-  have h_eq : 100 * k + d = d + (25 * k) * 4 := by ring
+  have h_eq : 100 * k + d = d + (25 * k) * 4
+  · ring
+
   rw [h_eq]
+
   exact mod_add_multiple d (25 * k) 4
 
 Conclusion "

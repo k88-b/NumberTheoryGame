@@ -21,10 +21,11 @@ Once again, `polynomial_cong` will do all the heavy lifting — and just like wi
 
 /-- The alternating sum of digits rule for 11. -/
 Statement div11_rule_3 (c0 c1 c2 : ℤ) : (c2 * 10^2 + c1 * 10 + c0) ≡ (c2 * (-1)^2 + c1 * (-1) + c0) (mod 11) := by
-  have h10 : 10 ≡ -1 (mod 11) := by
-    unfold ModEq
+  have h10 : 10 ≡ -1 (mod 11)
+  · unfold ModEq
     use 1
     ring
+
   exact polynomial_cong 10 (-1) c0 c1 c2 11 h10
 
 Conclusion "

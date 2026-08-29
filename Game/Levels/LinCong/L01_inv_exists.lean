@@ -1,5 +1,6 @@
 import GameServer
 import Mathlib.Tactic
+import Game.Metadata
 import Game.Levels.Definitions
 import Game.Doc.Definitions
 import Game.Doc.Tactics
@@ -31,9 +32,12 @@ Statement inv_exists (a m : ℤ) (h : IsGCD(a, m) 1) : ∃ x : ℤ, (a * x) ≡ 
   Hint (hidden := true) "Your goal is `{m} ∣ ({a} * {x} - 1)`. From `{hxy}` you know `{a} * {x} - 1 = -{m} * {y}`, so try `use -{y}`."
   use -y
   Hint (hidden := true) "Rewrite `{a} * {x} - 1` using `{hxy}` with `have h_eq : {a} * {x} - 1 = ({a} * {x} + {m} * {y}) - 1 - {m} * {y}`."
-  have h_eq : a * x - 1 = (a * x + m * y) - 1 - m * y := by ring
+
+  have h_eq : a * x - 1 = (a * x + m * y) - 1 - m * y
+  · ring
+
   rw [h_eq, hxy]
-  ring
+  · ring
 
 
 Conclusion "

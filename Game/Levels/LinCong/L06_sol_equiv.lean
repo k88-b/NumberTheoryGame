@@ -15,14 +15,22 @@ This perfectly mirrors `mod_cancel_general` from World 3. You can reuse it direc
 
 
 Statement lin_cong_sol_equiv (a b m d a1 m1 x1 x2 : ℤ) (hd_not_zero : d ≠ 0) (hd : IsGCD(a, m) d) (ha : a = a1 * d) (hm : m = m1 * d) (h1 : (a * x1) ≡ b (mod m)) (h2 : (a * x2) ≡ b (mod m)) : x1 ≡ x2 (mod m1) := by
-  have h_trans : (a * x1) ≡ (a * x2) (mod m) := by
-    have h2_symm := mod_symm (a * x2) b m h2
+  have h_trans : (a * x1) ≡ (a * x2) (mod m)
+  · have h2_symm : b ≡ (a * x2) (mod m)
+    · exact mod_symm (a * x2) b m h2
+
     exact mod_trans (a * x1) b (a * x2) m h1 h2_symm
-  have h_eq : (x1 * a) ≡ (x2 * a) (mod m) := by
-    have hrw1 : x1 * a = a * x1 := by ring
-    have hrw2 : x2 * a = a * x2 := by ring
+
+  have h_eq : (x1 * a) ≡ (x2 * a) (mod m)
+  · have hrw1 : x1 * a = a * x1
+    · ring
+
+    have hrw2 : x2 * a = a * x2
+    · ring
+
     rw [hrw1, hrw2]
     exact h_trans
+
   exact mod_cancel_general x1 x2 a m d a1 m1 hd_not_zero h_eq hd ha hm
 
 Conclusion "

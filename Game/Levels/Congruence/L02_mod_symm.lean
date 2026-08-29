@@ -23,9 +23,7 @@ We assume $m \\mid (a - b)$, so $a - b = m \\cdot k$.
 We need to prove $m \\mid (b - a)$, which means $b - a = m \\cdot ?$.
 Since $b - a = -(a - b)$, the multiplier should be $-k$.
 
-You will need an intermediate mathematical step. You can create one using the `have` tactic.
-If you type `have h_eq : b - a = -(a - b) := by ring`, Lean will add `h_eq` to your context.
-You can then use `rw [h_eq]` to transform your goal!
+If you type `have h_eq : b - a = -(a - b)`, Lean will create a new goal asking you to prove this exact equation. Once you prove it, Lean will add `h_eq` to your context so you can use `rw [h_eq]` to transform your main goal!
 
 **Syntax Tip:**
 By default, `rw [h_eq]` looks for the *left* side of your equality (`b - a`) and replaces it with the *right* side (`-(a - b)`).
@@ -39,7 +37,10 @@ Statement mod_symm (a b m : ℤ) (h : a ≡ b (mod m)) : b ≡ a (mod m) := by
   unfold ModEq at *
   obtain ⟨k, hk⟩ := h
   use -k
-  have h_eq : b - a = -(a - b) := by ring
+
+  have h_eq : b - a = -(a - b)
+  · ring
+
   rw [h_eq, hk]
   ring
 

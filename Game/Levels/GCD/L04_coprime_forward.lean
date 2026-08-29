@@ -23,6 +23,7 @@ This direction is really just unpacking the definition: `unfold IsGCD at h` to g
 Statement coprime_imp_bezout (c m : ℤ) (h :  IsGCD(c, m) 1) : ∃ x y : ℤ, c * x + m * y = 1 := by
   unfold IsGCD at h
   obtain ⟨_, x, y, hxy⟩ := h
+
   use x, y
 
 Conclusion "

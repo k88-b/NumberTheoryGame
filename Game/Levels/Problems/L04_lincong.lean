@@ -17,8 +17,8 @@ Build the GCD proof for `IsGCD(5, 7) 1`, and the divisibility proof for `1 ∣ 3
 "
 
 Statement : ∃ x : ℤ, (5 * x) ≡ 3 (mod 7) := by
-  have h_gcd : IsGCD 5 7 1 := by
-    unfold IsGCD
+  have h_gcd : IsGCD 5 7 1
+  · unfold IsGCD
     constructor
     · constructor
       · exact one_dvd 5
@@ -26,8 +26,8 @@ Statement : ∃ x : ℤ, (5 * x) ≡ 3 (mod 7) := by
     · use 3, -2
       ring
 
-  have h_div : (1: ℤ) ∣ 3 := by
-    use 3
+  have h_div : (1: ℤ) ∣ 3
+  · use 3
     ring
 
   Hint "Apply your theorem! Look at the arguments for `lin_cong_suff` in your theorems tab."

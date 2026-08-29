@@ -18,12 +18,15 @@ Statement lin_cong_sol_shift (a b m d m1 x0 t : ℤ) (hd : IsGCD(a, m) d) (hm : 
   unfold IsGCD at hd
   obtain ⟨⟨hda, _⟩, _⟩ := hd
   obtain ⟨a1, ha1⟩ := hda
+
   Hint (hidden := true) "You want to show `{a} * ({x0} + {t} * {m1}) = {a} * {x0} + ({a1} * {t}) * {m}`, so that `mod_add_multiple` applies directly. Substitute `{a} = {a1} * {d}` and `{m} = {m1} * {d}`"
-  have h_shift : (a * (x0 + t * m1)) = a * x0 + (a1 * t) * m := by
-    rw [ha1, hm]
+
+  have h_shift : (a * (x0 + t * m1)) = a * x0 + (a1 * t) * m
+  · rw [ha1, hm]
     ring
-  have h_cong : (a * (x0 + t * m1)) ≡ (a * x0) (mod m) := by
-    rw [h_shift]
+
+  have h_cong : (a * (x0 + t * m1)) ≡ (a * x0) (mod m)
+  · rw [h_shift]
     exact mod_add_multiple (a * x0) (a1 * t) m
 
   exact mod_trans (a * (x0 + t * m1)) (a * x0) b m h_cong h0

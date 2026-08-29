@@ -16,8 +16,8 @@ Let's prove this explicitly for $m = 10$, $a = x$, and $c = 3$.
 "
 
 Statement (x : ℤ) (h : 10 ∣ x * 3) : 10 ∣ x := by
-  have h_gcd : IsGCD 3 10 1 := by
-    unfold IsGCD
+  have h_gcd : IsGCD 3 10 1
+  · unfold IsGCD
     constructor
     · constructor
       · exact one_dvd 3

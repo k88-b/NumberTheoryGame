@@ -1,5 +1,6 @@
 import GameServer
 import Mathlib.Tactic
+import Game.Metadata
 import Game.Levels.Definitions
 import Game.Doc.Definitions
 import Game.Doc.Tactics
