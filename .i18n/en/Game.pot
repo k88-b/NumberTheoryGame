@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-29\n"
+"POT-Creation-Date: 2026-08-30\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -176,38 +176,6 @@ msgid "**Divisibility by 9**\n"
 "\n"
 "A number is congruent to the sum of its digits modulo 9.\n"
 "This works beautifully because any number can be written as a polynomial evaluated at 10, and §0."
-msgstr ""
-
-#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
-#. §1: `IsGCD(c, m) d`
-#. §2: $d \\neq 0$
-#. §3: $c = c_1 \\cdot d$
-#. §4: $m = m_1 \\cdot d$
-#. §5: $a \\equiv b \\pmod{m_1}$
-#. §6: `gcd_div_coprime`
-#. §7: `IsGCD(c_1, m_1) 1`
-#. §8: $c = c_1 \\cdot d$
-#. §9: $m = m_1 \\cdot d$
-#. §10: $d$
-#. §11: `mul_left_cancel₀`
-#. §12: `have h1' : (a * c1) ≡ (b * c1) (mod m1)`
-#. §13: `ModEq`
-#. §14: `mod_cancel_coprime`
-#. §15: `mod_mul`
-#. §16: `have`
-#. §17: `exact`
-#: Game.Levels.GCD.L09_cancel_general
-msgid "Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!\n"
-"\n"
-"If §0 and §1 with §2, and we write §3, §4 (exactly as in Level 7), then §5.\n"
-"\n"
-"**Strategy:** Assemble, don't reprove.\n"
-"1. Apply §6 (Level 7) to get §7.\n"
-"2. Unfold the congruence hypothesis, substitute §8 and §9, and cancel the shared factor §10 (using §11 again). This will leave you with a plain algebraic equation!\n"
-"3. **Reassemble the congruence:** create the specific hypothesis you need using §12. Prove it by unfolding §13 and using the cancelled equation from step 2.\n"
-"4. Feed both pieces into §14 (Level 6) to finish in one line!\n"
-"\n"
-"This is exactly the reuse pattern from §15 back in World 2: build small intermediate facts with §16, then §17 the final theorem."
 msgstr ""
 
 #: Game.Levels.LinCong.L02_inv_reverse
@@ -944,6 +912,21 @@ msgid "If we want a number §0 to satisfy two separate congruences simultaneousl
 "Try it! Use your algebra skills and the Bézout identity to prove this explicitly."
 msgstr ""
 
+#. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
+#. §1: $x \\equiv y \\pmod 9$
+#. §2: `mod_cancel_coprime`
+#. §3: `IsGCD(14, 9) 1`
+#. §4: `have`
+#. §5: `IsGCD 14 9 1`
+#: Game.Levels.Problems.L02_cancel
+msgid "Suppose we know that §0. Can we conclude that §1?\n"
+"\n"
+"In World 3, you proved §2, which says we can cancel a factor if it's coprime to the modulus.\n"
+"To use it here, you first need to prove that 14 and 9 are coprime, meaning §3.\n"
+"\n"
+"*(Remember the syntax tip: when writing your own code with §4, you need to use the standard Lean syntax without parentheses or commas, like §5)*"
+msgstr ""
+
 #: Game.Levels.LinCong.L11_poly
 msgid "🎉 Congratulations on completing World 4! 🎉\n"
 "\n"
@@ -1141,6 +1124,43 @@ msgstr ""
 msgid "Dividing by the gcd produces coprime numbers."
 msgstr ""
 
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: `IsGCD(c, m) d`
+#. §2: $d \\neq 0$
+#. §3: $c = c_1 \\cdot d$
+#. §4: $m = m_1 \\cdot d$
+#. §5: $a \\equiv b \\pmod{m_1}$
+#. §6: `IsGCD(a, b) d`
+#. §7: `have`
+#. §8: `IsGCD a b d`
+#. §9: `gcd_div_coprime`
+#. §10: `IsGCD(c_1, m_1) 1`
+#. §11: $c = c_1 \\cdot d$
+#. §12: $m = m_1 \\cdot d$
+#. §13: $d$
+#. §14: `mul_left_cancel₀`
+#. §15: `have h1' : (a * c1) ≡ (b * c1) (mod m1)`
+#. §16: `ModEq`
+#. §17: `mod_cancel_coprime`
+#. §18: `mod_mul`
+#. §19: `have`
+#. §20: `exact`
+#: Game.Levels.GCD.L09_cancel_general
+msgid "Time to combine the last two levels into the *fully general* cancellation law — no coprimality assumption required!\n"
+"\n"
+"If §0 and §1 with §2, and we write §3, §4 (exactly as in Level 7), then §5.\n"
+"\n"
+"**Lean Syntax Tip:** The notation §6 is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with §7), you need to use the standard Lean syntax without parentheses or commas: §8.\n"
+"\n"
+"**Strategy:** Assemble, don't reprove.\n"
+"1. Apply §9 (Level 7) to get §10.\n"
+"2. Unfold the congruence hypothesis, substitute §11 and §12, and cancel the shared factor §13 (using §14 again). This will leave you with a plain algebraic equation!\n"
+"3. **Reassemble the congruence:** create the specific hypothesis you need using §15. Prove it by unfolding §16 and using the cancelled equation from step 2.\n"
+"4. Feed both pieces into §17 (Level 6) to finish in one line!\n"
+"\n"
+"This is exactly the reuse pattern from §18 back in World 2: build small intermediate facts with §19, then §20 the final theorem."
+msgstr ""
+
 #: Game.Levels.LinCong.L02_inv_reverse
 msgid "To verify a * «{x}» + m * (−«{k}») = 1, rewrite it as (a * «{x}» − 1) − m * «{k}» + 1, then substitute a * «{x}» − 1 = m * «{k}». What remains is pure arithmetic."
 msgstr ""
@@ -1270,22 +1290,6 @@ msgid "🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
 "You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.\n"
 "\n"
 "Thank you for playing!"
-msgstr ""
-
-#. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
-#. §1: $x \\equiv y \\pmod 9$
-#. §2: `mod_cancel_coprime`
-#. §3: `IsGCD(14, 9) 1`
-#. §4: `IsGCD(a, b) d`
-#. §5: `have`
-#. §6: `IsGCD a b d`
-#: Game.Levels.Problems.L02_cancel
-msgid "Suppose we know that §0. Can we conclude that §1?\n"
-"\n"
-"In World 3, you proved §2, which says we can cancel a factor if it's coprime to the modulus.\n"
-"To use it here, you first need to prove that 14 and 9 are coprime, meaning §3.\n"
-"\n"
-"**Lean Syntax Tip:** The notation §4 is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with §5), you need to use the standard Lean syntax without parentheses or commas: §6."
 msgstr ""
 
 #: Game.Levels.Congruence.L10_mod_dvd
