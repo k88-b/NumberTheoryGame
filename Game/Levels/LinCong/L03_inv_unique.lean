@@ -18,7 +18,7 @@ We know $a \\cdot x \\equiv 1 \\pmod m$ and $a \\cdot y \\equiv 1 \\pmod m$. Thi
 "
 
 
-Statement inv_unique_mod (a x y m : ℤ) (hx : (a * x) ≡ 1 (mod m)) (hy : (a * y) ≡ 1 (mod m)) : x ≡ y (mod m) := by
+Statement inv_unique (a x y m : ℤ) (hx : (a * x) ≡ 1 (mod m)) (hy : (a * y) ≡ 1 (mod m)) : x ≡ y (mod m) := by
   Hint "Following step 1 of the strategy, create a proof that *some* inverse exists using {x} as the witness: `have h_exists : ∃ k, ({a} * k) ≡ 1 (mod {m})`."
 
   have h_exists : ∃ k, (a * k) ≡ 1 (mod m)
