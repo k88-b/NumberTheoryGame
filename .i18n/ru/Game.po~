@@ -2284,7 +2284,7 @@ msgstr "Отлично сделано! Вы построили доказате�
 #: Game.Levels.DivRules.L06_div3
 msgid "If the rule for 9 works, the rule for 3 must come for free, because §0.\n"
 "\n"
-"Just like you shrank the modulus from 10 down to 2 and 5 earlier, shrink the modulus from 9 to 3 here using §1.\n"
+"Just like you shrink the modulus from 10 down to 2 and 5 earlier, shrink the modulus from 9 to 3 here using §1.\n"
 "\n"
 "**Syntax Tip:** When writing your divisibility fact, make sure to specify the type so Lean doesn't default to natural numbers: §2"
 msgstr "Если правило для 9 работает, правило для 3 получается автоматически, потому что §0.\n"
