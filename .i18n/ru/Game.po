@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-26\n"
+"POT-Creation-Date: 2026-08-31\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -309,64 +309,6 @@ msgstr ""
 "Это прекрасно работает, потому что любое число можно записать как многочлен, "
 "вычисленный в точке 10, а §0."
 
-#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
-#. §1: `IsGCD(c, m) d`
-#. §2: $d \\neq 0$
-#. §3: $c = c_1 \\cdot d$
-#. §4: $m = m_1 \\cdot d$
-#. §5: $a \\equiv b \\pmod{m_1}$
-#. §6: `gcd_div_coprime`
-#. §7: `IsGCD(c_1, m_1) 1`
-#. §8: $c = c_1 \\cdot d$
-#. §9: $m = m_1 \\cdot d$
-#. §10: $d$
-#. §11: `mul_left_cancel₀`
-#. §12: `have h1' : (a * c1) ≡ (b * c1) (mod m1) := by ...`
-#. §13: `ModEq`
-#. §14: `mod_cancel_coprime`
-#. §15: `mod_mul`
-#. §16: `have`
-#. §17: `exact`
-#: Game.Levels.GCD.L09_cancel_general
-msgid ""
-"Time to combine the last two levels into the *fully general* cancellation "
-"law — no coprimality assumption required!\n"
-"\n"
-"If §0 and §1 with §2, and we write §3, §4 (exactly as in Level 7), then §5.\n"
-"\n"
-"**Strategy:** Assemble, don't reprove.\n"
-"1. Apply §6 (Level 7) to get §7.\n"
-"2. Unfold the congruence hypothesis, substitute §8 and §9, and cancel the "
-"shared factor §10 (using §11 again). This will leave you with a plain "
-"algebraic equation!\n"
-"3. **Reassemble the congruence:** create the specific hypothesis you need "
-"using §12. Prove it by unfolding §13 and using the cancelled equation from "
-"step 2.\n"
-"4. Feed both pieces into §14 (Level 6) to finish in one line!\n"
-"\n"
-"This is exactly the reuse pattern from §15 back in World 2: build small "
-"intermediate facts with §16, then §17 the final theorem."
-msgstr ""
-"Пришло время объединить два последних уровня в *полностью общий* закон "
-"сокращения — без каких-либо предположений о взаимной простоте!\n"
-"\n"
-"Пусть выполнено сравнение §0, а §1, где §2. Если представить числа в виде §3 "
-"и §4 (точно как на уровне 7), то §5.\n"
-"\n"
-"**Стратегия:** Собирайте из готового, а не доказывайте заново.\n"
-"1. Примените §6 (уровень 7), чтобы получить §7.\n"
-"2. Раскройте гипотезу о сравнении, подставьте §8 и §9 и сократите общий "
-"множитель §10 (снова используя §11). В результате у вас останется обычное "
-"алгебраическое равенство!\n"
-"3. **Соберите сравнение заново:** сформулируйте нужное утверждение с помощью "
-"§12. Докажите его, раскрыв §13 и используя сокращённое равенство из шага 2.\n"
-"4. Передайте оба факта в §14 (уровень 6), чтобы завершить доказательство в "
-"одну строчку!\n"
-"\n"
-"Это в точности та же схема повторного использования, что и §15 ещё в мире 2: "
-"сначала выведите промежуточные факты с помощью §16, а затем закройте цель с "
-"помощью итоговой теоремы через §17."
-
 #: Game.Levels.LinCong.L02_inv_reverse
 msgid ""
 "Great! Reversibility is confirmed. Having a modular inverse is *exactly "
@@ -405,7 +347,7 @@ msgstr ""
 #. §2: $5 \\mid 10$
 #. §3: `mod_shrink`
 #. §4: $10 \\cdot k + d \\equiv d \\pmod 5$
-#. §5: `have h5 : (5 : ℤ) ∣ 10 := by ...`
+#. §5: `have h5 : (5 : ℤ) ∣ 10`
 #: Game.Levels.DivRules.L03_div5
 msgid ""
 "As promised at the end of the last level, let's finish off the pair: since "
@@ -546,6 +488,92 @@ msgstr "Безу даёт взаимную простоту (⟸)"
 #: Game.Levels.Congruence.L05_mul_const
 msgid "Multiplying a congruence by a constant."
 msgstr "Умножение обеих частей сравнения на константу."
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $b \\equiv a \\pmod m$
+#. §2: `at`
+#. §3: `unfold`
+#. §4: `rw`
+#. §5: `unfold ModEq at h`
+#. §6: `h`
+#. §7: `unfold ModEq at *`
+#. §8: `rw [h_eq] at h1`
+#. §9: `h_eq`
+#. §10: `h1`
+#. §11: `unfold ModEq at *`
+#. §12: $m \\mid (a - b)$
+#. §13: $a - b = m \\cdot k$
+#. §14: $m \\mid (b - a)$
+#. §15: $b - a = m \\cdot ?$
+#. §16: $b - a = -(a - b)$
+#. §17: $-k$
+#. §18: `have h_eq : b - a = -(a - b)`
+#. §19: `h_eq`
+#. §20: `rw [h_eq]`
+#. §21: `rw [h_eq]`
+#. §22: `b - a`
+#. §23: `-(a - b)`
+#. §24: `have h_eq : -(a - b) = b - a`
+#. §25: `rw [← h_eq]`
+#. §26: `←`
+#. §27: `\\l`
+#: Game.Levels.Congruence.L02_mod_symm
+msgid ""
+"If §0, is it true that §1?\n"
+"\n"
+"Before we dive into the math, let's learn a crucial syntactic trick: the "
+"**§2** keyword.\n"
+"By default, tactics like §3 or §4 only apply to your *goal*. But often you "
+"need to modify your *hypotheses* (your assumptions).\n"
+"* §5 will unfold the definition only inside the hypothesis §6.\n"
+"* §7 will unfold it *everywhere* (in all hypotheses and the goal at once).\n"
+"* You can also do this with rewrites: §8 will rewrite using §9 inside §10.\n"
+"\n"
+"Start this proof by typing §11. Then let's unpack the algebra:\n"
+"We assume §12, so §13.\n"
+"We need to prove §14, which means §15.\n"
+"Since §16, the multiplier should be §17.\n"
+"\n"
+"If you type §18, Lean will create a new goal asking you to prove this exact "
+"equation. Once you prove it, Lean will add §19 to your context so you can "
+"use §20 to transform your main goal!\n"
+"\n"
+"**Syntax Tip:**\n"
+"By default, §21 looks for the *left* side of your equality (§22) and "
+"replaces it with the *right* side (§23).\n"
+"If you ever formulate your equality the other way around, for example §24, "
+"you will need to tell Lean to rewrite from right to left using a left arrow: "
+"§25.\n"
+"*(To type §26, write §27 and press Space.)*"
+msgstr ""
+"Если §0, верно ли, что §1?\n"
+"\n"
+"Прежде чем перейти к математике, изучим важный синтаксический приём: "
+"ключевое слово **§2**.\n"
+"По умолчанию тактики вроде §3 или §4 применяются только к вашей *цели*. Но "
+"часто нужно изменить именно ваши *гипотезы* (предположения).\n"
+"* §5 раскроет определение только внутри гипотезы §6.\n"
+"* §7 раскроет его *везде* (во всех гипотезах и в цели одновременно).\n"
+"* То же самое можно сделать и с переписыванием: §8 перепишет с помощью §9 "
+"внутри §10.\n"
+"\n"
+"Начните это доказательство с ввода §11. Теперь разберём алгебраические "
+"выкладки:\n"
+"Мы предполагаем §12, значит §13.\n"
+"Нам нужно доказать §14, что означает §15.\n"
+"Поскольку §16, множитель должен быть §17.\n"
+"\n"
+"Если вы введёте §18, Lean создаст новую цель, требуя доказать именно это "
+"равенство. Как только вы его докажете, Lean добавит §19 в ваш контекст, "
+"так что вы сможете использовать §20 для преобразования вашей главной цели!\n"
+"\n"
+"**Совет по синтаксису:**\n"
+"По умолчанию §21 ищет *левую* часть вашего равенства (§22) и заменяет её на "
+"*правую* часть (§23).\n"
+"Если вы когда-нибудь сформулируете равенство в обратном порядке, например "
+"§24, вам нужно будет указать Lean переписывать справа налево с помощью "
+"стрелки влево: §25.\n"
+"*(Чтобы напечатать §26, введите §27 и нажмите пробел.)*"
 
 #. §0: $10 \\cdot k + d$
 #. §1: $100 \\cdot k + d$
@@ -805,6 +833,7 @@ msgstr ""
 "Прекрасно. Здесь отчётливо видно, насколько математические структуры похожи "
 "друг на друга."
 
+#. §0: `gcd_symm`
 #: Game.Levels.GCD.L06_gcd_symm
 msgid ""
 "Nice and easy! This lemma will be saved as §0. It will save you from doing "
@@ -1154,88 +1183,6 @@ msgstr ""
 msgid "Euclid in Practice"
 msgstr "Евклид на практике"
 
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $c \\equiv d \\pmod m$
-#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
-#. §3: `mod_trans`
-#. §4: $a \\cdot c$
-#. §5: $b \\cdot c$
-#. §6: $b \\cdot c$
-#. §7: $b \\cdot d$
-#. §8: `have h3 := mod_mul_const a b c m h1`
-#. §9: $a \\cdot c \\equiv b \\cdot c \\pmod m$
-#. §10: `mod_mul_const`
-#. §11: $c \\equiv d$
-#. §12: $b$
-#. §13: $c \\cdot b \\equiv d \\cdot b$
-#. §14: $b \\cdot c \\equiv b \\cdot d$
-#. §15: `have`
-#. §16: `rw`
-#. §17: `≡`
-#. §18: `have`
-#. §19: `\\==`
-#. §20: `have`
-#. §21: `exact`
-#. §22: `mod_trans`
-#: Game.Levels.Congruence.L06_mul
-msgid ""
-"We know we can add congruences, but can we multiply them?\n"
-"If §0 and §1, is §2?\n"
-"\n"
-"Instead of doing algebra from scratch, we can **reuse** our previous "
-"theorems!\n"
-"Think about transitivity (§3 from World 1). We can step from §4 to §5, and "
-"then from §6 to §7.\n"
-"\n"
-"You can explicitly apply a theorem to variables to create a new hypothesis:\n"
-"§8 will prove that §9.\n"
-"\n"
-"**Watch out for the order of multiplication!**\n"
-"Applying §10 to §11 with multiplier §12 will give you §13. You will need to "
-"manually flip the order to §14 using a §15 block and §16 before you can "
-"chain them together!\n"
-"\n"
-"*(Reminder: to type the §17 symbol in your §18 statement, type §19 and press "
-"Space)*\n"
-"\n"
-"Use §20 to build your intermediate steps, and then use the §21 tactic to "
-"finish the proof by providing §22!"
-msgstr ""
-"Мы знаем, что сравнения можно складывать, но можно ли их перемножать?\n"
-"Если §0 и §1, верно ли §2?\n"
-"\n"
-"Вместо того чтобы выполнять все преобразования с нуля, мы можем **повторно "
-"использовать** наши предыдущие теоремы!\n"
-"Подумайте о транзитивности (§3 из мира 1). Мы можем сделать переход от §4 к "
-"§5, а затем от §6 к §7.\n"
-"\n"
-"Вы можете явно применить теорему к переменным, чтобы создать новую "
-"гипотезу:\n"
-"§8 докажет, что §9.\n"
-"\n"
-"**Будьте внимательны с порядком умножения!**\n"
-"Применение §10 к §11 с множителем §12 даст вам §13. Вам придётся вручную "
-"изменить порядок сомножителей, чтобы получить §14. Для этого используйте "
-"блок §15 и тактику §16, и только после этого объединяйте сравнения в "
-"цепочку!\n"
-"\n"
-"*(Напоминание: чтобы напечатать символ §17 в вашем утверждении §18, введите "
-"§19 и нажмите пробел)*\n"
-"\n"
-"Используйте §20, чтобы построить промежуточные шаги, а затем используйте "
-"тактику §21, чтобы завершить доказательство, применив §22!"
-
-#. §0: `have`
-#. §1: `have h : X = Y := by ring`
-#. §2: `h`
-#: Game.Doc.Tactics
-msgid ""
-"The §0 tactic allows you to prove intermediate steps.\n"
-"Typing §1 creates a new hypothesis §2 in your context."
-msgstr ""
-"Тактика §0 позволяет вводить и доказывать промежуточные утверждения.\n"
-"Ввод §1 создаёт новую гипотезу §2 в вашем контексте."
-
 #. §0: $m \\mid (a \\cdot c)$
 #. §1: $\\text{gcd}(c, m) = 1$
 #. §2: $m \\mid a$
@@ -1425,6 +1372,78 @@ msgstr ""
 "Отлично! Точно та же логика применима к 5, поскольку 5 ∣ 10 тоже — именно "
 "этому и посвящён следующий уровень."
 
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
+#. §3: `mod_trans`
+#. §4: $a \\cdot c$
+#. §5: $b \\cdot c$
+#. §6: $b \\cdot c$
+#. §7: $b \\cdot d$
+#. §8: `have h3 : (a * c) ≡ (b * c) (mod m)`
+#. §9: `exact mod_mul_const a b c m h1`
+#. §10: `mod_mul_const`
+#. §11: $c \\equiv d$
+#. §12: $b$
+#. §13: $c \\cdot b \\equiv d \\cdot b$
+#. §14: $b \\cdot c \\equiv b \\cdot d$
+#. §15: `have`
+#. §16: `rw`
+#. §17: `≡`
+#. §18: `have`
+#. §19: `\\==`
+#. §20: `have`
+#. §21: `exact`
+#. §22: `mod_trans`
+#: Game.Levels.Congruence.L06_mul
+msgid ""
+"We know we can add congruences, but can we multiply them?\n"
+"If §0 and §1, is §2?\n"
+"\n"
+"Instead of doing algebra from scratch, we can **reuse** our previous "
+"theorems!\n"
+"Think about transitivity (§3 from World 1). We can step from §4 to §5, and "
+"then from §6 to §7.\n"
+"\n"
+"You can explicitly state a new hypothesis and then apply a theorem to prove "
+"it. For example, typing §8 creates a new goal, which you can immediately "
+"close using §9\n"
+"\n"
+"**Watch out for the order of multiplication!**\n"
+"Applying §10 to §11 with multiplier §12 will give you §13. You will need to "
+"manually flip the order to §14 using a §15 block and §16 before you can "
+"chain them together!\n"
+"\n"
+"*(Reminder: to type the §17 symbol in your §18 statement, type §19 and press "
+"Space)*\n"
+"\n"
+"Use §20 to build your intermediate steps, and then use the §21 tactic to "
+"finish the proof by providing §22!"
+msgstr ""
+"Мы знаем, что сравнения можно складывать, но можно ли их перемножать?\n"
+"Если §0 и §1, верно ли §2?\n"
+"\n"
+"Вместо того чтобы выполнять все преобразования с нуля, мы можем **повторно "
+"использовать** наши предыдущие теоремы!\n"
+"Подумайте о транзитивности (§3 из мира 1). Мы можем сделать переход от §4 к "
+"§5, а затем от §6 к §7.\n"
+"\n"
+"Вы можете явно сформулировать новую гипотезу, а затем применить теорему, "
+"чтобы доказать её. Например, ввод §8 создаёт новую цель, которую вы можете "
+"сразу же закрыть с помощью §9\n"
+"\n"
+"**Будьте внимательны с порядком умножения!**\n"
+"Применение §10 к §11 с множителем §12 даст вам §13. Вам придётся вручную "
+"изменить порядок сомножителей, чтобы получить §14. Для этого используйте "
+"блок §15 и тактику §16, и только после этого объединяйте сравнения в "
+"цепочку!\n"
+"\n"
+"*(Напоминание: чтобы напечатать символ §17 в вашем утверждении §18, введите "
+"§19 и нажмите пробел)*\n"
+"\n"
+"Используйте §20, чтобы построить промежуточные шаги, а затем используйте "
+"тактику §21, чтобы завершить доказательство, применив §22!"
+
 #: Game.Levels.GCD.L06_gcd_symm
 msgid "The GCD is symmetric."
 msgstr "НОД симметричен."
@@ -1476,6 +1495,35 @@ msgstr ""
 "\n"
 "Попробуйте! Используйте свои навыки алгебры и тождество Безу, чтобы доказать "
 "это явно."
+
+#. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
+#. §1: $x \\equiv y \\pmod 9$
+#. §2: `mod_cancel_coprime`
+#. §3: `IsGCD(14, 9) 1`
+#. §4: `have`
+#. §5: `IsGCD 14 9 1`
+#: Game.Levels.Problems.L02_cancel
+msgid ""
+"Suppose we know that §0. Can we conclude that §1?\n"
+"\n"
+"In World 3, you proved §2, which says we can cancel a factor if it's coprime "
+"to the modulus.\n"
+"To use it here, you first need to prove that 14 and 9 are coprime, meaning "
+"§3.\n"
+"\n"
+"*(Remember the syntax tip: when writing your own code with §4, you need to "
+"use the standard Lean syntax without parentheses or commas, like §5)*"
+msgstr ""
+"Предположим, мы знаем, что §0. Можем ли мы заключить, что §1?\n"
+"\n"
+"В мире 3 вы доказали теорему §2, которая утверждает, что можно сократить "
+"множитель, если он взаимно прост с модулем.\n"
+"Чтобы использовать это здесь, вам сначала нужно доказать, что 14 и 9 взаимно "
+"просты, то есть §3.\n"
+"\n"
+"*(Вспомните совет по синтаксису: при написании собственного кода с помощью "
+"§4 нужно использовать стандартный синтаксис Lean без скобок и запятых, "
+"например §5)*"
 
 #: Game.Levels.LinCong.L11_poly
 msgid ""
@@ -1717,10 +1765,10 @@ msgstr ""
 #. §2: `mod_shrink`
 #. §3: $2 \\mid 10$
 #. §4: `have`
-#. §5: `have h2 : 2 ∣ 10 := by ...`
+#. §5: `have h2 : 2 ∣ 10`
 #. §6: `ℕ`
 #. §7: `ℤ`
-#. §8: `have h2 : (2 : ℤ) ∣ 10 := by ...`
+#. §8: `have h2 : (2 : ℤ) ∣ 10`
 #. §9: `ℤ`
 #. §10: `\\Z`
 #: Game.Levels.DivRules.L02_div2
@@ -1782,6 +1830,77 @@ msgstr "Сравнение по модулю m транзитивно."
 #: Game.Levels.GCD.L08_gcd_div_coprime
 msgid "Dividing by the gcd produces coprime numbers."
 msgstr "Деление на НОД даёт взаимно простые числа."
+
+#. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
+#. §1: `IsGCD(c, m) d`
+#. §2: $d \\neq 0$
+#. §3: $c = c_1 \\cdot d$
+#. §4: $m = m_1 \\cdot d$
+#. §5: $a \\equiv b \\pmod{m_1}$
+#. §6: `IsGCD(a, b) d`
+#. §7: `have`
+#. §8: `IsGCD a b d`
+#. §9: `gcd_div_coprime`
+#. §10: `IsGCD(c_1, m_1) 1`
+#. §11: $c = c_1 \\cdot d$
+#. §12: $m = m_1 \\cdot d$
+#. §13: $d$
+#. §14: `mul_left_cancel₀`
+#. §15: `have h1' : (a * c1) ≡ (b * c1) (mod m1)`
+#. §16: `ModEq`
+#. §17: `mod_cancel_coprime`
+#. §18: `mod_mul`
+#. §19: `have`
+#. §20: `exact`
+#: Game.Levels.GCD.L09_cancel_general
+msgid ""
+"Time to combine the last two levels into the *fully general* cancellation "
+"law — no coprimality assumption required!\n"
+"\n"
+"If §0 and §1 with §2, and we write §3, §4 (exactly as in Level 7), then §5.\n"
+"\n"
+"**Lean Syntax Tip:** The notation §6 is just syntactic sugar to make the "
+"goals easier to read. When writing your own code (for example, when defining "
+"a new hypothesis with §7), you need to use the standard Lean syntax without "
+"parentheses or commas: §8.\n"
+"\n"
+"**Strategy:** Assemble, don't reprove.\n"
+"1. Apply §9 (Level 7) to get §10.\n"
+"2. Unfold the congruence hypothesis, substitute §11 and §12, and cancel the "
+"shared factor §13 (using §14 again). This will leave you with a plain "
+"algebraic equation!\n"
+"3. **Reassemble the congruence:** create the specific hypothesis you need "
+"using §15. Prove it by unfolding §16 and using the cancelled equation from "
+"step 2.\n"
+"4. Feed both pieces into §17 (Level 6) to finish in one line!\n"
+"\n"
+"This is exactly the reuse pattern from §18 back in World 2: build small "
+"intermediate facts with §19, then §20 the final theorem."
+msgstr ""
+"Пришло время объединить два последних уровня в *полностью общий* закон "
+"сокращения — без каких-либо предположений о взаимной простоте!\n"
+"\n"
+"Пусть выполнено сравнение §0, а §1, где §2. Если представить числа в виде §3 "
+"и §4 (точно как на уровне 7), то §5.\n"
+"\n"
+"**Совет по синтаксису Lean:** Обозначение §6 — это просто синтаксический "
+"сахар, чтобы цели было легче читать. При написании собственного кода "
+"(например, при определении новой гипотезы с помощью §7) нужно использовать "
+"стандартный синтаксис Lean без скобок и запятых: §8.\n"
+"\n"
+"**Стратегия:** Собирайте из готового, а не доказывайте заново.\n"
+"1. Примените §9 (уровень 7), чтобы получить §10.\n"
+"2. Раскройте гипотезу о сравнении, подставьте §11 и §12 и сократите общий "
+"множитель §13 (снова используя §14). В результате у вас останется обычное "
+"алгебраическое равенство!\n"
+"3. **Соберите сравнение заново:** сформулируйте нужное утверждение с помощью "
+"§15. Докажите его, раскрыв §16 и используя сокращённое равенство из шага 2.\n"
+"4. Передайте оба факта в §17 (уровень 6), чтобы завершить доказательство в "
+"одну строчку!\n"
+"\n"
+"Это в точности та же схема повторного использования, что и §18 ещё в мире 2: "
+"сначала выведите промежуточные факты с помощью §19, а затем закройте цель "
+"итоговой теоремой через §20."
 
 #: Game.Levels.LinCong.L02_inv_reverse
 msgid ""
@@ -1913,12 +2032,12 @@ msgstr ""
 "Прежде чем мы перейдём к законам сокращения, давайте докажем очень простое, "
 "но удобное свойство: симметрию.\n"
 "\n"
-"Если §0 — наибольший общий делитель §1 и §2, то он также является "
-"наибольшим общим делителем §3 и §4.\n"
+"Если §0 — наибольший общий делитель §1 и §2, то он также является наибольшим "
+"общим делителем §3 и §4.\n"
 "Формально: §5.\n"
 "\n"
-"Вам понадобится раскрыть определение, поменять местами два факта о "
-"делимости и изменить порядок коэффициентов Безу!"
+"Вам понадобится раскрыть определение, поменять местами два факта о делимости "
+"и изменить порядок коэффициентов Безу!"
 
 #: Game.Levels.GCD.L09_cancel_general
 msgid ""
@@ -2023,39 +2142,6 @@ msgstr ""
 "\n"
 "Спасибо за игру!"
 
-#. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
-#. §1: $x \\equiv y \\pmod 9$
-#. §2: `mod_cancel_coprime`
-#. §3: `IsGCD(14, 9) 1`
-#. §4: `IsGCD(a, b) d`
-#. §5: `have`
-#. §6: `IsGCD a b d`
-#: Game.Levels.Problems.L02_cancel
-msgid ""
-"Suppose we know that §0. Can we conclude that §1?\n"
-"\n"
-"In World 3, you proved §2, which says we can cancel a factor if it's coprime "
-"to the modulus.\n"
-"To use it here, you first need to prove that 14 and 9 are coprime, meaning "
-"§3.\n"
-"\n"
-"**Lean Syntax Tip:** The notation §4 is just syntactic sugar to make the "
-"goals easier to read. When writing your own code (for example, when defining "
-"a new hypothesis with §5), you need to use the standard Lean syntax without "
-"parentheses or commas: §6."
-msgstr ""
-"Предположим, мы знаем, что §0. Можем ли мы заключить, что §1?\n"
-"\n"
-"В мире 3 вы доказали теорему §2, которая утверждает, что можно сократить "
-"множитель, если он взаимно прост с модулем.\n"
-"Чтобы использовать это здесь, вам сначала нужно доказать, что 14 и 9 взаимно "
-"просты, то есть §3.\n"
-"\n"
-"**Совет по синтаксису Lean:** обозначение §4 — это просто синтаксический "
-"сахар, чтобы цели было легче читать. При написании собственного кода "
-"(например, при определении новой гипотезы с помощью §5) нужно использовать "
-"стандартный синтаксис Lean без скобок и запятых: §6."
-
 #: Game.Levels.Congruence.L10_mod_dvd
 msgid ""
 "Beautiful. This shows the deep underlying connection between standard "
@@ -2132,95 +2218,6 @@ msgid ""
 msgstr ""
 "Отлично! Вы извлекли сразу двух свидетелей с помощью §0 и доказали своё "
 "первое арифметическое правило для сравнений."
-
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $b \\equiv a \\pmod m$
-#. §2: `at`
-#. §3: `unfold`
-#. §4: `rw`
-#. §5: `unfold ModEq at h`
-#. §6: `h`
-#. §7: `unfold ModEq at *`
-#. §8: `rw [h_eq] at h1`
-#. §9: `h_eq`
-#. §10: `h1`
-#. §11: `unfold ModEq at *`
-#. §12: $m \\mid (a - b)$
-#. §13: $a - b = m \\cdot k$
-#. §14: $m \\mid (b - a)$
-#. §15: $b - a = m \\cdot ?$
-#. §16: $b - a = -(a - b)$
-#. §17: $-k$
-#. §18: `have`
-#. §19: `have h_eq : b - a = -(a - b) := by ring`
-#. §20: `h_eq`
-#. §21: `rw [h_eq]`
-#. §22: `rw [h_eq]`
-#. §23: `b - a`
-#. §24: `-(a - b)`
-#. §25: `have h_eq : -(a - b) = b - a`
-#. §26: `rw [← h_eq]`
-#. §27: `←`
-#. §28: `\\l`
-#: Game.Levels.Congruence.L02_mod_symm
-msgid ""
-"If §0, is it true that §1?\n"
-"\n"
-"Before we dive into the math, let's learn a crucial syntactic trick: the "
-"**§2** keyword.\n"
-"By default, tactics like §3 or §4 only apply to your *goal*. But often you "
-"need to modify your *hypotheses* (your assumptions).\n"
-"* §5 will unfold the definition only inside the hypothesis §6.\n"
-"* §7 will unfold it *everywhere* (in all hypotheses and the goal at once).\n"
-"* You can also do this with rewrites: §8 will rewrite using §9 inside §10.\n"
-"\n"
-"Start this proof by typing §11. Then let's unpack the algebra:\n"
-"We assume §12, so §13.\n"
-"We need to prove §14, which means §15.\n"
-"Since §16, the multiplier should be §17.\n"
-"\n"
-"You will need an intermediate mathematical step. You can create one using "
-"the §18 tactic.\n"
-"If you type §19, Lean will add §20 to your context.\n"
-"You can then use §21 to transform your goal!\n"
-"\n"
-"**Syntax Tip:**\n"
-"By default, §22 looks for the *left* side of your equality (§23) and "
-"replaces it with the *right* side (§24).\n"
-"If you ever formulate your equality the other way around, for example §25, "
-"you will need to tell Lean to rewrite from right to left using a left arrow: "
-"§26.\n"
-"*(To type §27, write §28 and press Space.)*"
-msgstr ""
-"Если §0, верно ли, что §1?\n"
-"\n"
-"Прежде чем перейти к математике, изучим важный синтаксический приём: "
-"ключевое слово **§2**.\n"
-"По умолчанию тактики вроде §3 или §4 применяются только к вашей *цели*. Но "
-"часто нужно изменить именно ваши *гипотезы* (предположения).\n"
-"* §5 раскроет определение только внутри гипотезы §6.\n"
-"* §7 раскроет его *везде* (во всех гипотезах и в цели одновременно).\n"
-"* То же самое можно сделать и с переписыванием: §8 перепишет с помощью §9 "
-"внутри §10.\n"
-"\n"
-"Начните это доказательство с ввода §11. Теперь разберём алгебраические "
-"выкладки:\n"
-"Мы предполагаем §12, значит §13.\n"
-"Нам нужно доказать §14, что означает §15.\n"
-"Поскольку §16, множитель должен быть §17.\n"
-"\n"
-"Вам понадобится промежуточный математический шаг. Его можно создать с "
-"помощью тактики §18.\n"
-"Если вы введёте §19, Lean добавит §20 в ваш контекст.\n"
-"Затем вы можете использовать §21, чтобы преобразовать вашу цель!\n"
-"\n"
-"**Совет по синтаксису:**\n"
-"По умолчанию §22 ищет *левую* часть вашего равенства (§23) и заменяет её на "
-"*правую* часть (§24).\n"
-"Если вы когда-нибудь сформулируете равенство в обратном порядке, например "
-"§25, вам нужно будет указать Lean переписывать справа налево с помощью "
-"стрелки влево: §26.\n"
-"*(Чтобы напечатать §27, введите §28 и нажмите пробел.)*"
 
 #: Game.Levels.LinCong.L09_crt_exists
 msgid "Chinese Remainder Theorem: Existence"
@@ -2470,18 +2467,6 @@ msgstr ""
 "Поскольку 100 = 25 * 4, слагаемое 100 * k уже кратно 4. Переформулируйте "
 "цель в виде суммы d и этого слагаемого, кратного 4, в форме, которую ожидает "
 "mod_add_multiple."
-
-#. §0: `ring`
-#. §1: `x + y = y + x`
-#. §2: `x * 1 = x`
-#: Game.Doc.Tactics
-msgid ""
-"The §0 tactic automatically proves algebraic equalities like §1\n"
-"or §2. It is a powerful tool so you don't have to manually apply axioms."
-msgstr ""
-"Тактика §0 автоматически доказывает алгебраические равенства вроде §1\n"
-"или §2. Это мощный инструмент, избавляющий вас от необходимости вручную "
-"применять аксиомы."
 
 #. §0: `x - a`
 #. §1: `have h_eq : «{m}» * «{k1}» = «{n}» * «{k2}»`
@@ -3093,7 +3078,7 @@ msgstr ""
 
 #. §0: $3 \\mid 9$
 #. §1: `mod_shrink`
-#. §2: `have h3 : (3 : ℤ) ∣ 9 := by ...`
+#. §2: `have h3 : (3 : ℤ) ∣ 9`
 #: Game.Levels.DivRules.L06_div3
 msgid ""
 "If the rule for 9 works, the rule for 3 must come for free, because §0.\n"
@@ -3309,6 +3294,36 @@ msgstr ""
 "уровень 3 (на этот раз с §38 в качестве «наибольшего»), вы получите §39.\n"
 "3. Наконец, §40 и §41 вместе с §42 и §43 дают §44 по лемме антисимметрии "
 "(§45), которая только что добавилась в ваш арсенал!"
+
+#. §0: `have`
+#. §1: `h`
+#. §2: `X = Y`
+#. §3: `have`
+#. §4: `a ≡ b (mod m)`
+#. §5: `x ∣ y`
+#. §6: `IsGCD(a, b) 1`
+#. §7: `:=`
+#. §8: `have h : a ≡ b (mod m)`
+#. §9: `<proof steps>`
+#: Game.Doc.Tactics
+msgid ""
+"The §0 tactic allows you to prove intermediate steps. Once proven, a new "
+"hypothesis §1 is added to your context for the rest of the proof.\n"
+"\n"
+"You are not limited to basic equalities (§2). You can use §3 for any "
+"proposition, such as modular equivalences (§4), divisibility (§5), or "
+"predicates like §6.\n"
+"\n"
+"\n"
+"**Important:** In this game, the assignment syntax (§7) is disabled. You "
+"must state the assumption and provide the proof on the following line.\n"
+"\n"
+"**Using a proof block:**\n"
+"You can state the assumption and provide the proof on the following lines. "
+"This sets your intermediate assumption as the current goal:\n"
+"§8\n"
+"§9"
+msgstr ""
 
 #. §0: `mul_left_cancel₀`
 #. §1: `«{d}» * something = «{d}» * 1`
@@ -4993,6 +5008,36 @@ msgstr ""
 "3. Используйте алгебру (§8), чтобы переписать §9 как §10.\n"
 "4. Примените ваши переписывания и позвольте §11 завершить дело!"
 
+#. §0: `ring`
+#. §1: `x + y = y + x`
+#. §2: `x * 1 = x`
+#. §3: `ring`
+#. §4: `+`
+#. §5: `-`
+#. §6: `*`
+#. §7: `^`
+#. §8: `ℤ`
+#. §9: `ℚ`
+#. §10: `ℝ`
+#. §11: `/`
+#. §12: `%`
+#: Game.Doc.Tactics
+msgid ""
+"The §0 tactic automatically proves algebraic equalities by expanding and "
+"rearranging expressions.\n"
+"It is a powerful tool so you don't have to manually apply basic axioms like "
+"commutativity or distributivity (e.g., §1 or §2).\n"
+"\n"
+"**What it works with:**\n"
+"§3 works on equations involving addition (§4), subtraction (§5), "
+"multiplication (§6), and natural number exponents (§7) within commutative "
+"rings (such as integers §8, rationals §9, or reals §10).\n"
+"\n"
+"**What it does NOT work with:**\n"
+"It cannot handle division (§11), modulo arithmetic (§12) or non-commutative "
+"structures (like matrices)."
+msgstr ""
+
 #: Game.Levels.Congruence.L11_mod_split
 msgid "Splitting the modulus into a product."
 msgstr "Разбиение модуля на произведение."
@@ -5135,3 +5180,18 @@ msgstr ""
 "На этом уровне с боссом мы покажем, что два свидетеля НОД делят друг друга, "
 "и используем именно эту теорему, чтобы заключить, что они должны быть *одним "
 "и тем же* числом."
+
+#~ msgid ""
+#~ "The §0 tactic allows you to prove intermediate steps.\n"
+#~ "Typing §1 creates a new hypothesis §2 in your context."
+#~ msgstr ""
+#~ "Тактика §0 позволяет вводить и доказывать промежуточные утверждения.\n"
+#~ "Ввод §1 создаёт новую гипотезу §2 в вашем контексте."
+
+#~ msgid ""
+#~ "The §0 tactic automatically proves algebraic equalities like §1\n"
+#~ "or §2. It is a powerful tool so you don't have to manually apply axioms."
+#~ msgstr ""
+#~ "Тактика §0 автоматически доказывает алгебраические равенства вроде §1\n"
+#~ "или §2. Это мощный инструмент, избавляющий вас от необходимости вручную "
+#~ "применять аксиомы."
