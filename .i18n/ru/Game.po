@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-31\n"
+"POT-Creation-Date: 2026-09-20\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -564,8 +564,8 @@ msgstr ""
 "Поскольку §16, множитель должен быть §17.\n"
 "\n"
 "Если вы введёте §18, Lean создаст новую цель, требуя доказать именно это "
-"равенство. Как только вы его докажете, Lean добавит §19 в ваш контекст, "
-"так что вы сможете использовать §20 для преобразования вашей главной цели!\n"
+"равенство. Как только вы его докажете, Lean добавит §19 в ваш контекст, так "
+"что вы сможете использовать §20 для преобразования вашей главной цели!\n"
 "\n"
 "**Совет по синтаксису:**\n"
 "По умолчанию §21 ищет *левую* часть вашего равенства (§22) и заменяет её на "
@@ -1129,30 +1129,6 @@ msgstr "Ваша цель — §0. Из §1 вы знаете §2, так что
 msgid "Divisibility by 11 (Boss)"
 msgstr "Признак делимости на 11 (Босс)"
 
-#. §0: `use`
-#. §1: `∃ k, 12 = 3 * k`
-#. §2: `use 4`
-#. §3: `12 = 3 * 4`
-#. §4: `∃ x y : ℤ, 2 * x + 3 * y = 1`
-#. §5: `use -1, 1`
-#: Game.Doc.Tactics
-msgid ""
-"The §0 tactic is used to provide a \\\\\"witness\\\\\" to prove that "
-"something exists.\n"
-"If your goal is §1, typing §2 changes the goal to §3.\n"
-"\n"
-"**Multiple arguments:**\n"
-"If your goal has multiple existentials, for example §4, you can provide "
-"multiple witnesses separated by commas: §5."
-msgstr ""
-"Тактика §0 используется для того, чтобы предъявить «свидетеля», "
-"доказывающего, что нечто существует.\n"
-"Если ваша цель — §1, ввод §2 меняет цель на §3.\n"
-"\n"
-"**Несколько аргументов:**\n"
-"Если в вашей цели несколько кванторов существования, например §4, вы можете "
-"перечислить несколько свидетелей через запятую: §5."
-
 #. §0: $k$
 #: Game.Levels.Congruence.L09_mod_scale
 msgid "Nice! Notice how the witness §0 didn't even need to change!"
@@ -1706,24 +1682,6 @@ msgid "Apply your theorem! Look at the arguments for §0 in your theorems tab."
 msgstr ""
 "Примените вашу теорему! Посмотрите на аргументы теоремы §0 на вкладке "
 "«Теоремы»."
-
-#. §0: `intro`
-#. §1: $\\forall$
-#. §2: $\\implies$
-#. §3: `∀ a, P a`
-#. §4: `intro a`
-#. §5: `a`
-#: Game.Doc.Tactics
-msgid ""
-"The §0 tactic is used to introduce variables from a \\\\\"For all\\\\\" (§1) "
-"statement\n"
-"or to assume the premise of an implication (§2).\n"
-"For example, if the goal is §3, typing §4 moves §5 into your context."
-msgstr ""
-"Тактика §0 используется для введения переменных из утверждения «для всех» "
-"(§1)\n"
-"или для того, чтобы принять в качестве допущения посылку импликации (§2).\n"
-"Например, если цель — §3, ввод §4 переносит §5 в ваш контекст."
 
 #: Game.Levels.Divisibility.L04_dvd_zero
 msgid "Everything divides zero"
@@ -2591,6 +2549,92 @@ msgstr ""
 "Отлично! Вы на лету вычислили конкретный НОД, чтобы раскрыть силу вашей "
 "теоремы о сокращении."
 
+#. §0: $a \\mid b$
+#. §1: $a$
+#. §2: $b$
+#. §3: $a \\mid b$
+#. §4: $b$
+#. §5: $a$
+#. §6: $k$
+#. §7: $$b = a \\cdot k$$
+#. §8: $a \\mid b$
+#. §9: $b$
+#. §10: $a$
+#. §11: $3 \\mid 12$
+#. §12: $12 = 3 \\cdot 4$
+#. §13: $k = 4$
+#. §14: $5 \\mid -15$
+#. §15: $-15 = 5 \\cdot (-3)$
+#. §16: $k = -3$
+#. §17: $7 \\mid 0$
+#. §18: $0 = 7 \\cdot 0$
+#. §19: $k = 0$
+#. §20: $4 \\mid 14$
+#. §21: $k$
+#. §22: $14 = 4 \\cdot k$
+#. §23: $a \\mid b$
+#. §24: `∃ k, b = a * k`
+#. §25: $k$
+#. §26: `use`
+#. §27: `use 4`
+#. §28: `∣`
+#. §29: `\\mid`
+#. §30: `\\|`
+#: Game.Doc.Definitions
+msgid ""
+"**Divisibility (§0)**\n"
+"\n"
+"We say that an integer §1 **divides** an integer §2 (written as §3) if §4 is "
+"a multiple of §5.\n"
+"Formally, this means there exists some integer §6 such that:\n"
+"§7\n"
+"\n"
+"**Intuition:**\n"
+"Thinking of §8 as \"§9 can be built entirely out of copies of §10\" often "
+"makes it easier to reason about than the formal existential statement.\n"
+"\n"
+"**Examples:**\n"
+"* §11 is true because §12 (here our witness is §13).\n"
+"* §14 is true because §15 (here §16).\n"
+"* §17 is true because §18 (here §19).\n"
+"* §20 is **false**, because there is no integer §21 that makes §22.\n"
+"\n"
+"**How it works in Lean:**\n"
+"When you see §23 in your goal, Lean translates this under the hood to an "
+"\"exists\" statement: §24.\n"
+"To prove it, you must provide the exact value of §25 using the §26 tactic "
+"(for example, §27).\n"
+"\n"
+"*(To type the divides symbol §28, type §29 or §30 and press Space!)*"
+msgstr ""
+"**Делимость (§0)**\n"
+"\n"
+"Мы говорим, что целое число §1 **делит** целое число §2 (записывается как "
+"§3), если §4 кратно §5.\n"
+"Формально это означает, что существует некое целое число §6 такое, что:\n"
+"§7\n"
+"\n"
+"**Интуиция:**\n"
+"Представление §8 в виде «§9 можно полностью построить из копий §10» часто "
+"облегчает рассуждения по сравнению с формальным утверждением с квантором "
+"существования.\n"
+"\n"
+"**Примеры:**\n"
+"* §11 верно, потому что §12 (здесь наш свидетель — §13).\n"
+"* §14 верно, потому что §15 (здесь §16).\n"
+"* §17 верно, потому что §18 (здесь §19).\n"
+"* §20 **неверно**, потому что не существует такого целого числа §21, при "
+"котором выполняется §22.\n"
+"\n"
+"**Как это работает в Lean:**\n"
+"Когда в качестве цели у вас §23, Lean под капотом переводит это в "
+"утверждение с «существует»: §24.\n"
+"Чтобы доказать его, вам нужно указать точное значение §25 с помощью тактики "
+"§26 (например, §27).\n"
+"\n"
+"*(Чтобы напечатать символ делимости §28, введите §29 или §30 и нажмите "
+"пробел!)*"
+
 #. §0: $a$
 #. §1: $b$
 #. §2: $m$
@@ -3324,6 +3368,49 @@ msgid ""
 "§8\n"
 "§9"
 msgstr ""
+"Тактика §0 позволяет доказывать промежуточные утверждения. После "
+"доказательства новая гипотеза §1 добавляется в ваш контекст до конца "
+"основного доказательства.\n"
+"\n"
+"Вы не ограничены простыми равенствами (§2). Можно использовать §3 для "
+"любого утверждения, такого как модульные сравнения (§4), делимость (§5) "
+"или предикаты вроде §6.\n"
+"\n"
+"\n"
+"**Важно:** В этой игре синтаксис присваивания (§7) отключен. Вы "
+"должны сформулировать гипотезу и привести её доказательство на "
+"следующей строке.\n"
+"\n"
+"**Использование блока доказательства:**\n"
+"Вы можете сформулировать гипотезу и предоставить доказательство на "
+"следующих строках. Это сделает ваше промежуточное утверждение текущей "
+"целью:\n"
+"§8\n"
+"§9"
+
+#. §0: `use`
+#. §1: `∃ k, 12 = 3 * k`
+#. §2: `use 4`
+#. §3: `12 = 3 * 4`
+#. §4: `∃ x y : ℤ, 2 * x + 3 * y = 1`
+#. §5: `use -1, 1`
+#: Game.Doc.Tactics
+msgid ""
+"The §0 tactic is used to provide a \"witness\" to prove that something "
+"exists.\n"
+"If your goal is §1, typing §2 changes the goal to §3.\n"
+"\n"
+"**Multiple arguments:**\n"
+"If your goal has multiple existentials, for example §4, you can provide "
+"multiple witnesses separated by commas: §5."
+msgstr ""
+"Тактика §0 используется для того, чтобы предъявить «свидетеля», "
+"доказывающего, что нечто существует.\n"
+"Если ваша цель — §1, ввод §2 меняет цель на §3.\n"
+"\n"
+"**Несколько аргументов:**\n"
+"Если в вашей цели несколько кванторов существования, например §4, вы можете "
+"перечислить несколько свидетелей через запятую: §5."
 
 #. §0: `mul_left_cancel₀`
 #. §1: `«{d}» * something = «{d}» * 1`
@@ -3334,92 +3421,6 @@ msgstr "Чтобы использовать §0, вам нужно состав�
 #: Game.Levels.Congruence.L02_mod_symm
 msgid "Symmetry of Congruences"
 msgstr "Симметричность сравнений"
-
-#. §0: $a \\mid b$
-#. §1: $a$
-#. §2: $b$
-#. §3: $a \\mid b$
-#. §4: $b$
-#. §5: $a$
-#. §6: $k$
-#. §7: $$b = a \\cdot k$$
-#. §8: $a \\mid b$
-#. §9: $b$
-#. §10: $a$
-#. §11: $3 \\mid 12$
-#. §12: $12 = 3 \\cdot 4$
-#. §13: $k = 4$
-#. §14: $5 \\mid -15$
-#. §15: $-15 = 5 \\cdot (-3)$
-#. §16: $k = -3$
-#. §17: $7 \\mid 0$
-#. §18: $0 = 7 \\cdot 0$
-#. §19: $k = 0$
-#. §20: $4 \\mid 14$
-#. §21: $k$
-#. §22: $14 = 4 \\cdot k$
-#. §23: $a \\mid b$
-#. §24: `∃ k, b = a * k`
-#. §25: $k$
-#. §26: `use`
-#. §27: `use 4`
-#. §28: `∣`
-#. §29: `\\mid`
-#. §30: `\\|`
-#: Game.Doc.Definitions
-msgid ""
-"**Divisibility (§0)**\n"
-"\n"
-"We say that an integer §1 **divides** an integer §2 (written as §3) if §4 is "
-"a multiple of §5.\n"
-"Formally, this means there exists some integer §6 such that:\n"
-"§7\n"
-"\n"
-"**Intuition:**\n"
-"Thinking of §8 as \"§9 can be built entirely out of copies of §10\" often "
-"makes it easier to reason about than the formal existential statement.\n"
-"\n"
-"**Examples:**\n"
-"* §11 is true because §12 (here our witness is §13).\n"
-"* §14 is true because §15 (here §16).\n"
-"* §17 is true because §18 (here §19).\n"
-"* §20 is **false**, because there is no integer §21 that makes §22.\n"
-"\n"
-"**How it works in Lean:**\n"
-"When you see §23 in your goal, Lean translates this under the hood to an \\\\"
-"\"exists\\\\\" statement: §24.\n"
-"To prove it, you must provide the exact value of §25 using the §26 tactic "
-"(for example, §27).\n"
-"\n"
-"*(To type the divides symbol §28, type §29 or §30 and press Space!)*"
-msgstr ""
-"**Делимость (§0)**\n"
-"\n"
-"Мы говорим, что целое число §1 **делит** целое число §2 (записывается как "
-"§3), если §4 кратно §5.\n"
-"Формально это означает, что существует некое целое число §6 такое, что:\n"
-"§7\n"
-"\n"
-"**Интуиция:**\n"
-"Представление §8 в виде «§9 можно полностью построить из копий §10» часто "
-"облегчает рассуждения по сравнению с формальным утверждением с квантором "
-"существования.\n"
-"\n"
-"**Примеры:**\n"
-"* §11 верно, потому что §12 (здесь наш свидетель — §13).\n"
-"* §14 верно, потому что §15 (здесь §16).\n"
-"* §17 верно, потому что §18 (здесь §19).\n"
-"* §20 **неверно**, потому что не существует такого целого числа §21, при "
-"котором выполняется §22.\n"
-"\n"
-"**Как это работает в Lean:**\n"
-"Когда в качестве цели у вас §23, Lean под капотом переводит это в "
-"утверждение с «существует»: §24.\n"
-"Чтобы доказать его, вам нужно указать точное значение §25 с помощью тактики "
-"§26 (например, §27).\n"
-"\n"
-"*(Чтобы напечатать символ делимости §28, введите §29 или §30 и нажмите "
-"пробел!)*"
 
 #: Game.Levels.GCD.L03_gcd_greatest
 msgid "Any gcd witness dominates every common divisor."
@@ -3509,6 +3510,72 @@ msgstr ""
 "нас не интересуют, можно использовать подчёркивание §13, чтобы отбросить эту "
 "часть шаблона: §14."
 
+#. §0: `obtain`
+#. §1: $\\exists$
+#. §2: $\\wedge$
+#. §3: `h : x ∣ y`
+#. §4: `∃ k, y = x * k`
+#. §5: `obtain ⟨k, hk⟩ := h`
+#. §6: `k`
+#. §7: `hk : y = x * k`
+#. §8: `⟨`
+#. §9: `⟩`
+#. §10: `\\<`
+#. §11: `\\>`
+#. §12: `IsGCD(c, m) 1`
+#. §13: `∧`
+#. §14: `∃`
+#. §15: `obtain ⟨_, x, y, hxy⟩ := h`
+#. §16: `_`
+#. §17: `x`
+#. §18: `y`
+#. §19: `hxy`
+#. §20: `∧`
+#. §21: `obtain`
+#. §22: `h.1.1`
+#. §23: `h.1.2`
+#: Game.Doc.Tactics
+msgid ""
+"The §0 tactic extracts a witness from a hypothesis that contains an "
+"\"exists\" (§1) or a logical AND (§2).\n"
+"If you have a hypothesis §3 (which means §4), you can type\n"
+"§5 to get the variable §6 and the equation §7.\n"
+"*(To type §8 and §9, write §10 and §11, then press Space.)*\n"
+"\n"
+"**Nested and multiple arguments:**\n"
+"For more complex hypotheses, such as §12 (which contains multiple nested §13 "
+"and §14), you can extract everything at once by providing up to 4 "
+"arguments.\n"
+"For example: §15.\n"
+"The underscore §16 is used to discard parts of the hypothesis you don't need "
+"(like the divisibility facts), while binding the Bézout witnesses to §17 and "
+"§18 and the equation to §19.\n"
+"\n"
+"**Dot notation alternative:**\n"
+"If a hypothesis is just a nested logical AND (§20), you can extract its "
+"pieces directly using **dot notation** without destroying the original "
+"hypothesis via §21. For example, §22 gets the first fact, and §23 gets the "
+"second."
+msgstr ""
+"Тактика §0 извлекает свидетеля из гипотезы, содержащей «существует» (§1) или "
+"логическое И (§2).\n"
+"Если у вас есть гипотеза §3 (что означает §4), можно ввести\n"
+"§5, чтобы получить переменную §6 и уравнение §7.\n"
+"*(Чтобы напечатать §8 и §9, введите §10 и §11, затем нажмите пробел.)*\n"
+"\n"
+"**Вложенные и множественные аргументы:**\n"
+"Для более сложных гипотез, таких как §12 (содержащих несколько вложенных §13 "
+"и §14), можно извлечь всё сразу, передав до 4 аргументов.\n"
+"Например: §15.\n"
+"Подчёркивание §16 используется, чтобы отбросить ненужные вам части гипотезы "
+"(например, факты о делимости), одновременно связывая свидетелей Безу с §17 и "
+"§18, а уравнение — с §19.\n"
+"\n"
+"**Альтернатива с точечной нотацией:**\n"
+"Если гипотеза представляет собой просто вложенное логическое И (§20), можно "
+"извлечь её части напрямую с помощью **точечной нотации**, не удаляя исходную "
+"гипотезу, как это делает §21. Например, §22 даёт первый факт, а §23 — второй."
+
 #. §0: $x$
 #. §1: $x \\equiv 7 \\pmod{10}$
 #. §2: $x \\equiv 2 \\pmod 3$
@@ -3546,6 +3613,24 @@ msgstr ""
 #: Game.Levels.GCD.L02_gcd_def
 msgid "The first goal is *also* an §0. Use §1 again!"
 msgstr "Первая цель — тоже §0. Используйте §1 снова!"
+
+#. §0: `intro`
+#. §1: $\\forall$
+#. §2: $\\implies$
+#. §3: `∀ a, P a`
+#. §4: `intro a`
+#. §5: `a`
+#: Game.Doc.Tactics
+msgid ""
+"The §0 tactic is used to introduce variables from a \"For all\" (§1) "
+"statement\n"
+"or to assume the premise of an implication (§2).\n"
+"For example, if the goal is §3, typing §4 moves §5 into your context."
+msgstr ""
+"Тактика §0 используется для введения переменных из утверждения «для всех» "
+"(§1)\n"
+"или для того, чтобы принять в качестве допущения посылку импликации (§2).\n"
+"Например, если цель — §3, ввод §4 переносит §5 в ваш контекст."
 
 #. §0: $k_1$
 #. §1: $k_2$
@@ -4762,72 +4847,6 @@ msgstr ""
 "Поскольку 3 делит 9, число сравнимо с суммой своих цифр по модулю 3, точно "
 "так же, как и с 9."
 
-#. §0: `obtain`
-#. §1: $\\exists$
-#. §2: $\\wedge$
-#. §3: `h : x ∣ y`
-#. §4: `∃ k, y = x * k`
-#. §5: `obtain ⟨k, hk⟩ := h`
-#. §6: `k`
-#. §7: `hk : y = x * k`
-#. §8: `⟨`
-#. §9: `⟩`
-#. §10: `\\<`
-#. §11: `\\>`
-#. §12: `IsGCD(c, m) 1`
-#. §13: `∧`
-#. §14: `∃`
-#. §15: `obtain ⟨_, x, y, hxy⟩ := h`
-#. §16: `_`
-#. §17: `x`
-#. §18: `y`
-#. §19: `hxy`
-#. §20: `∧`
-#. §21: `obtain`
-#. §22: `h.1.1`
-#. §23: `h.1.2`
-#: Game.Doc.Tactics
-msgid ""
-"The §0 tactic extracts a witness from a hypothesis that contains an \\\\"
-"\"exists\\\\\" (§1) or a logical AND (§2).\n"
-"If you have a hypothesis §3 (which means §4), you can type\n"
-"§5 to get the variable §6 and the equation §7.\n"
-"*(To type §8 and §9, write §10 and §11, then press Space.)*\n"
-"\n"
-"**Nested and multiple arguments:**\n"
-"For more complex hypotheses, such as §12 (which contains multiple nested §13 "
-"and §14), you can extract everything at once by providing up to 4 "
-"arguments.\n"
-"For example: §15.\n"
-"The underscore §16 is used to discard parts of the hypothesis you don't need "
-"(like the divisibility facts), while binding the Bézout witnesses to §17 and "
-"§18 and the equation to §19.\n"
-"\n"
-"**Dot notation alternative:**\n"
-"If a hypothesis is just a nested logical AND (§20), you can extract its "
-"pieces directly using **dot notation** without destroying the original "
-"hypothesis via §21. For example, §22 gets the first fact, and §23 gets the "
-"second."
-msgstr ""
-"Тактика §0 извлекает свидетеля из гипотезы, содержащей «существует» (§1) или "
-"логическое И (§2).\n"
-"Если у вас есть гипотеза §3 (что означает §4), можно ввести\n"
-"§5, чтобы получить переменную §6 и уравнение §7.\n"
-"*(Чтобы напечатать §8 и §9, введите §10 и §11, затем нажмите пробел.)*\n"
-"\n"
-"**Вложенные и множественные аргументы:**\n"
-"Для более сложных гипотез, таких как §12 (содержащих несколько вложенных §13 "
-"и §14), можно извлечь всё сразу, передав до 4 аргументов.\n"
-"Например: §15.\n"
-"Подчёркивание §16 используется, чтобы отбросить ненужные вам части гипотезы "
-"(например, факты о делимости), одновременно связывая свидетелей Безу с §17 и "
-"§18, а уравнение — с §19.\n"
-"\n"
-"**Альтернатива с точечной нотацией:**\n"
-"Если гипотеза представляет собой просто вложенное логическое И (§20), можно "
-"извлечь её части напрямую с помощью **точечной нотации**, не удаляя исходную "
-"гипотезу, как это делает §21. Например, §22 даёт первый факт, а §23 — второй."
-
 #. §0: $c_2$
 #. §1: $c_1$
 #. §2: $c_0$
@@ -5037,6 +5056,20 @@ msgid ""
 "It cannot handle division (§11), modulo arithmetic (§12) or non-commutative "
 "structures (like matrices)."
 msgstr ""
+"Тактика §0 автоматически доказывает алгебраические равенства путем раскрытия "
+"скобок и перегруппировки выражений.\n"
+"Это мощный инструмент, избавляющий вас от необходимости вручную применять "
+"базовые аксиомы, такие как коммутативность или дистрибутивность (например, "
+"§1 или §2).\n"
+"\n"
+"**С чем она работает:**\n"
+"§3 работает с уравнениями, включающими сложение (§4), вычитание (§5), "
+"умножение (§6) и возведение в натуральную степень (§7) в коммутативных "
+"кольцах (таких как целые числа §8, рациональные §9 или вещественные §10).\n"
+"\n"
+"**С чем она НЕ работает:**\n"
+"Она не поддерживает деление (§11), модульную арифметику (§12) или "
+"некоммутативные структуры (например, матрицы)."
 
 #: Game.Levels.Congruence.L11_mod_split
 msgid "Splitting the modulus into a product."

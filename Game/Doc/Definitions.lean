@@ -69,7 +69,7 @@ Thinking of $a \mid b$ as "$b$ can be built entirely out of copies of $a$" often
 * $4 \mid 14$ is **false**, because there is no integer $k$ that makes $14 = 4 \cdot k$.
 
 **How it works in Lean:**
-When you see $a \mid b$ in your goal, Lean translates this under the hood to an \"exists\" statement: `∃ k, b = a * k`.
+When you see $a \mid b$ in your goal, Lean translates this under the hood to an "exists" statement: `∃ k, b = a * k`.
 To prove it, you must provide the exact value of $k$ using the `use` tactic (for example, `use 4`).
 
 *(To type the divides symbol `∣`, type `\mid` or `\|` and press Space!)*

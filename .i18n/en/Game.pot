@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-31\n"
+"POT-Creation-Date: 2026-09-20\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -685,20 +685,6 @@ msgstr ""
 msgid "Divisibility by 11 (Boss)"
 msgstr ""
 
-#. §0: `use`
-#. §1: `∃ k, 12 = 3 * k`
-#. §2: `use 4`
-#. §3: `12 = 3 * 4`
-#. §4: `∃ x y : ℤ, 2 * x + 3 * y = 1`
-#. §5: `use -1, 1`
-#: Game.Doc.Tactics
-msgid "The §0 tactic is used to provide a \\\\\"witness\\\\\" to prove that something exists.\n"
-"If your goal is §1, typing §2 changes the goal to §3.\n"
-"\n"
-"**Multiple arguments:**\n"
-"If your goal has multiple existentials, for example §4, you can provide multiple witnesses separated by commas: §5."
-msgstr ""
-
 #. §0: $k$
 #: Game.Levels.Congruence.L09_mod_scale
 msgid "Nice! Notice how the witness §0 didn't even need to change!"
@@ -1039,18 +1025,6 @@ msgstr ""
 #. §0: `lin_cong_suff`
 #: Game.Levels.Problems.L04_lincong
 msgid "Apply your theorem! Look at the arguments for §0 in your theorems tab."
-msgstr ""
-
-#. §0: `intro`
-#. §1: $\\forall$
-#. §2: $\\implies$
-#. §3: `∀ a, P a`
-#. §4: `intro a`
-#. §5: `a`
-#: Game.Doc.Tactics
-msgid "The §0 tactic is used to introduce variables from a \\\\\"For all\\\\\" (§1) statement\n"
-"or to assume the premise of an implication (§2).\n"
-"For example, if the goal is §3, typing §4 moves §5 into your context."
 msgstr ""
 
 #: Game.Levels.Divisibility.L04_dvd_zero
@@ -1559,6 +1533,60 @@ msgstr ""
 msgid "Excellent! You proved a concrete GCD on the fly to unlock the power of your cancellation theorem."
 msgstr ""
 
+#. §0: $a \\mid b$
+#. §1: $a$
+#. §2: $b$
+#. §3: $a \\mid b$
+#. §4: $b$
+#. §5: $a$
+#. §6: $k$
+#. §7: $$b = a \\cdot k$$
+#. §8: $a \\mid b$
+#. §9: $b$
+#. §10: $a$
+#. §11: $3 \\mid 12$
+#. §12: $12 = 3 \\cdot 4$
+#. §13: $k = 4$
+#. §14: $5 \\mid -15$
+#. §15: $-15 = 5 \\cdot (-3)$
+#. §16: $k = -3$
+#. §17: $7 \\mid 0$
+#. §18: $0 = 7 \\cdot 0$
+#. §19: $k = 0$
+#. §20: $4 \\mid 14$
+#. §21: $k$
+#. §22: $14 = 4 \\cdot k$
+#. §23: $a \\mid b$
+#. §24: `∃ k, b = a * k`
+#. §25: $k$
+#. §26: `use`
+#. §27: `use 4`
+#. §28: `∣`
+#. §29: `\\mid`
+#. §30: `\\|`
+#: Game.Doc.Definitions
+msgid "**Divisibility (§0)**\n"
+"\n"
+"We say that an integer §1 **divides** an integer §2 (written as §3) if §4 is a multiple of §5.\n"
+"Formally, this means there exists some integer §6 such that:\n"
+"§7\n"
+"\n"
+"**Intuition:**\n"
+"Thinking of §8 as \"§9 can be built entirely out of copies of §10\" often makes it easier to reason about than the formal existential statement.\n"
+"\n"
+"**Examples:**\n"
+"* §11 is true because §12 (here our witness is §13).\n"
+"* §14 is true because §15 (here §16).\n"
+"* §17 is true because §18 (here §19).\n"
+"* §20 is **false**, because there is no integer §21 that makes §22.\n"
+"\n"
+"**How it works in Lean:**\n"
+"When you see §23 in your goal, Lean translates this under the hood to an \"exists\" statement: §24.\n"
+"To prove it, you must provide the exact value of §25 using the §26 tactic (for example, §27).\n"
+"\n"
+"*(To type the divides symbol §28, type §29 or §30 and press Space!)*"
+msgstr ""
+
 #. §0: $a$
 #. §1: $b$
 #. §2: $m$
@@ -2020,6 +2048,20 @@ msgid "The §0 tactic allows you to prove intermediate steps. Once proven, a new
 "§9"
 msgstr ""
 
+#. §0: `use`
+#. §1: `∃ k, 12 = 3 * k`
+#. §2: `use 4`
+#. §3: `12 = 3 * 4`
+#. §4: `∃ x y : ℤ, 2 * x + 3 * y = 1`
+#. §5: `use -1, 1`
+#: Game.Doc.Tactics
+msgid "The §0 tactic is used to provide a \"witness\" to prove that something exists.\n"
+"If your goal is §1, typing §2 changes the goal to §3.\n"
+"\n"
+"**Multiple arguments:**\n"
+"If your goal has multiple existentials, for example §4, you can provide multiple witnesses separated by commas: §5."
+msgstr ""
+
 #. §0: `mul_left_cancel₀`
 #. §1: `«{d}» * something = «{d}» * 1`
 #: Game.Levels.GCD.L08_gcd_div_coprime
@@ -2028,60 +2070,6 @@ msgstr ""
 
 #: Game.Levels.Congruence.L02_mod_symm
 msgid "Symmetry of Congruences"
-msgstr ""
-
-#. §0: $a \\mid b$
-#. §1: $a$
-#. §2: $b$
-#. §3: $a \\mid b$
-#. §4: $b$
-#. §5: $a$
-#. §6: $k$
-#. §7: $$b = a \\cdot k$$
-#. §8: $a \\mid b$
-#. §9: $b$
-#. §10: $a$
-#. §11: $3 \\mid 12$
-#. §12: $12 = 3 \\cdot 4$
-#. §13: $k = 4$
-#. §14: $5 \\mid -15$
-#. §15: $-15 = 5 \\cdot (-3)$
-#. §16: $k = -3$
-#. §17: $7 \\mid 0$
-#. §18: $0 = 7 \\cdot 0$
-#. §19: $k = 0$
-#. §20: $4 \\mid 14$
-#. §21: $k$
-#. §22: $14 = 4 \\cdot k$
-#. §23: $a \\mid b$
-#. §24: `∃ k, b = a * k`
-#. §25: $k$
-#. §26: `use`
-#. §27: `use 4`
-#. §28: `∣`
-#. §29: `\\mid`
-#. §30: `\\|`
-#: Game.Doc.Definitions
-msgid "**Divisibility (§0)**\n"
-"\n"
-"We say that an integer §1 **divides** an integer §2 (written as §3) if §4 is a multiple of §5.\n"
-"Formally, this means there exists some integer §6 such that:\n"
-"§7\n"
-"\n"
-"**Intuition:**\n"
-"Thinking of §8 as \"§9 can be built entirely out of copies of §10\" often makes it easier to reason about than the formal existential statement.\n"
-"\n"
-"**Examples:**\n"
-"* §11 is true because §12 (here our witness is §13).\n"
-"* §14 is true because §15 (here §16).\n"
-"* §17 is true because §18 (here §19).\n"
-"* §20 is **false**, because there is no integer §21 that makes §22.\n"
-"\n"
-"**How it works in Lean:**\n"
-"When you see §23 in your goal, Lean translates this under the hood to an \\\\\"exists\\\\\" statement: §24.\n"
-"To prove it, you must provide the exact value of §25 using the §26 tactic (for example, §27).\n"
-"\n"
-"*(To type the divides symbol §28, type §29 or §30 and press Space!)*"
 msgstr ""
 
 #: Game.Levels.GCD.L03_gcd_greatest
@@ -2138,6 +2126,45 @@ msgid "Two integers §0 and §1 are called **coprime** (or *relatively prime*) e
 "**Note:** Since we only need §11 and §12 and don't care about the divisibility facts, we can use an underscore §13 to discard that part of the pattern: §14."
 msgstr ""
 
+#. §0: `obtain`
+#. §1: $\\exists$
+#. §2: $\\wedge$
+#. §3: `h : x ∣ y`
+#. §4: `∃ k, y = x * k`
+#. §5: `obtain ⟨k, hk⟩ := h`
+#. §6: `k`
+#. §7: `hk : y = x * k`
+#. §8: `⟨`
+#. §9: `⟩`
+#. §10: `\\<`
+#. §11: `\\>`
+#. §12: `IsGCD(c, m) 1`
+#. §13: `∧`
+#. §14: `∃`
+#. §15: `obtain ⟨_, x, y, hxy⟩ := h`
+#. §16: `_`
+#. §17: `x`
+#. §18: `y`
+#. §19: `hxy`
+#. §20: `∧`
+#. §21: `obtain`
+#. §22: `h.1.1`
+#. §23: `h.1.2`
+#: Game.Doc.Tactics
+msgid "The §0 tactic extracts a witness from a hypothesis that contains an \"exists\" (§1) or a logical AND (§2).\n"
+"If you have a hypothesis §3 (which means §4), you can type\n"
+"§5 to get the variable §6 and the equation §7.\n"
+"*(To type §8 and §9, write §10 and §11, then press Space.)*\n"
+"\n"
+"**Nested and multiple arguments:**\n"
+"For more complex hypotheses, such as §12 (which contains multiple nested §13 and §14), you can extract everything at once by providing up to 4 arguments.\n"
+"For example: §15.\n"
+"The underscore §16 is used to discard parts of the hypothesis you don't need (like the divisibility facts), while binding the Bézout witnesses to §17 and §18 and the equation to §19.\n"
+"\n"
+"**Dot notation alternative:**\n"
+"If a hypothesis is just a nested logical AND (§20), you can extract its pieces directly using **dot notation** without destroying the original hypothesis via §21. For example, §22 gets the first fact, and §23 gets the second."
+msgstr ""
+
 #. §0: $x$
 #. §1: $x \\equiv 7 \\pmod{10}$
 #. §2: $x \\equiv 2 \\pmod 3$
@@ -2159,6 +2186,18 @@ msgstr ""
 #. §1: `constructor`
 #: Game.Levels.GCD.L02_gcd_def
 msgid "The first goal is *also* an §0. Use §1 again!"
+msgstr ""
+
+#. §0: `intro`
+#. §1: $\\forall$
+#. §2: $\\implies$
+#. §3: `∀ a, P a`
+#. §4: `intro a`
+#. §5: `a`
+#: Game.Doc.Tactics
+msgid "The §0 tactic is used to introduce variables from a \"For all\" (§1) statement\n"
+"or to assume the premise of an implication (§2).\n"
+"For example, if the goal is §3, typing §4 moves §5 into your context."
 msgstr ""
 
 #. §0: $k_1$
@@ -2880,45 +2919,6 @@ msgstr ""
 msgid "**Divisibility by 3**\n"
 "\n"
 "Since 3 divides 9, a number is congruent to the sum of its digits modulo 3, just like with 9."
-msgstr ""
-
-#. §0: `obtain`
-#. §1: $\\exists$
-#. §2: $\\wedge$
-#. §3: `h : x ∣ y`
-#. §4: `∃ k, y = x * k`
-#. §5: `obtain ⟨k, hk⟩ := h`
-#. §6: `k`
-#. §7: `hk : y = x * k`
-#. §8: `⟨`
-#. §9: `⟩`
-#. §10: `\\<`
-#. §11: `\\>`
-#. §12: `IsGCD(c, m) 1`
-#. §13: `∧`
-#. §14: `∃`
-#. §15: `obtain ⟨_, x, y, hxy⟩ := h`
-#. §16: `_`
-#. §17: `x`
-#. §18: `y`
-#. §19: `hxy`
-#. §20: `∧`
-#. §21: `obtain`
-#. §22: `h.1.1`
-#. §23: `h.1.2`
-#: Game.Doc.Tactics
-msgid "The §0 tactic extracts a witness from a hypothesis that contains an \\\\\"exists\\\\\" (§1) or a logical AND (§2).\n"
-"If you have a hypothesis §3 (which means §4), you can type\n"
-"§5 to get the variable §6 and the equation §7.\n"
-"*(To type §8 and §9, write §10 and §11, then press Space.)*\n"
-"\n"
-"**Nested and multiple arguments:**\n"
-"For more complex hypotheses, such as §12 (which contains multiple nested §13 and §14), you can extract everything at once by providing up to 4 arguments.\n"
-"For example: §15.\n"
-"The underscore §16 is used to discard parts of the hypothesis you don't need (like the divisibility facts), while binding the Bézout witnesses to §17 and §18 and the equation to §19.\n"
-"\n"
-"**Dot notation alternative:**\n"
-"If a hypothesis is just a nested logical AND (§20), you can extract its pieces directly using **dot notation** without destroying the original hypothesis via §21. For example, §22 gets the first fact, and §23 gets the second."
 msgstr ""
 
 #. §0: $c_2$

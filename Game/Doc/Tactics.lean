@@ -1,7 +1,7 @@
 import GameServer
 
 /--
-The `use` tactic is used to provide a \"witness\" to prove that something exists.
+The `use` tactic is used to provide a "witness" to prove that something exists.
 If your goal is `∃ k, 12 = 3 * k`, typing `use 4` changes the goal to `12 = 3 * 4`.
 
 **Multiple arguments:**
@@ -11,7 +11,7 @@ TacticDoc use
 
 
 /--
-The `intro` tactic is used to introduce variables from a \"For all\" ($\\forall$) statement
+The `intro` tactic is used to introduce variables from a "For all" ($\\forall$) statement
 or to assume the premise of an implication ($\\implies$).
 For example, if the goal is `∀ a, P a`, typing `intro a` moves `a` into your context.
 -/
@@ -32,7 +32,7 @@ TacticDoc ring
 
 
 /--
-The `obtain` tactic extracts a witness from a hypothesis that contains an \"exists\" ($\exists$) or a logical AND ($\wedge$).
+The `obtain` tactic extracts a witness from a hypothesis that contains an "exists" ($\exists$) or a logical AND ($\wedge$).
 If you have a hypothesis `h : x ∣ y` (which means `∃ k, y = x * k`), you can type
 `obtain ⟨k, hk⟩ := h` to get the variable `k` and the equation `hk : y = x * k`.
 *(To type `⟨` and `⟩`, write `\<` and `\>`, then press Space.)*
