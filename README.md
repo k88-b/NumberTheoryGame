@@ -17,7 +17,7 @@ The game translates classical pen-and-paper mathematics into rigorous code, intr
 The game is extremely approachable and serves as an introduction to integer arithmetic and formal proofs. No advanced programming or math background is strictly required to get started.
 
 ## Building Locally
-There are multiple ways to run the game while developing it. For full instructions, see the [lean4game documentation on running locally](https://github.com/leanprover-community/lean4game/blob/main/docs/running-locally.md).
+There are multiple ways to run the game while developing it. For full instructions, see the [lean4game documentation on running locally](https://github.com/leanprover-community/lean4game/blob/main/doc/running_locally.md).
 *The recommended setup for development is using a VSCode Devcontainer or Codespaces.*
 
 ## Contributing
