@@ -30,20 +30,37 @@ those who read the help texts on the left side of the screen.
 To start, click on the **Divisibility Club**.
 "
 
+
 Info "
 *Game version: 1.0*
-
-## Progress saving
-
-The game stores your progress in your local browser storage.
-If you clear your cookies or site data, your progress will be lost!
-Make sure to download your game progress if you switch browsers.
 
 ## About
 
 This game was created to teach Number Theory using formal verification in Lean 4.
 It introduces players to fundamental properties of integers, modular arithmetic,
 and divisibility, translating classical pen-and-paper mathematics into rigorous code.
+
+## Credits
+
+* **Creator:** Konstantin Belyanin
+
+## Resources
+
+* [Game Source Code](https://github.com/k88-b/NumberTheoryGame)
+* [Game Solutions](https://github.com/k88-b/NumberTheoryGame_solutions)
+* The [Lean Zulip chat](https://leanprover.zulipchat.com/) forum
+
+## Problems?
+
+Please ask any questions about this game in the
+[Lean Zulip chat](https://leanprover.zulipchat.com/) forum, for example in
+the stream \"New Members\". The community will happily help. Note that
+the Lean Zulip chat is a professional research forum.
+Please use your full real name there, stay on topic, and be nice. If you're
+looking for somewhere less formal then head on over to the [Lean Discord](https://discord.gg/WZ9bs9UCvx).
+
+If you experience issues / bugs with the game's content, please open an
+[issue at the Number Theory Game repo](https://github.com/k88-b/NumberTheoryGame/issues).
 "
 
 -- Dependency tree: Players must complete worlds in this order
