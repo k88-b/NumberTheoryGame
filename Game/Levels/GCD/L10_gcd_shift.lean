@@ -19,11 +19,11 @@ Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and
 
 1. Show $d_1$ is also a common divisor of $a$ and $m$ (not just of $a + m \\cdot k$): since $a = (a + m \\cdot k) - m \\cdot k$, and $d_1$ divides both $(a + mk)$ and $m$, it divides $a$ too. Now $d_1$ is a common divisor of $a$ and $m$, and $d_2$ is *the greatest one* (Level 3!), so $d_1 \\mid d_2$.
 2. Symmetrically, show $d_2$ is also a common divisor of $(a + m \\cdot k)$ and $m$: since $d_2$ divides both $a$ and $m$, it divides the combination $a + m \\cdot k$ too. Applying Level 3 again (this time with $d_1$ as \"the greatest\"), you get $d_2 \\mid d_1$.
-3. Finally, `d1 ∣ d2` and `d2 ∣ d1`, together with `0 ≤ d1` and `0 ≤ d2`, give `d1 = d2` by the antisymmetry lemma (`Int.dvd_antisymm`) that has just been added to your inventory!
+3. Finally, `d1 ∣ d2` and `d2 ∣ d1`, together with `0 ≤ d1` and `0 ≤ d2`, give `d1 = d2` by the antisymmetry lemma (`dvd_antisymm`) that has just been added to your inventory!
 "
 
 
-
+export Int (dvd_antisymm)
 NewTheorem Int.dvd_antisymm
 
 /-- Shifting by a multiple of m does not change the gcd with m. -/
@@ -75,9 +75,9 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
   have hd2_d1 : d2 ∣ d1
   · exact gcd_is_greatest (a + m * k) m d2 d1 h1 hd2_amk hd2_m
 
-  Hint "You have `{d1} ∣ {d2}` and `{d2} ∣ {d1}`. Finish the boss by applying `Int.dvd_antisymm`!"
+  Hint "You have `{d1} ∣ {d2}` and `{d2} ∣ {d1}`. Finish the boss by applying `dvd_antisymm`!"
 
-  exact Int.dvd_antisymm hd1 hd2 hd1_d2 hd2_d1
+  exact dvd_antisymm hd1 hd2 hd1_d2 hd2_d1
 
 
 Conclusion "

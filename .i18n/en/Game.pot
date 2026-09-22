@@ -2039,7 +2039,7 @@ msgstr ""
 #. §42: `0 ≤ d1`
 #. §43: `0 ≤ d2`
 #. §44: `d1 = d2`
-#. §45: `Int.dvd_antisymm`
+#. §45: `dvd_antisymm`
 #: Game.Levels.GCD.L10_gcd_shift
 msgid "Welcome to the final boss of World 3!\n"
 "\n"
@@ -2399,7 +2399,7 @@ msgstr ""
 
 #. §0: `«{d1}» ∣ «{d2}»`
 #. §1: `«{d2}» ∣ «{d1}»`
-#. §2: `Int.dvd_antisymm`
+#. §2: `dvd_antisymm`
 #: Game.Levels.GCD.L10_gcd_shift
 msgid "You have §0 and §1. Finish the boss by applying §2!"
 msgstr ""
