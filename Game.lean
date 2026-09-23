@@ -28,6 +28,11 @@ Tests show that the people who get the most out of this game are
 those who read the help texts on the left side of the screen.
 
 To start, click on the **Divisibility Club**.
+
+## More
+
+Click on the three lines in the top right and select \"Game Info\" for resources,
+links, solutions, and ways to interact with the Lean community.
 "
 
 
