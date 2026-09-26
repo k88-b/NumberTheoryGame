@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-23\n"
+"POT-Creation-Date: 2026-09-26\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -616,6 +616,16 @@ msgstr ""
 msgid "Divisibility Rules"
 msgstr ""
 
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Masterfully done! You used divisibility to shrink the modulus, manually computed a small remainder, and used transitivity to glue it all together.\n"
+"\n"
+"This is exactly how number theory problems are solved in practice."
+msgstr ""
+
+#: Game.Levels.Problems.L08_system
+msgid "System of Congruences (Boss)"
+msgstr ""
+
 #: Game.Levels.LinCong.L06_sol_equiv
 msgid "Congruent Solutions"
 msgstr ""
@@ -665,6 +675,10 @@ msgstr ""
 #. §0: $k$
 #: Game.Levels.Congruence.L09_mod_scale
 msgid "Nice! Notice how the witness §0 didn't even need to change!"
+msgstr ""
+
+#: Game.Levels.Problems.L07_quadratic
+msgid "Quadratic Congruence"
 msgstr ""
 
 #. §0: $x_1$
@@ -873,6 +887,22 @@ msgid "If we want a number §0 to satisfy two separate congruences simultaneousl
 "§7.\n"
 "\n"
 "Try it! Use your algebra skills and the Bézout identity to prove this explicitly."
+msgstr ""
+
+#. §0: $x \\equiv 23 \\pmod{100}$
+#. §1: $x$
+#. §2: `mod_shrink`
+#. §3: $x \\equiv 23 \\pmod 4$
+#. §4: `mod_trans`
+#. §5: `have`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Let's combine multiple theorems into one elegant deduction.\n"
+"If you know that §0, what is the remainder of §1 when divided by 4?\n"
+"\n"
+"Since 4 divides 100, we can safely shrink the modulus using §2. This will give us §3.\n"
+"But 23 is not a standard remainder! We need to step from 23 down to 3 modulo 4, using §4.\n"
+"\n"
+"This level tests your ability to chain §5 statements and piece together different theorems."
 msgstr ""
 
 #. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
@@ -1263,18 +1293,6 @@ msgstr ""
 msgid "You need a witness for §0. We know §1. Multiplying §2 by this gives §3. With some algebra, the §4 can be factored out. Try to §5."
 msgstr ""
 
-#: Game.Levels.Problems.L06_shrink_shift
-msgid "🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
-"\n"
-"Masterfully done! You used divisibility to shrink the modulus, manually computed a small remainder, and used transitivity to glue it all together.\n"
-"\n"
-"This is exactly how number theory problems are solved in practice.\n"
-"\n"
-"You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.\n"
-"\n"
-"Thank you for playing!"
-msgstr ""
-
 #: Game.Levels.Congruence.L10_mod_dvd
 msgid "Beautiful. This shows the deep underlying connection between standard divisibility and modular congruences."
 msgstr ""
@@ -1453,6 +1471,14 @@ msgid "Here's a natural question: if §0 is a gcd of §1 and §2, and we divide 
 "We need §10 for this level. (If §11 then §12 too, and \"dividing by §13\" doesn't make sense — you'll see exactly where this hypothesis is used.)\n"
 "\n"
 "**Strategy:** unfold §14 to get the Bézout identity §15. Substitute §16 and §17 to get §18, i.e. §19. Since §20, you can *cancel* it from both sides using the new theorem §21, leaving exactly the Bézout identity you need for §22 — with the very same §23!"
+msgstr ""
+
+#: Game.Levels.Problems.L07_quadratic
+msgid "Brilliant!\n"
+"\n"
+"Whether you used clever algebra to factor the polynomial, or applied the heavy machinery of the Chinese Remainder Theorem, you proved you can handle complex congruences. Both paths are perfectly valid!\n"
+"\n"
+"Now, take a deep breath. Only one challenge remains..."
 msgstr ""
 
 #. §0: `∧`
@@ -1840,6 +1866,10 @@ msgstr ""
 msgid "Exactly! Using the cancellation law on congruences works wonderfully here."
 msgstr ""
 
+#: Game.Levels.Problems.L07_quadratic
+msgid "There are two paths to solve this: a short one and a long one. It is worth thinking a bit about algebraic transformations."
+msgstr ""
+
 #. §0: $10 \\equiv -1 \\pmod{11}$
 #: Game.Doc.Theorems.DivRules
 msgid "**Divisibility by 11**\n"
@@ -2113,10 +2143,6 @@ msgstr ""
 msgid "Any gcd witness dominates every common divisor."
 msgstr ""
 
-#: Game.Levels.Problems.L06_shrink_shift
-msgid "Prove that 23 is congruent to 3 modulo 4"
-msgstr ""
-
 #: Game.Levels.GCD.L07_cancel_coprime
 msgid "Cancelling a factor coprime to the modulus."
 msgstr ""
@@ -2323,6 +2349,15 @@ msgid "**Transitivity of Divisibility**\n"
 "Divisibility chains perfectly! In Lean, if you have §13 and §14, applying this theorem proves §15."
 msgstr ""
 
+#. §0: $x \\equiv 2 \\pmod 5$
+#. §1: $x \\equiv 3 \\pmod 7$
+#. §2: $x^2 - 5x + 6 \\equiv 0 \\pmod{35}$
+#: Game.Levels.Problems.L07_quadratic
+msgid "Let's evaluate a polynomial congruence based on multiple moduli.\n"
+"\n"
+"If §0 and §1, can you prove that §2?"
+msgstr ""
+
 #: Game.Levels.LinCong.L03_inv_unique
 msgid "The Inverse is Unique"
 msgstr ""
@@ -2331,6 +2366,23 @@ msgstr ""
 #. §1: `one_dvd`
 #: Game.Levels.Divisibility.L02_what_is_dvd
 msgid "Great job! §0 is a tactic you will use constantly whenever you need to prove a statement for *any* element. Notice that this theorem is now saved in your inventory as §1!"
+msgstr ""
+
+#. §0: $3x + 4y \\equiv 0 \\pmod{11}$
+#. §1: $4x - 3y \\equiv 0 \\pmod{11}$
+#. §2: $x \\equiv 0 \\pmod{11}$
+#. §3: $y$
+#. §4: `euclids_lemma`
+#: Game.Levels.Problems.L08_system
+msgid "Welcome to the final boss of World 6!\n"
+"\n"
+"In this battle, you are given a system of congruences:\n"
+"§0\n"
+"§1\n"
+"\n"
+"You must prove that §2.\n"
+"\n"
+"To win this battle, you only need two key ideas: figure out how to eliminate §3, and think about what you need to apply §4."
 msgstr ""
 
 #. §0: `gcd_div_coprime`
@@ -2477,10 +2529,6 @@ msgstr ""
 #: Game.Doc.Tactics
 msgid "The §0 tactic is used to prove goals consisting of a logical AND (§1).\n"
 "It splits the goal §2 into two separate goals: §3 and §4."
-msgstr ""
-
-#: Game.Levels.Problems.L06_shrink_shift
-msgid "Shrinking and Shifting (Boss)"
 msgstr ""
 
 #. §0: `3 ∣ 12`
@@ -2788,6 +2836,16 @@ msgstr ""
 msgid "Incredible! You just built the full cancellation law for modular congruences by gluing together two previous theorems and one careful algebraic cancellation. This is exactly how real number-theory results get assembled from smaller pieces."
 msgstr ""
 
+#: Game.Levels.Problems.L08_system
+msgid "🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
+"\n"
+"You have defeated the final boss by elegantly solving a system of congruences and applying Euclid's Lemma!\n"
+"\n"
+"You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.\n"
+"\n"
+"Thank you for playing!"
+msgstr ""
+
 #. §0: $m$
 #. §1: $a$
 #. §2: $a + k \\cdot m \\equiv a \\pmod m$
@@ -2898,24 +2956,6 @@ msgstr ""
 msgid "Build the shift identity: §0. The last term vanishes once you plug in §1."
 msgstr ""
 
-#. §0: $x \\equiv 23 \\pmod{100}$
-#. §1: $x$
-#. §2: `mod_shrink`
-#. §3: $x \\equiv 23 \\pmod 4$
-#. §4: `mod_trans`
-#. §5: `have`
-#: Game.Levels.Problems.L06_shrink_shift
-msgid "Welcome to the final boss of World 6!\n"
-"\n"
-"Let's combine multiple theorems into one elegant deduction.\n"
-"If you know that §0, what is the remainder of §1 when divided by 4?\n"
-"\n"
-"Since 4 divides 100, we can safely shrink the modulus using §2. This will give us §3.\n"
-"But 23 is not a standard remainder! We need to step from 23 down to 3 modulo 4, using §4.\n"
-"\n"
-"This level tests your ability to chain §5 statements and piece together different theorems."
-msgstr ""
-
 #: Game.Levels.GCD.L01_dvd_mul
 msgid "Once you know a = d·k, substituting into a·b immediately gives d·(k·b). So the multiplier the goal is asking for is your existing k, scaled by b."
 msgstr ""
@@ -2971,6 +3011,10 @@ msgid "🎉 MAGNIFICENT! 🎉\n"
 "You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.\n"
 "\n"
 "You've mastered nested §0, chained §1-based lemma reuse, and careful case-by-case algebra. To be continued in World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!"
+msgstr ""
+
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Shrinking and Shifting"
 msgstr ""
 
 #. §0: $a \\cdot 0 = 0$

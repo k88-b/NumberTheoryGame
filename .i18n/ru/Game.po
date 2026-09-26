@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-23\n"
+"POT-Creation-Date: 2026-09-26\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -1029,6 +1029,22 @@ msgstr "Начните с доказательства базовых сравн
 msgid "Divisibility Rules"
 msgstr "Признаки делимости"
 
+#: Game.Levels.Problems.L06_shrink_shift
+msgid ""
+"Masterfully done! You used divisibility to shrink the modulus, manually "
+"computed a small remainder, and used transitivity to glue it all together.\n"
+"\n"
+"This is exactly how number theory problems are solved in practice."
+msgstr ""
+"Мастерски сделано! Вы использовали делимость, чтобы уменьшить модуль, вручную "
+"вычислили небольшой остаток и применили транзитивность, чтобы связать всё воедино.\n"
+"\n"
+"Именно так на практике решаются задачи по теории чисел."
+
+#: Game.Levels.Problems.L08_system
+msgid "System of Congruences (Boss)"
+msgstr "Система сравнений (Босс)"
+
 #: Game.Levels.LinCong.L06_sol_equiv
 msgid "Congruent Solutions"
 msgstr "Сравнимые решения"
@@ -1087,6 +1103,10 @@ msgstr "Признак делимости на 11 (Босс)"
 #: Game.Levels.Congruence.L09_mod_scale
 msgid "Nice! Notice how the witness §0 didn't even need to change!"
 msgstr "Отлично! Обратите внимание: свидетеля §0 даже не пришлось менять!"
+
+#: Game.Levels.Problems.L07_quadratic
+msgid "Quadratic Congruence"
+msgstr "Квадратичное сравнение"
 
 #. §0: $x_1$
 #. §1: $x_2$
@@ -1425,6 +1445,36 @@ msgstr ""
 "\n"
 "Попробуйте! Используйте свои навыки алгебры и тождество Безу, чтобы доказать "
 "это явно."
+
+#. §0: $x \\equiv 23 \\pmod{100}$
+#. §1: $x$
+#. §2: `mod_shrink`
+#. §3: $x \\equiv 23 \\pmod 4$
+#. §4: `mod_trans`
+#. §5: `have`
+#: Game.Levels.Problems.L06_shrink_shift
+msgid ""
+"Let's combine multiple theorems into one elegant deduction.\n"
+"If you know that §0, what is the remainder of §1 when divided by 4?\n"
+"\n"
+"Since 4 divides 100, we can safely shrink the modulus using §2. This will "
+"give us §3.\n"
+"But 23 is not a standard remainder! We need to step from 23 down to 3 modulo "
+"4, using §4.\n"
+"\n"
+"This level tests your ability to chain §5 statements and piece together "
+"different theorems."
+msgstr ""
+"Давайте объединим несколько теорем в одно элегантное рассуждение.\n"
+"Если вы знаете, что §0, каков остаток §1 при делении на 4?\n"
+"\n"
+"Поскольку 4 делит 100, мы можем безопасно уменьшить модуль, используя §2. "
+"Это даст нам §3.\n"
+"Но 23 — не стандартный остаток! Нам нужно перейти от 23 к 3 по модулю 4, "
+"используя §4.\n"
+"\n"
+"Этот уровень проверяет ваше умение выстраивать утверждения §5 в логическую "
+"цепочку и комбинировать различные теоремы."
 
 #. §0: $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$
 #. §1: $x \\equiv y \\pmod 9$
@@ -2095,38 +2145,6 @@ msgstr ""
 "§3. С помощью простых алгебраических преобразований §4 можно вынести за "
 "скобки. Примените тактику §5."
 
-#: Game.Levels.Problems.L06_shrink_shift
-msgid ""
-"🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
-"\n"
-"Masterfully done! You used divisibility to shrink the modulus, manually "
-"computed a small remainder, and used transitivity to glue it all together.\n"
-"\n"
-"This is exactly how number theory problems are solved in practice.\n"
-"\n"
-"You started from the simplest definition of divisibility and built a "
-"massive, formally verified mathematical theory. You conquered congruences, "
-"the greatest common divisor, and the Chinese Remainder Theorem — and then "
-"used your abstract tools to crush real numerical problems.\n"
-"\n"
-"Thank you for playing!"
-msgstr ""
-"🎉 ПОЗДРАВЛЯЕМ С ЗАВЕРШЕНИЕМ ИГРЫ ПО ТЕОРИИ ЧИСЕЛ! 🎉\n"
-"\n"
-"Мастерски сделано! Вы использовали делимость, чтобы уменьшить модуль, "
-"вручную вычислили небольшой остаток и использовали транзитивность, чтобы "
-"соединить всё воедино.\n"
-"\n"
-"Именно так на практике решаются задачи теории чисел.\n"
-"\n"
-"Вы начали с простейшего определения делимости и построили огромную, "
-"формально верифицированную математическую теорию. Вы покорили сравнения, "
-"наибольший общий делитель и Китайскую теорему об остатках — а затем "
-"использовали свои абстрактные инструменты, чтобы щёлкать реальные числовые "
-"задачи как орешки.\n"
-"\n"
-"Спасибо за игру!"
-
 #: Game.Levels.Congruence.L10_mod_dvd
 msgid ""
 "Beautiful. This shows the deep underlying connection between standard "
@@ -2321,8 +2339,8 @@ msgstr ""
 "\n"
 "## Дополнительно\n"
 "\n"
-"Нажмите на три полоски в правом верхнем углу и выберите «Информация об игре», чтобы "
-"получить доступ к ресурсам,\n"
+"Нажмите на три полоски в правом верхнем углу и выберите «Информация об "
+"игре», чтобы получить доступ к ресурсам,\n"
 "ссылкам, решениям и способам общения с сообществом Lean."
 
 #. §0: $a \\cdot x \\equiv b \\pmod m$
@@ -2437,6 +2455,25 @@ msgstr ""
 "§16 и §17, чтобы получить §18, т.е. §19. Поскольку §20, вы можете "
 "*сократить* его в обеих частях, используя новую теорему §21, что оставит вам "
 "в точности то тождество Безу, которое нужно для §22 — с тем же самым §23!"
+
+#: Game.Levels.Problems.L07_quadratic
+msgid ""
+"Brilliant!\n"
+"\n"
+"Whether you used clever algebra to factor the polynomial, or applied the "
+"heavy machinery of the Chinese Remainder Theorem, you proved you can handle "
+"complex congruences. Both paths are perfectly valid!\n"
+"\n"
+"Now, take a deep breath. Only one challenge remains..."
+msgstr ""
+"Блестяще!\n"
+"\n"
+"Независимо от того, использовали ли вы хитрые алгебраические преобразования "
+"для разложения многочлена, или применили тяжелую артиллерию Китайской "
+"теоремы об остатках — вы доказали, что умеете справляться со сложными "
+"сравнениями. Оба пути абсолютно верны!\n"
+"\n"
+"А теперь сделайте глубокий вдох. Осталось всего одно испытание..."
 
 #. §0: `∧`
 #. §1: `constructor`
@@ -3080,6 +3117,14 @@ msgstr ""
 "Именно! Применение закона сокращения к сравнениям здесь прекрасно "
 "срабатывает."
 
+#: Game.Levels.Problems.L07_quadratic
+msgid ""
+"There are two paths to solve this: a short one and a long one. It is worth "
+"thinking a bit about algebraic transformations."
+msgstr ""
+"Есть два пути решения: короткий и длинный. Стоит немного подумать над "
+"алгебраическими преобразованиями."
+
 #. §0: $10 \\equiv -1 \\pmod{11}$
 #: Game.Doc.Theorems.DivRules
 msgid ""
@@ -3509,10 +3554,6 @@ msgstr "Симметричность сравнений"
 msgid "Any gcd witness dominates every common divisor."
 msgstr "Любой свидетель НОД делится на любой общий делитель."
 
-#: Game.Levels.Problems.L06_shrink_shift
-msgid "Prove that 23 is congruent to 3 modulo 4"
-msgstr "Докажите, что 23 сравнимо с 3 по модулю 4"
-
 #: Game.Levels.GCD.L07_cancel_coprime
 msgid "Cancelling a factor coprime to the modulus."
 msgstr "Сокращение множителя, взаимно простого с модулем."
@@ -3861,6 +3902,19 @@ msgstr ""
 "Свойство делимости транзитивно! В Lean, если у вас есть §13 и §14, "
 "применение этой теоремы доказывает §15."
 
+#. §0: $x \\equiv 2 \\pmod 5$
+#. §1: $x \\equiv 3 \\pmod 7$
+#. §2: $x^2 - 5x + 6 \\equiv 0 \\pmod{35}$
+#: Game.Levels.Problems.L07_quadratic
+msgid ""
+"Let's evaluate a polynomial congruence based on multiple moduli.\n"
+"\n"
+"If §0 and §1, can you prove that §2?"
+msgstr ""
+"Давайте рассмотрим полиномиальное сравнение по нескольким модулям.\n"
+"\n"
+"Если §0 и §1, можете ли вы доказать, что §2?"
+
 #: Game.Levels.LinCong.L03_inv_unique
 msgid "The Inverse is Unique"
 msgstr "Обратный элемент единственен"
@@ -3876,6 +3930,35 @@ msgstr ""
 "Отличная работа! §0 — это тактика, которую вы будете постоянно использовать "
 "всякий раз, когда нужно доказать утверждение для *любого* элемента. "
 "Заметьте, что эта теорема теперь сохранена в вашем арсенале как §1!"
+
+#. §0: $3x + 4y \\equiv 0 \\pmod{11}$
+#. §1: $4x - 3y \\equiv 0 \\pmod{11}$
+#. §2: $x \\equiv 0 \\pmod{11}$
+#. §3: $y$
+#. §4: `euclids_lemma`
+#: Game.Levels.Problems.L08_system
+msgid ""
+"Welcome to the final boss of World 6!\n"
+"\n"
+"In this battle, you are given a system of congruences:\n"
+"§0\n"
+"§1\n"
+"\n"
+"You must prove that §2.\n"
+"\n"
+"To win this battle, you only need two key ideas: figure out how to eliminate "
+"§3, and think about what you need to apply §4."
+msgstr ""
+"Добро пожаловать к финальному боссу Мира 6!\n"
+"\n"
+"В этой битве вам дается система сравнений:\n"
+"§0\n"
+"§1\n"
+"\n"
+"Вы должны доказать, что §2.\n"
+"\n"
+"Для победы на этом уровне вам понадобятся всего две ключевые идеи: придумайте, как исключить "
+"§3, и подумайте о том, что вам нужно для применения §4."
 
 #. §0: `gcd_div_coprime`
 #: Game.Levels.GCD.L08_gcd_div_coprime
@@ -4125,10 +4208,6 @@ msgstr ""
 "Тактика §0 используется для доказательства целей, состоящих из логического И "
 "(§1).\n"
 "Она разбивает цель §2 на две отдельные цели: §3 и §4."
-
-#: Game.Levels.Problems.L06_shrink_shift
-msgid "Shrinking and Shifting (Boss)"
-msgstr "Уменьшение и сдвиг (Босс)"
 
 #. §0: `3 ∣ 12`
 #. §1: `∣`
@@ -4652,6 +4731,33 @@ msgstr ""
 "алгебраическое сокращение. Именно так на самом деле собираются результаты "
 "теории чисел из более мелких кусочков."
 
+#: Game.Levels.Problems.L08_system
+msgid ""
+"🎉 CONGRATULATIONS ON COMPLETING THE NUMBER THEORY GAME! 🎉\n"
+"\n"
+"You have defeated the final boss by elegantly solving a system of "
+"congruences and applying Euclid's Lemma!\n"
+"\n"
+"You started from the simplest definition of divisibility and built a "
+"massive, formally verified mathematical theory. You conquered congruences, "
+"the greatest common divisor, and the Chinese Remainder Theorem — and then "
+"used your abstract tools to crush real numerical problems.\n"
+"\n"
+"Thank you for playing!"
+msgstr ""
+"🎉 ПОЗДРАВЛЯЕМ С ЗАВЕРШЕНИЕМ ИГРЫ ПО ТЕОРИИ ЧИСЕЛ! 🎉\n"
+"\n"
+"Вы победили финального босса, элегантно решив систему сравнений и "
+"применив лемму Евклида!\n"
+"\n"
+"Вы начали с простейшего определения делимости и построили огромную, "
+"формально верифицированную математическую теорию. Вы покорили сравнения, "
+"наибольший общий делитель и Китайскую теорему об остатках — а затем "
+"использовали свои абстрактные инструменты, чтобы щёлкать реальные числовые "
+"задачи как орешки.\n"
+"\n"
+"Спасибо за игру!"
+
 #. §0: $m$
 #. §1: $a$
 #. §2: $a + k \\cdot m \\equiv a \\pmod m$
@@ -4819,40 +4925,6 @@ msgstr ""
 "Постройте тождество сдвига: §0. Последнее слагаемое обнуляется, как только "
 "вы подставите §1."
 
-#. §0: $x \\equiv 23 \\pmod{100}$
-#. §1: $x$
-#. §2: `mod_shrink`
-#. §3: $x \\equiv 23 \\pmod 4$
-#. §4: `mod_trans`
-#. §5: `have`
-#: Game.Levels.Problems.L06_shrink_shift
-msgid ""
-"Welcome to the final boss of World 6!\n"
-"\n"
-"Let's combine multiple theorems into one elegant deduction.\n"
-"If you know that §0, what is the remainder of §1 when divided by 4?\n"
-"\n"
-"Since 4 divides 100, we can safely shrink the modulus using §2. This will "
-"give us §3.\n"
-"But 23 is not a standard remainder! We need to step from 23 down to 3 modulo "
-"4, using §4.\n"
-"\n"
-"This level tests your ability to chain §5 statements and piece together "
-"different theorems."
-msgstr ""
-"А вот и финальный босс мира 6!\n"
-"\n"
-"Объединим несколько теорем в одно элегантное рассуждение.\n"
-"Если вы знаете, что §0, каков остаток §1 при делении на 4?\n"
-"\n"
-"Поскольку 4 делит 100, мы можем безопасно уменьшить модуль, используя §2. "
-"Это даст нам §3.\n"
-"Но 23 — не стандартный остаток! Нам нужно перейти от 23 к 3 по модулю 4, "
-"используя §4.\n"
-"\n"
-"Этот уровень проверяет ваше умение выстраивать утверждения §5 в логическую "
-"цепочку и комбинировать разные теоремы."
-
 #: Game.Levels.GCD.L01_dvd_mul
 msgid ""
 "Once you know a = d·k, substituting into a·b immediately gives d·(k·b). So "
@@ -4970,6 +5042,10 @@ msgstr ""
 "помощью §1 и аккуратный разбор случаев в алгебре. Продолжение следует в мире "
 "4, где всё это сойдётся вместе для решения линейных сравнений и "
 "доказательства Китайской теоремы об остатках!"
+
+#: Game.Levels.Problems.L06_shrink_shift
+msgid "Shrinking and Shifting"
+msgstr "Уменьшение и сдвиг"
 
 #. §0: $a \\cdot 0 = 0$
 #. §1: $a$

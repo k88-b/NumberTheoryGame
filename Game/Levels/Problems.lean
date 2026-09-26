@@ -4,6 +4,8 @@ import Game.Levels.Problems.L03_crt
 import Game.Levels.Problems.L04_lincong
 import Game.Levels.Problems.L05_euclid
 import Game.Levels.Problems.L06_shrink_shift
+import Game.Levels.Problems.L07_quadratic
+import Game.Levels.Problems.L08_system
 
 
 World "Problems"
