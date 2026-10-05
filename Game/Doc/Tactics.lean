@@ -94,6 +94,16 @@ TacticDoc «have»
 
 /--
 The `exact` tactic closes a goal if you provide a theorem that perfectly matches the goal.
+
+**How to use theorems:**
+When you look at a theorem in the **Theorems** tab, you will see its signature, like `mod_trans (a b c m : ℤ) (h1 : ...) (h2 : ...)`.
+To use it, you must pass the arguments exactly in that order, separated by spaces: first all the variables (`a`, `b`, `c`, `m`), and then the proofs for the hypotheses (`h1`, `h2`).
+For example: `exact mod_trans a b c m step1 step2`
+
+**Using parentheses:**
+If any of your arguments is a complex expression (like `a * c` or `2^100`), you **must** wrap it in parentheses: `(a * c)`.
+Otherwise, Lean will read `exact mod_trans a * c ...` as trying to pass `a` as the first argument, and then multiply the whole tactic result by `c`, which will cause an error!
+Correct usage: `exact mod_trans (a * c) (b * c) (b * d) m step1 step2`
 -/
 TacticDoc exact
 

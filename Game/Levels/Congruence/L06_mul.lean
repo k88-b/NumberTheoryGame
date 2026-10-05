@@ -16,7 +16,12 @@ If $a \\equiv b \\pmod m$ and $c \\equiv d \\pmod m$, is $a \\cdot c \\equiv b \
 Instead of doing algebra from scratch, we can **reuse** our previous theorems!
 Think about transitivity (`mod_trans` from World 1). We can step from $a \\cdot c$ to $b \\cdot c$, and then from $b \\cdot c$ to $b \\cdot d$.
 
-You can explicitly state a new hypothesis and then apply a theorem to prove it. For example, typing `have h3 : (a * c) ≡ (b * c) (mod m)` creates a new goal, which you can immediately close using `exact mod_mul_const a b c m h1`
+**How to apply theorems:**
+Check the **Theorems** tab on the right. A theorem's signature tells you exactly what it needs and in what order. For example, `mod_trans` requires four numbers and two proofs.
+You can explicitly state a new hypothesis and then apply a theorem to prove it. For example, typing `have h3 : (a * c) ≡ (b * c) (mod m)` creates a new goal, which you can immediately close using `exact mod_mul_const a b c m h1`.
+
+**Syntax Tip: Parentheses!**
+When passing compound expressions like $a \\cdot c$ to a theorem, you **must** wrap them in parentheses so Lean doesn't get confused. For example, `exact mod_trans (a * c) (b * c) (b * d) m step1 step2_symm`. If you write `a * c` without parentheses, Lean thinks you are passing `a` and then trying to multiply the rest of the line by `c`!
 
 **Watch out for the order of multiplication!**
 Applying `mod_mul_const` to $c \\equiv d$ with multiplier $b$ will give you $c \\cdot b \\equiv d \\cdot b$. You will need to manually flip the order to $b \\cdot c \\equiv b \\cdot d$ using a `have` block and `rw` before you can chain them together!

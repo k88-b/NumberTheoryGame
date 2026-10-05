@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-04\n"
+"POT-Creation-Date: 2026-10-05\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -100,11 +100,6 @@ msgstr ""
 
 #: Game.Levels.Divisibility.L05_dvd_trans
 msgid "Divisibility is transitive."
-msgstr ""
-
-#. §0: `exact`
-#: Game.Doc.Tactics
-msgid "The §0 tactic closes a goal if you provide a theorem that perfectly matches the goal."
 msgstr ""
 
 #: Game.Levels.GCD.L04_coprime_forward
@@ -816,46 +811,6 @@ msgstr ""
 msgid "Nice! Exactly the same logic applies to 5, since 5 ∣ 10 too — that's exactly what the next level does."
 msgstr ""
 
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $c \\equiv d \\pmod m$
-#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
-#. §3: `mod_trans`
-#. §4: $a \\cdot c$
-#. §5: $b \\cdot c$
-#. §6: $b \\cdot c$
-#. §7: $b \\cdot d$
-#. §8: `have h3 : (a * c) ≡ (b * c) (mod m)`
-#. §9: `exact mod_mul_const a b c m h1`
-#. §10: `mod_mul_const`
-#. §11: $c \\equiv d$
-#. §12: $b$
-#. §13: $c \\cdot b \\equiv d \\cdot b$
-#. §14: $b \\cdot c \\equiv b \\cdot d$
-#. §15: `have`
-#. §16: `rw`
-#. §17: `≡`
-#. §18: `have`
-#. §19: `\\==`
-#. §20: `have`
-#. §21: `exact`
-#. §22: `mod_trans`
-#: Game.Levels.Congruence.L06_mul
-msgid "We know we can add congruences, but can we multiply them?\n"
-"If §0 and §1, is §2?\n"
-"\n"
-"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
-"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
-"\n"
-"You can explicitly state a new hypothesis and then apply a theorem to prove it. For example, typing §8 creates a new goal, which you can immediately close using §9\n"
-"\n"
-"**Watch out for the order of multiplication!**\n"
-"Applying §10 to §11 with multiplier §12 will give you §13. You will need to manually flip the order to §14 using a §15 block and §16 before you can chain them together!\n"
-"\n"
-"*(Reminder: to type the §17 symbol in your §18 statement, type §19 and press Space)*\n"
-"\n"
-"Use §20 to build your intermediate steps, and then use the §21 tactic to finish the proof by providing §22!"
-msgstr ""
-
 #: Game.Levels.GCD.L06_gcd_symm
 msgid "The GCD is symmetric."
 msgstr ""
@@ -1547,6 +1502,36 @@ msgid "Does it work the other way? If §0 has a modular inverse modulo §1, must
 "Absolutely. If §4, it means §5, which you can rearrange into a Bézout identity for §6. You proved in World 3 (§7) that this forces the GCD to be 1!"
 msgstr ""
 
+#. §0: `exact`
+#. §1: `mod_trans (a b c m : ℤ) (h1 : ...) (h2 : ...)`
+#. §2: `a`
+#. §3: `b`
+#. §4: `c`
+#. §5: `m`
+#. §6: `h1`
+#. §7: `h2`
+#. §8: `exact mod_trans a b c m step1 step2`
+#. §9: `a * c`
+#. §10: `2^100`
+#. §11: `(a * c)`
+#. §12: `exact mod_trans a * c ...`
+#. §13: `a`
+#. §14: `c`
+#. §15: `exact mod_trans (a * c) (b * c) (b * d) m step1 step2`
+#: Game.Doc.Tactics
+msgid "The §0 tactic closes a goal if you provide a theorem that perfectly matches the goal.\n"
+"\n"
+"**How to use theorems:**\n"
+"When you look at a theorem in the **Theorems** tab, you will see its signature, like §1.\n"
+"To use it, you must pass the arguments exactly in that order, separated by spaces: first all the variables (§2, §3, §4, §5), and then the proofs for the hypotheses (§6, §7).\n"
+"For example: §8\n"
+"\n"
+"**Using parentheses:**\n"
+"If any of your arguments is a complex expression (like §9 or §10), you **must** wrap it in parentheses: §11.\n"
+"Otherwise, Lean will read §12 as trying to pass §13 as the first argument, and then multiply the whole tactic result by §14, which will cause an error!\n"
+"Correct usage: §15"
+msgstr ""
+
 #: Game.Levels.Divisibility.L03_dvd_refl
 msgid "A number divides itself"
 msgstr ""
@@ -2137,6 +2122,57 @@ msgstr ""
 
 #: Game.Levels.Congruence.L02_mod_symm
 msgid "Symmetry of Congruences"
+msgstr ""
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $c \\equiv d \\pmod m$
+#. §2: $a \\cdot c \\equiv b \\cdot d \\pmod m$
+#. §3: `mod_trans`
+#. §4: $a \\cdot c$
+#. §5: $b \\cdot c$
+#. §6: $b \\cdot c$
+#. §7: $b \\cdot d$
+#. §8: `mod_trans`
+#. §9: `have h3 : (a * c) ≡ (b * c) (mod m)`
+#. §10: `exact mod_mul_const a b c m h1`
+#. §11: $a \\cdot c$
+#. §12: `exact mod_trans (a * c) (b * c) (b * d) m step1 step2_symm`
+#. §13: `a * c`
+#. §14: `a`
+#. §15: `c`
+#. §16: `mod_mul_const`
+#. §17: $c \\equiv d$
+#. §18: $b$
+#. §19: $c \\cdot b \\equiv d \\cdot b$
+#. §20: $b \\cdot c \\equiv b \\cdot d$
+#. §21: `have`
+#. §22: `rw`
+#. §23: `≡`
+#. §24: `have`
+#. §25: `\\==`
+#. §26: `have`
+#. §27: `exact`
+#. §28: `mod_trans`
+#: Game.Levels.Congruence.L06_mul
+msgid "We know we can add congruences, but can we multiply them?\n"
+"If §0 and §1, is §2?\n"
+"\n"
+"Instead of doing algebra from scratch, we can **reuse** our previous theorems!\n"
+"Think about transitivity (§3 from World 1). We can step from §4 to §5, and then from §6 to §7.\n"
+"\n"
+"**How to apply theorems:**\n"
+"Check the **Theorems** tab on the right. A theorem's signature tells you exactly what it needs and in what order. For example, §8 requires four numbers and two proofs.\n"
+"You can explicitly state a new hypothesis and then apply a theorem to prove it. For example, typing §9 creates a new goal, which you can immediately close using §10.\n"
+"\n"
+"**Syntax Tip: Parentheses!**\n"
+"When passing compound expressions like §11 to a theorem, you **must** wrap them in parentheses so Lean doesn't get confused. For example, §12. If you write §13 without parentheses, Lean thinks you are passing §14 and then trying to multiply the rest of the line by §15!\n"
+"\n"
+"**Watch out for the order of multiplication!**\n"
+"Applying §16 to §17 with multiplier §18 will give you §19. You will need to manually flip the order to §20 using a §21 block and §22 before you can chain them together!\n"
+"\n"
+"*(Reminder: to type the §23 symbol in your §24 statement, type §25 and press Space)*\n"
+"\n"
+"Use §26 to build your intermediate steps, and then use the §27 tactic to finish the proof by providing §28!"
 msgstr ""
 
 #: Game.Levels.GCD.L03_gcd_greatest
