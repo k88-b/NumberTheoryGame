@@ -2577,7 +2577,7 @@ msgstr ""
 #. §7: `use 4`
 #. §8: $k$
 #: Game.Levels.Divisibility.L01_first_proof
-msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.\n"
+msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that transform your goal or hypotheses (assumptions) until the goal is solved.\n"
 "\n"
 "Our first statement is §0, which is read as \"3 divides 12\".\n"
 "Check your **Definitions** tab on the right to read exactly what this means mathematically!\n"
