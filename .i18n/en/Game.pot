@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-05\n"
+"POT-Creation-Date: 2026-10-16\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -2358,6 +2358,28 @@ msgstr ""
 msgid "To prove this divisibility, you need to factor out §0. Notice that §1 can be algebraically rearranged into §2. If you introduce this equality, you can use §3 to replace §4 with §5, effectively cancelling out the second part."
 msgstr ""
 
+#. §0: `3 ∣ 12`
+#. §1: `∣`
+#. §2: `\\mid`
+#. §3: `3 ∣ 12`
+#. §4: `∃ k, 12 = 3 * k`
+#. §5: $k$
+#. §6: `use`
+#. §7: `use 4`
+#. §8: $k$
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.\n"
+"\n"
+"Our first statement is §0, which is read as \"3 divides 12\".\n"
+"Check your **Definitions** tab on the right to read exactly what this means mathematically!\n"
+"\n"
+"(To type §1, write §2 and press Space.)\n"
+"\n"
+"Lean sees §3 as §4.\n"
+"To prove this, you need to provide the number §5. You can do this using the §6 tactic.\n"
+"Type §7. Lean will automatically substitute §8 with 4 and close the goal since 12 equals 3 * 4!"
+msgstr ""
+
 #. §0: $a$
 #. §1: $b$
 #. §2: $b$
@@ -2565,28 +2587,6 @@ msgstr ""
 #: Game.Doc.Tactics
 msgid "The §0 tactic is used to prove goals consisting of a logical AND (§1).\n"
 "It splits the goal §2 into two separate goals: §3 and §4."
-msgstr ""
-
-#. §0: `3 ∣ 12`
-#. §1: `∣`
-#. §2: `\\mid`
-#. §3: `3 ∣ 12`
-#. §4: `∃ k, 12 = 3 * k`
-#. §5: $k$
-#. §6: `use`
-#. §7: `use 4`
-#. §8: $k$
-#: Game.Levels.Divisibility.L01_first_proof
-msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.\n"
-"\n"
-"Our first statement is §0, which is read as \"3 divides 12\".\n"
-"Check your **Definitions** tab on the right to read exactly what this means mathematically!\n"
-"\n"
-"*(To type §1, write §2 and press Space.)*\n"
-"\n"
-"Lean sees §3 as §4.\n"
-"To prove this, you need to provide the number §5. You can do this using the §6 tactic.\n"
-"Type §7. Lean will automatically substitute §8 with 4 and close the goal since 12 equals 3 * 4!"
 msgstr ""
 
 #. §0: `mod_cancel_coprime`
