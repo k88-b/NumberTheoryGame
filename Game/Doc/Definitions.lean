@@ -19,6 +19,8 @@ This is a mathematical way of saying that $a$ and $b$ leave the *same remainder*
 **How it works in Lean:**
 We created a custom notation $a \equiv b \pmod m$ to represent a function called `ModEq`. When you see this notation in your goal or hypotheses, you can use the `unfold ModEq` tactic. This will strip away the formatting and reveal the underlying divisibility statement: `m ∣ a - b`.
 
+To work with this definition, use: `unfold ModEq`
+
 *(To type the congruence symbol `≡`, type `\==` and press Space)*
 -/
 DefinitionDoc ModEq as "a ≡ b (mod m)"
@@ -48,6 +50,8 @@ This definition alone does not force $d \geq 0$ or force $d$ to be unique. In th
 When you see `IsGCD(a, b) d` in your goal, `unfold IsGCD` reveals the raw conjunction: `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`. Use `constructor` to split the outer `∧`, and `use` to supply the Bézout witnesses.
 
 The notation `IsGCD(a, b) d` is just syntactic sugar to make the goals easier to read. When writing your own code (for example, when defining a new hypothesis with `have`), you need to use the standard Lean syntax without parentheses or commas: `IsGCD a b d`.
+
+To work with this definition, use: `unfold IsGCD`
 -/
 DefinitionDoc IsGCD as "IsGCD(a, b) d"
 

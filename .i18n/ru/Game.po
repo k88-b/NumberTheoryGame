@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-16\n"
+"POT-Creation-Date: 2026-10-18\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -16,121 +16,6 @@ msgstr "Разрешимость: Необходимое условие"
 #: Game.Levels.DivRules.L01_div10
 msgid "The remainder of a number modulo 10 is its last digit."
 msgstr "Остаток от деления числа на 10 — это его последняя цифра."
-
-#. §0: $d$
-#. §1: $a$
-#. §2: $b$
-#. §3: `IsGCD(a, b) d`
-#. §4: $d$
-#. §5: $d \\mid a$
-#. §6: $d \\mid b$
-#. §7: $d$
-#. §8: $x, y$
-#. §9: $a \\cdot x + b \\cdot y = d$
-#. §10: $$\\text{IsGCD}(a, b) d \\iff (d \\mid a \\land d \\mid b) \\land \\exists x, y \\in \\mathbb{Z},\\ a x + b y = d$$
-#. §11: $d$
-#. §12: $d \\geq 0$
-#. §13: $d$
-#. §14: `IsGCD(2, 3) 1`
-#. §15: $1 \\mid 2$
-#. §16: $1 \\mid 3$
-#. §17: $2 \\cdot (-1) + 3 \\cdot 1 = 1$
-#. §18: `IsGCD(12, 18) 6`
-#. §19: $6 \\mid 12$
-#. §20: $6 \\mid 18$
-#. §21: $12 \\cdot (-1) + 18 \\cdot 1 = 6$
-#. §22: `IsGCD(2, 3) (-1)`
-#. §23: `IsGCD(a, b) d`
-#. §24: `unfold IsGCD`
-#. §25: `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`
-#. §26: `constructor`
-#. §27: `∧`
-#. §28: `use`
-#. §29: `IsGCD(a, b) d`
-#. §30: `have`
-#. §31: `IsGCD a b d`
-#: Game.Doc.Definitions
-msgid ""
-"**The Greatest Common Divisor, Bézout-style**\n"
-"\n"
-"In this game, we say §0 **is a greatest common divisor** of §1 and §2 — "
-"written §3 — if **two** conditions hold together:\n"
-"\n"
-"1. §4 is a **common divisor**: §5 and §6.\n"
-"2. §7 can be written as a **Bézout combination**: there exist integers §8 "
-"such that §9.\n"
-"\n"
-"§10\n"
-"\n"
-"**Intuition:**\n"
-"Working with \"largest\" directly is awkward in Lean: comparing sizes "
-"doesn't play well with negative numbers, and proving something is *the* "
-"biggest usually means comparing it to every other common divisor one at a "
-"time. The Bézout condition sidesteps all of that. It turns out (and you will "
-"prove it in the very next level!) that *any* §11 satisfying condition 2, "
-"together with condition 1, is automatically bigger than every other common "
-"divisor — for free, with a short proof. So instead of taking \"greatest\" as "
-"the definition, we derive it as a theorem.\n"
-"\n"
-"This definition alone does not force §12 or force §13 to be unique. In this "
-"game we will always keep a specific, non-negative witness in mind.\n"
-"\n"
-"**Examples:**\n"
-"* §14, since §15, §16, and §17.\n"
-"* §18, since §19, §20, and §21.\n"
-"* §22 is *also* technically true, up to sign — in this game we always keep "
-"the non-negative witness in mind.\n"
-"\n"
-"**How it works in Lean:**\n"
-"When you see §23 in your goal, §24 reveals the raw conjunction: §25. Use §26 "
-"to split the outer §27, and §28 to supply the Bézout witnesses.\n"
-"\n"
-"The notation §29 is just syntactic sugar to make the goals easier to read. "
-"When writing your own code (for example, when defining a new hypothesis with "
-"§30), you need to use the standard Lean syntax without parentheses or "
-"commas: §31."
-msgstr ""
-"**Наибольший общий делитель в стиле Безу**\n"
-"\n"
-"В этой игре мы говорим, что §0 **является наибольшим общим делителем** чисел "
-"§1 и §2 — записывается §3 — если выполняются **два** условия одновременно:\n"
-"\n"
-"1. §4 является **общим делителем**: §5 и §6.\n"
-"2. §7 можно записать как **комбинацию Безу**: существуют целые числа §8 "
-"такие, что §9.\n"
-"\n"
-"§10\n"
-"\n"
-"**Интуиция:**\n"
-"Работать с понятием «наибольший» напрямую в Lean неудобно: сравнение величин "
-"плохо работает с отрицательными числами, а доказательство того, что нечто — "
-"*самое* большое, обычно означает сравнение его со всеми остальными общими "
-"делителями по очереди. Условие Безу обходит всё это стороной. Оказывается (и "
-"вы докажете это уже на следующем уровне!), что *любое* §11, удовлетворяющее "
-"условию 2, вместе с условием 1, автоматически оказывается больше любого "
-"другого общего делителя — причём это легко показывается коротким "
-"доказательством. Поэтому вместо того, чтобы брать «наибольший» за "
-"определение, мы выводим это как теорему.\n"
-"\n"
-"Само по себе это определение не требует неотрицательности §12 и не "
-"гарантирует единственность §13. В этой игре мы всегда выбираем конкретного "
-"неотрицательного свидетеля.\n"
-"\n"
-"**Примеры:**\n"
-"* §14, поскольку §15, §16 и §17.\n"
-"* §18, поскольку §19, §20 и §21.\n"
-"* §22 тоже технически верно, с точностью до знака — в этой игре мы всегда "
-"имеем в виду неотрицательного свидетеля.\n"
-"\n"
-"**Как это работает в Lean:**\n"
-"Когда в качестве цели у вас §23, §24 раскрывает исходную конъюнкцию: §25. "
-"Используйте §26, чтобы разбить внешнее выражение §27, и §28, чтобы "
-"предъявить свидетелей Безу.\n"
-"\n"
-"Обозначение §29 — это просто синтаксический сахар, чтобы цели было легче "
-"читать. При написании собственного кода (например, при определении новой "
-"гипотезы с помощью §30) нужно использовать стандартный синтаксис Lean без "
-"скобок и запятых: §31."
 
 #: Game.Levels.Problems.L01_large_powers
 msgid "Huge Powers"
@@ -253,6 +138,38 @@ msgstr ""
 "Число сравнимо с суммой своих цифр по модулю 9.\n"
 "Это прекрасно работает, потому что любое число можно записать как многочлен, "
 "вычисленный в точке 10, а §0."
+
+#. §0: `unfold`
+#. §1: `a ≡ b (mod m)`
+#. §2: `unfold ModEq`
+#. §3: `m ∣ a - b`
+#. §4: `IsGCD(a, b) d`
+#. §5: `unfold IsGCD`
+#. §6: `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`
+#. §7: `unfold`
+#. §8: `h`
+#. §9: `unfold ModEq at h`
+#. §10: `unfold ModEq at *`
+#: Game.Doc.Tactics
+msgid ""
+"The §0 tactic replaces a definition with its underlying meaning.\n"
+"If your goal contains §1, typing §2 will change it to §3.\n"
+"Similarly, if your goal contains §4, typing §5 will change it to §6.\n"
+"\n"
+"**Targeting hypotheses:**\n"
+"By default, §7 applies only to the goal. You can unfold a definition inside "
+"a specific hypothesis §8 by typing §9.\n"
+"To unfold it everywhere (in all hypotheses and the goal at once), use §10."
+msgstr ""
+"Тактика §0 заменяет определение его исходным смыслом.\n"
+"Если ваша цель содержит §1, ввод §2 изменит её на §3.\n"
+"Аналогично, если ваша цель содержит §4, ввод §5 изменит её на §6.\n"
+"\n"
+"**Нацеливание на гипотезы:**\n"
+"По умолчанию §4 применяется только к цели. Раскрыть определение внутри "
+"конкретной гипотезы §5 можно, введя §6.\n"
+"Чтобы раскрыть его везде (во всех гипотезах и в цели одновременно), "
+"используйте §7."
 
 #: Game.Levels.LinCong.L02_inv_reverse
 msgid ""
@@ -742,6 +659,126 @@ msgid "You want to show §0, so that §1 applies directly. Substitute §2 and §
 msgstr ""
 "Вы хотите показать §0, чтобы можно было напрямую применить §1. Подставьте §2 "
 "и §3"
+
+#. §0: $d$
+#. §1: $a$
+#. §2: $b$
+#. §3: `IsGCD(a, b) d`
+#. §4: $d$
+#. §5: $d \\mid a$
+#. §6: $d \\mid b$
+#. §7: $d$
+#. §8: $x, y$
+#. §9: $a \\cdot x + b \\cdot y = d$
+#. §10: $$\\text{IsGCD}(a, b) d \\iff (d \\mid a \\land d \\mid b) \\land \\exists x, y \\in \\mathbb{Z},\\ a x + b y = d$$
+#. §11: $d$
+#. §12: $d \\geq 0$
+#. §13: $d$
+#. §14: `IsGCD(2, 3) 1`
+#. §15: $1 \\mid 2$
+#. §16: $1 \\mid 3$
+#. §17: $2 \\cdot (-1) + 3 \\cdot 1 = 1$
+#. §18: `IsGCD(12, 18) 6`
+#. §19: $6 \\mid 12$
+#. §20: $6 \\mid 18$
+#. §21: $12 \\cdot (-1) + 18 \\cdot 1 = 6$
+#. §22: `IsGCD(2, 3) (-1)`
+#. §23: `IsGCD(a, b) d`
+#. §24: `unfold IsGCD`
+#. §25: `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`
+#. §26: `constructor`
+#. §27: `∧`
+#. §28: `use`
+#. §29: `IsGCD(a, b) d`
+#. §30: `have`
+#. §31: `IsGCD a b d`
+#. §32: `unfold IsGCD`
+#: Game.Doc.Definitions
+msgid ""
+"**The Greatest Common Divisor, Bézout-style**\n"
+"\n"
+"In this game, we say §0 **is a greatest common divisor** of §1 and §2 — "
+"written §3 — if **two** conditions hold together:\n"
+"\n"
+"1. §4 is a **common divisor**: §5 and §6.\n"
+"2. §7 can be written as a **Bézout combination**: there exist integers §8 "
+"such that §9.\n"
+"\n"
+"§10\n"
+"\n"
+"**Intuition:**\n"
+"Working with \"largest\" directly is awkward in Lean: comparing sizes "
+"doesn't play well with negative numbers, and proving something is *the* "
+"biggest usually means comparing it to every other common divisor one at a "
+"time. The Bézout condition sidesteps all of that. It turns out (and you will "
+"prove it in the very next level!) that *any* §11 satisfying condition 2, "
+"together with condition 1, is automatically bigger than every other common "
+"divisor — for free, with a short proof. So instead of taking \"greatest\" as "
+"the definition, we derive it as a theorem.\n"
+"\n"
+"This definition alone does not force §12 or force §13 to be unique. In this "
+"game we will always keep a specific, non-negative witness in mind.\n"
+"\n"
+"**Examples:**\n"
+"* §14, since §15, §16, and §17.\n"
+"* §18, since §19, §20, and §21.\n"
+"* §22 is *also* technically true, up to sign — in this game we always keep "
+"the non-negative witness in mind.\n"
+"\n"
+"**How it works in Lean:**\n"
+"When you see §23 in your goal, §24 reveals the raw conjunction: §25. Use §26 "
+"to split the outer §27, and §28 to supply the Bézout witnesses.\n"
+"\n"
+"The notation §29 is just syntactic sugar to make the goals easier to read. "
+"When writing your own code (for example, when defining a new hypothesis with "
+"§30), you need to use the standard Lean syntax without parentheses or "
+"commas: §31.\n"
+"\n"
+"To work with this definition, use: §32"
+msgstr ""
+"**Наибольший общий делитель в стиле Безу**\n"
+"\n"
+"В этой игре мы говорим, что §0 **является наибольшим общим делителем** чисел "
+"§1 и §2 — записывается §3 — если выполняются **два** условия одновременно:\n"
+"\n"
+"1. §4 является **общим делителем**: §5 и §6.\n"
+"2. §7 можно записать как **комбинацию Безу**: существуют целые числа §8 "
+"такие, что §9.\n"
+"\n"
+"§10\n"
+"\n"
+"**Интуиция:**\n"
+"Работать с понятием «наибольший» напрямую в Lean неудобно: сравнение величин "
+"плохо работает с отрицательными числами, а доказательство того, что нечто — "
+"*самое* большое, обычно означает сравнение его со всеми остальными общими "
+"делителями по очереди. Условие Безу обходит всё это стороной. Оказывается (и "
+"вы докажете это уже на следующем уровне!), что *любое* §11, удовлетворяющее "
+"условию 2, вместе с условием 1, автоматически оказывается больше любого "
+"другого общего делителя — причём это легко показывается коротким "
+"доказательством. Поэтому вместо того, чтобы брать «наибольший» за "
+"определение, мы выводим это как теорему.\n"
+"\n"
+"Само по себе это определение не требует неотрицательности §12 и не "
+"гарантирует единственность §13. В этой игре мы всегда выбираем конкретного "
+"неотрицательного свидетеля.\n"
+"\n"
+"**Примеры:**\n"
+"* §14, поскольку §15, §16 и §17.\n"
+"* §18, поскольку §19, §20 и §21.\n"
+"* §22 тоже технически верно, с точностью до знака — в этой игре мы всегда "
+"имеем в виду неотрицательного свидетеля.\n"
+"\n"
+"**Как это работает в Lean:**\n"
+"Когда в качестве цели у вас §23, §24 раскрывает исходную конъюнкцию: §25. "
+"Используйте §26, чтобы разбить внешнее выражение §27, и §28, чтобы "
+"предъявить свидетелей Безу.\n"
+"\n"
+"Обозначение §29 — это просто синтаксический сахар, чтобы цели было легче "
+"читать. При написании собственного кода (например, при определении новой "
+"гипотезы с помощью §30) нужно использовать стандартный синтаксис Lean без "
+"скобок и запятых: §31.\n"
+"\n"
+"Чтобы работать с этим определением, используйте: §32"
 
 #: Game.Levels.Congruence.L08_pow
 msgid "Powers of Congruences"
@@ -3177,33 +3214,6 @@ msgstr "Цепочка делителей (Босс)"
 msgid "Number Theory Game"
 msgstr "Игра по теории чисел"
 
-#. §0: `unfold`
-#. §1: `a ≡ b (mod m)`
-#. §2: `unfold ModEq`
-#. §3: `m ∣ a - b`
-#. §4: `unfold`
-#. §5: `h`
-#. §6: `unfold ModEq at h`
-#. §7: `unfold ModEq at *`
-#: Game.Doc.Tactics
-msgid ""
-"The §0 tactic replaces a definition with its underlying meaning.\n"
-"If your goal contains §1, typing §2 will change it to §3.\n"
-"\n"
-"**Targeting hypotheses:**\n"
-"By default, §4 applies only to the goal. You can unfold a definition inside "
-"a specific hypothesis §5 by typing §6.\n"
-"To unfold it everywhere (in all hypotheses and the goal at once), use §7."
-msgstr ""
-"Тактика §0 заменяет определение его исходным смыслом.\n"
-"Если ваша цель содержит §1, ввод §2 изменит её на §3.\n"
-"\n"
-"**Нацеливание на гипотезы:**\n"
-"По умолчанию §4 применяется только к цели. Раскрыть определение внутри "
-"конкретной гипотезы §5 можно, введя §6.\n"
-"Чтобы раскрыть его везде (во всех гипотезах и в цели одновременно), "
-"используйте §7."
-
 #: Game.Levels.GCD.L03_gcd_greatest
 msgid "Use the theorem from Level 1!"
 msgstr "Используйте теорему с уровня 1!"
@@ -4361,86 +4371,6 @@ msgstr ""
 "Следуя шагу 1 стратегии, создайте доказательство, что *некий* обратный "
 "элемент существует, используя «{x}» как свидетеля: §0."
 
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $a$
-#. §2: $b$
-#. §3: $m$
-#. §4: $(a - b)$
-#. §5: $m$
-#. §6: $m$
-#. §7: $(a - b)$
-#. §8: $$m \\mid (a - b)$$
-#. §9: $a$
-#. §10: $b$
-#. §11: $m$
-#. §12: $15 \\equiv 3 \\pmod{12}$
-#. §13: $17 \\equiv 5 \\pmod{12}$
-#. §14: $12 \\mid (17 - 5)$
-#. §15: $12 \\mid 12$
-#. §16: $23 \\equiv 2 \\pmod 7$
-#. §17: $7 \\mid (23 - 2)$
-#. §18: $7 \\mid 21$
-#. §19: $10 \\equiv 0 \\pmod 5$
-#. §20: $5 \\mid (10 - 0)$
-#. §21: $5 \\mid 10$
-#. §22: $a \\equiv b \\pmod m$
-#. §23: `ModEq`
-#. §24: `unfold ModEq`
-#. §25: `m ∣ a - b`
-#. §26: `≡`
-#. §27: `\\==`
-#: Game.Doc.Definitions
-msgid ""
-"**Modular Congruence (§0)**\n"
-"\n"
-"We say that §1 is **congruent** to §2 modulo §3 if their difference §4 is a "
-"multiple of §5.\n"
-"Formally, it means §6 divides §7:\n"
-"§8\n"
-"\n"
-"**Intuition:**\n"
-"This is a mathematical way of saying that §9 and §10 leave the *same "
-"remainder* when divided by §11. Think of a clock: 15:00 and 3:00 point to "
-"the same place because §12.\n"
-"\n"
-"**Examples:**\n"
-"* §13 because §14, which simplifies to §15.\n"
-"* §16 because §17, which is §18.\n"
-"* §19 because §20, which is §21.\n"
-"\n"
-"**How it works in Lean:**\n"
-"We created a custom notation §22 to represent a function called §23. When "
-"you see this notation in your goal or hypotheses, you can use the §24 "
-"tactic. This will strip away the formatting and reveal the underlying "
-"divisibility statement: §25.\n"
-"\n"
-"*(To type the congruence symbol §26, type §27 and press Space)*"
-msgstr ""
-"**Сравнение по модулю (§0)**\n"
-"\n"
-"Мы говорим, что §1 **сравнимо** с §2 по модулю §3, если их разность §4 "
-"кратна §5.\n"
-"Формально это означает, что §6 делит §7:\n"
-"§8\n"
-"\n"
-"**Интуиция:**\n"
-"Это математический способ сказать, что §9 и §10 имеют *один и тот же "
-"остаток* при делении на §11. Представьте часы: 15:00 и 3:00 указывают на "
-"одно и то же место, потому что §12.\n"
-"\n"
-"**Примеры:**\n"
-"* §13, потому что §14, что упрощается до §15.\n"
-"* §16, потому что §17, что равно §18.\n"
-"* §19, потому что §20, что равно §21.\n"
-"\n"
-"**Как это работает в Lean:**\n"
-"Мы создали специальное обозначение §22 для представления функции под "
-"названием §23. Когда вы видите это обозначение в цели или гипотезах, можно "
-"использовать тактику §24. Это уберёт форматирование и раскроет исходное "
-"утверждение о делимости: §25.\n"
-"\n"
-"*(Чтобы напечатать символ сравнения §26, введите §27 и нажмите пробел)*"
-
 #. §0: $10 \\cdot k + d \\equiv d \\pmod{10}$
 #: Game.Doc.Theorems.DivRules
 msgid ""
@@ -5120,6 +5050,91 @@ msgstr ""
 #: Game.Levels.Problems.L06_shrink_shift
 msgid "Shrinking and Shifting"
 msgstr "Уменьшение и сдвиг"
+
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $a$
+#. §2: $b$
+#. §3: $m$
+#. §4: $(a - b)$
+#. §5: $m$
+#. §6: $m$
+#. §7: $(a - b)$
+#. §8: $$m \\mid (a - b)$$
+#. §9: $a$
+#. §10: $b$
+#. §11: $m$
+#. §12: $15 \\equiv 3 \\pmod{12}$
+#. §13: $17 \\equiv 5 \\pmod{12}$
+#. §14: $12 \\mid (17 - 5)$
+#. §15: $12 \\mid 12$
+#. §16: $23 \\equiv 2 \\pmod 7$
+#. §17: $7 \\mid (23 - 2)$
+#. §18: $7 \\mid 21$
+#. §19: $10 \\equiv 0 \\pmod 5$
+#. §20: $5 \\mid (10 - 0)$
+#. §21: $5 \\mid 10$
+#. §22: $a \\equiv b \\pmod m$
+#. §23: `ModEq`
+#. §24: `unfold ModEq`
+#. §25: `m ∣ a - b`
+#. §26: `unfold ModEq`
+#. §27: `≡`
+#. §28: `\\==`
+#: Game.Doc.Definitions
+msgid ""
+"**Modular Congruence (§0)**\n"
+"\n"
+"We say that §1 is **congruent** to §2 modulo §3 if their difference §4 is a "
+"multiple of §5.\n"
+"Formally, it means §6 divides §7:\n"
+"§8\n"
+"\n"
+"**Intuition:**\n"
+"This is a mathematical way of saying that §9 and §10 leave the *same "
+"remainder* when divided by §11. Think of a clock: 15:00 and 3:00 point to "
+"the same place because §12.\n"
+"\n"
+"**Examples:**\n"
+"* §13 because §14, which simplifies to §15.\n"
+"* §16 because §17, which is §18.\n"
+"* §19 because §20, which is §21.\n"
+"\n"
+"**How it works in Lean:**\n"
+"We created a custom notation §22 to represent a function called §23. When "
+"you see this notation in your goal or hypotheses, you can use the §24 "
+"tactic. This will strip away the formatting and reveal the underlying "
+"divisibility statement: §25.\n"
+"\n"
+"To work with this definition, use: §26\n"
+"\n"
+"*(To type the congruence symbol §27, type §28 and press Space)*"
+msgstr ""
+"**Сравнение по модулю (§0)**\n"
+"\n"
+"Мы говорим, что §1 **сравнимо** с §2 по модулю §3, если их разность §4 "
+"кратна §5.\n"
+"Формально это означает, что §6 делит §7:\n"
+"§8\n"
+"\n"
+"**Интуиция:**\n"
+"Это математический способ сказать, что §9 и §10 имеют *один и тот же "
+"остаток* при делении на §11. Представьте часы: 15:00 и 3:00 указывают на "
+"одно и то же место, потому что §12.\n"
+"\n"
+"**Примеры:**\n"
+"* §13, потому что §14, что упрощается до §15.\n"
+"* §16, потому что §17, что равно §18.\n"
+"* §19, потому что §20, что равно §21.\n"
+"\n"
+"**Как это работает в Lean:**\n"
+"Мы создали специальное обозначение §22 для представления функции под "
+"названием §23. Когда вы видите это обозначение в цели или гипотезах, можно "
+"использовать тактику §24. Это уберёт форматирование и раскроет исходное "
+"утверждение о делимости: §25.\n"
+"\n"
+"Чтобы работать с этим определением, используйте: §26\n"
+"\n"
+"*(Чтобы напечатать символ сравнения §27, введите §28 и нажмите пробел)*"
 
 #. §0: $a \\cdot 0 = 0$
 #. §1: $a$
