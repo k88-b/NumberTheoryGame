@@ -68,6 +68,7 @@ TacticDoc rw
 /--
 The `unfold` tactic replaces a definition with its underlying meaning.
 If your goal contains `a ≡ b (mod m)`, typing `unfold ModEq` will change it to `m ∣ a - b`.
+Similarly, if your goal contains `IsGCD(a, b) d`, typing `unfold IsGCD` will change it to `(d ∣ a ∧ d ∣ b) ∧ ∃ x y, a * x + b * y = d`.
 
 **Targeting hypotheses:**
 By default, `unfold` applies only to the goal. You can unfold a definition inside a specific hypothesis `h` by typing `unfold ModEq at h`.
