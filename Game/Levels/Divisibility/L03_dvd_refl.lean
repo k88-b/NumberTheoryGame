@@ -12,7 +12,7 @@ Think about what $k$ should be so that $a = a \\cdot k$.
 
 
 /-- Every integer divides itself. -/
-Statement dvd_refl (a : ℤ) : a ∣ a := by
+Statement dvd_refl_int (a : ℤ) : a ∣ a := by
   use 1
   ring
 

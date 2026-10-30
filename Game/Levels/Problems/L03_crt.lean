@@ -21,8 +21,8 @@ Statement : ∃ x : ℤ, x ≡ 7 (mod 10) ∧ x ≡ 2 (mod 3) := by
   · unfold IsGCD
     constructor
     · constructor
-      · exact one_dvd 10
-      · exact one_dvd 3
+      · exact one_dvd_int 10
+      · exact one_dvd_int 3
     · use 1, -3
       ring
 

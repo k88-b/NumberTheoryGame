@@ -13,7 +13,7 @@ By our definition, this just means $0 = a \\cdot k$ for some $k$.
 
 
 /-- Any integer divides zero. -/
-Statement dvd_zero (a : ℤ) : a ∣ 0 := by
+Statement dvd_zero_int (a : ℤ) : a ∣ 0 := by
   use 0
   ring
 

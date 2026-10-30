@@ -20,8 +20,8 @@ Statement (x : ℤ) (h : 10 ∣ x * 3) : 10 ∣ x := by
   · unfold IsGCD
     constructor
     · constructor
-      · exact one_dvd 3
-      · exact one_dvd 10
+      · exact one_dvd_int 3
+      · exact one_dvd_int 10
     · use -3, 1
       ring
 

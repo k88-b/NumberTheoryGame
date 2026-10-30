@@ -27,7 +27,7 @@ TheoremDoc inv_implies_coprime as "inv_implies_coprime" in "LinCong"
 
 If $a \cdot x \equiv 1 \pmod m$ and $a \cdot y \equiv 1 \pmod m$, then $x \equiv y \pmod m$.
 -/
-TheoremDoc inv_unique as "inv_unique" in "LinCong"
+TheoremDoc inv_unique_int as "inv_unique_int" in "LinCong"
 
 
 /--

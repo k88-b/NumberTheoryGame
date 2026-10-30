@@ -28,7 +28,7 @@ Good luck!
 
 
 /-- Divisibility is transitive. -/
-Statement dvd_trans (x y z : ℤ) (h1 : x ∣ y) (h2 : y ∣ z) : x ∣ z := by
+Statement dvd_trans_int (x y z : ℤ) (h1 : x ∣ y) (h2 : y ∣ z) : x ∣ z := by
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
 

@@ -17,7 +17,7 @@ Use the `use` tactic, and then close the algebra with our new super-tactic: `rin
 
 
 /-- 1 divides every integer. -/
-Statement one_dvd (a : ℤ) :  1 ∣ a := by
+Statement one_dvd_int (a : ℤ) :  1 ∣ a := by
   use a
   ring
 

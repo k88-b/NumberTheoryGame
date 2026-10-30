@@ -13,8 +13,8 @@ Formulation: if `IsGCD(a, b) d` holds, and $c$ is *any* common divisor of $a$ an
 
 **Strategy:**
 1. `unfold IsGCD at h` to extract the two divisibility facts and the Bézout witnesses $x, y$ with $a \\cdot x + b \\cdot y = d$. Since this is a nested conjunction-with-an-existential, `obtain` can peel apart all the layers at once with a pattern like `⟨⟨hda, hdb⟩, x, y, hxy⟩`.
-2. Apply `dvd_mul_of_dvd_left` (from the previous level!) to $c \\mid a$ to get $c \\mid (a \\cdot x)$, and similarly to get $c \\mid (b \\cdot y)$. Use `have` to store each as an intermediate fact.
-3. `obtain` witnesses from both new facts, `use` their sum, then `rw` and `ring` to finish — exactly the witness-gluing pattern you used for `dvd_trans` in World 1.
+2. Apply `dvd_mul_of_dvd_left_int` (from the previous level!) to $c \\mid a$ to get $c \\mid (a \\cdot x)$, and similarly to get $c \\mid (b \\cdot y)$. Use `have` to store each as an intermediate fact.
+3. `obtain` witnesses from both new facts, `use` their sum, then `rw` and `ring` to finish — exactly the witness-gluing pattern you used for `dvd_trans_int` in World 1.
 "
 
 
@@ -29,10 +29,10 @@ Statement gcd_is_greatest (a b c d : ℤ) (h : IsGCD(a, b) d) (hca : c ∣ a) (h
   Hint (hidden := true) "Use the theorem from Level 1!"
 
   have h1 : c ∣ (a * x)
-  · exact dvd_mul_of_dvd_left hca x
+  · exact dvd_mul_of_dvd_left_int a x c hca
 
   have h2 : c ∣ (b * y)
-  · exact dvd_mul_of_dvd_left hcb y
+  · exact dvd_mul_of_dvd_left_int b y c hcb
 
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2

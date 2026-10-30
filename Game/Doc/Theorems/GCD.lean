@@ -12,7 +12,7 @@ For example, $3 \mid 6$, so $3 \mid (6 \cdot 5) = 30$ as well.
 
 This little lemma is a "brick" you will reuse constantly in this world: whenever you have a Bézout-style identity $a \cdot x + b \cdot y = d$ and you know some $c$ divides $a$ or $b$, this lemma lets you conclude $c$ divides the whole term $a \cdot x$ or $b \cdot y$.
 -/
-TheoremDoc dvd_mul_of_dvd_left as "dvd_mul_of_dvd_left" in "Divisibility"
+TheoremDoc dvd_mul_of_dvd_left_int as "dvd_mul_of_dvd_left_int" in "Divisibility"
 
 
 /--

@@ -37,8 +37,8 @@ Statement (x y : ℤ) (h1 : (3 * x + 4 * y) ≡ 0 (mod 11)) (h2 : (4 * x - 3 * y
   · unfold IsGCD
     constructor
     · constructor
-      · exact one_dvd 25
-      · exact one_dvd 11
+      · exact one_dvd_int 25
+      · exact one_dvd_int 11
 
     · use 4, -9
       ring

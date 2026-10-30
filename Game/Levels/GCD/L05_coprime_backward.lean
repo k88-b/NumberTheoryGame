@@ -9,7 +9,7 @@ Title "Bézout Gives You Coprimality (⟸)"
 Introduction "
 Now the other direction: if there exist integers $x, y$ with $c \\cdot x + m \\cdot y = 1$, does that mean `IsGCD(c, m) 1`?
 
-Yes — and to prove it, remember `one_dvd` from World 1: *every* integer is divisible by $1$. So the \"common divisor\" half of the definition (`1 ∣ c` and `1 ∣ m`) comes completely for free! All that's left is to hand back the Bézout identity you were already given.
+Yes — and to prove it, remember `one_dvd_int` from World 1: *every* integer is divisible by $1$. So the \"common divisor\" half of the definition (`1 ∣ c` and `1 ∣ m`) comes completely for free! All that's left is to hand back the Bézout identity you were already given.
 "
 
 
@@ -18,9 +18,9 @@ Statement bezout_imp_coprime (c m : ℤ) (h : ∃ x y : ℤ, c * x + m * y = 1) 
   unfold IsGCD
   constructor
   · constructor
-    · Hint (hidden := true) "Remember the theorem `one_dvd` from World 1? It proves that 1 divides everything."
-      exact one_dvd c
-    · exact one_dvd m
+    · Hint (hidden := true) "Remember the theorem `one_dvd_int` from World 1? It proves that 1 divides everything."
+      exact one_dvd_int c
+    · exact one_dvd_int m
 
   · exact h
 

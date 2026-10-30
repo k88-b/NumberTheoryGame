@@ -26,8 +26,8 @@ Statement gcd_div_coprime (c m d c1 m1 : ℤ) (hd : d ≠ 0) (h : IsGCD(c, m) d)
   obtain ⟨_, x, y, hxy⟩ := h
   constructor
   · constructor
-    · exact one_dvd c1
-    · exact one_dvd m1
+    · exact one_dvd_int c1
+    · exact one_dvd_int m1
   · use x, y
 
     have e : d * (c1 * x + m1 * y) = c1 * d * x + m1 * d * y

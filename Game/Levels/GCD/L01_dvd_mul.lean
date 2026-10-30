@@ -24,7 +24,7 @@ You already have every tool you need for this one: `obtain` the witness from you
 
 
 /-- If d divides a, then d divides a * b for any integer b. -/
-Statement dvd_mul_of_dvd_left (a b d : ℤ) (h : d ∣ a) : d ∣ (a * b) := by
+Statement dvd_mul_of_dvd_left_int (a b d : ℤ) (h : d ∣ a) : d ∣ (a * b) := by
   obtain ⟨k, hk⟩ := h
   Hint (hidden := true) "Once you know a = d·k, substituting into a·b immediately gives d·(k·b). So the multiplier the goal is asking for is your existing k, scaled by b."
   use k * b
@@ -33,5 +33,5 @@ Statement dvd_mul_of_dvd_left (a b d : ℤ) (h : d ∣ a) : d ∣ (a * b) := by
   ring
 
 Conclusion "
-Perfect! Keep `dvd_mul_of_dvd_left` close at hand — you'll use it again and again in this world.
+Perfect! Keep `dvd_mul_of_dvd_left_int` close at hand — you'll use it again and again in this world.
 "

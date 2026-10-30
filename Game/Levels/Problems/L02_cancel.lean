@@ -20,8 +20,8 @@ Statement (x y : ℤ) (h : (14 * x) ≡ (14 * y) (mod 9)) : x ≡ y (mod 9) := b
   unfold IsGCD
   constructor
   · constructor
-    · exact one_dvd 14
-    · exact one_dvd 9
+    · exact one_dvd_int 14
+    · exact one_dvd_int 9
   · use 2, -3
     ring
 

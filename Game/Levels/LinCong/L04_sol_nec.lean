@@ -11,7 +11,7 @@ We now move to general linear equations: $a \\cdot x \\equiv b \\pmod m$.
 When does this have a solution?
 
 Let $d = \\gcd(a, m)$. If a solution $x$ exists, it is strictly necessary that $d$ divides $b$.
-Unfold the definitions, and apply `dvd_mul_of_dvd_left` from World 3!
+Unfold the definitions, and apply `dvd_mul_of_dvd_left_int` from World 3!
 "
 
 
@@ -23,10 +23,10 @@ Statement lin_cong_nec (a b x m d : ℤ) (hd : IsGCD(a, m) d) (hx : (a * x) ≡ 
   obtain ⟨k, hk⟩ := hx
 
   have h1 : d ∣ (a * x)
-  · exact dvd_mul_of_dvd_left hda x
+  · exact dvd_mul_of_dvd_left_int a x d hda
 
   have h2 : d ∣ (m * k)
-  · exact dvd_mul_of_dvd_left hdm k
+  · exact dvd_mul_of_dvd_left_int m k d hdm
 
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2

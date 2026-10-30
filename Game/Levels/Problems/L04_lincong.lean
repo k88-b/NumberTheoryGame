@@ -21,8 +21,8 @@ Statement : ∃ x : ℤ, (5 * x) ≡ 3 (mod 7) := by
   · unfold IsGCD
     constructor
     · constructor
-      · exact one_dvd 5
-      · exact one_dvd 7
+      · exact one_dvd_int 5
+      · exact one_dvd_int 7
     · use 3, -2
       ring
 
