@@ -14,7 +14,7 @@ If $a \\cdot c \\equiv b \\cdot c \\pmod m$, and $c$ is coprime to $m$ (`IsGCD(c
 
 **Yes** — but only because $c$ and $m$ are coprime! Without that assumption this would be false: take $c = 2$, $m = 4$. Then $2 \\cdot 1 \\equiv 2 \\cdot 3 \\pmod 4$ (since $6 - 2 = 4$), yet $1 \\equiv 3 \\pmod 4$ is false ($3 - 1 = 2$ is not a multiple of $4$). Coprimality is essential.
 
-**The key idea:** since $c$ and $m$ are coprime, we have $c \\cdot x + m \\cdot y = 1$ for some $x, y$ (that's exactly what you proved in Level 4!). Multiplying our congruence's underlying equation by $x$ makes the extra factor $c$ effectively disappear, leaving exactly what we want.
+**The key idea:** since $c$ and $m$ are coprime, we have $c \\cdot x + m \\cdot y = 1$ for some $x, y$ (that's exactly what you proved in Level 3!). Multiplying our congruence's underlying equation by $x$ makes the extra factor $c$ effectively disappear, leaving exactly what we want.
 
 This proof is long, but every single step is either a `have` (a pure algebra identity, closed by `ring`) or an `rw` that plugs in a hypothesis. Take it one line at a time.
 "

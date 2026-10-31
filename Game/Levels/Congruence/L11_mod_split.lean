@@ -15,14 +15,11 @@ Welcome to the final boss of World 2!
 If $a \\equiv b \\pmod{m \\cdot n}$, then it must be true that $a \\equiv b \\pmod m$ AND $a \\equiv b \\pmod n$.
 
 Your goal contains a logical AND (`∧`). To prove it, use the `constructor` tactic.
-This will split your goal into two separate cases.
+This will split your goal into two separate cases:
+- In the first case, you need to show $m \\mid (a - b)$ knowing $(m \\cdot n) \\mid (a - b)$.
+- In the second case, you need to show $n \\mid (a - b)$ from the same fact.
 
-**Syntax Tip:**
-To close the goals here, you will use `have` to state that $m \\cdot n \\cdot k = m \\cdot (n \\cdot k)$.
-Because you want to replace $m \\cdot (n \\cdot k)$ in your goal with the left side, remember to rewrite backwards using the left arrow: `rw [← h_eq]`.
-*(To type `←`, write `\\l` and press Space.)*
-
-For each case, unfold the definition, construct the witness, use `have` for algebra, and rewrite backwards to close the goal!
+For each case, unfold `ModEq`, extract the witness $k$ with `obtain`, supply the scaled witness with `use`, and finish with `rw` and `ring` — just like you did in World 1!
 "
 
 
@@ -44,7 +41,7 @@ Conclusion "
 🎉 AMAZING! 🎉
 
 You have conquered World 2! You've successfully built an entire algebraic toolkit for congruences.
-You learned how to use `induction'`, how to break down logical conjunctions with `constructor`, and how to confidently rewrite backwards using `←` (`\\l`)!
+You learned how to use `have` to build intermediate steps, `exact` to reuse theorems, `induction'` for powers, and `constructor` to break down logical conjunctions!
 
 Next up is World 3, where we will dive into the Greatest Common Divisor (GCD) and learn how to *cancel* numbers out of congruences.
 "

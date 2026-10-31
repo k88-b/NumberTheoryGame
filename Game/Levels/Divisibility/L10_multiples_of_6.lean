@@ -23,5 +23,5 @@ Statement (x : ℤ) (h : 6 ∣ x) : 3 ∣ x := by
   ring
 
 Conclusion "
-Spot on! This four-step rhythm — `obtain`, `rw`, `use`, `ring` — is the bread and butter of divisibility proofs.
+Spot on! This four-step rhythm — `obtain`, `use`, `rw`, `ring` — is the bread and butter of divisibility proofs.
 "

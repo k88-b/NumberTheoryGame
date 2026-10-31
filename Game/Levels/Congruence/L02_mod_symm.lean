@@ -26,9 +26,8 @@ Since $b - a = -(a - b)$, the multiplier should be $-k$.
 If you type `have h_eq : b - a = -(a - b)`, Lean will create a new goal asking you to prove this exact equation. Once you prove it, Lean will add `h_eq` to your context so you can use `rw [h_eq]` to transform your main goal!
 
 **Syntax Tip:**
-By default, `rw [h_eq]` looks for the *left* side of your equality (`b - a`) and replaces it with the *right* side (`-(a - b)`).
-If you ever formulate your equality the other way around, for example `have h_eq : -(a - b) = b - a`, you will need to tell Lean to rewrite from right to left using a left arrow: `rw [← h_eq]`.
-*(To type `←`, write `\\l` and press Space.)*
+Remember from World 1 that `rw [h_eq]` looks for the *left* side of your equality (`b - a`) and replaces it with the *right* side (`-(a - b)`).
+If you ever formulate your equality the other way around, for example `have h_eq : -(a - b) = b - a`, remember you can rewrite from right to left using a left arrow: `rw [← h_eq]` (`\\l`).
 "
 
 

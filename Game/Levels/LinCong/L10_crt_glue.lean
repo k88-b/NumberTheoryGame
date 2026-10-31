@@ -15,11 +15,11 @@ The second half of CRT: if two numbers share the same remainder modulo $m$ and m
 
 Formally: $x \\equiv a \\pmod m$ and $x \\equiv a \\pmod n$ means $m \\mid (x - a)$ and $n \\mid (x - a)$. Extract the witnesses, equate them, and reach for **Euclid's Lemma**.
 
-**One trap to watch for:** `euclids_lemma` expects coprimality as `IsGCD(n, m) 1`, but your hypothesis is `IsGCD(m, n) 1` — arguments swapped! You'll need to prove the symmetric version yourself first (a short unfold-and-swap, just like `bezout_imp_coprime` back in World 3).
+**One trap to watch for:** `euclids_lemma` expects coprimality as `IsGCD(n, m) 1`, but your hypothesis is `IsGCD(m, n) 1` — arguments swapped! Fortunately, you already proved `gcd_symm` back in World 3 for this exact moment.
 
 **Strategy:**
 1. **Equate the witnesses:** Extract the witnesses for $x - a$, set them equal, and deduce that $m \\mid (k_2 \\cdot n)$.
-2. **Swap the GCD:** Prove the symmetric version of your coprimality hypothesis (since `euclids_lemma` expects `IsGCD(n, m) 1` instead of `m, n`).
+2. **Swap the GCD:** Apply `gcd_symm` to your coprimality hypothesis so it matches the argument order `euclids_lemma` expects (`IsGCD n m 1`).
 3. **Apply Euclid's Lemma:** Use the lemma to conclude that $m$ must entirely divide $k_2$.
 4. **Finish the algebra:** Substitute this new divisibility witness back into your original equation.
 

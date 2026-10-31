@@ -14,7 +14,7 @@ We know we can add congruences, but can we multiply them?
 If $a \\equiv b \\pmod m$ and $c \\equiv d \\pmod m$, is $a \\cdot c \\equiv b \\cdot d \\pmod m$?
 
 Instead of doing algebra from scratch, we can **reuse** our previous theorems!
-Think about transitivity (`mod_trans` from World 1). We can step from $a \\cdot c$ to $b \\cdot c$, and then from $b \\cdot c$ to $b \\cdot d$.
+Think about transitivity (`mod_trans` from Level 3). We can step from $a \\cdot c$ to $b \\cdot c$, and then from $b \\cdot c$ to $b \\cdot d$.
 
 **How to apply theorems:**
 Check the **Theorems** tab on the right. A theorem's signature tells you exactly what it needs and in what order. For example, `mod_trans` requires four numbers and two proofs.

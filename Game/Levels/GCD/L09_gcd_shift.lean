@@ -17,8 +17,8 @@ Formulation: if $d_1$ is a (non-negative) gcd of $(a + m \\cdot k)$ and $m$, and
 
 **Strategy:** This one's long — take it one step at a time!
 
-1. Show $d_1$ is also a common divisor of $a$ and $m$ (not just of $a + m \\cdot k$): since $a = (a + m \\cdot k) - m \\cdot k$, and $d_1$ divides both $(a + mk)$ and $m$, it divides $a$ too. Now $d_1$ is a common divisor of $a$ and $m$, and $d_2$ is *the greatest one* (Level 3!), so $d_1 \\mid d_2$.
-2. Symmetrically, show $d_2$ is also a common divisor of $(a + m \\cdot k)$ and $m$: since $d_2$ divides both $a$ and $m$, it divides the combination $a + m \\cdot k$ too. Applying Level 3 again (this time with $d_1$ as \"the greatest\"), you get $d_2 \\mid d_1$.
+1. Show $d_1$ is also a common divisor of $a$ and $m$ (not just of $a + m \\cdot k$): since $a = (a + m \\cdot k) - m \\cdot k$, and $d_1$ divides both $(a + mk)$ and $m$, it divides $a$ too. Now $d_1$ is a common divisor of $a$ and $m$, and $d_2$ is *the greatest one* (Level 2!), so $d_1 \\mid d_2$.
+2. Symmetrically, show $d_2$ is also a common divisor of $(a + m \\cdot k)$ and $m$: since $d_2$ divides both $a$ and $m$, it divides the combination $a + m \\cdot k$ too. Applying Level 2 again (this time with $d_1$ as \"the greatest\"), you get $d_2 \\mid d_1$.
 3. Finally, `d1 ∣ d2` and `d2 ∣ d1`, together with `0 ≤ d1` and `0 ≤ d2`, give `d1 = d2` by the antisymmetry lemma (`dvd_antisymm_int`) that has just been added to your inventory!
 "
 
@@ -56,7 +56,7 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
     rw [h_eq1, hx, hy]
     ring
 
-  Hint "Now that you know `{d1} ∣ {a}` and `{d1} ∣ {m}`, use the theorem `gcd_is_greatest` (from Level 3) on `{h2}` to show that `{d1} ∣ {d2}`."
+  Hint "Now that you know `{d1} ∣ {a}` and `{d1} ∣ {m}`, use the theorem `gcd_is_greatest` (from Level 2) on `{h2}` to show that `{d1} ∣ {d2}`."
 
   have hd1_d2 : d1 ∣ d2
   · exact gcd_is_greatest a m d1 d2 h2 hd1_a hd1_m

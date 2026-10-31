@@ -11,7 +11,7 @@ We now move to general linear equations: $a \\cdot x \\equiv b \\pmod m$.
 When does this have a solution?
 
 Let $d = \\gcd(a, m)$. If a solution $x$ exists, it is strictly necessary that $d$ divides $b$.
-Unfold the definitions, and apply `dvd_mul_of_dvd_left_int` from World 3!
+Unfold the definitions, and apply `dvd_mul_of_dvd_left_int` from World 1!
 "
 
 
