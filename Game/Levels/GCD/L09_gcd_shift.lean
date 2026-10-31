@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L09_cancel_general
+import Game.Levels.GCD.L08_cancel_general
 
 World "GCD"
-Level 10
+Level 9
 Title "A Shift Doesn't Change the GCD (Boss)"
 
 Introduction "

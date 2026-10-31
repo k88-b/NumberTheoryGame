@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L04_coprime_forward
+import Game.Levels.GCD.L03_coprime_forward
 
 World "GCD"
-Level 5
+Level 4
 Title "Bézout Gives You Coprimality (⟸)"
 
 Introduction "

@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L03_gcd_greatest
+import Game.Levels.GCD.L02_gcd_greatest
 
 World "GCD"
-Level 4
+Level 3
 Title "Coprimality Gives You Bézout (⟹)"
 
 Introduction "

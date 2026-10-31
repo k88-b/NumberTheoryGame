@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L05_coprime_backward
+import Game.Levels.GCD.L04_coprime_backward
 
 World "GCD"
-Level 6
+Level 5
 Title "Symmetry of the GCD"
 
 Introduction "

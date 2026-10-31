@@ -2,20 +2,6 @@ import GameServer
 
 
 /--
-**A Divisor of a Factor Divides the Product**
-
-If $d \mid a$, then $d \mid (a \cdot b)$ for any integer $b$.
-
-**Intuition:**
-If $a$ is built out of $k$ copies of $d$ (i.e. $a = d \cdot k$), then $a \cdot b$ is built out of $k \cdot b$ copies of $d$.
-For example, $3 \mid 6$, so $3 \mid (6 \cdot 5) = 30$ as well.
-
-This little lemma is a "brick" you will reuse constantly in this world: whenever you have a Bézout-style identity $a \cdot x + b \cdot y = d$ and you know some $c$ divides $a$ or $b$, this lemma lets you conclude $c$ divides the whole term $a \cdot x$ or $b \cdot y$.
--/
-TheoremDoc dvd_mul_of_dvd_left_int as "dvd_mul_of_dvd_left_int" in "Divisibility"
-
-
-/--
 **The Bézout Definition Really Gives the Greatest Common Divisor**
 
 If `IsGCD(a, b) d`, and $c$ is *any* common divisor of $a$ and $b$ (i.e. $c \mid a$ and $c \mid b$), then $c \mid d$.

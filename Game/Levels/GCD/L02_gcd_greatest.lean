@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L02_gcd_def
+import Game.Levels.GCD.L01_gcd_def
 
 World "GCD"
-Level 3
+Level 2
 Title "The GCD Really Is the Greatest"
 
 Introduction "

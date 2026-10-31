@@ -1,9 +1,16 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L01_dvd_mul
+import Game.Metadata
+import Game.Levels.Definitions
+import Game.Doc.Definitions
+import Game.Doc.Tactics
+import Game.Doc.Theorems.GCD
+
+import Game.Levels.Congruence
+import Game.Levels.Divisibility
 
 World "GCD"
-Level 2
+Level 1
 Title "Meeting the GCD"
 
 NewDefinition IsGCD

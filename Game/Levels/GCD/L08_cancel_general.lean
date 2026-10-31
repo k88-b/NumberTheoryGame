@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.GCD.L08_gcd_div_coprime
+import Game.Levels.GCD.L07_gcd_div_coprime
 
 World "GCD"
-Level 9
+Level 8
 Title "The General Cancellation Law"
 
 Introduction "
