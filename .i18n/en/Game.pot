@@ -384,12 +384,6 @@ msgstr ""
 msgid "The remainder modulo 5 depends only on the last digit."
 msgstr ""
 
-#. §0: `obtain`
-#. §1: `have`
-#: Game.Levels.GCD.L02_gcd_greatest
-msgid "Excellent! You combined a deeply nested §0, two applications of a previous lemma via §1, and the familiar witness-gluing pattern. This is the deepest proof so far — and you built it entirely from pieces you already had."
-msgstr ""
-
 #. §0: `rw [h]`
 #. §1: `h`
 #. §2: `h : a * k = b`
@@ -790,6 +784,47 @@ msgid "**Shrinking the Modulus**\n"
 "If §0 and §1, then §2."
 msgstr ""
 
+#. §0: $d$
+#. §1: `IsGCD(a, b) d`
+#. §2: $a$
+#. §3: $b$
+#. §4: $d$
+#. §5: `IsGCD(a, b) d`
+#. §6: $c$
+#. §7: $a$
+#. §8: $b$
+#. §9: $c \\mid a$
+#. §10: $c \\mid b$
+#. §11: $c \\mid d$
+#. §12: $d = a \\cdot x + b \\cdot y$
+#. §13: $a$
+#. §14: $b$
+#. §15: `dvd_lin_comb_int`
+#. §16: $a$
+#. §17: $b$
+#. §18: $a \\cdot x + b \\cdot y$
+#. §19: `unfold IsGCD at h`
+#. §20: $x, y$
+#. §21: $a \\cdot x + b \\cdot y = d$
+#. §22: `obtain`
+#. §23: `⟨⟨hda, hdb⟩, x, y, hxy⟩`
+#. §24: $c \\mid d$
+#. §25: `rw [← hxy]`
+#. §26: $c \\mid a \\cdot x + b \\cdot y$
+#. §27: `dvd_lin_comb_int`
+#: Game.Levels.GCD.L02_gcd_greatest
+msgid "Now for the payoff of our definition: let's show that any §0 satisfying §1 is truly a *greatest* common divisor — meaning every other common divisor of §2 and §3 also divides §4.\n"
+"\n"
+"Formulation: if §5 holds, and §6 is *any* common divisor of §7 and §8 (§9 and §10), then §11.\n"
+"\n"
+"Why is this so easy with our Bézout-style definition? Because §12 is a **linear combination** of §13 and §14 — and in the final boss of World 1 (§15), you already proved that any common divisor of §16 and §17 divides *every* linear combination §18!\n"
+"\n"
+"**Strategy:**\n"
+"1. §19 to reveal the two divisibility facts and the Bézout witnesses §20 with §21. Since this is a nested conjunction-with-an-existential, §22 can peel apart all the layers at once with a pattern like §23.\n"
+"2. Rewrite the goal §24 backwards using §25 to turn it into §26.\n"
+"3. Close the goal in one line using §27 from World 1!"
+msgstr ""
+
 #: Game.Levels.DivRules.L04_div4
 msgid "The remainder modulo 4 depends only on the last two digits."
 msgstr ""
@@ -815,8 +850,8 @@ msgid "Linear Combinations (Boss)"
 msgstr ""
 
 #. §0: `obtain`
-#. §1: `use`
-#. §2: `rw`
+#. §1: `rw`
+#. §2: `use`
 #. §3: `ring`
 #: Game.Levels.Divisibility.L10_multiples_of_6
 msgid "Spot on! This four-step rhythm — §0, §1, §2, §3 — is the bread and butter of divisibility proofs."
@@ -1065,14 +1100,6 @@ msgid "Suppose we know that §0. Can we conclude that §1?\n"
 "*(Remember the syntax tip: when writing your own code with §4, you need to use the standard Lean syntax without parentheses or commas, like §5)*"
 msgstr ""
 
-#. §0: `use`
-#. §1: $a = 1 \\cdot a$
-#. §2: `ring`
-#. §3: `one_dvd_int`
-#: Game.Levels.Divisibility.L04_one_dvd
-msgid "Great job! Whenever §0 leaves you with an algebraic identity like §1, §2 cleans it right up. This theorem is now saved in your inventory as §3!"
-msgstr ""
-
 #: Game.Levels.LinCong.L11_poly
 msgid "🎉 Congratulations on completing World 4! 🎉\n"
 "\n"
@@ -1143,12 +1170,6 @@ msgstr ""
 msgid "**Every Integer Divides Zero**\n"
 "\n"
 "For any integer §0: §1."
-msgstr ""
-
-#. §0: `«{h}»`
-#. §1: `obtain ⟨⟨hda, hdb⟩, x, y, hxy⟩ := «{h}»`
-#: Game.Levels.GCD.L02_gcd_greatest
-msgid "Your hypothesis §0 is now a nested conjunction with an existential. Extract everything at once using §1."
 msgstr ""
 
 #: Game.Levels.Congruence.L07_add_mul_mod
@@ -1267,6 +1288,10 @@ msgstr ""
 msgid "Congruence modulo m is transitive."
 msgstr ""
 
+#: Game.Levels.GCD.L07_gcd_div_coprime
+msgid "Dividing by the gcd produces coprime numbers."
+msgstr ""
+
 #. §0: $a \\cdot c \\equiv b \\cdot c \\pmod m$
 #. §1: `IsGCD(c, m) d`
 #. §2: $d \\neq 0$
@@ -1302,10 +1327,6 @@ msgid "Time to combine the last two levels into the *fully general* cancellation
 "4. Feed both pieces into §17 (Level 6) to finish in one line!\n"
 "\n"
 "This is exactly the reuse pattern from §18 back in World 2: build small intermediate facts with §19, then §20 the final theorem."
-msgstr ""
-
-#: Game.Levels.GCD.L07_gcd_div_coprime
-msgid "Dividing by the gcd produces coprime numbers."
 msgstr ""
 
 #: Game.Levels.LinCong.L02_inv_reverse
@@ -2018,44 +2039,6 @@ msgstr ""
 msgid "level completed with warnings… 🎭"
 msgstr ""
 
-#. §0: $d$
-#. §1: `IsGCD(a, b) d`
-#. §2: $a$
-#. §3: $b$
-#. §4: $d$
-#. §5: `IsGCD(a, b) d`
-#. §6: $c$
-#. §7: $a$
-#. §8: $b$
-#. §9: $c \\mid a$
-#. §10: $c \\mid b$
-#. §11: $c \\mid d$
-#. §12: `unfold IsGCD at h`
-#. §13: $x, y$
-#. §14: $a \\cdot x + b \\cdot y = d$
-#. §15: `obtain`
-#. §16: `⟨⟨hda, hdb⟩, x, y, hxy⟩`
-#. §17: `dvd_mul_of_dvd_left_int`
-#. §18: $c \\mid a$
-#. §19: $c \\mid (a \\cdot x)$
-#. §20: $c \\mid (b \\cdot y)$
-#. §21: `have`
-#. §22: `obtain`
-#. §23: `use`
-#. §24: `rw`
-#. §25: `ring`
-#. §26: `dvd_trans_int`
-#: Game.Levels.GCD.L02_gcd_greatest
-msgid "Now for the payoff of our definition: let's show that any §0 satisfying §1 is truly a *greatest* common divisor — meaning every other common divisor of §2 and §3 also divides §4.\n"
-"\n"
-"Formulation: if §5 holds, and §6 is *any* common divisor of §7 and §8 (§9 and §10), then §11.\n"
-"\n"
-"**Strategy:**\n"
-"1. §12 to extract the two divisibility facts and the Bézout witnesses §13 with §14. Since this is a nested conjunction-with-an-existential, §15 can peel apart all the layers at once with a pattern like §16.\n"
-"2. Apply §17 (from the previous level!) to §18 to get §19, and similarly to get §20. Use §21 to store each as an intermediate fact.\n"
-"3. §22 witnesses from both new facts, §23 their sum, then §24 and §25 to finish — exactly the witness-gluing pattern you used for §26 in World 1."
-msgstr ""
-
 #: Game.Levels.DivRules.L03_div5
 msgid "Divisibility by 5"
 msgstr ""
@@ -2194,6 +2177,11 @@ msgid "**Euclid's Lemma**\n"
 "If §0 and §1 is coprime to §2, then §3."
 msgstr ""
 
+#. §0: `dvd_lin_comb_int`
+#: Game.Levels.GCD.L02_gcd_greatest
+msgid "Excellent! Because you already conquered linear combinations in World 1 (§0), proving that our Bézout-style GCD dominates every other common divisor took just four lines!"
+msgstr ""
+
 #: Game.Levels.Congruence.L03_mod_trans
 msgid "Transitivity of Congruences"
 msgstr ""
@@ -2239,10 +2227,6 @@ msgstr ""
 #. §2: `«{d2}» ∣ «{m}»`
 #: Game.Levels.GCD.L09_gcd_shift
 msgid "Symmetrically, show §0 using the fact that §1 and §2."
-msgstr ""
-
-#: Game.Levels.GCD.L02_gcd_greatest
-msgid "Use the theorem from Level 1!"
 msgstr ""
 
 #. §0: `hx : x = 42`
@@ -2339,15 +2323,15 @@ msgstr ""
 msgid "An interactive introduction to Number Theory and modular arithmetic."
 msgstr ""
 
-#: Game.Levels.GCD.L08_cancel_general
-msgid "The General Cancellation Law"
-msgstr ""
-
 #. §0: $a - a = 0$
 #. §1: $m \\mid 0$
 #. §2: $a \\equiv a \\pmod m$
 #: Game.Levels.Congruence.L01_mod_refl
 msgid "Great! Because §0, and §1, it immediately follows that §2."
+msgstr ""
+
+#: Game.Levels.GCD.L08_cancel_general
+msgid "The General Cancellation Law"
 msgstr ""
 
 #. §0: $m$
@@ -2942,6 +2926,14 @@ msgstr ""
 #: Game.Doc.Tactics
 msgid "The §0 tactic is used to prove goals consisting of a logical AND (§1).\n"
 "It splits the goal §2 into two separate goals: §3 and §4."
+msgstr ""
+
+#. §0: `use`
+#. §1: $a = 1 \\cdot a$
+#. §2: `ring`
+#. §3: `one_dvd_int`
+#: Game.Levels.Divisibility.L04_one_dvd
+msgid "Great job! Whenever §0 leaves you with an algebraic identity like §1, §2 cleans it right up. §3 is now added to your toolkit!"
 msgstr ""
 
 #. §0: `mod_cancel_coprime`
