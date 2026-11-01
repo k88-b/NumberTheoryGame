@@ -48,6 +48,7 @@ and divisibility, translating classical pen-and-paper mathematics into rigorous 
 ## Credits
 
 * **Creator:** Konstantin Belyanin
+* **Additional thanks:** Jon Eugster, Marcus Zibrowius, Ruslan Shvedov
 
 ## Resources
 
