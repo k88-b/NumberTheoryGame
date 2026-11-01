@@ -6,6 +6,8 @@ import Game.Doc.Definitions
 import Game.Doc.Tactics
 import Game.Doc.Theorems.Congruence
 
+import Game.Levels.Divisibility
+
 World "Congruence"
 Level 1
 Title "Modular Arithmetic: Reflexivity"
