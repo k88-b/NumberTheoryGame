@@ -94,14 +94,3 @@ $x - a$ is a multiple of both $m$ and $n$ separately. If $m$ and $n$ share no co
 **Example:** $12$ is a multiple of both $3$ and $4$ (coprime!), and indeed $12$ is a multiple of $3 \cdot 4 = 12$.
 -/
 TheoremDoc crt_glue as "crt_glue" in "LinCong"
-
-
-/--
-**Polynomial Congruences**
-
-If $a \equiv b \pmod m$, then $P(a) \equiv P(b) \pmod m$ for any integer polynomial $P$.
-
-**Intuition:**
-This is the reason modular arithmetic is genuinely useful and not just a curiosity: congruence mod $m$ is compatible with *every* polynomial operation, so you can reduce numbers mod $m$ at any point in a calculation without changing the final remainder. It's what makes "clock arithmetic" behave like real arithmetic.
--/
-TheoremDoc polynomial_cong as "polynomial_cong" in "LinCong"

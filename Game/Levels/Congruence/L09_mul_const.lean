@@ -1,17 +1,16 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L04_add
+import Game.Levels.Congruence.L08_add_const
 
 World "Congruence"
-Level 5
+Level 9
 Title "Multiplying by a Common Factor"
 
 Introduction "
-Next, let's prove that we can multiply both sides of a congruence by any integer $c$.
+Now let's move from addition to multiplication. As a first step, let's show that we can scale both sides of a congruence by any integer $c$:
 If $a \\equiv b \\pmod m$, then $a \\cdot c \\equiv b \\cdot c \\pmod m$.
 
-This is a direct application of what you already know.
-Rewrite $a \\cdot c - b \\cdot c$ as $(a - b) \\cdot c$ and close the goal!
+This simple scaling rule will be our stepping stone to multiplying any two congruences together in the next level.
 "
 
 
@@ -29,5 +28,5 @@ Statement mod_mul_const (a b c m : ℤ) (h : a ≡ b (mod m)) : (a * c) ≡ (b *
 
 
 Conclusion "
-Very smooth. Keep this theorem (`mod_mul_const`) in mind, it will be very useful!
+Very smooth. Keep `mod_mul_const` in mind — you're going to put it to work right now!
 "

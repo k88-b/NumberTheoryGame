@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L08_pow
+import Game.Levels.Congruence.L12_pow
 
 World "Congruence"
-Level 9
+Level 13
 Title "Scaling the Modulus"
 
 Introduction "

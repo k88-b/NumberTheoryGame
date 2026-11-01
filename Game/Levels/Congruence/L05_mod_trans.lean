@@ -1,20 +1,16 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L02_mod_symm
+import Game.Levels.Congruence.L04_mod_symm
 
 World "Congruence"
-Level 3
+Level 5
 Title "Transitivity of Congruences"
 
 Introduction "
-To prove that $\\equiv$ is a true equivalence relation, we must prove **transitivity**:
-If $a \\equiv b$ and $b \\equiv c$, then $a \\equiv c$.
+The final pillar of an equivalence relation is **transitivity**:
+If $a \\equiv b \\pmod m$ and $b \\equiv c \\pmod m$, then $a \\equiv c \\pmod m$.
 
-You know the drill:
-1. Use `unfold ModEq at *` to reveal the definitions in your goals and hypotheses.
-2. `obtain` the witnesses $k_1$ and $k_2$ from your hypotheses.
-3. Use algebra (`have`) to rewrite $a - c$ as $(a - b) + (b - c)$.
-4. Apply your rewrites and let `ring` finish the job!
+This is the property that allows us to chain long sequences of congruences together, stepping from one expression to the next just like we do with standard equalities.
 "
 
 
@@ -33,5 +29,5 @@ Statement mod_trans (a b c m : ℤ) (h1 : a ≡ b (mod m)) (h2 : b ≡ c (mod m)
   ring
 
 Conclusion "
-Excellent! You have successfully proved transitivity, completely confirming that congruences behave just like regular equality.
+Excellent! Reflexivity, symmetry, and transitivity are now complete — congruence modulo $m$ is officially an equivalence relation.
 "

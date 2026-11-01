@@ -118,3 +118,27 @@ So if two numbers are congruent modulo 15, they are automatically congruent modu
 This is a crucial stepping stone towards the Chinese Remainder Theorem!
 -/
 TheoremDoc mod_split as "mod_split" in "Congruence"
+
+
+/--
+-/
+TheoremDoc dvd_imp_mod_zero_int as "dvd_imp_mod_zero" in "Congruence"
+
+/--
+-/
+TheoremDoc mod_sub_int as "mod_sub" in "Congruence"
+
+/--
+-/
+TheoremDoc mod_add_const_int as "mod_add_const" in "Congruence"
+
+
+/--
+**Polynomial Congruences**
+
+If $a \equiv b \pmod m$, then $P(a) \equiv P(b) \pmod m$ for any integer polynomial $P$.
+
+**Intuition:**
+This is the reason modular arithmetic is genuinely useful and not just a curiosity: congruence mod $m$ is compatible with *every* polynomial operation, so you can reduce numbers mod $m$ at any point in a calculation without changing the final remainder. It's what makes "clock arithmetic" behave like real arithmetic.
+-/
+TheoremDoc polynomial_cong as "polynomial_cong" in "Congruence"

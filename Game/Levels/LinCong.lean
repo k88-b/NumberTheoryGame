@@ -8,7 +8,6 @@ import Game.Levels.LinCong.L07_sol_shift
 import Game.Levels.LinCong.L08_euclid
 import Game.Levels.LinCong.L09_crt_exists
 import Game.Levels.LinCong.L10_crt_glue
-import Game.Levels.LinCong.L11_poly
 
 World "LinCong"
 Title "Linear Congruences and CRT"

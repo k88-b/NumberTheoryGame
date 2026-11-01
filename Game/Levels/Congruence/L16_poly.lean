@@ -1,22 +1,22 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.LinCong.L10_crt_glue
+import Game.Levels.Congruence.L15_mod_split
 
-World "LinCong"
-Level 11
-Title "Polynomial Congruences (Victory Lap)"
+World "Congruence"
+Level 16
+Title "Polynomial Congruences (Boss)"
 
 Introduction "
-You did it — the mountain of linear congruences is behind you. This last level of the world isn't here to test you; it's a victory lap.
+Welcome to the final boss of World 2!
 
-All the tools you've built — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if $a \\equiv b \\pmod m$, then **any** polynomial with integer coefficients evaluated at $a$ and $b$ stays congruent modulo $m$ too.
+All the tools you've built in this world — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if $a \\equiv b \\pmod m$, then **any** polynomial with integer coefficients evaluated at $a$ and $b$ stays congruent modulo $m$ too.
 
 Let's prove it for a quadratic: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b + c_0 \\pmod m$.
 
-Nothing new to invent here — just snap together `mod_pow`, `mod_add`, `mod_mul_const`, and `mod_refl` from World 2, piece by piece, and enjoy watching it all just... work.
+Nothing new to invent here — just snap together `mod_pow`, `mod_add`, `mod_mul_const`, and `mod_refl` piece by piece, and enjoy watching it all just... work.
 "
 
-
+/-- Polynomials preserve congruences. -/
 Statement polynomial_cong (a b c0 c1 c2 m : ℤ) (h : a ≡ b (mod m)) : (c2 * a^2 + c1 * a + c0) ≡ (c2 * b^2 + c1 * b + c0) (mod m) := by
   have h_pow2 : (a^2) ≡ (b^2) (mod m)
   · exact mod_pow a b m 2 h
@@ -53,10 +53,11 @@ Statement polynomial_cong (a b c0 c1 c2 m : ℤ) (h : a ≡ b (mod m)) : (c2 * a
 
 
 Conclusion "
-🎉 Congratulations on completing World 4! 🎉
+🎉 AMAZING! 🎉
 
-And there it is — modular arithmetic behaving exactly like a ring should!
+You have conquered World 2! You've successfully built an entire algebraic toolkit for congruences — and showed that modular arithmetic behaves exactly like a ring should.
 
-Next up is World 5 (Divisibility Rules). Think of it as a short breather after the heavy lifting of linear congruences, and a perfect preparation for the final practical challenges ahead. You get to sit back, relax, and watch how these high-level theorems effortlessly crush the classical math rules you learned in school.
+You learned how to use `have` to build intermediate steps, `exact` to reuse theorems, `induction'` for powers, and `constructor` to break down logical conjunctions!
+
+Next up is World 3, where we will dive into the Greatest Common Divisor (GCD) and learn how to *cancel* numbers out of congruences.
 "
-

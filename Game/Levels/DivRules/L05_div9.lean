@@ -15,7 +15,7 @@ If we call the individual digits $c_2$, $c_1$, and $c_0$, the number is written 
 Notice anything? This is a polynomial evaluated at 10!
 We want to show it is congruent to the sum of its digits: $c_2 \\cdot 1^2 + c_1 \\cdot 1 + c_0$, which is the exact same polynomial evaluated at 1.
 
-Since $10 \\equiv 1 \\pmod 9$, your ultimate weapon `polynomial_cong` from World 4 will solve this instantly.
+Since $10 \\equiv 1 \\pmod 9$, your ultimate weapon `polynomial_cong` from World 2 will solve this instantly.
 
 *(We prove this here for 3-digit numbers as a clean, concrete illustration — the exact same argument, with a longer polynomial, proves it for numbers of any length.)*
 "

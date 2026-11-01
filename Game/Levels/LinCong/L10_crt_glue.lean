@@ -58,7 +58,6 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
 
   ring
 
-
 Conclusion "
 🎉 YOU DEFEATED THE FINAL BOSS! 🎉
 
@@ -66,5 +65,5 @@ Together, `crt_exists` and `crt_glue` give you the full Chinese Remainder Theore
 
 Starting from a single Bézout-style definition of the GCD, you built cancellation laws, modular inverses, Euclid's Lemma, and now the CRT itself — one of the oldest and most celebrated theorems in number theory, formally verified, entirely by you.
 
-One more level awaits — not to test you further, but to let you enjoy the view.
+Next up is World 5 (Divisibility Rules). Think of it as a short breather after the heavy lifting of linear congruences, and a perfect preparation for the final practical challenges ahead!
 "

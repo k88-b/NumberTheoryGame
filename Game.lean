@@ -1,9 +1,9 @@
 -- Import all worlds
 import Game.Levels.Divisibility
 import Game.Levels.Congruence
+import Game.Levels.DivRules
 import Game.Levels.GCD
 import Game.Levels.LinCong
-import Game.Levels.DivRules
 import Game.Levels.Problems
 
 Title "Number Theory Game"
@@ -71,10 +71,10 @@ If you experience issues / bugs with the game's content, please open an
 
 -- Dependency tree: Players must complete worlds in this order
 Dependency Divisibility → Congruence
+Dependency Congruence → DivRules
 Dependency Congruence → GCD
 Dependency GCD → LinCong
-Dependency LinCong → DivRules
-Dependency DivRules → Problems
+Dependency LinCong → Problems
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en" "ru"
