@@ -1,6 +1,8 @@
 -- Import all worlds
 import Game.Levels.Divisibility
+import Game.Levels.Divisors
 import Game.Levels.Congruence
+import Game.Levels.ModArith
 import Game.Levels.DivRules
 import Game.Levels.GCD
 import Game.Levels.LinCong
@@ -17,9 +19,9 @@ We will start from the basic definition of divisibility and build our way up
 to modular arithmetic and congruences.
 
 Our ultimate goal is to understand how remainders work, how to safely manipulate
-equations modulo $m$, and eventually reach powerful results like the
-Chinese Remainder Theorem. We will do this by solving levels in a computer
-puzzle game called Lean.
+equations modulo $m$, prove the classic divisibility rules, and reach powerful
+results like the Chinese Remainder Theorem. We will do this by solving levels
+in a computer puzzle game called Lean.
 
 # Read this.
 
@@ -70,11 +72,14 @@ If you experience issues / bugs with the game's content, please open an
 "
 
 -- Dependency tree: Players must complete worlds in this order
-Dependency Divisibility → Congruence
-Dependency Congruence → DivRules
+Dependency Divisibility → Divisors
+Dependency Divisors → Congruence
 Dependency Congruence → GCD
 Dependency GCD → LinCong
+Dependency Congruence → ModArith
+Dependency ModArith → DivRules
 Dependency LinCong → Problems
+Dependency DivRules → Problems
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en" "ru"

@@ -6,9 +6,10 @@ import Game.Doc.Definitions
 import Game.Doc.Tactics
 import Game.Doc.Theorems.LinCong
 
-import Game.Levels.GCD
-import Game.Levels.Congruence
 import Game.Levels.Divisibility
+import Game.Levels.Divisors
+import Game.Levels.Congruence
+import Game.Levels.GCD
 
 
 World "LinCong"
@@ -37,7 +38,7 @@ Statement inv_exists (a m : ℤ) (h : IsGCD(a, m) 1) : ∃ x : ℤ, (a * x) ≡ 
   · ring
 
   rw [h_eq, hxy]
-  · ring
+  ring
 
 
 Conclusion "

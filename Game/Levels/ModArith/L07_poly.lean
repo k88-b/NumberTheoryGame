@@ -1,15 +1,15 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L15_mod_split
+import Game.Levels.ModArith.L06_pow
 
-World "Congruence"
-Level 16
+World "ModArith"
+Level 7
 Title "Polynomial Congruences (Boss)"
 
 Introduction "
-Welcome to the final boss of World 2!
+Welcome to the final boss of Modular Arithmetic!
 
-All the tools you've built in this world — reflexivity, addition, multiplication, scaling, and powers of congruences — combine into one satisfying finishing move: if $a \\equiv b \\pmod m$, then **any** polynomial with integer coefficients evaluated at $a$ and $b$ stays congruent modulo $m$ too.
+All the tools you've built — reflexivity, addition, scaling, and powers of congruences — combine into one satisfying finishing move: if $a \\equiv b \\pmod m$, then **any** polynomial with integer coefficients evaluated at $a$ and $b$ stays congruent modulo $m$ too.
 
 Let's prove it for a quadratic: $c_2 a^2 + c_1 a + c_0 \\equiv c_2 b^2 + c_1 b + c_0 \\pmod m$.
 
@@ -55,9 +55,7 @@ Statement polynomial_cong (a b c0 c1 c2 m : ℤ) (h : a ≡ b (mod m)) : (c2 * a
 Conclusion "
 🎉 AMAZING! 🎉
 
-You have conquered World 2! You've successfully built an entire algebraic toolkit for congruences — and showed that modular arithmetic behaves exactly like a ring should.
+You have conquered Modular Arithmetic! You've built a complete algebraic toolkit for congruences and proved `polynomial_cong`.
 
-You learned how to use `have` to build intermediate steps, `exact` to reuse theorems, `induction'` for powers, and `constructor` to break down logical conjunctions!
-
-Next up is World 3, where we will dive into the Greatest Common Divisor (GCD) and learn how to *cancel* numbers out of congruences.
+Next up in this branch is **Divisibility Rules**, where you will see how `polynomial_cong`, `mod_shrink`, and `mod_add_multiple` turn the famous school divisibility rules for 2, 3, 4, 5, 9, 10, and 11 into two-line proofs!
 "

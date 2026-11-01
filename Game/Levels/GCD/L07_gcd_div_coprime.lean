@@ -13,7 +13,7 @@ Yes — and this is exactly what will let us reduce a *general* cancellation pro
 
 We need $d \\neq 0$ for this level. (If $d = 0$ then $c = m = 0$ too, and \"dividing by $d$\" doesn't make sense — you'll see exactly where this hypothesis is used.)
 
-**Strategy:** unfold `IsGCD c m d` to get the Bézout identity $c \\cdot x + m \\cdot y = d$. Substitute $c = c_1 \\cdot d$ and $m = m_1 \\cdot d$ to get $c_1 \\cdot d \\cdot x + m_1 \\cdot d \\cdot y = d$, i.e. $d \\cdot (c_1 \\cdot x + m_1 \\cdot y) = d \\cdot 1$. Since $d \\neq 0$, you can *cancel* it from both sides using the new theorem `mul_left_cancel₀`, leaving exactly the Bézout identity you need for $c_1, m_1$ — with the very same $x, y$!
+**Strategy:** `unfold IsGCD at h` to get the Bézout identity $c \\cdot x + m \\cdot y = d$. Substitute $c = c_1 \\cdot d$ and $m = m_1 \\cdot d$ to get $c_1 \\cdot d \\cdot x + m_1 \\cdot d \\cdot y = d$, i.e. $d \\cdot (c_1 \\cdot x + m_1 \\cdot y) = d \\cdot 1$. Since $d \\neq 0$, you can *cancel* it from both sides using the new theorem `mul_left_cancel₀`, leaving exactly the Bézout identity you need for $c_1, m_1$ — with the very same $x, y$!
 "
 
 

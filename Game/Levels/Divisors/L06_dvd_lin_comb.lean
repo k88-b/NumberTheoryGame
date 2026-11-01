@@ -1,18 +1,18 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L13_dvd_trans
+import Game.Levels.Divisors.L05_dvd_trans
 
-World "Divisibility"
-Level 14
+World "Divisors"
+Level 6
 Title "Linear Combinations (Boss)"
 
 Introduction "
-Welcome to the final boss of World 1!
+Welcome to the final boss of World 2!
 
 An expression of the form $a \\cdot x + b \\cdot y$ is called a **linear combination** of $a$ and $b$.
 Here you will prove one of the most important facts in all of number theory: if $d$ divides both $a$ and $b$, then $d$ divides **any** linear combination $a \\cdot x + b \\cdot y$!
 
-This combines the scaling principle from Level 11 ($d \\mid a \\implies d \\mid a \\cdot x$) with the addition principle from Level 12 ($d \\mid u$ and $d \\mid v \\implies d \\mid u + v$) into a single proof.
+This combines the scaling principle from Level 3 ($d \\mid a \\implies d \\mid a \\cdot x$) with the addition principle from Level 4 ($d \\mid u$ and $d \\mid v \\implies d \\mid u + v$) into a single proof.
 
 Unpack both `ha` and `hb` with `obtain`, substitute them into the goal, and construct the combined witness!
 "
@@ -29,8 +29,8 @@ Statement dvd_lin_comb_int (d a b x y : ℤ) (ha : d ∣ a) (hb : d ∣ b) : d �
 Conclusion "
 🎉 INCREDIBLE! 🎉
 
-You have conquered the first world! By combining scaling and addition of witnesses into $k_1 \\cdot x + k_2 \\cdot y$, you proved that common divisors always divide linear combinations (`dvd_lin_comb_int`) — a theorem that will later power Bézout's Identity and the Greatest Common Divisor.
+You have conquered World 2! By combining scaling and addition of witnesses into $k_1 \\cdot x + k_2 \\cdot y$, you proved that common divisors always divide linear combinations (`dvd_lin_comb_int`) — a theorem that will later power Bézout's Identity and the Greatest Common Divisor.
 
 You've mastered the foundational tactics `use`, `obtain`, `rw`, and `ring`.
-Get ready for World 2, where we will introduce a massive new concept built directly on divisibility: **Modular Arithmetic (Congruences)**!
+Get ready for World 3, where we will introduce a massive new concept built directly on divisibility: **Modular Congruences**!
 "

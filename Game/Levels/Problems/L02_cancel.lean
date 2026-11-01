@@ -9,7 +9,7 @@ Title "Cancelling Constants"
 Introduction "
 Suppose we know that $14 \\cdot x \\equiv 14 \\cdot y \\pmod 9$. Can we conclude that $x \\equiv y \\pmod 9$?
 
-In World 3, you proved `mod_cancel_coprime`, which says we can cancel a factor if it's coprime to the modulus.
+In the GCD world, you proved `mod_cancel_coprime`, which says we can cancel a factor if it's coprime to the modulus.
 To use it here, you first need to prove that 14 and 9 are coprime, meaning `IsGCD(14, 9) 1`.
 
 *(Remember the syntax tip: when writing your own code with `have`, you need to use the standard Lean syntax without parentheses or commas, like `IsGCD 14 9 1`)*

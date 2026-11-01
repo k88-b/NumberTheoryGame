@@ -4,11 +4,10 @@ import Game.Metadata
 import Game.Levels.Definitions
 import Game.Doc.Theorems.DivRules
 
-
-import Game.Levels.GCD
-import Game.Levels.Congruence
 import Game.Levels.Divisibility
-import Game.Levels.LinCong
+import Game.Levels.Divisors
+import Game.Levels.Congruence
+import Game.Levels.ModArith
 
 World "DivRules"
 Level 1
@@ -21,7 +20,7 @@ How do we write \"the last digit\" in math? Think about how numbers are built. Y
 So, any integer can mathematically be written as $10 \\cdot k + d$, where $d$ is the last digit and $k$ is the rest of the number.
 
 We want to prove that $10 \\cdot k + d \\equiv d \\pmod{10}$.
-This is a direct consequence of `mod_add_multiple` from World 2! You just need to massage the equation slightly.
+This is a direct consequence of `mod_add_multiple` from the Congruence world! You just need to massage the equation slightly.
 "
 
 /-- The remainder of a number modulo 10 is its last digit. -/

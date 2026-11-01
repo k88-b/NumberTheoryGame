@@ -10,7 +10,7 @@ Introduction "
 Is there a number that ends in 7 (modulo 10) but leaves a remainder of 2 when divided by 3?
 In other words, does there exist an $x$ such that $x \\equiv 7 \\pmod{10}$ and $x \\equiv 2 \\pmod 3$?
 
-Instead of guessing, we can use the `crt_exists` theorem you proved in World 4. It guarantees a solution exists as long as the moduli are coprime.
+Instead of guessing, we can use the `crt_exists` theorem you proved in the Linear Congruences world. It guarantees a solution exists as long as the moduli are coprime.
 
 All you need to do is prove `IsGCD(10, 3) 1` and feed it to the theorem!
 *(Remember the syntax tip from the previous level: you need to use the standard Lean syntax `IsGCD 10 3 1` in your `have` block.)*

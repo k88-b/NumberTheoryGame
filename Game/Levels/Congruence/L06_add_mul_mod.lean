@@ -1,16 +1,16 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L10_mul
+import Game.Levels.Congruence.L05_mod_trans
 
 World "Congruence"
-Level 11
+Level 6
 Title "Shifting by the Modulus"
 
 Introduction "
 In modular arithmetic, the modulus $m$ essentially acts like zero. That means adding or subtracting any multiple of $m$ to a number doesn't change its remainder at all:
 $$a + k \\cdot m \\equiv a \\pmod m$$
 
-It's a quick, refreshing lemma after the heavy lifting of multiplication, and one we will rely on later!
+Let's prove this fundamental shifting rule!
 "
 
 
@@ -21,5 +21,5 @@ Statement mod_add_multiple (a k m : ℤ) : (a + k * m) ≡ a (mod m) := by
   ring
 
 Conclusion "
-Short and sweet. This fact will be a lifesaver when we reach linear congruences in World 4!
+Short and sweet. This fact (`mod_add_multiple`) will be a lifesaver when we prove divisibility rules and solve linear congruences!
 "

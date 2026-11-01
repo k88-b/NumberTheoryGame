@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L10_multiples_of_6
+import Game.Levels.Divisors.L02_multiples_of_6
 
-World "Divisibility"
-Level 11
+World "Divisors"
+Level 3
 Title "A Divisor of a Factor Divides the Product"
 
 Introduction "

@@ -9,7 +9,7 @@ Title "The Inverse is Unique"
 Introduction "
 If $x$ and $y$ are both inverses of $a$ modulo $m$, are they the same?
 
-We know $a \\cdot x \\equiv 1 \\pmod m$ and $a \\cdot y \\equiv 1 \\pmod m$. This implies $a \\cdot x \\equiv a \\cdot y \\pmod m$. Since $a$ has an inverse, $a$ and $m$ are coprime. You can now use your ultimate weapon from World 3: `mod_cancel_coprime`!
+We know $a \\cdot x \\equiv 1 \\pmod m$ and $a \\cdot y \\equiv 1 \\pmod m$. This implies $a \\cdot x \\equiv a \\cdot y \\pmod m$. Since $a$ has an inverse, $a$ and $m$ are coprime. You can now use your ultimate weapon from the GCD world: `mod_cancel_coprime`!
 
 **Strategy:**
 1. **Prove coprimality:** The theorem `inv_implies_coprime` (from the previous level) requires a proof that *some* inverse exists (`∃ k, a * k ≡ 1`). You can provide $x$ as the witness to build this existence proof, and then extract the coprimality fact.
@@ -19,7 +19,7 @@ We know $a \\cdot x \\equiv 1 \\pmod m$ and $a \\cdot y \\equiv 1 \\pmod m$. Thi
 
 
 Statement inv_unique_int (a x y m : ℤ) (hx : (a * x) ≡ 1 (mod m)) (hy : (a * y) ≡ 1 (mod m)) : x ≡ y (mod m) := by
-  Hint "Following step 1 of the strategy, create a proof that *some* inverse exists using {x} as the witness: `have h_exists : ∃ k, ({a} * k) ≡ 1 (mod {m})`."
+  Hint "Following step 1 of the strategy, create a proof that *some* inverse exists using `{x}` as the witness: `have h_exists : ∃ k, ({a} * k) ≡ 1 (mod {m})`."
 
   have h_exists : ∃ k, (a * k) ≡ 1 (mod m)
   · use x

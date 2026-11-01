@@ -7,15 +7,15 @@ Level 10
 Title "Chinese Remainder Theorem: Glued (Boss)"
 
 Introduction "
-This is it — the final boss of the Number Theory Game!
+Welcome to the final boss of Linear Congruences and CRT!
 
-Everything you've built across four worlds — Bézout's identity, the cancellation laws, Euclid's Lemma, and CRT existence from the last level — comes together right here.
+Everything you've built in this branch — Bézout's identity, the cancellation laws, Euclid's Lemma, and CRT existence from the last level — comes together right here.
 
 The second half of CRT: if two numbers share the same remainder modulo $m$ and modulo $n$ separately, they share the same remainder modulo $m \\cdot n$ — provided $m$ and $n$ are coprime.
 
 Formally: $x \\equiv a \\pmod m$ and $x \\equiv a \\pmod n$ means $m \\mid (x - a)$ and $n \\mid (x - a)$. Extract the witnesses, equate them, and reach for **Euclid's Lemma**.
 
-**One trap to watch for:** `euclids_lemma` expects coprimality as `IsGCD(n, m) 1`, but your hypothesis is `IsGCD(m, n) 1` — arguments swapped! Fortunately, you already proved `gcd_symm` back in World 3 for this exact moment.
+**One trap to watch for:** `euclids_lemma` expects coprimality as `IsGCD(n, m) 1`, but your hypothesis is `IsGCD(m, n) 1` — arguments swapped! Fortunately, you already proved `gcd_symm` in the GCD world for this exact moment.
 
 **Strategy:**
 1. **Equate the witnesses:** Extract the witnesses for $x - a$, set them equal, and deduce that $m \\mid (k_2 \\cdot n)$.
@@ -59,11 +59,11 @@ Statement crt_glue (x a m n : ℤ) (hm : x ≡ a (mod m)) (hn : x ≡ a (mod n))
   ring
 
 Conclusion "
-🎉 YOU DEFEATED THE FINAL BOSS! 🎉
+🎉 YOU DEFEATED THE CRT BOSS! 🎉
 
 Together, `crt_exists` and `crt_glue` give you the full Chinese Remainder Theorem: a system of coprime congruences always has a solution, and that solution is unique modulo the product.
 
 Starting from a single Bézout-style definition of the GCD, you built cancellation laws, modular inverses, Euclid's Lemma, and now the CRT itself — one of the oldest and most celebrated theorems in number theory, formally verified, entirely by you.
 
-Next up is World 5 (Divisibility Rules). Think of it as a short breather after the heavy lifting of linear congruences, and a perfect preparation for the final practical challenges ahead!
+Once you have also completed the **Modular Arithmetic** and **Divisibility Rules** branch, the grand finale world — **Problems** — will unlock!
 "

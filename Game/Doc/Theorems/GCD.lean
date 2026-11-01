@@ -44,7 +44,7 @@ TheoremDoc gcd_symm as "gcd_symm" in "GCD"
 If $a \cdot c \equiv b \cdot c \pmod m$ and `IsGCD(c, m) 1`, then $a \equiv b \pmod m$.
 
 **Intuition:**
-Multiplying both sides of a congruence by the same number is always safe (World 2!). This theorem shows the *reverse* direction — cancelling out a common factor — is *also* safe, but only when that factor shares no common divisor with the modulus. Coprimality is precisely the condition under which "dividing" makes sense in modular arithmetic.
+Multiplying both sides of a congruence by the same number is always safe. This theorem shows the *reverse* direction — cancelling out a common factor — is *also* safe, but only when that factor shares no common divisor with the modulus. Coprimality is precisely the condition under which "dividing" makes sense in modular arithmetic.
 -/
 TheoremDoc mod_cancel_coprime as "mod_cancel_coprime" in "Congruence"
 
@@ -74,7 +74,7 @@ TheoremDoc gcd_div_coprime as "gcd_div_coprime" in "GCD"
 If $a \cdot c \equiv b \cdot c \pmod m$, `IsGCD(c, m) d` with $d \neq 0$, $c = c_1 \cdot d$ and $m = m_1 \cdot d$, then $a \equiv b \pmod{m_1}$.
 
 **Intuition:**
-This is the fully general version of "dividing" a congruence: you can always cancel a factor $c$ out of a congruence, as long as you also divide the modulus by whatever $c$ and $m$ have in common (`such that IsGCD(c, m) d)`. The coprime case (Level 6) is just the special case $d = 1$, where the modulus doesn't need to shrink at all.
+This is the fully general version of "dividing" a congruence: you can always cancel a factor $c$ out of a congruence, as long as you also divide the modulus by whatever $c$ and $m$ have in common ($d$, where `IsGCD(c, m) d`). The coprime case (Level 6) is just the special case $d = 1$, where the modulus doesn't need to shrink at all.
 -/
 TheoremDoc mod_cancel_general as "mod_cancel_general" in "Congruence"
 

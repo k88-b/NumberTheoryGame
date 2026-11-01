@@ -1,16 +1,16 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L12_pow
+import Game.Levels.Congruence.L06_add_mul_mod
 
 World "Congruence"
-Level 13
+Level 7
 Title "Scaling the Modulus"
 
 Introduction "
-So far, we have only changed the numbers $a$ and $b$. But what if we want to change the modulus $m$ itself?
+So far, the modulus $m$ has stayed fixed. What if we want to change the modulus $m$ itself?
 
-If $a \\equiv b \\pmod m$, then multiplying everything (including the modulus) by $c$ preserves the truth of the statement:
-$a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$.
+If $a \\equiv b \\pmod m$, then multiplying everything (including the modulus) by $c$ preserves the congruence:
+$$a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$$
 
 Unfold the definition and look closely at the algebra.
 "

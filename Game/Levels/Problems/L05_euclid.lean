@@ -10,7 +10,7 @@ Introduction "
 If a number is a multiple of 10, and we know it's written as $x \\cdot 3$, does 10 divide $x$?
 Yes! Because 3 and 10 share no common factors, the 10 must entirely divide the $x$.
 
-This is exactly `euclids_lemma` from World 4: if $m \\mid (a \\cdot c)$ and $\\gcd(c, m) = 1$, then $m \\mid a$.
+This is exactly `euclids_lemma` from the Linear Congruences world: if $m \\mid (a \\cdot c)$ and $\\gcd(c, m) = 1$, then $m \\mid a$.
 
 Let's prove this explicitly for $m = 10$, $a = x$, and $c = 3$.
 "

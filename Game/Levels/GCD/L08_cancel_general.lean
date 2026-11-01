@@ -19,7 +19,7 @@ If $a \\cdot c \\equiv b \\cdot c \\pmod m$ and `IsGCD(c, m) d` with $d \\neq 0$
 3. **Reassemble the congruence:** create the specific hypothesis you need using `have h1' : (a * c1) ≡ (b * c1) (mod m1)`. Prove it by unfolding `ModEq` and using the cancelled equation from step 2.
 4. Feed both pieces into `mod_cancel_coprime` (Level 6) to finish in one line!
 
-This is exactly the reuse pattern from `mod_mul` back in World 2: build small intermediate facts with `have`, then `exact` the final theorem.
+Build small intermediate facts with `have`, then `exact` the final theorem!
 "
 
 
@@ -42,7 +42,7 @@ Statement mod_cancel_general (a b c m d c1 m1 : ℤ) (hd : d ≠ 0) (h1 : (a * c
   have hk2 : a * c1 - b * c1 = m1 * k
   · exact mul_left_cancel₀ hd hk
 
-  Hint (hidden := true) "You have a plain equation now, {a} * {c1} − {b} * {c1} = {m1} * {k}, but mod_cancel_coprime needs an actual congruence, not a bare equation. Wrap it back up: state the congruence, unfold it, and it reduces to exactly the equation you already have."
+  Hint (hidden := true) "You have a plain equation now, `{a} * {c1} - {b} * {c1} = {m1} * {k}`, but `mod_cancel_coprime` needs an actual congruence, not a bare equation. Wrap it back up: state the congruence, unfold it, and it reduces to exactly the equation you already have."
   have h1' : (a * c1) ≡ (b * c1) (mod m1)
   · unfold ModEq
     use k

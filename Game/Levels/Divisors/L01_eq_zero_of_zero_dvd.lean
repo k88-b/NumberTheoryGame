@@ -1,15 +1,15 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L08_rewriting_backwards
+import Game.Levels.Divisibility
 
-World "Divisibility"
-Level 9
+World "Divisors"
+Level 1
 Title "Only Zero Is Divisible by Zero"
 
 NewTactic obtain
 
 Introduction "
-In Level 6, we proved that everything divides $0$ (`a ∣ 0`). What if we flip it around and ask what $0$ can divide (`0 ∣ a`)?
+In World 1, we proved that everything divides $0$ (`a ∣ 0`). What if we flip it around and ask what $0$ can divide (`0 ∣ a`)?
 Only $0$ itself!
 
 Notice a crucial difference here: `h : 0 ∣ a` is now a **hypothesis**, not the goal.

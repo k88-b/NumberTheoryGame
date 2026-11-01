@@ -7,6 +7,7 @@ import Game.Doc.Tactics
 import Game.Doc.Theorems.Congruence
 
 import Game.Levels.Divisibility
+import Game.Levels.Divisors
 
 World "Congruence"
 Level 1
@@ -16,7 +17,7 @@ NewDefinition ModEq
 NewTactic unfold
 
 Introduction "
-Welcome to World 2! Here we introduce one of the most powerful ideas in number theory: **Congruences**.
+Welcome to World 3! Here we introduce one of the most powerful ideas in number theory: **Congruences**.
 
 Often, we don't care about a number itself, only about the remainder it leaves when divided by some modulus $m$ — just like reading a 12-hour clock. Formally, we say that $a \\equiv b \\pmod m$ if $m$ divides their difference $(a - b)$.
 

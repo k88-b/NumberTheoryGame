@@ -10,6 +10,17 @@ TheoremDoc mod_refl as "mod_refl" in "Congruence"
 
 
 /--
+**Divisible Means Congruent to Zero**
+
+If $m \mid a$, then $a \equiv 0 \pmod m$.
+
+**Intuition:**
+Being divisible by $m$ is the exact same thing as leaving a remainder of $0$ modulo $m$.
+-/
+TheoremDoc dvd_imp_mod_zero as "dvd_imp_mod_zero" in "Congruence"
+
+
+/--
 **Symmetry of Congruences**
 
 If $a \equiv b \pmod m$, then $b \equiv a \pmod m$.
@@ -44,6 +55,22 @@ If $12 \equiv 2 \pmod{10}$ and $25 \equiv 5 \pmod{10}$, then $12 + 25 = 37$, whi
 Notice that $2 + 5 = 7$. We just added the remainders safely!
 -/
 TheoremDoc mod_add as "mod_add" in "Congruence"
+
+
+/--
+**Subtracting Congruences**
+
+If $a \equiv b \pmod m$ and $c \equiv d \pmod m$, then $(a - c) \equiv (b - d) \pmod m$.
+-/
+TheoremDoc mod_sub as "mod_sub" in "Congruence"
+
+
+/--
+**Adding a Constant**
+
+If $a \equiv b \pmod m$, then $(a + c) \equiv (b + c) \pmod m$ for any integer $c$.
+-/
+TheoremDoc mod_add_const as "mod_add_const" in "Congruence"
 
 
 /--
@@ -118,19 +145,6 @@ So if two numbers are congruent modulo 15, they are automatically congruent modu
 This is a crucial stepping stone towards the Chinese Remainder Theorem!
 -/
 TheoremDoc mod_split as "mod_split" in "Congruence"
-
-
-/--
--/
-TheoremDoc dvd_imp_mod_zero_int as "dvd_imp_mod_zero" in "Congruence"
-
-/--
--/
-TheoremDoc mod_sub_int as "mod_sub" in "Congruence"
-
-/--
--/
-TheoremDoc mod_add_const_int as "mod_add_const" in "Congruence"
 
 
 /--

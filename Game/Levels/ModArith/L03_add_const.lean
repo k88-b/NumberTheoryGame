@@ -1,12 +1,10 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L07_sub
+import Game.Levels.ModArith.L02_sub
 
-World "Congruence"
-Level 8
+World "ModArith"
+Level 3
 Title "Adding a Constant"
-
-NewTactic exact
 
 Introduction "
 If $a \\equiv b \\pmod m$, adding the same integer $c$ to both sides preserves the congruence:
@@ -16,11 +14,8 @@ We *could* unfold definitions and do the algebra again, but real mathematicians 
 
 Notice that:
 - We know $a \\equiv b \\pmod m$ by hypothesis `h`.
-- We know $c \\equiv c \\pmod m$ by `mod_refl` (from Level 2).
-- We can combine these two facts using `mod_add` (from Level 6)!
-
-**How to apply theorems (`exact`):**
-Check the **Theorems** tab on the right. A theorem's signature tells you exactly what inputs it expects and in what order. Whenever a theorem directly matches your current goal, you can close the goal in one step using the **`exact`** tactic, followed by the theorem's name and its arguments separated by spaces.
+- We know $c \\equiv c \\pmod m$ by `mod_refl` (from the Congruence world).
+- We can combine these two facts using `mod_add` (from Level 1)!
 
 You can combine `have` and `exact` to build proofs step by step:
 1. First, state the intermediate fact you need: `have h_refl : c ≡ c (mod m)`.
@@ -36,5 +31,5 @@ Statement mod_add_const (a b c m : ℤ) (h : a ≡ b (mod m)) : (a + c) ≡ (b +
   exact mod_add a b c c m h h_refl
 
 Conclusion "
-You have officially unlocked the power of theorem reuse with `have` and `exact`! This is how large mathematical libraries are constructed.
+You have mastered combining `have` and `exact` to chain existing theorems together! This is how large mathematical libraries are constructed.
 "

@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L09_eq_zero_of_zero_dvd
+import Game.Levels.Divisors.L01_eq_zero_of_zero_dvd
 
-World "Divisibility"
-Level 10
+World "Divisors"
+Level 2
 Title "Multiples of 6"
 
 Introduction "

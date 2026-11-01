@@ -10,7 +10,7 @@ Introduction "
 If $x_1$ and $x_2$ are both solutions to $a \\cdot x \\equiv b \\pmod m$, how are they related?
 
 They are not necessarily congruent modulo $m$, but they **are** congruent modulo $m_1 = m / d$.
-This perfectly mirrors `mod_cancel_general` from World 3. You can reuse it directly!
+This perfectly mirrors `mod_cancel_general` from the GCD world. You can reuse it directly!
 "
 
 

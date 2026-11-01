@@ -8,7 +8,7 @@ Level 8
 Title "System of Congruences (Boss)"
 
 Introduction "
-Welcome to the final boss of World 6!
+Welcome to the final boss of the Problems world!
 
 In this battle, you are given a system of congruences:
 $3x + 4y \\equiv 0 \\pmod{11}$
@@ -56,7 +56,7 @@ Conclusion "
 
 You have defeated the final boss by elegantly solving a system of congruences and applying Euclid's Lemma!
 
-You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.
+You started from the simplest definition of divisibility and built a massive, formally verified mathematical theory. You conquered congruences, modular arithmetic, divisibility rules, the greatest common divisor, and the Chinese Remainder Theorem — and then used your abstract tools to crush real numerical problems.
 
 Thank you for playing!
 "

@@ -19,7 +19,7 @@ Statement mod_trans (a b c m : ℤ) (h1 : a ≡ b (mod m)) (h2 : b ≡ c (mod m)
   unfold ModEq at *
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
-  Hint (hidden := true) "You know a − b = m * {k1} and b − c = m * {k2}. Add those two equations: a − c = m * ({k1} + {k2}). So the multiplier you need combines {k1} and {k2} by addition."
+  Hint (hidden := true) "You know `{a} - {b} = {m} * {k1}` and `{b} - {c} = {m} * {k2}`. Add those two equations: `{a} - {c} = {m} * ({k1} + {k2})`. So the multiplier you need combines `{k1}` and `{k2}` by addition."
   use k1 + k2
 
   have h_eq : a - c = (a - b) + (b - c)

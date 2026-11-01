@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L11_dvd_mul
+import Game.Levels.Divisors.L03_dvd_mul
 
-World "Divisibility"
-Level 12
+World "Divisors"
+Level 4
 Title "Sums of Multiples"
 
 Introduction "

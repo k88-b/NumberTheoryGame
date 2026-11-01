@@ -3,29 +3,20 @@ import Game.Levels.Congruence.L02_mod_refl
 import Game.Levels.Congruence.L03_dvd_imp_mod_zero
 import Game.Levels.Congruence.L04_mod_symm
 import Game.Levels.Congruence.L05_mod_trans
-import Game.Levels.Congruence.L06_add
-import Game.Levels.Congruence.L07_sub
-import Game.Levels.Congruence.L08_add_const
-import Game.Levels.Congruence.L09_mul_const
-import Game.Levels.Congruence.L10_mul
-import Game.Levels.Congruence.L11_add_mul_mod
-import Game.Levels.Congruence.L12_pow
-import Game.Levels.Congruence.L13_mod_scale
-import Game.Levels.Congruence.L14_mod_dvd
-import Game.Levels.Congruence.L15_mod_split
-import Game.Levels.Congruence.L16_poly
+import Game.Levels.Congruence.L06_add_mul_mod
+import Game.Levels.Congruence.L07_mod_scale
+import Game.Levels.Congruence.L08_mod_dvd
+import Game.Levels.Congruence.L09_mod_split
 
 
 World "Congruence"
-Title "Congruences in Action"
+Title "Meet the Congruence"
 
 Introduction
 "
-Welcome to World 2: Congruences in Action!
+Welcome to World 3: Meet the Congruence!
 
-Here we introduce a massive concept: **Modular Arithmetic (Congruences)**.
+Here we introduce one of the central concepts of number theory: **Modular Congruences** ($a \\equiv b \\pmod m$).
 
-First, you will prove that modular arithmetic forms an equivalence relation. Then, we will unlock its real power: its arithmetic properties. You will prove that you can safely add, multiply, and raise congruences to powers, just like regular equations!
-
-You will also learn how to manipulate the modulus $m$ itself, breaking it apart or scaling it up. Let us dive into the algebra!
+First, you will prove that congruence modulo $m$ forms an equivalence relation (reflexive, symmetric, and transitive) and learn how to shift numbers by multiples of the modulus. Then, you will learn how to manipulate the modulus $m$ itself — scaling it up, shrinking it to a divisor, and splitting a product modulus apart!
 "

@@ -7,7 +7,7 @@ Level 9
 Title "A Shift Doesn't Change the GCD (Boss)"
 
 Introduction "
-Welcome to the final boss of World 3!
+Welcome to the final boss of the GCD world!
 
 We prove the fact that sits at the heart of the **Euclidean Algorithm**: shifting a number by a multiple of $m$ does not change its greatest common divisor with $m$.
 
@@ -82,7 +82,7 @@ Statement gcd_shift_invariant (a k m d1 d2 : ℤ) (hd1 : 0 ≤ d1) (hd2 : 0 ≤ 
 Conclusion "
 🎉 MAGNIFICENT! 🎉
 
-You have conquered World 3! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime cancellation law — the central tool of the whole game — and finished by proving the very fact that powers the Euclidean Algorithm.
+You have conquered the GCD world! You built a working theory of the greatest common divisor from a single Bézout-style definition, proved it truly deserves the name \"greatest\", derived the coprime and general cancellation laws, and finished by proving the very fact that powers the Euclidean Algorithm.
 
-You've mastered nested `obtain`, chained `have`-based lemma reuse, and careful case-by-case algebra. To be continued in World 4, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!
+To be continued in **Linear Congruences and CRT**, where all of this comes together to solve linear congruences and prove the Chinese Remainder Theorem!
 "

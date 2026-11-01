@@ -7,7 +7,7 @@ Level 3
 Title "Divisible Means Congruent to Zero"
 
 Introduction "
-Before continuing with equivalence relations, let's build a direct bridge between World 1 and World 2.
+Before continuing with equivalence relations, let's build a direct bridge between divisibility and congruences.
 
 What does it mean for a number $a$ to be divisible by $m$ in the language of congruences? It simply means that dividing $a$ by $m$ leaves a remainder of $0$ — or in other words, $a \\equiv 0 \\pmod m$.
 "

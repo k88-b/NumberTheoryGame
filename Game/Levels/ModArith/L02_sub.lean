@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L06_add
+import Game.Levels.ModArith.L01_add
 
-World "Congruence"
-Level 7
+World "ModArith"
+Level 2
 Title "Subtracting Congruences"
 
 Introduction "

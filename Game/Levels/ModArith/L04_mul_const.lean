@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L08_add_const
+import Game.Levels.ModArith.L03_add_const
 
-World "Congruence"
-Level 9
+World "ModArith"
+Level 4
 Title "Multiplying by a Common Factor"
 
 Introduction "

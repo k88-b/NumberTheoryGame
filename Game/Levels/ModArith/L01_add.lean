@@ -1,9 +1,17 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L05_mod_trans
+import Game.Metadata
+import Game.Levels.Definitions
+import Game.Doc.Definitions
+import Game.Doc.Tactics
+import Game.Doc.Theorems.Congruence
 
-World "Congruence"
-Level 6
+import Game.Levels.Divisibility
+import Game.Levels.Divisors
+import Game.Levels.Congruence
+
+World "ModArith"
+Level 1
 Title "Adding Congruences"
 
 Introduction "

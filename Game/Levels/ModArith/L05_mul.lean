@@ -1,20 +1,20 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L09_mul_const
+import Game.Levels.ModArith.L04_mul_const
 
-World "Congruence"
-Level 10
+World "ModArith"
+Level 5
 Title "Multiplying Congruences"
 
 Introduction "
 We know we can add and subtract congruences, but can we multiply them?
 If $a \\equiv b \\pmod m$ and $c \\equiv d \\pmod m$, is $a \\cdot c \\equiv b \\cdot d \\pmod m$?
 
-Just like in Level 8, instead of doing algebra from scratch, we can glue together our previous theorems using `have` and `exact`!
-Think about transitivity (`mod_trans` from Level 5). We can step from $a \\cdot c$ to $b \\cdot c$, and then from $b \\cdot c$ to $b \\cdot d$, using `mod_mul_const` (from Level 9) for each step.
+Just like in Level 3, instead of doing algebra from scratch, we can glue together our previous theorems using `have` and `exact`!
+Think about transitivity (`mod_trans`). We can step from $a \\cdot c$ to $b \\cdot c$, and then from $b \\cdot c$ to $b \\cdot d$, using `mod_mul_const` (from Level 4) for each step.
 
-**Syntax Tip: Parentheses!**
-When passing compound expressions like $a \\cdot c$ as arguments to a theorem, you **must** wrap them in parentheses so Lean knows they are a single argument:
+**Reminder: Parentheses!**
+When passing compound expressions like $a \\cdot c$ as arguments to a theorem, remember to wrap them in parentheses so Lean knows they are a single argument:
 `exact mod_trans (a * c) (b * c) (b * d) m step1 step2_symm`
 
 **Watch out for the order of multiplication!**

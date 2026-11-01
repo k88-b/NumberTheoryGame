@@ -1,14 +1,16 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L14_mod_dvd
+import Game.Levels.Congruence.L08_mod_dvd
 
 World "Congruence"
-Level 15
-Title "Splitting the Modulus"
+Level 9
+Title "Splitting the Modulus (Boss)"
 
 NewTactic constructor
 
 Introduction "
+Welcome to the final boss of World 3!
+
 If $a \\equiv b \\pmod{m \\cdot n}$, then the congruence holds modulo each factor individually:
 $$a \\equiv b \\pmod m \\quad \\text{AND} \\quad a \\equiv b \\pmod n$$
 
@@ -33,7 +35,11 @@ Statement mod_split (a b m n : ℤ) (h : a ≡ b (mod (m * n))) : (a ≡ b (mod 
     ring
 
 Conclusion "
-Great job! You now know how to split logical conjunctions with `constructor` and break apart a product modulus.
+🎉 AMAZING! 🎉
 
-Now, one last challenge stands between you and the end of World 2!
+You have conquered World 3! You now know how to work with congruences, reuse theorems with `exact`, split conjunctions with `constructor`, and break apart a product modulus.
+
+The map now splits into **two parallel paths** — you can tackle them in whichever order you prefer:
+- **In Search of the GCD** → **Linear Congruences and CRT**: discover Bézout's identity, cancellation laws, Euclid's Lemma, and the Chinese Remainder Theorem.
+- **Modular Arithmetic** → **Divisibility Rules**: add, multiply, and raise congruences to powers, prove polynomial congruences, and unlock all classic divisibility rules!
 "

@@ -6,8 +6,9 @@ import Game.Doc.Definitions
 import Game.Doc.Tactics
 import Game.Doc.Theorems.GCD
 
-import Game.Levels.Congruence
 import Game.Levels.Divisibility
+import Game.Levels.Divisors
+import Game.Levels.Congruence
 
 World "GCD"
 Level 1

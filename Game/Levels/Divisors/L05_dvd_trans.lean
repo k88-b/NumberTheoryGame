@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Divisibility.L12_dvd_add
+import Game.Levels.Divisors.L04_dvd_add
 
-World "Divisibility"
-Level 13
+World "Divisors"
+Level 5
 Title "Chain of Divisors"
 
 Introduction "
@@ -24,9 +24,9 @@ Statement dvd_trans_int (x y z : ℤ) (h1 : x ∣ y) (h2 : y ∣ z) : x ∣ z :=
 
   Branch
     rw [hk2, hk1]
-    Hint "The goal now expresses z purely in terms of x, k1, and k2 — nothing else is left. Look at what's multiplying x; that's the single witness the goal is asking you to supply."
+    Hint "The goal now expresses `{z}` purely in terms of `{x}`, `{k1}`, and `{k2}` — nothing else is left. Look at what's multiplying `{x}`; that's the single witness the goal is asking you to supply."
 
-  Hint (hidden := true) "Think it through: z = y·k2, and y = x·k1, so z = (x·k1)·k2 = x·(k1·k2). A single number built from k1 and k2 already turns x into z — that's the witness this goal wants."
+  Hint (hidden := true) "Think it through: `{z} = {y} * {k2}`, and `{y} = {x} * {k1}`, so `{z} = ({x} * {k1}) * {k2} = {x} * ({k1} * {k2})`. A single number built from `{k1}` and `{k2}` already turns `{x}` into `{z}` — that's the witness this goal wants."
   use k1 * k2
 
   rw [hk2, hk1]
@@ -35,5 +35,5 @@ Statement dvd_trans_int (x y z : ℤ) (h1 : x ∣ y) (h2 : y ∣ z) : x ∣ z :=
 Conclusion "
 Brilliant! By multiplying the two witnesses $k_1$ and $k_2$, you proved that divisibility chains together seamlessly (`dvd_trans_int`).
 
-Now, one last challenge stands between you and the end of World 1!
+Now, one last challenge stands between you and the end of World 2!
 "

@@ -1,9 +1,9 @@
 import GameServer
 import Mathlib.Tactic
-import Game.Levels.Congruence.L11_add_mul_mod
+import Game.Levels.ModArith.L05_mul
 
-World "Congruence"
-Level 12
+World "ModArith"
+Level 6
 Title "Powers of Congruences"
 
 
@@ -35,4 +35,6 @@ Statement mod_pow (a b m : ℤ) (n : ℕ) (h : a ≡ b (mod m)) : (a^n) ≡ (b^n
 
 Conclusion "
 Fantastic! You just performed your first proof by induction, effortlessly reducing powers to multiplication with `mod_mul`.
+
+Now, one last challenge stands between you and the end of Modular Arithmetic!
 "

@@ -9,7 +9,7 @@ Title "Solving Linear Congruences"
 Introduction "
 Can we always find a solution to $5 \\cdot x \\equiv 3 \\pmod 7$?
 
-In World 4, you proved `lin_cong_suff`, which states that $a \\cdot x \\equiv b \\pmod m$ has a solution as long as $\\gcd(a, m) \\mid b$.
+In the Linear Congruences world, you proved `lin_cong_suff`, which states that $a \\cdot x \\equiv b \\pmod m$ has a solution as long as $\\gcd(a, m) \\mid b$.
 Here $a = 5$, $b = 3$, and $m = 7$. Since 5 and 7 are coprime, their GCD is 1, and 1 certainly divides 3!
 
 **Strategy:**

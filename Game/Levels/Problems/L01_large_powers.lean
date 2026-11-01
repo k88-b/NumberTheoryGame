@@ -5,9 +5,12 @@ import Game.Levels.Definitions
 import Game.Doc.Definitions
 import Game.Doc.Tactics
 
-import Game.Levels.GCD
-import Game.Levels.Congruence
 import Game.Levels.Divisibility
+import Game.Levels.Divisors
+import Game.Levels.Congruence
+import Game.Levels.ModArith
+import Game.Levels.DivRules
+import Game.Levels.GCD
 import Game.Levels.LinCong
 
 World "Problems"
