@@ -12,7 +12,7 @@ So far, the modulus $m$ has stayed fixed. What if we want to change the modulus 
 If $a \\equiv b \\pmod m$, then multiplying everything (including the modulus) by $c$ preserves the congruence:
 $$a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$$
 
-Unfold the definition and look closely at the algebra.
+Unfold the definition and look closely at the algebra you've got.
 "
 
 

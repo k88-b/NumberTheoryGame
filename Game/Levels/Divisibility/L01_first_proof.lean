@@ -17,12 +17,12 @@ Introduction "
 Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.
 
 Our first statement is `3 ∣ 12`, which is read as \"3 divides 12\".
-Whenever a new mathematical concept is introduced, it appears in your **Definitions** tab on the right. Click on `Dvd.dvd` there right now to see what divisibility means formally!
+Whenever a new mathematical concept is introduced, it appears in your **Definitions** tab on the right. Click on `a ∣ b` there right now to see what divisibility means formally!
 
 *(To type `∣`, write `\\mid` and press Space.)*
 
 Lean sees `3 ∣ 12` as `∃ k, 12 = 3 * k`.
-To prove this, you need to provide the number $k$. You can do this using the `use` tactic.
+To prove this, you need to provide the number $k$. You can do this with the `use` tactic.
 Type `use 4`. Lean will automatically substitute $k$ with $4$ and close the goal since $12$ equals $3 \\cdot 4$!
 "
 

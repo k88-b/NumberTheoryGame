@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01\n"
+"POT-Creation-Date: 2026-11-03\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -417,12 +417,34 @@ msgstr ""
 msgid "Linear Congruences and CRT"
 msgstr ""
 
+#. §0: $a$
+#. §1: `dvd_add_int`
+#. §2: `rw [hk1, hk2]`
+#. §3: `use k1 + k2`
+#: Game.Levels.Divisors.L04_dvd_add
+msgid "Awesome! You just proved that multiples of §0 are closed under addition (§1). Notice that it doesn't matter whether you §2 before or after §3 — both orders just work!"
+msgstr ""
+
 #. §0: `«{a}» * («{x0}» + «{t}» * «{m1}») = «{a}» * «{x0}» + («{a1}» * «{t}») * «{m}»`
 #. §1: `mod_add_multiple`
 #. §2: `«{a}» = «{a1}» * «{d}»`
 #. §3: `«{m}» = «{m1}» * «{d}»`
 #: Game.Levels.LinCong.L07_sol_shift
 msgid "You want to show §0, so that §1 applies directly. Substitute §2 and §3"
+msgstr ""
+
+#. §0: $a$
+#. §1: $b$
+#. §2: $a$
+#. §3: $a \\cdot b$
+#. §4: $k$
+#. §5: $a \\cdot b = a \\cdot k$
+#. §6: $k$
+#: Game.Levels.Divisibility.L03_dvd_mul_right
+msgid "Now let's move from numerals to integer variables §0 and §1.\n"
+"\n"
+"We want to prove that §2 divides §3. By definition, this means finding some §4 such that §5.\n"
+"Look closely at the equation — the witness §6 is hiding in plain sight!"
 msgstr ""
 
 #. §0: $b$
@@ -534,6 +556,20 @@ msgid "Welcome to Modular Arithmetic!\n"
 "In the Congruence world, you proved that §0 is an equivalence relation. Now we unlock its real algebraic power: you can safely add, subtract, multiply, and raise congruences to powers, just like regular equations!\n"
 "\n"
 "By the end of this world, you will combine all of these operations to prove that **polynomials preserve congruences** (§1) — the master key to proving the classic divisibility rules!"
+msgstr ""
+
+#. §0: $m$
+#. §1: $m$
+#. §2: $a \\equiv b \\pmod m$
+#. §3: $c$
+#. §4: $$a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$$
+#: Game.Levels.Congruence.L07_mod_scale
+msgid "So far, the modulus §0 has stayed fixed. What if we want to change the modulus §1 itself?\n"
+"\n"
+"If §2, then multiplying everything (including the modulus) by §3 preserves the congruence:\n"
+"§4\n"
+"\n"
+"Unfold the definition and look closely at the algebra you've got."
 msgstr ""
 
 #: Game.Levels.DivRules.L06_div3
@@ -832,6 +868,20 @@ msgstr ""
 msgid "System of Congruences (Boss)"
 msgstr ""
 
+#. §0: `a ∣ b`
+#. §1: `use`
+#. §2: `a ∣ b`
+#. §3: `obtain`
+#. §4: $d \\mid a \\cdot x + b \\cdot y$
+#: Game.Levels.Divisors
+msgid "Welcome to World 2: Algebra of Divisors!\n"
+"\n"
+"In World 1, you learned how to prove the divisibility goal §0 by supplying a witness with §1.\n"
+"Now we flip the perspective: what if §2 is given to you as a **hypothesis**?\n"
+"\n"
+"In this world, you will unlock the §3 tactic to extract witnesses from your hypotheses. Using it, you will build a toolkit of algebraic rules showing how divisibility behaves across products, sums, chains (transitivity), and finally **linear combinations** (§4) — the cornerstone for Bézout's identity and the GCD!"
+msgstr ""
+
 #. §0: $a \\equiv b \\pmod m$
 #. §1: $n$
 #. §2: $$a^n \\equiv b^n \\pmod m$$
@@ -1032,34 +1082,6 @@ msgstr ""
 msgid "Quadratic Congruence"
 msgstr ""
 
-#. §0: $m$
-#: Game
-msgid "# Welcome to the Number Theory Game\n"
-"#### An introduction to integer arithmetic and formal proofs.\n"
-"\n"
-"In this game, we will explore the fascinating world of Number Theory.\n"
-"We will start from the basic definition of divisibility and build our way up\n"
-"to modular arithmetic and congruences.\n"
-"\n"
-"Our ultimate goal is to understand how remainders work, how to safely manipulate\n"
-"equations modulo §0, prove the classic divisibility rules, and reach powerful\n"
-"results like the Chinese Remainder Theorem. We will do this by solving levels\n"
-"in a computer puzzle game called Lean.\n"
-"\n"
-"# Read this.\n"
-"\n"
-"Learning how to use an interactive theorem prover takes time.\n"
-"Tests show that the people who get the most out of this game are\n"
-"those who read the help texts on the left side of the screen.\n"
-"\n"
-"To start, click on the **Divisibility Club**.\n"
-"\n"
-"## More\n"
-"\n"
-"Click on the three lines in the top right and select \"Game Info\" for resources,\n"
-"links, solutions, and ways to interact with the Lean community."
-msgstr ""
-
 #: Game.Levels.Problems.L05_euclid
 msgid "Euclid in Practice"
 msgstr ""
@@ -1127,20 +1149,6 @@ msgstr ""
 msgid "Excellent! The theorem constructed the solution under the hood.\n"
 "\n"
 "If you trace the algebra of §0, it gives §1, and indeed §2. Abstract theory gives concrete results!"
-msgstr ""
-
-#. §0: $m$
-#. §1: $m$
-#. §2: $a \\equiv b \\pmod m$
-#. §3: $c$
-#. §4: $$a \\cdot c \\equiv b \\cdot c \\pmod{m \\cdot c}$$
-#: Game.Levels.Congruence.L07_mod_scale
-msgid "So far, the modulus §0 has stayed fixed. What if we want to change the modulus §1 itself?\n"
-"\n"
-"If §2, then multiplying everything (including the modulus) by §3 preserves the congruence:\n"
-"§4\n"
-"\n"
-"Unfold the definition and look closely at the algebra."
 msgstr ""
 
 #. §0: $a \\mid b$
@@ -1308,40 +1316,6 @@ msgstr ""
 msgid "Multiples of a"
 msgstr ""
 
-#. §0: $a \\equiv b \\pmod m$
-#. §1: $b \\equiv a \\pmod m$
-#. §2: `at`
-#. §3: `unfold`
-#. §4: `rw`
-#. §5: `at`
-#. §6: `unfold ModEq at h`
-#. §7: `h`
-#. §8: `unfold ModEq at *`
-#. §9: `have`
-#. §10: $a - b = m \\cdot k$
-#. §11: $b - a$
-#. §12: `have h_eq : b - a = -(a - b)`
-#. §13: `ring`
-#. §14: `h_eq`
-#. §15: `rw [h_eq]`
-#. §16: `rw`
-#. §17: `rw [← h_eq]`
-#. §18: `\\l`
-#: Game.Levels.Congruence.L04_mod_symm
-msgid "The second property of an equivalence relation is **symmetry**: if §0, then §1.\n"
-"\n"
-"Before we dive into the proof, let's learn two crucial Lean features:\n"
-"\n"
-"1. **The §2 keyword:** By default, tactics like §3 or §4 only affect your *goal*. To modify hypotheses, use §5:\n"
-"* §6 unfolds the definition inside hypothesis §7.\n"
-"* §8 unfolds it *everywhere* (in all hypotheses and the goal at once).\n"
-"\n"
-"2. **The §9 tactic:** Often, you need an intermediate algebraic fact before you can rewrite your goal. For example, here you know §10, but your goal contains §11.\n"
-"If you type §12, Lean will pause and ask you to prove this equation first (using §13). Once proved, §14 is added to your assumptions so you can §15 in the main goal!\n"
-"\n"
-"*(Tip: Remember that §16 replaces the left side of an equation with the right side, unless you use a left arrow §17 via §18.)*"
-msgstr ""
-
 #: Game.Levels.GCD.L09_gcd_shift
 msgid "🎉 MAGNIFICENT! 🎉\n"
 "\n"
@@ -1476,6 +1450,32 @@ msgstr ""
 #. §1: `use`
 #: Game.Levels.LinCong.L09_crt_exists
 msgid "As explained in the introduction, the witness is §0. §1 it"
+msgstr ""
+
+#. §0: `3 ∣ 12`
+#. §1: `a ∣ b`
+#. §2: `∣`
+#. §3: `\\mid`
+#. §4: `3 ∣ 12`
+#. §5: `∃ k, 12 = 3 * k`
+#. §6: $k$
+#. §7: `use`
+#. §8: `use 4`
+#. §9: $k$
+#. §10: $4$
+#. §11: $12$
+#. §12: $3 \\cdot 4$
+#: Game.Levels.Divisibility.L01_first_proof
+msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.\n"
+"\n"
+"Our first statement is §0, which is read as \"3 divides 12\".\n"
+"Whenever a new mathematical concept is introduced, it appears in your **Definitions** tab on the right. Click on §1 there right now to see what divisibility means formally!\n"
+"\n"
+"*(To type §2, write §3 and press Space.)*\n"
+"\n"
+"Lean sees §4 as §5.\n"
+"To prove this, you need to provide the number §6. You can do this with the §7 tactic.\n"
+"Type §8. Lean will automatically substitute §9 with §10 and close the goal since §11 equals §12!"
 msgstr ""
 
 #: Game.Levels.Divisibility.L08_rewriting_backwards
@@ -2713,6 +2713,40 @@ msgid "Divisibility and congruence to zero are two sides of the same coin!\n"
 "Whenever you see §0, you can immediately translate it in your head as \"§1 divides §2\"."
 msgstr ""
 
+#. §0: $a \\equiv b \\pmod m$
+#. §1: $b \\equiv a \\pmod m$
+#. §2: `at`
+#. §3: `unfold`
+#. §4: `rw`
+#. §5: `at`
+#. §6: `unfold ModEq at h`
+#. §7: `h`
+#. §8: `unfold ModEq at *`
+#. §9: `have`
+#. §10: $a - b = m \\cdot k$
+#. §11: $b - a$
+#. §12: `have h_eq : b - a = -(a - b)`
+#. §13: `ring`
+#. §14: `h_eq`
+#. §15: `rw [h_eq]`
+#. §16: `rw`
+#. §17: `rw [← h_eq]`
+#. §18: `\\l`
+#: Game.Levels.Congruence.L04_mod_symm
+msgid "The second property of an equivalence relation is **symmetry**: if §0, then §1.\n"
+"\n"
+"Before we dive into the proof, let's learn two crucial Lean features:\n"
+"\n"
+"1. **The §2 keyword:** By default, tactics like §3 or §4 only affect your *goal*. To modify hypotheses, use §5:\n"
+"* §6 unfolds the definition inside hypothesis §7.\n"
+"* §8 unfolds it *everywhere* (in all hypotheses and the goal at once).\n"
+"\n"
+"2. **The §9 tactic:** Often, you need an intermediate algebraic fact before you can rewrite your goal. For example, here you know §10, but your goal contains §11.\n"
+"If you type §12, Lean will pause and ask you to prove this equation first (using §13). Once proved, §14 is added to your assumptions so you can §15 to change the main goal!\n"
+"\n"
+"*(Tip: Remember that §16 replaces the left side of an equation with the right side, unless you use a left arrow §17 via §18.)*"
+msgstr ""
+
 #: Game.Levels.GCD.L02_gcd_greatest
 msgid "Any gcd witness dominates every common divisor."
 msgstr ""
@@ -2984,32 +3018,6 @@ msgstr ""
 msgid "Multiples of 6"
 msgstr ""
 
-#. §0: `3 ∣ 12`
-#. §1: `Dvd.dvd`
-#. §2: `∣`
-#. §3: `\\mid`
-#. §4: `3 ∣ 12`
-#. §5: `∃ k, 12 = 3 * k`
-#. §6: $k$
-#. §7: `use`
-#. §8: `use 4`
-#. §9: $k$
-#. §10: $4$
-#. §11: $12$
-#. §12: $3 \\cdot 4$
-#: Game.Levels.Divisibility.L01_first_proof
-msgid "Welcome to your first level! In Lean, you write proofs by using **tactics**. Tactics are commands that manipulate the goal until it is solved.\n"
-"\n"
-"Our first statement is §0, which is read as \"3 divides 12\".\n"
-"Whenever a new mathematical concept is introduced, it appears in your **Definitions** tab on the right. Click on §1 there right now to see what divisibility means formally!\n"
-"\n"
-"*(To type §2, write §3 and press Space.)*\n"
-"\n"
-"Lean sees §4 as §5.\n"
-"To prove this, you need to provide the number §6. You can do this using the §7 tactic.\n"
-"Type §8. Lean will automatically substitute §9 with §10 and close the goal since §11 equals §12!"
-msgstr ""
-
 #. §0: `gcd_div_coprime`
 #: Game.Levels.GCD.L07_gcd_div_coprime
 msgid "Great! §0 is now saved — it's the missing piece that will let us cancel factors that aren't necessarily coprime to the modulus, in the very next level."
@@ -3086,14 +3094,6 @@ msgstr ""
 
 #: Game.Levels.DivRules.L06_div3
 msgid "The sum of digits rule for 3."
-msgstr ""
-
-#. §0: $a$
-#. §1: `dvd_add_int`
-#. §2: `rw [hk1, hk2]`
-#. §3: `use k1 + k2`
-#: Game.Levels.Divisors.L04_dvd_add
-msgid "Awesome! You just proved that multiples of §0 are closed under addition (§1). Notice that it doesn't matter whether you §2 before or after §3 — both orders work cleanly!"
 msgstr ""
 
 #. §0: `constructor`
@@ -3249,6 +3249,34 @@ msgstr ""
 msgid "Excellent! You have shown that any two solutions only differ by multiples of §0."
 msgstr ""
 
+#. §0: $m$
+#: Game
+msgid "# Welcome to the Number Theory Game\n"
+"#### An introduction to integer arithmetic and formal proofs.\n"
+"\n"
+"In this game, we will explore the fascinating world of Number Theory.\n"
+"We will start from the basic definition of divisibility and build our way up\n"
+"to modular arithmetic and congruences.\n"
+"\n"
+"Our ultimate goal is to understand how remainders work, how to safely manipulate\n"
+"equations modulo §0, prove the classic divisibility rules, and prove strong\n"
+"results like the Chinese Remainder Theorem. We will do this by solving levels\n"
+"with Lean theorem prover.\n"
+"\n"
+"# Read this.\n"
+"\n"
+"Learning how to use an interactive theorem prover takes time.\n"
+"Tests show that the people who get the most out of this game are\n"
+"those who read the help texts on the left side of the screen.\n"
+"\n"
+"To start, click on the **Divisibility Club**.\n"
+"\n"
+"## More\n"
+"\n"
+"Click on the three lines in the top right and select \"Game Info\" for resources,\n"
+"links, solutions, and ways to interact with the Lean community."
+msgstr ""
+
 #: Game.Levels.LinCong.L09_crt_exists
 msgid "Magnificent! This explicit witness construction sits at the core of CRT."
 msgstr ""
@@ -3275,20 +3303,6 @@ msgstr ""
 
 #: Game.Levels.GCD.L01_gcd_def
 msgid "A first, concrete example: IsGCD(2, 3) 1."
-msgstr ""
-
-#. §0: $a$
-#. §1: $b$
-#. §2: $a$
-#. §3: $a \\cdot b$
-#. §4: $k$
-#. §5: $a \\cdot b = a \\cdot k$
-#. §6: $k$
-#: Game.Levels.Divisibility.L03_dvd_mul_right
-msgid "Now let's move from concrete numbers to abstract integers §0 and §1.\n"
-"\n"
-"We want to prove that §2 divides §3. By definition, this means finding some §4 such that §5.\n"
-"Look closely at the equation — the witness §6 is hiding in plain sight!"
 msgstr ""
 
 #. §0: $3x + 4y \\equiv 0 \\pmod{11}$
@@ -3344,20 +3358,6 @@ msgstr ""
 
 #: Game.Levels.LinCong.L10_crt_glue
 msgid "Chinese Remainder Theorem: Glued (Boss)"
-msgstr ""
-
-#. §0: `a ∣ b`
-#. §1: `use`
-#. §2: `a ∣ b`
-#. §3: `obtain`
-#. §4: $d \\mid a \\cdot x + b \\cdot y$
-#: Game.Levels.Divisors
-msgid "Welcome to World 2: Algebra of Divisors!\n"
-"\n"
-"In World 1, you learned how to prove a divisibility goal §0 by supplying a witness with §1.\n"
-"Now we flip the perspective: what if §2 is given to you as a **hypothesis**?\n"
-"\n"
-"In this world, you will unlock the §3 tactic to extract witnesses from your hypotheses. Using it, you will build a toolkit of algebraic rules showing how divisibility behaves across products, sums, chains (transitivity), and finally **linear combinations** (§4) — the cornerstone for Bézout's identity and the GCD!"
 msgstr ""
 
 #. §0: $m$

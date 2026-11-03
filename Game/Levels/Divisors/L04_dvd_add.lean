@@ -27,5 +27,5 @@ Statement dvd_add_int (a b c : ℤ) (h1 : a ∣ b) (h2 : a ∣ c) : a ∣ b + c 
   ring
 
 Conclusion "
-Awesome! You just proved that multiples of $a$ are closed under addition (`dvd_add_int`). Notice that it doesn't matter whether you `rw [hk1, hk2]` before or after `use k1 + k2` — both orders work cleanly!
+Awesome! You just proved that multiples of $a$ are closed under addition (`dvd_add_int`). Notice that it doesn't matter whether you `rw [hk1, hk2]` before or after `use k1 + k2` — both orders just work!
 "

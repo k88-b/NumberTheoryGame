@@ -7,7 +7,7 @@ Level 3
 Title "Multiples of a"
 
 Introduction "
-Now let's move from concrete numbers to abstract integers $a$ and $b$.
+Now let's move from numerals to integer variables $a$ and $b$.
 
 We want to prove that $a$ divides $a \\cdot b$. By definition, this means finding some $k$ such that $a \\cdot b = a \\cdot k$.
 Look closely at the equation — the witness $k$ is hiding in plain sight!

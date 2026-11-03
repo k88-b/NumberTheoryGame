@@ -19,7 +19,7 @@ Before we dive into the proof, let's learn two crucial Lean features:
 * `unfold ModEq at *` unfolds it *everywhere* (in all hypotheses and the goal at once).
 
 2. **The `have` tactic:** Often, you need an intermediate algebraic fact before you can rewrite your goal. For example, here you know $a - b = m \\cdot k$, but your goal contains $b - a$.
-If you type `have h_eq : b - a = -(a - b)`, Lean will pause and ask you to prove this equation first (using `ring`). Once proved, `h_eq` is added to your assumptions so you can `rw [h_eq]` in the main goal!
+If you type `have h_eq : b - a = -(a - b)`, Lean will pause and ask you to prove this equation first (using `ring`). Once proved, `h_eq` is added to your assumptions so you can `rw [h_eq]` to change the main goal!
 
 *(Tip: Remember that `rw` replaces the left side of an equation with the right side, unless you use a left arrow `rw [← h_eq]` via `\\l`.)*
 "
