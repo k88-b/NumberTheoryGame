@@ -1,5 +1,5 @@
 import GameServer
--- import Mathlib.Tactic.Common
+import Mathlib.Tactic
 
 /-! Use this file to add things that should be available in all levels.
 
@@ -26,4 +26,4 @@ macro_rules (kind := gameHave)
      Please use `have _ : _` and provide the proof on the next lines."
     `(tactic| skip)
 
-
+macro (priority := high) "ring" : tactic => `(tactic| ring1)
