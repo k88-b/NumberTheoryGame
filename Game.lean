@@ -19,9 +19,9 @@ We will start from the basic definition of divisibility and build our way up
 to modular arithmetic and congruences.
 
 Our ultimate goal is to understand how remainders work, how to safely manipulate
-equations modulo $m$, prove the classic divisibility rules, and reach powerful
+equations modulo $m$, prove the classic divisibility rules, and prove strong
 results like the Chinese Remainder Theorem. We will do this by solving levels
-in a computer puzzle game called Lean.
+with Lean theorem prover.
 
 # Read this.
 
