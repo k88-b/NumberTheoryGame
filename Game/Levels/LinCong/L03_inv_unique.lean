@@ -1,4 +1,4 @@
-import GameServer
+import GameApi
 import Mathlib.Tactic
 import Game.Levels.LinCong.L02_inv_reverse
 

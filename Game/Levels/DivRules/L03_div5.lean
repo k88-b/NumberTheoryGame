@@ -1,4 +1,4 @@
-import GameServer
+import GameApi
 import Mathlib.Tactic
 import Game.Levels.DivRules.L02_div2
 

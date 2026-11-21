@@ -1,4 +1,4 @@
-import GameServer
+import GameApi
 import Mathlib.Tactic
 import Game.Levels.GCD.L07_gcd_div_coprime
 

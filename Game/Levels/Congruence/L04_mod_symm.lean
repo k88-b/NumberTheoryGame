@@ -1,4 +1,4 @@
-import GameServer
+import GameApi
 import Mathlib.Tactic
 import Game.Levels.Congruence.L03_dvd_imp_mod_zero
 

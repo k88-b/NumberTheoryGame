@@ -1,4 +1,4 @@
-import GameServer
+import GameApi
 
 /--
 The `use` tactic is used to provide a "witness" to prove that something exists.
