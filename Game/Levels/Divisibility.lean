@@ -1,5 +1,5 @@
 import Game.Metadata
-import GameServer
+import GameApi
 
 import Game.Levels.Divisibility.L01_first_proof
 import Game.Levels.Divisibility.L02_negative_multiples

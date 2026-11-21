@@ -1,4 +1,4 @@
-import GameServer
+import GameApi
 import Mathlib.Tactic
 import Game.Levels.Divisors.L01_eq_zero_of_zero_dvd
 
